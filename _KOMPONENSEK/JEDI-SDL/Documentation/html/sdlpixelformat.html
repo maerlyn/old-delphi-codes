@@ -1,0 +1,172 @@
+<html>
+<head>
+  <title>SDL_PixelFormat</title>
+                                         
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+                       
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+                       
+  <link rel="UP" title="Video" href="video.html">
+                       
+  <link rel="PREVIOUS" title="SDL_Palette" href="sdlpalette.html">
+                       
+  <link rel="NEXT" title="SDL_Surface" href="sdlsurface.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+           
+<div class="NAVHEADER">      
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+          </tr>
+          <tr>
+            <td width="7%" align="Left" valign="Bottom"><a href="sdlpalette.html">
+      Prev</a></td>
+            <td width="75%" align="Center" valign="Bottom"><br>
+            </td>
+            <td width="7%" align="Right" valign="Bottom"><a href="sdlsurface.html">
+      Next</a></td>
+          </tr>
+                       
+  </tbody>      
+</table>
+           
+<hr align="Left" width="100%"></div>
+           
+<h1><a name="SDLPIXELFORMAT">TSDL_PixelFormat</a></h1>
+           
+<div class="REFNAMEDIV"><a name="AEN2762"></a>      
+<h2>Name</h2>
+   &nbsp;&nbsp; TSDL_PixelFormat -- Stores surface format information</div>
+           
+<div class="REFSECT1"><a name="AEN2765"></a><br>
+       
+<h2>Structure Definition</h2>
+      <pre class="PROGRAMLISTING">  TSDL_PixelFormat = <b>record</b><br>    palette: PSDL_Palette;<br>    BitsPerPixel: UInt8;<br>    BytesPerPixel: UInt8;<br>    Rloss: UInt8;<br>    Gloss: UInt8;<br>    Bloss: UInt8;<br>    Aloss: UInt8;<br>    Rshift: UInt8;<br>    Gshift: UInt8;<br>    Bshift: UInt8;<br>    Ashift: UInt8;<br>    Rmask: UInt32;<br>    Gmask: UInt32;<br>    Bmask: UInt32;<br>    Amask: UInt32;<br>    colorkey: Uint32; // RGB color key information<br>    alpha: Uint8; // Alpha value information (per-surface alpha)<br>  <b>end;</b></pre>
+      </div>
+           
+<div class="REFSECT1"><a name="AEN2768"></a>      
+<h2>Structure Data</h2>
+           
+<div class="INFORMALTABLE"><a name="AEN2770"></a>      
+<p></p>
+           
+<table border="0" class="CALSTABLE">
+        <tbody>
+          <tr>
+            <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>palette</i></tt></td>
+            <td align="Left" valign="Top">Pointer to the <a href="sdlpalette.html">
+      palette</a>, or <b><tt class="LITERAL">nil</tt></b> if the <tt class="STRUCTFIELD"><i>
+      BitsPerPixel</i></tt>&gt;8</td>
+          </tr>
+          <tr>
+            <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>BitsPerPixel</i></tt></td>
+            <td align="Left" valign="Top">The number of bits used to represent
+   each pixel in a surface. Usually 8, 16, 24 or 32.</td>
+          </tr>
+          <tr>
+            <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>BytesPerPixel</i></tt></td>
+            <td align="Left" valign="Top">The number of bytes used to represent
+   each pixel in a surface. Usually one to four.</td>
+          </tr>
+          <tr>
+            <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>[RGBA]mask</i></tt></td>
+            <td align="Left" valign="Top">Binary mask used to retrieve individual
+   color values</td>
+          </tr>
+          <tr>
+            <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>[RGBA]loss</i></tt></td>
+            <td align="Left" valign="Top">Precision loss of each color component
+   (2<sup>[RGBA]loss</sup>)</td>
+          </tr>
+          <tr>
+            <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>[RGBA]shift</i></tt></td>
+            <td align="Left" valign="Top">Binary left shift of each color 
+component   in the pixel value</td>
+          </tr>
+          <tr>
+            <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>colorkey</i></tt></td>
+            <td align="Left" valign="Top">Pixel value of transparent pixels</td>
+          </tr>
+          <tr>
+            <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>alpha</i></tt></td>
+            <td align="Left" valign="Top">Overall surface alpha value</td>
+          </tr>
+                       
+  </tbody>      
+</table>
+           
+<p></p>
+      </div>
+      </div>
+           
+<div class="REFSECT1"><a name="AEN2809"></a>      
+<h2>Description</h2>
+           
+<p>A <span class="STRUCTNAME">SDL_PixelFormat</span> describes the format&nbsp; 
+ of the pixel data stored at the <tt class="STRUCTFIELD"><i>pixels</i></tt>
+    &nbsp;&nbsp; field of a <a href="sdlsurface.html"><span class="STRUCTNAME">
+   TSDL_Surface</span></a> &nbsp; . Every surface stores a <span class="STRUCTNAME">
+   SDL_PixelFormat</span> &nbsp; in the <tt class="STRUCTFIELD"><i>format</i></tt>
+    field.</p>
+           
+<p>If you wish to do pixel level modifications on a surface, then understanding
+   how SDL stores its color information is essential.</p>
+           
+<p>8-bit pixel formats are the easiest to understand. Since its an 8-bit
+format, we have 8 <tt class="STRUCTFIELD"><i>BitsPerPixel</i></tt> and 1
+<tt class="STRUCTFIELD"><i>   BytesPerPixel</i></tt>. Since <tt class="STRUCTFIELD"><i>
+ &nbsp; BytesPerPixel</i></tt>  &nbsp; is 1, all pixels are represented by
+a Uint8 which contains an index into <tt class="STRUCTFIELD"><i>palette.colors</i></tt>
+  . So, to determine the color of a pixel in a 8-bit surface:&nbsp; we read
+the color index from <span class="STRUCTNAME">surface.pixels</span> and we
+use that index to read the <a href="sdlcolor.html"><span class="STRUCTNAME">
+  TSDL_Color</span></a>   structure from <span class="STRUCTNAME">surface.</span><tt class="STRUCTFIELD"><i>
+    format.palette.</i></tt><tt class="STRUCTFIELD"><i>colors</i></tt>. Like
+  so:&nbsp; <pre class="PROGRAMLISTING"><b>var</b> <br>  surface : PSDL_Surface;<br>  fmt : PSDL_PixelFormat;<br>  color : PSDL_Color;<br>  index : UInt8;<br><br>.<br>.<br><br>// Create surface<br>.<br>.<br>fmt := surface.format;<br><br>// Check the bitdepth of the surface <br><b>if</b> ( fmt.BitsPerPixel &lt;&gt; 8 ) <b>then</b> <br><b>begin</b><br>  WriteLn( 'Not an 8-bit surface.' );<br>  return(-1);<br><b>end;</b><br><br>// Lock the surface<br>SDL_LockSurface( surface );<br><br>// Get the topleft pixel <br>index := PUint8( surface.pixels )^;<br>color := fmt.palette.colors[ index ];<br><br>// Unlock the surface <br>SDL_UnlockSurface( surface );<br>WriteLn( Format( 'Pixel Color-&gt; Red: %d, Green: %d, Blue: %d. Index: %d', [ color.r, color.g, color.b, index ] ) );<br>.<br>.</pre>
+      </p>
+           
+<p>Pixel formats above 8-bit are an entirely different experience. They are 
+   considered to be "TrueColor" formats and the color information is stored
+   in the pixels themselves, not in a palette. The mask, shift and loss fields
+   tell us how the color information is encoded. The mask fields allow us
+to   isolate each color component, the shift fields tell us the number of
+bits   to the right of each component in the pixel value and the loss fields
+tell   us the number of bits lost from each component when packing 8-bit
+color component  in a pixel. <pre class="PROGRAMLISTING">// Extracting color components from a 32-bit color value */<br>fmt : PSDL_PixelFormat;<br>surface : PSDL_Surface;<br>temp, pixel : UInt32;<br>red, green, blue, alpha : UInt8;<br>.<br>.<br>.<br>fmt := surface-&gt;format;<br>SDL_LockSurface( surface );<br>pixel := PUint32( surface.pixels )^;<br>SDL_UnlockSurface( surface );<br><br>// Get Red component <br>temp := pixel <b>and</b> fmt.RMask; // Isolate red component<br>temp := temp <b>shr</b> fmt.RShift; // Shift it down to 8-bit<br>temp := temp <b>shl</b> fmt.RLoss;  // Expand to a full 8-bit number <br>red  := UInt8( temp );<br><br>// Get Green component <br>temp  := pixel <b>and</b> fmt.GMask; // Isolate green component<br>temp  := temp <b>shr</b> fmt.GShift; // Shift it down to 8-bit<br>temp  := temp <b>shl</b> fmt.GLoss;  // Expand to a full 8-bit number<br>green := UInt8( temp );<br><br>// Get Blue component <br>temp := pixel <b>and</b> fmt.BMask; // Isolate blue component <br>temp := temp <b>shr</b> fmt.BShift; // Shift it down to 8-bit <br>temp := temp <b>shl</b> fmt.BLoss;  // Expand to a full 8-bit number <br>blue := UInt8( temp );<br><br>// Get Alpha component <br>temp  := pixel <b>and</b> fmt.AMask; // Isolate alpha component<br>temp  := temp <b>shr</b> fmt.AShift; // Shift it down to 8-bit <br>temp  := temp <b>shl</b> fmt.ALoss;  // Expand to a full 8-bit number <br>alpha := UInt8( temp );<br><br>WriteLn( Format( 'Pixel Color -&gt; R: %d,  G: %d,  B: %d,  A: %d', [ red, green, blue, alpha ] ) );<br>.<br>.<br>.</pre>
+      </p>
+      </div>
+           
+<div class="REFSECT1"><a name="AEN2836"></a>      
+<h2>See Also</h2>
+           
+<p><a href="sdlsurface.html"><span class="STRUCTNAME">TSDL_Surface</span></a>
+    &nbsp; , <a href="sdlmaprgb.html"><tt class="FUNCTION">SDL_MapRGB</tt></a></p>
+      </div>
+           
+<div class="NAVFOOTER">      
+<hr align="Left" width="100%">      
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td width="31%" align="Left" valign="Top"><a href="sdlpalette.html">
+      Prev</a></td>
+            <td width="34%" align="Center" valign="Top"><a href="index.html">
+    Home</a></td>
+            <td width="31%" align="Right" valign="Top"><a href="sdlsurface.html">
+      Next</a></td>
+          </tr>
+          <tr>
+            <td width="31%" align="Left" valign="Top">TSDL_Palette</td>
+            <td width="34%" align="Center" valign="Top"><a href="video.html">
+    Up</a></td>
+            <td width="31%" align="Right" valign="Top">TSDL_Surface</td>
+          </tr>
+                       
+  </tbody>      
+</table>
+      </div>
+           
+</body>
+</html>

@@ -1,0 +1,161 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+DLGNEW DIALOG DISCARDABLE  157, 71, 163, 83
+STYLE DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Napravi poddirektorijum"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Trenutni direktorijum",-1,7,5,74,9
+    LTEXT           "Text",3001,3,16,156,15,WS_BORDER
+    LTEXT           "Novi poddirektirijum",-1,7,37,114,9
+    EDITTEXT        3002,3,48,156,15,ES_AUTOVSCROLL | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",1,51,67,50,14
+    PUSHBUTTON      "Cancel",2,106,67,50,14
+END
+
+FILEEXIST DIALOGEX 13, 19, 194, 56
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_DLGMODALFRAME
+CAPTION "Potvrdi overwrite fajla..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&Da",1,43,39,50,14
+    PUSHBUTTON      "&Ne",2,101,39,50,14
+    EDITTEXT        101,10,4,177,14,ES_CENTER | ES_MULTILINE | ES_READONLY | 
+                    NOT WS_BORDER | NOT WS_TABSTOP
+    CONTROL         "Isto iza ostale slucajeve",401,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,22,69,12
+END
+
+MAINDIALOG DIALOG DISCARDABLE  86, 48, 237, 151
+STYLE DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | 
+    WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "DELZIPSFX32"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "",102,0,0,237,126,WS_BORDER
+    DEFPUSHBUTTON   "Pocni",1,131,131,47,16
+    EDITTEXT        101,77,20,136,12,ES_AUTOVSCROLL | ES_AUTOHSCROLL
+    PUSHBUTTON      "...",775,213,20,15,12
+    LISTBOX         301,77,41,151,34,LBS_SORT | LBS_MULTIPLESEL | 
+                    LBS_HASSTRINGS | LBS_USETABSTOPS | WS_VSCROLL | 
+                    WS_TABSTOP
+    LISTBOX         302,77,41,151,34,LBS_SORT | LBS_HASSTRINGS | 
+                    LBS_USETABSTOPS | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "&Potvrdi overwrite",503,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,38,92,68,9
+    CONTROL         "&Overwrite",501,"Button",BS_AUTORADIOBUTTON,182,92,47,9
+    CONTROL         "&Bez overwrite-a",502,"Button",BS_AUTORADIOBUTTON,112,
+                    92,65,9
+    CONTROL         "Pocni",1007,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,108,
+                    208,12
+    PUSHBUTTON      "&Kraj",2,185,131,47,16
+    LTEXT           "Postijeci fajlovi :",509,10,80,53,9,WS_TABSTOP
+    LTEXT           "Raspakuj u :",100,38,9,37,8,NOT WS_GROUP
+    LTEXT           "Fajlovi :",-1,38,41,23,11
+    ICON            "MNICON",-1,10,9,20,20
+    CONTROL         "O DelZip SFX-u...",103,"BUTTON",BS_USERBUTTON | 
+                    WS_TABSTOP,10,131,73,16
+END
+
+PASSWD DIALOG DISCARDABLE  6, 15, 157, 41
+STYLE DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION
+CAPTION "Lozinka..."
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        101,5,2,146,12,ES_PASSWORD | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "&Ok",1,52,22,54,11
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+MNICON                  ICON    DISCARDABLE     "MNICON.ICO"
+
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

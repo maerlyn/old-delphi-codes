@@ -1,0 +1,149 @@
+<html>
+<head>
+  <title>SDL_Init</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="General" href="general.html">
+   
+  <link rel="PREVIOUS" title="General" href="general.html">
+   
+  <link rel="NEXT" title="SDL_InitSubSystem" href="sdlinitsubsystem.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="general.html">
+ Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom"><br>
+       </td>
+       <td width="8%" align="Right" valign="Bottom"><a href="sdlinitsubsystem.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<h1><a name="SDLINIT">SDL_Init</a></h1>
+ 
+<div class="REFNAMEDIV"><a name="AEN473"></a> 
+<h2>Name</h2>
+ SDL_Init&nbsp;--&nbsp;Initializes SDL</div>
+ 
+<div class="REFSYNOPSISDIV"><a name="AEN476"></a> 
+<h2>Synopsis</h2>
+ 
+<div class="FUNCSYNOPSIS"><a name="AEN477"></a> 
+<p></p>
+ <pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+ 
+<p>function <b>SDL_Init</b>( flags : uint32 ) : Integer;</p>
+ 
+<p></p>
+ </div>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN483"></a> 
+<h2>Description</h2>
+ 
+<p>Initializes SDL. This should be called before all other SDL functions. 
+The <tt class="PARAMETER"><i>flags</i></tt> parameter specifies what part(s) 
+of SDL to initialize.</p>
+ 
+<div class="INFORMALTABLE"><a name="AEN487"></a> 
+<p></p>
+ 
+<table border="1" class="CALSTABLE">
+   <tbody>
+     <tr>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_INIT_TIMER</tt></td>
+       <td align="Left" valign="Top">Initializes the <a href="time.html">
+timer</a>  subsystem.</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_INIT_AUDIO</tt></td>
+       <td align="Left" valign="Top">Initializes the <a href="audio.html">
+ audio</a> subsystem.</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_INIT_VIDEO</tt></td>
+       <td align="Left" valign="Top">Initializes the <a href="video.html">
+ video</a> subsystem.</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_INIT_CDROM</tt></td>
+       <td align="Left" valign="Top">Initializes the <a href="cdrom.html">
+ cdrom</a> subsystem.</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_INIT_JOYSTICK</tt></td>
+       <td align="Left" valign="Top">Initializes the <a href="joystick.html">
+ joystick</a> subsystem.</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_INIT_EVERYTHING</tt></td>
+       <td align="Left" valign="Top">Initialize all of the above.</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_INIT_NOPARACHUTE</tt></td>
+       <td align="Left" valign="Top">Prevents SDL from catching fatal signals.</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_INIT_EVENTTHREAD</tt></td>
+       <td align="Left" valign="Top">&nbsp;</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<p></p>
+ </div>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN527"></a> 
+<h2>Return Value</h2>
+ 
+<p>Returns <span class="RETURNVALUE">-1</span> on an error or <span class="RETURNVALUE">
+ 0</span> on success.</p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN532"></a> 
+<h2>See Also</h2>
+ 
+<p><a href="sdlquit.html"><tt class="FUNCTION">SDL_Quit</tt></a>, <a href="sdlinitsubsystem.html"><tt class="FUNCTION">
+ SDL_InitSubSystem</tt></a></p>
+ </div>
+ 
+<div class="NAVFOOTER"> 
+<hr align="Left" width="100%"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <td width="31%" align="Left" valign="Top"><a href="general.html">Prev</a></td>
+       <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+       <td width="31%" align="Right" valign="Top"><a href="sdlinitsubsystem.html">
+ Next</a></td>
+     </tr>
+     <tr>
+       <td width="31%" align="Left" valign="Top">General</td>
+       <td width="34%" align="Center" valign="Top"><a href="general.html">
+ Up</a></td>
+       <td width="31%" align="Right" valign="Top">SDL_InitSubSystem</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ </div>
+ 
+</body>
+</html>

@@ -1,0 +1,79 @@
+<html>
+<head>
+  <title>Audio Examples</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="Examples" href="guideexamples.html">
+   
+  <link rel="PREVIOUS" title="Event Examples" href="guideeventexamples.html">
+   
+  <link rel="NEXT" title="CDROM Examples" href="guidecdromexamples.html">
+</head>
+ <body class="SECT1" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="guideeventexamples.html">
+ Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom">Chapter 4. Examples</td>
+       <td width="8%" align="Right" valign="Bottom"><a href="guidecdromexamples.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<div class="SECT1"> 
+<h1 class="SECT1"><a name="GUIDEAUDIOEXAMPLES">Audio Examples</a></h1>
+ 
+<p></p>
+ 
+<div class="SECT2"> 
+<h2 class="SECT2"><a name="AEN415">Opening the audio device</a></h2>
+ 
+<p><pre class="PROGRAMLISTING">    <b>procedure</b> fill_audio( udata : pointer; stream : PUint8; len : integer );<br>    <b>var</b><br>      wanted : TSDL_AudioSpec;<br>    <b>begin</b><br>       // Set the audio format <br>      wanted.freq := 22050;<br>      wanted.format := AUDIO_S16;<br>      wanted.channels := 2;    // 1 = mono, 2 = stereo <br>      wanted.samples := 1024;  // Good low-latency value for callback <br>      wanted.callback := fill_audio;<br>      wanted.userdata := <b>nil</b>;<br><br>      // Open the audio device, forcing the desired formats<br>      <b>if</b> ( SDL_OpenAudio( @wanted, nil ) &lt; 0 ) <b>then</b><br>      <b>begin</b><br>        MessageBox( 0, PChar( Format( 'Couldn''t open SDL Audio : %s', [SDL_GetError] ) ), 'Error', MB_OK or MB_ICONHAND );<br>        exit;<br>      <b>end;</b><br>    <b>end;</b><br></pre>
+ </p>
+ </div>
+ 
+<div class="SECT2"> 
+<h2 class="SECT2"><a name="AEN419">Playing audio</a></h2>
+ 
+<p><pre class="PROGRAMLISTING"><b>var</b>    <br>    audio_chunk : PUint8;<br>    audio_len : Uint32;<br>    audoi_pos : PUint8;<br><br>    (* The audio function callback takes the following parameters:<br>       stream:  A pointer to the audio buffer to be filled<br>       len:     The length (in bytes) of the audio buffer<br>    *)<br>    <b>procedure</b> fill_audio( udata : pointer; stream : PUint8; len : integer );<br>    <b>begin</b><br>        // Only play if we have data left <br>        <b>if</b> ( audio_len = 0 ) <b>then</b><br>            exit;<br><br>        // Mix as much data as possible<br>        <b>if</b> ( len &gt; audio_len ) <b>then</b><br>          len := audio_len;<br>        SDL_MixAudio(stream, audio_pos, len, SDL_MIX_MAXVOLUME );<br>        inc( audio_pos, len );<br>        dec( audio_len, len );<br>    <b>end;</b><br><br>    // Load the audio data ... <br><br>    ....<br><br>    audio_pos := audio_chunk;<br><br>    // Let the callback function play the audio chunk<br>    SDL_PauseAudio( 0 );<br><br>    // Do some processing<br><br>    ....<br><br>    // Wait for sound to complete<br>    <b>while</b> ( audio_len &gt; 0 ) <b>do</b><br>    <b>begin</b><br>        SDL_Delay( 100 );         // Sleep 1/10 second<br>    <b>end;</b><br>    SDL_CloseAudio;</pre>
+ </p>
+ </div>
+ </div>
+ 
+<div class="NAVFOOTER"> 
+<hr align="Left" width="100%"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <td width="31%" align="Left" valign="Top"><a href="guideeventexamples.html">
+ Prev</a></td>
+       <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+       <td width="31%" align="Right" valign="Top"><a href="guidecdromexamples.html">
+ Next</a></td>
+     </tr>
+     <tr>
+       <td width="31%" align="Left" valign="Top">Event Examples</td>
+       <td width="34%" align="Center" valign="Top"><a href="guideexamples.html">
+ Up</a></td>
+       <td width="31%" align="Right" valign="Top">CDROM Examples</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ </div>
+ 
+</body>
+</html>

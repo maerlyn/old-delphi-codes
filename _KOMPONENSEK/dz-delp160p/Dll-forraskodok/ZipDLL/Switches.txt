@@ -1,0 +1,76 @@
+
+You only need to use this info if you will be tracing/modifying the
+DLL source code.  Most BCB/Delphi programmers will NEVER need to know 
+these switches!
+
+IMPORTANT: Most of these switches have NO RELATIONSHIP to the 
+switches used by PKZIP and PKUNZIP.  These switches, except for
+some 'slight' changes, are the Info-Zip switches.
+
+These switches are created in DLLMAIN.C and decoded in DLLZIP.C.
+Note that my "-!" switch replaces the Info-Zip "-n" switch, because
+I prefer to skip compression of already-compressed files by default.
+Life is too short to waste time trying to compress ZIP files again!
+
+zip [-options] [-b path] [-t mmddyy] [zipfile] [list of fnames] [-xi list]
+
+  -9 compression level is default
+  The default action is to ADD or REPLACE zipfile entries from list.
+  The default will save dirnames specified and recursed into.
+      (to override saving of dirnames use: -j -D)
+
+  -f   freshen: add only updated files that were already in ZIP
+  -u   update: add only updated files, and any new files not already in ZIP
+  -d   delete specified files from zipfile  
+  -m   move files into zipfile (delete orig files after adding them)
+
+  -k   force MSDOS (8+3) filenames
+  -l   convert CRLF to LF (if this ZIP is heading for Unix) - NOT TESTED
+       (this is lower-case L, not one!)
+  -b   use \path\ for temp file
+
+  -g   allow growing existing zipfile (must use this for Add)
+  -r   recurse into subdirectories (like /S on XCOPY) 
+
+  -0   store only (very fast, but no compression)
+  -1   compress fastest (don't confuse "dash one" with "dash Lower-case L")
+  -6   comprimize compression
+  -9   compress best
+
+  -q   quiet operation (disable all dialog output from DLL)
+  -v   verbose operation (give us extra statistics)
+
+  -t   only do files after \mmddyy\ { must have a null at end }
+  -o   set zipfile datetime same as newest entry in the zipfile
+
+  -D   do not add dirnames "by themselves" to the zipfile (they will 
+       be by dflt).  
+       Example: 
+          args to ZIP Add:  \WINDOWS \CONFIG.SYS 
+          With -D, this dirname: \WINDOWS won't be saved because it
+          is given by itself (no filename with it).  If a filename is
+          given with a dirname, then the "-j" switch is used to
+          control whether or not it is saved.
+            Also:  with recursion specified, all dirnames will be
+          saved as separate entries, but the dirnames will also be 
+          stored with the filenames.
+  -j   junk dirnames (don't save dirnames of fspecs when you compress
+       them)
+       Example:
+          args to ZIP: \DOS\ATTRIB.EXE  \WINDOWS\WIN.INI
+          With -j, the dirnames of these files won't be saved along
+          with the filenames.  Of course, the files will still be
+          stored, but their names won't have dirnames with them.
+
+  -J   junk .EXE suffix (self extract)
+  -$   include volume label  
+  -S   include system and hidden files
+
+  -!   Override the non-compression of files with "special" suffixes
+       This will make us try to compress every file, even those that
+       appear to be already compressed.
+  -e   encrypt
+
+  -A   Adjust for SFX code (Always set)
+  -b   temporary path, must be followed by a path. i.e. -b C:\Temp
+  -X   Don't add extra fields

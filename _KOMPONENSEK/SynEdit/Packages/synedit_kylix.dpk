@@ -1,0 +1,109 @@
+package synedit_kylix;
+
+{$R *.res}
+{$R 'SynEditReg.dcr'}
+{$IFDEF LINUX}
+{$ALIGN 8}
+{$ENDIF}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'SynEdit package for Kylix'}
+{$IMPLICITBUILD OFF}
+
+requires
+  baseclx,
+  visualclx,
+  visualdbclx,
+  dataclx;
+
+contains
+  SynEdit in 'SynEdit.pas',
+  SynHighlighterCpp in 'SynHighlighterCpp.pas',
+  SynHighlighterPas in 'SynHighlighterPas.pas',
+  SynCompletionProposal in 'SynCompletionProposal.pas',
+  SynEditAutoComplete in 'SynEditAutoComplete.pas',
+  SynEditHighlighter in 'SynEditHighlighter.pas',
+  SynEditKeyCmds in 'SynEditKeyCmds.pas',
+  SynEditKeyCmdsEditor in 'SynEditKeyCmdsEditor.pas' {SynEditKeystrokesEditorForm},
+  SynEditMiscClasses in 'SynEditMiscClasses.pas',
+  SynEditMiscProcs in 'SynEditMiscProcs.pas',
+  SynEditPropertyReg in 'SynEditPropertyReg.pas',
+  SynEditPythonBehaviour in 'SynEditPythonBehaviour.pas',
+  SynEditReg in 'SynEditReg.pas',
+  SynEditSearch in 'SynEditSearch.pas',
+  SynEditStrConst in 'SynEditStrConst.pas',
+  SynEditTextBuffer in 'SynEditTextBuffer.pas',
+  SynEditTypes in 'SynEditTypes.pas',
+  SynExportHTML in 'SynExportHTML.pas',
+  SynExportRTF in 'SynExportRTF.pas',
+  SynHighlighterADSP21xx in 'SynHighlighterADSP21xx.pas',
+  SynHighlighterAWK in 'SynHighlighterAWK.pas',
+  SynHighlighterAsm in 'SynHighlighterAsm.pas',
+  SynHighlighterBaan in 'SynHighlighterBaan.pas',
+  SynHighlighterBat in 'SynHighlighterBat.pas',
+  SynHighlighterCAC in 'SynHighlighterCAC.pas',
+  SynHighlighterCache in 'SynHighlighterCache.pas',
+  SynHighlighterCss in 'SynHighlighterCss.pas',
+  SynHighlighterDfm in 'SynHighlighterDfm.pas',
+  SynHighlighterDml in 'SynHighlighterDml.pas',
+  SynHighlighterFortran in 'SynHighlighterFortran.pas',
+  SynHighlighterFoxpro in 'SynHighlighterFoxpro.pas',
+  SynHighlighterGalaxy in 'SynHighlighterGalaxy.pas',
+  SynHighlighterGeneral in 'SynHighlighterGeneral.pas',
+  SynHighlighterHC11 in 'SynHighlighterHC11.pas',
+  SynHighlighterHP48 in 'SynHighlighterHP48.pas',
+  SynHighlighterHP48Utils in 'SynHighlighterHP48Utils.pas',
+  SynHighlighterHashEntries in 'SynHighlighterHashEntries.pas',
+  SynHighlighterHtml in 'SynHighlighterHtml.pas',
+  SynHighlighterIni in 'SynHighlighterIni.pas',
+  SynHighlighterInno in 'SynHighlighterInno.pas',
+  SynHighlighterJScript in 'SynHighlighterJScript.pas',
+  SynHighlighterJava in 'SynHighlighterJava.pas',
+  SynHighlighterKix in 'SynHighlighterKix.pas',
+  SynHighlighterM3 in 'SynHighlighterM3.pas',
+  SynHighlighterMPerl in 'SynHighlighterMPerl.pas',
+  SynHighlighterModelica in 'SynHighlighterModelica.pas',
+  SynHighlighterMulti in 'SynHighlighterMulti.pas',
+  SynHighlighterPHP in 'SynHighlighterPHP.pas',
+  SynHighlighterPerl in 'SynHighlighterPerl.pas',
+  SynHighlighterProgress in 'SynHighlighterProgress.pas',
+  SynHighlighterPython in 'SynHighlighterPython.pas',
+  SynHighlighterSQL in 'SynHighlighterSQL.pas',
+  SynHighlighterSml in 'SynHighlighterSml.pas',
+  SynHighlighterTclTk in 'SynHighlighterTclTk.pas',
+  SynHighlighterVB in 'SynHighlighterVB.pas',
+  SynHighlighterVBScript in 'SynHighlighterVBScript.pas',
+  SynHighlighterXML in 'SynHighlighterXML.pas',
+  SynMemo in 'SynMemo.pas',
+  SynRegExpr in 'SynRegExpr.pas',
+  kTextDrawer in 'kTextDrawer.pas',
+  SynEditKeyCmdEditor in 'SynEditKeyCmdEditor.pas' {SynEditKeystrokeEditorForm},
+  SynEditPrinterInfo in 'SynEditPrinterInfo.pas',
+  SynEditPrintHeaderFooter in 'SynEditPrintHeaderFooter.pas',
+  SynEditPrintMargins in 'SynEditPrintMargins.pas',
+  SynEditPrintTypes in 'SynEditPrintTypes.pas',
+  SynEditPrint in 'SynEditPrint.pas',
+  SynEditPrintMarginsDialog in 'SynEditPrintMarginsDialog.pas' {SynEditPrintMarginsDlg},
+  SynEditPrintPreview in 'SynEditPrintPreview.pas',
+  SynDBEdit in 'SynDBEdit.pas',
+  SynEditExport in 'SynEditExport.pas';
+
+end.

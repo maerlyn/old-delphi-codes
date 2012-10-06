@@ -1,0 +1,31 @@
+Graphics32
+Copyright (c) 2001 Alex A. Denisov. All rights reserved
+
+License
+-------
+
+This notice may not be removed from or altered in any source distribution.
+
+"Author" herein refers to Alex A. Denisov (the creator of the the 
+Graphics32 library). "Software" refers to all files included with 
+Graphics32 distribution package. 
+
+Graphics32 is distributed as a freeware. You are free to use Graphics32 
+as part of your application for any purpose including freeware, 
+commercial and shareware applications, provided some credit is given to 
+the author.
+
+The origin of this software must not be misrepresented; you must 
+not claim your authorship. All redistributions must retain the original 
+copyright notice and web site addresses. 
+
+Commercial redistribution of the library source is allowed only with
+a written permission from the author.
+
+This software is provided 'as-is', without warranty of any kind, either 
+expressed or implied. In no event shall the author be held liable for 
+any damages arising from the use of this software.
+
+Alex A. Denisov
+alex@g32.org 
+http://g32.org

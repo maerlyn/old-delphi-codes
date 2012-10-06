@@ -1,0 +1,109 @@
+<html>
+<head>
+  <title>CD-ROM</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="SDL Reference" href="reference.html">
+  <link rel="PREVIOUS" title="SDL_CloseAudio" href="sdlcloseaudio.html">
+  <link rel="NEXT" title="SDL_CDNumDrives" href="sdlcdnumdrives.html">
+  <meta name="KEYWORD" content="cdrom">
+  <meta name="KEYWORD" content="function">
+</head>
+<body class="CHAPTER" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlcloseaudio.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlcdnumdrives.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<div class="CHAPTER">
+<h1><a name="CDROM">Chapter 11. CD-ROM</a></h1>
+<div class="TOC">
+<dl>
+<dt><b>Table of Contents</b></dt>
+  <dt><a href="sdlcdnumdrives.html">SDL_CDNumDrives</a> &mdash; Returns the
+number of CD-ROM drives on the system.</dt>
+    <dt><a href="sdlcdname.html">SDL_CDName</a> &mdash; Returns a human-readable,
+system-dependent identifier for the CD-ROM.</dt>
+      <dt><a href="sdlcdopen.html">SDL_CDOpen</a> &mdash; Opens a CD-ROM
+drive for access.</dt>
+        <dt><a href="sdlcdstatus.html">SDL_CDStatus</a> &mdash; Returns the
+current status of the given drive.</dt>
+          <dt><a href="sdlcdplay.html">SDL_CDPlay</a> &mdash; Play a CD</dt>
+            <dt><a href="sdlcdplaytracks.html">SDL_CDPlayTracks</a> &mdash;
+Play the given CD track(s)</dt>
+              <dt><a href="sdlcdpause.html">SDL_CDPause</a> &mdash; Pauses
+a CDROM</dt>
+                <dt><a href="sdlcdresume.html">SDL_CDResume</a> &mdash; Resumes
+a CDROM</dt>
+                  <dt><a href="sdlcdstop.html">SDL_CDStop</a> &mdash; Stops
+a CDROM</dt>
+                    <dt><a href="sdlcdeject.html">SDL_CDEject</a> &mdash;
+Ejects a CDROM</dt>
+                      <dt><a href="sdlcdclose.html">SDL_CDClose</a> &mdash;
+Closes a SDL_CD handle</dt>
+                        <dt><a href="sdlcd.html">SDL_CD</a> &mdash; CDROM
+Drive Information</dt>
+                          <dt><a href="sdlcdtrack.html">SDL_CDtrack</a> &mdash;
+CD Track Information Structure</dt>
+                            </dl>
+                            </div>
+                            <p>SDL supports audio control of up to 32 local
+CD-ROM drives at once.</p>
+                            <p>You use this API to perform all the basic
+functions of a CD player, including listing the tracks, playing, stopping,
+and ejecting the CD-ROM. (Currently, multi-changer CD drives are not supported.)</p>
+                            <p>Before you call any of the SDL CD-ROM functions,
+you must first call "<tt class="FUNCTION">SDL_Init(SDL_INIT_CDROM)</tt>",
+which scans the system for CD-ROM drives, and sets the program up for audio
+control.  Check the  return code, which should be <span class="RETURNVALUE">
+0</span>, to see if there  were any errors in starting up.</p>
+                            <p>After you have initialized the library, you
+can find out how many drives are available using the <tt class="FUNCTION">
+SDL_CDNumDrives()</tt> function.   The first drive listed is the system default
+CD-ROM drive.  After you have  chosen a drive, and have opened it with <tt class="FUNCTION">
+SDL_CDOpen()</tt>,  you can check the status and start playing if there's
+a CD in the drive.</p>
+                            <p>A CD-ROM is organized into one or more tracks,
+each consisting of a certain number of "frames".&nbsp; Each frame is ~2K
+in size, and at normal playing speed, a CD plays 75 frames per second.&nbsp;
+SDL works with the number of frames on a CD, but this can easily be converted
+to the more familiar minutes/seconds format by using the <tt class="FUNCTION">
+FRAMES_TO_MSF()</tt> procedure.</p>
+                            </div>
+                            <div class="NAVFOOTER">
+                            <hr align="Left" width="100%">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                              <tbody>
+                                <tr>
+                                  <td width="32%" align="Left" valign="Top"><a href="sdlcloseaudio.html">
+Prev</a></td>
+                                  <td width="34%" align="Center" valign="Top"><a href="index.html">
+Home</a></td>
+                                  <td width="32%" align="Right" valign="Top"><a href="sdlcdnumdrives.html">
+Next</a></td>
+                                </tr>
+                                <tr>
+                                  <td width="32%" align="Left" valign="Top">
+SDL_CloseAudio</td>
+                                  <td width="34%" align="Center" valign="Top"><a href="reference.html">
+Up</a></td>
+                                  <td width="32%" align="Right" valign="Top">
+SDL_CDNumDrives</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            </div>
+                            </body>
+                            </html>

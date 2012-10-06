@@ -1,0 +1,87 @@
+package IcsDel90;
+
+{$R *.res}
+{$R 'WSocket.dcr'}
+{$R 'WSocketS.dcr'}
+{$R 'FtpCli.dcr'}
+{$R 'FTPSRV.dcr'}
+{$R 'HttpSrv.dcr'}
+{$R 'HttpProt.dcr'}
+{$R 'TnScript.dcr'}
+{$R 'EmulVT.dcr'}
+{$R 'FingCli.dcr'}
+{$R 'MimeDec.dcr'}
+{$R 'NntpCli.dcr'}
+{$R 'Ping.dcr'}
+{$R 'Pop3Prot.dcr'}
+{$R 'SmtpProt.dcr'}
+{$R 'TnCnx.dcr'}
+{$R 'TnEmulVT.dcr'}
+{$R 'DnsQuery.dcr'}
+{$ALIGN 1}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Internet Component Suite (ICS) for Delphi 2005'}
+{$IMPLICITBUILD ON}
+{%File 'ModelSupport\default.txvpck'}
+
+requires
+  designide,
+  xmlrtl,
+  rtl,
+  vclactnband,
+  vclx,
+  vcl;
+
+contains
+  WSockBuf in 'WSockBuf.pas',
+  WSocket in 'WSocket.pas',
+  WSocketE in 'WSocketE.pas',
+  WSocketS in 'WSocketS.pas',
+  FtpCli in 'FtpCli.pas',
+  FTPSRV in 'FTPSRV.PAS',
+  FtpSrvC in 'FtpSrvC.pas',
+  FtpSrvT in 'FtpSrvT.pas',
+  IcsSHA1 in 'IcsSHA1.pas',
+  HttpSrv in 'HttpSrv.pas',
+  IcsDES in 'IcsDES.pas',
+  IcsIpHlp in 'IcsIpHlp.pas',
+  IcsMD4 in 'IcsMD4.pas',
+  IcsNtlmMsgs in 'IcsNtlmMsgs.pas',
+  HttpProt in 'HttpProt.pas',
+  IcsUrl in 'IcsUrl.pas',
+  MimeUtil in 'MimeUtil.pas',
+  TnScript in 'TnScript.pas',
+  EmulVT in 'EmulVT.pas',
+  FingCli in 'FingCli.pas',
+  icmp in 'icmp.pas',
+  MimeDec in 'MimeDec.pas',
+  NntpCli in 'NntpCli.pas',
+  Ping in 'Ping.pas',
+  Pop3Prot in 'Pop3Prot.pas',
+  SmtpProt in 'SmtpProt.pas',
+  TnCnx in 'TnCnx.pas',
+  TnEmulVT in 'TnEmulVT.pas',
+  DnsQuery in 'DnsQuery.pas',
+  TnOptFrm in 'TnOptFrm.pas',
+  IcsMD5 in 'IcsMD5.pas';
+
+end.

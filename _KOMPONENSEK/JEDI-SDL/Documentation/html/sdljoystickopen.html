@@ -1,0 +1,108 @@
+<html>
+<head>
+  <title>SDL_JoystickOpen</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="Joystick" href="joystick.html">
+   
+  <link rel="PREVIOUS" title="SDL_JoystickName" href="sdljoystickname.html">
+   
+  <link rel="NEXT" title="SDL_JoystickOpened" href="sdljoystickopened.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="sdljoystickname.html">
+ Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom"><br>
+       </td>
+       <td width="8%" align="Right" valign="Bottom"><a href="sdljoystickopened.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<h1><a name="SDLJOYSTICKOPEN">SDL_JoystickOpen</a></h1>
+ 
+<div class="REFNAMEDIV"><a name="AEN5555"></a> 
+<h2>Name</h2>
+ SDL_JoystickOpen&nbsp;--&nbsp;Opens a joystick for use.</div>
+ 
+<div class="REFSYNOPSISDIV"><a name="AEN5558"></a><br>
+ 
+<h2>Synopsis</h2>
+ 
+<div class="FUNCSYNOPSIS"><a name="AEN5559"></a> 
+<p></p>
+ <pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+ 
+<p>function <b>SDL_JoystickOpen</b>( index : Integer ) : PSDL_Joystick;</p>
+ 
+<p></p>
+ </div>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN5565"></a> 
+<h2>Description</h2>
+ 
+<p>Opens a joystick for use within SDL. The <tt class="PARAMETER"><i>index</i></tt>
+  refers to the N'th joystick in the system. A joystick must be opened before 
+it game be used.</p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN5569"></a> 
+<h2>Return Value</h2>
+ 
+<p>Returns a <span class="STRUCTNAME">SDL_Joystick</span> structure on success. 
+<b>nil</b> on failure.</p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN5574"></a> 
+<h2>Examples</h2>
+ 
+<p><pre class="PROGRAMLISTING">joy : PSDL_Joystick;<br>.<br>.<br>.<br>// Check for joystick<br><b>if</b> ( SDL_NumJoysticks &gt; 0 ) <b>then</b><br><b>begin</b><br>  // Open joystick<br>  joy := SDL_JoystickOpen( 0 );<br>  <br>  <b>if</b> ( joy &lt;&gt; <b>nil</b> ) <b>then</b><br>  <b>begin</b><br>    WriteLn( 'Opened Joystick 0' );<br>    WriteLn( Format( 'Name: %s', [ SDL_JoystickName( 0 ) ] ) );<br>    WriteLn( Format( 'Number of Axes: %s', [ SDL_JoystickNumAxes( joy ) ] ) );<br>    WriteLn( Format( 'Number of Buttons: %s', [ SDL_JoystickNumButtons( joy ) ] ) );<br>    WriteLn( Format( 'Number of Balls: %s', [ SDL_JoystickNumBalls( joy ) ] ) );<br>  <b>end</b><br>  <b>else</b><br>   WriteLn( 'Couldn't open Joystick 0' );<br>  <br>  // Close if opened<br>  <b>if</b> ( SDL_JoystickOpened( 0 ) &lt;&gt; <b>nil</b> ) <b>then</b><br>    SDL_JoystickClose( joy );<br><b>end;</b><br></pre>
+ </p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN5578"></a> 
+<h2>See Also</h2>
+ 
+<p><a href="sdljoystickclose.html"><tt class="FUNCTION">SDL_JoystickClose</tt></a></p>
+ </div>
+ 
+<div class="NAVFOOTER"> 
+<hr align="Left" width="100%"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <td width="31%" align="Left" valign="Top"><a href="sdljoystickname.html">
+ Prev</a></td>
+       <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+       <td width="31%" align="Right" valign="Top"><a href="sdljoystickopened.html">
+ Next</a></td>
+     </tr>
+     <tr>
+       <td width="31%" align="Left" valign="Top">SDL_JoystickName</td>
+       <td width="34%" align="Center" valign="Top"><a href="joystick.html">
+ Up</a></td>
+       <td width="31%" align="Right" valign="Top">SDL_JoystickOpened</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ </div>
+ 
+</body>
+</html>

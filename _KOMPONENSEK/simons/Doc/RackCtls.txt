@@ -1,0 +1,286 @@
+RackControls:
+-------------
+(C)opyright 2001 Version 1.04
+Autor : Simon Reinhardt
+eMail : reinhardt@picsoft.de
+Internet : http://www.picsoft.de
+
+  RackControls ist eine Komponentensammlung zur Erstellung von
+  Audiorack-ähnlichen Oberflächen. Die Unit RackCtls enthält fünf verschiedene 
+  Komponenten:
+
+    TLEDButton ist eine Button-Komponente, deren Funktionaltität in etwa der der
+    TSpeedButton-Komponente entspricht. Vor allem das Design ist aber komplett neu.
+
+    TButtonPanel ist eine Panel-Komponente im Design von TLEDButton, enspricht aber 
+    sonst dem Standard-Panel.
+
+    TScrewPanel enspricht der Standard-TPanel-Komponente, in den vier Ecken des
+    Panels werden aber Schraubenköpfe angedeutet.
+
+    TLEDDisplay ist eine 7-Segment-Anzeige zur Darstellung von Zahlenwerten.
+
+    TLEDMeter ist eine Balkenanzeige in Form einer dreifarbigen LED-Kette.
+
+  Diese Komponenten sind Public Domain, das Urheberrecht liegt aber beim Autor.
+
+  Die Komponente TLEDDisplay ist eine Weiterentwicklung der Komponente TLCDDisplay 
+  von Luis Iglesias <luis.iglesias@vigo.org>
+
+  Änderungen, die bei LEDDisplay nachfolgende Nullen bei LeadingZeros=False doch zeichnet
+  Ergänzt von Wolfgang Kleinrath
+
+  Die Eigenschaft FSingleLED von TLEDMeter wurde ergänzt von U. Conrad 
+
+  Vielen Dank an Robert Rossmair für die rrColors-Unit! 
+
+
+
+Dateiumfang:
+------------
+
+Readme.txt	- Diese Datei
+RackCtls.pas	- Quelltext der Komponente
+RackCtls.d16	- Resourcendatei der 16Bit-Komponenten für Delphi 1
+RackCtls.d32	- Resourcendatei der 16Bit-Komponenten für Delphi 2 bis 5
+SRDefine.inc
+rr.inc		- Inculdedateien für die Komponente
+rrColors.pas	- Funktionen zur RGB-HSL-Umrechnung
+
+Ordner	RackDemo	- Demo-Projekt für Delphi 2 oder 3
+	RackMain.dfm	- Formulardatei der MainForm
+	RackMain.pas	- Quelltext der MainForm-Unit
+	RackDemo.dof	- Compileroptionen des Demo-Projekts
+	RackDemo.dpr	- Quelltext des Demo-Projekts
+	RackDemo.res	- Resourcendatei des Demo-Projekts
+
+
+Installation:
+-------------
+
+In Delphi 1:
+------------
+1. Alle Dateien in das Delphi-Komponenten-Verzeichnis entpacken.
+2. Menü Optionen : Komponente installieren
+3. Schaltfläche Hinzufügen / Durchsuchen
+4. Datei RackCtls.pas im Delphi-Komponenten-Verzeichnis suchen und mit
+   OK bestätigen.
+5. Die Komponenten erscheinen in der Komponenten-Gruppe "Simon"
+
+In Delphi 2:
+------------
+1. Alle Dateien in das Delphi-Komponenten-Verzeichnis entpacken.
+2. Menü Komponente :  installieren
+3. Schaltfläche Hinzufügen / Durchsuchen
+4. Datei RackCtls.pas im Delphi-Komponenten-Verzeichnis suchen und mit
+   OK bestätigen.
+5. Die Komponenten erscheinen in der Komponenten-Gruppe "Simon"
+
+Ab Delphi 3:
+------------
+1. Alle Dateien in das Delphi-Komponenten-Verzeichnis entpacken.
+2. Menü Komponente :  Komponente installieren
+3. Schaltfläche Durchsuchen (hinter dem Eingabefeld für den Unit-Namen)
+4. Datei RackCtls.pas im Delphi-Komponenten-Verzeichnis suchen und mit
+   OK bestätigen.
+5. Die Rückfrage nach dem Neukompilieren des Packages bestätigen.
+6. Die Komponenten erscheinen in der Komponenten-Gruppe "Simon"
+   (Evtl. muß eine bereits installierte, ältere Version der RackControls
+    zuvor entfernt werden)
+
+
+
+I. Funktion der Komponente TLEDButton:
+--------------------------------------
+
+A) Eigenschaften:
+-----------------
+1. Action - wie TSpeedButton
+2. Anchors - wie TSpeedButton
+3. Beveled - bestimmt, ob die Seiten des Buttons abgeschrägt sind.
+4. BorderStyle - wenn BorderStyle=bsSingle, wird ein Rahmen um den Button 
+   gezeichnet.
+5. ButtonDirection - bestimmt die erhöhte Seite des Buttons und die Position 
+   der LED.
+6. Caption - wie TSpeedButton
+7. Color - die Farbe des Buttons.
+8. ColorLED - die Farbe der LED, wenn StateOn=true
+9. Cursor - wie TSpeedButton
+10.Depth - die Tiefe der erhöhten Buttonseite
+11 .Enabled - wie TSpeedButton
+12.Font - wie TSpeedButton
+13.Glyph - wie TSpeedButton
+14.Height - wie TSpeedButton
+15.Hint - wie TSpeedButton
+16.LEDContrast - Kontrast zwischen leuchtender und abgeschalteter LED
+                 0: Kein Helligkeitsunterschied ..
+		 9: Maximaler Helligkeitsunterschied
+17.Left - wie TSpeedButton
+18.Name - wie TSpeedButton
+19.NumGlyphs - wie TSpeedButton
+20.ParentFont - wie TSpeedButton
+21.ParentShowHint - wie TSpeedButton
+22.PopupMenu - wie TSpeedButton
+23.ShowHint - wie TSpeedButton
+24.ShowLED - falls ShowLED=true, wird eine LED auf dem Button gezeichnet.
+25.StateOn - der Zustand des Buttons: an oder aus.
+26.Switching - gibt an, ob der Button wie ein Taster (false) oder wie ein
+   Schalter (true) funtkionieren soll. Die Eigenschaft StateOn wechselt nur, 
+   wenn Switching=true.
+27.Tag - wie TSpeedButton
+28.TextPosition - die Position der Beschriftung: Über, unter oder auf dem Button
+29.Top - wie TSpeedButton
+30.Visible - wie TSpeedButton
+31.Width - wie TSpeedButton
+
+B) Ereignisse:
+--------------
+Die Ereignisse entsprechen denen der TSpeedButton-Komponente.
+
+
+II. Funktion der Komponente TButtonPanel:
+-----------------------------------------
+
+A) Eigenschaften, die von TPanel abweichen:
+-------------------------------------------
+1. Beveled - bestimmt, ob die Seiten des Panels abgeschrägt sind.
+2. BorderStyle - wenn BorderStyle=bsSingle, wird ein Rahmen um das Panel 
+   gezeichnet.
+3. Depth - die Tiefe der erhöhten Panelseite
+4. PanelDirection - bestimmt die erhöhte Seite des Panels und die Position 
+   des LED-Rahmens.
+5. ShowLED - falls ShowLED=true, wird ein LED-Rahmen auf dem Panel gezeichnet.
+
+B) Ereignisse:
+--------------
+Die Ereignisse entsprechen denen der TPanel-Komponente.
+
+
+III. Funktion der Komponente TScrewPanel:
+-----------------------------------------
+
+A) Eigenschaften, die von TPanel abweichen:
+-------------------------------------------
+1. Margin - bestimmt den Abstand der Schrauben vom Rand (BevelInner) des 
+   Panels.
+2. ScrewSize - bestimmt den Durchmesser der Schrauben. 
+   Mögliche Werte : 1..8. Der Durchmesser ergibt sich aus ScrewSize*4.
+3. ShowScrews - falls ShowScrews=true, werden Schrauben auf dem Panel 
+   gezeichnet.
+
+B) Ereignisse:
+--------------
+Die Ereignisse entsprechen denen der TPanel-Komponente.
+
+
+IV. Funktion der Komponente TLEDDisplay:
+----------------------------------------
+
+A) Eigenschaften:
+-----------------
+1. Anchors - wie TPanel
+2. BevelStyle - Entspricht der Eigenschaft "BevelOuter" von TPanel.
+3. BorderStyle - Falls BorderStyle=bsSingle, wird ein Rahmen um die Anzeige 
+   gezeichnet.
+4. ColorBackGround - Hintergrundfarbe der Anzeige
+5. ColorLED - Farbe eines "leuchtenden" Anzeige-Segments
+6. Cursor - wie TPanel
+7. DecSeperator - Gibt bei Float-Werten die Form des Dezimaltrennzeichens an:
+   dsComma : Komma
+   dsDoublePoint : Doppelpunkt 
+   dsMinus : Minuszeichen
+   dsPoint : Punkt 
+8. DigitHeight - Höhe der dargestellten Zahlen
+9. DigitLineWidth - Liniendicke der dargestellten Zahlen
+10.DigitWidth - Breite der dargestellten Zahlen
+11.FractionDigits - Anzahl Nachkommastellen bei Float-Werten
+12.Height - wie TPanel
+13.Hint - wie TPanel
+14.LeadingZeros - Anzahl Nullen vor dem Zahlenwert
+15.LEDContrast - Kontrast zwischen leuchtender und abgeschalteter LED
+                 0: Kein Helligkeitsunterschied ..
+	         9: Maximaler Helligkeitsunterschied
+16.Left - wie TPanel
+17.Name - wie TPanel
+18.NumDigits - Stellenzahl der Anzeige
+19.SegmentStyle - Form der Anzeige-Segmente:
+   ssBeveled : Segmente mit abgeschrägten Ecken
+   ssRectabgular : rechteckige Segmente
+20.Tag - wie TPanel
+21.Top - wie TPanel
+22.Value - dargestellter Zahlenwert der Anzeige (extended)
+23.Visible - wie TPanel
+24.Width - wie TPanel
+ 
+B) Ereignisse:
+--------------
+1. OnChange tritt auf, wenn sich der Wert der Eigenschaft "Value" ändert.
+2. OnClick - wie TPanel
+3. OnDblClick - wie TPanel
+4. OnDragDrop - wie TPanel
+5. OnDragOver - wie TPanel
+6. OnEndDrag - wie TPanel
+7. OnMouseDown - wie TPanel
+8. OnMouseMove - wie TPanel
+9. OnMouseUp - wie TPanel
+
+
+V. Funktion der Komponente TLEDMeter:
+-------------------------------------
+
+A) Eigenschaften:
+-----------------
+1. Anchors - wie TPanel
+2. BevelStyle - Entspricht der Eigenschaft "BevelOuter" von TPanel.
+3. ColorLED1 - Farbe der Anzeige-Segmente bis zur Position "StartColor2"
+4. ColorLED2 - Farbe der Anzeige-Segmente bis zur Position "StartColor3"
+5. ColorLED3 - Farbe der Anzeige-Segmente ab der Position "StartColor3"
+6. ColorSeperator - Farbe der Trennstriche zwischen den Segmenten
+7. Cursor - wie TPanel
+8. Direction - Gibt die Richtung der Anzeige an:
+   dsDown : Die Anzeige verläuft von oben (kleine Werte) nach unten (große Werte) 
+   dsLeft : Die Anzeige verläuft von rechts (kleine Werte) nach links (große Werte) 
+   dsRight : Die Anzeige verläuft von links (kleine Werte) nach rechts (große Werte) 
+   dsUp : Die Anzeige verläuft von unten (kleine Werte) nach oben (große Werte) 
+9. DragCursor - wie TPanel
+10.DragMode - wie TPanel
+11.Height - wie TPanel
+12.Hint - wie TPanel
+13.LEDContrast - Kontrast zwischen leuchtender und abgeschalteter LED
+                 0: Kein Helligkeitsunterschied ..
+	         9: Maximaler Helligkeitsunterschied
+14.Left - wie TPanel
+15.Max - Maximalwert der Eigenschaft "Position"
+16.Min - Minimalwert der Eigenschaft "Position"
+17.Name - wie TPanel
+18.NumDigits - Anzahl Segmente in der Anzeige
+19.Position - Position der Anzeige (integer)
+20.SingleLED - Es wird jeweils nur die LED, die die Eigenschaft "Position" repräsentiert, 
+   erleuchtet angezeigt. (Hinzugefügt von U. Conrad)
+21.StartColor2 - Der Wert der Eigenschaft "Position", ab der die Segmente die Farbe
+   "ColorLED2" haben
+22.StartColor3 - Der Wert der Eigenschaft "Position", ab der die Segmente die Farbe
+   "ColorLED3" haben
+23.Tag - wie TPanel
+24.Top - wie TPanel
+25.Visible - wie TPanel
+26.Width - wie TPanel
+ 
+B) Ereignisse:
+--------------
+1. OnChange tritt auf, wenn sich der Wert der Eigenschaft "Position" ändert.
+2. OnClick - wie TPanel
+3. OnDblClick - wie TPanel
+4. OnDragDrop - wie TPanel
+5. OnDragOver - wie TPanel
+6. OnEndDrag - wie TPanel
+7. OnMouseDown - wie TPanel
+8. OnMouseMove - wie TPanel
+9. OnMouseUp - wie TPanel
+
+
+Einige Eigenschaften und Ereignisse sind in Delphiversionen<5 evtl.
+nicht verfügbar.
+
+Die Funktion der Komponenten läßt sich außerdem sehr schön im beigefügten 
+Demo-Programm im Ordner "RackDemo" sehen.

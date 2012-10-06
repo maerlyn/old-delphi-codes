@@ -1,0 +1,138 @@
+<html>
+<head>
+  <title>SDL_JoystickGetHat</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="Joystick" href="joystick.html">
+   
+  <link rel="PREVIOUS" title="SDL_JoystickGetAxis" href="sdljoystickgetaxis.html">
+   
+  <link rel="NEXT" title="SDL_JoystickGetButton" href="sdljoystickgetbutton.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="sdljoystickgetaxis.html">
+ Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom"><br>
+       </td>
+       <td width="8%" align="Right" valign="Bottom"><a href="sdljoystickgetbutton.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<h1><a name="SDLJOYSTICKGETHAT">SDL_JoystickGetHat</a></h1>
+ 
+<div class="REFNAMEDIV"><a name="AEN5817"></a> 
+<h2>Name</h2>
+ SDL_JoystickGetHat&nbsp;--&nbsp;Get the current state of a joystick hat</div>
+ 
+<div class="REFSYNOPSISDIV"><a name="AEN5820"></a><br>
+ 
+<h2>Synopsis</h2>
+ 
+<div class="FUNCSYNOPSIS"><a name="AEN5821"></a> 
+<p></p>
+ <pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+ 
+<p>function <b>SDL_JoystickGetHat</b>( joystick : PSDL_Joystick; hat : Integer 
+) : UInt8;</p>
+ 
+<p></p>
+ </div>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN5827"></a> 
+<h2>Description</h2>
+ 
+<p>SDL_JoystickGetHat returns the current state of the given <tt class="PARAMETER"><i>
+ hat</i></tt> on the given <tt class="PARAMETER"><i>joystick</i></tt>.</p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN5832"></a> 
+<h2>Return Value</h2>
+ 
+<p>The current state is returned as a Uint8 which is defined as an OR'd combination 
+of one or more of the following</p>
+ 
+<p></p>
+ 
+<table border="0">
+   <tbody>
+     <tr>
+       <td><tt class="LITERAL">SDL_HAT_CENTERED</tt></td>
+     </tr>
+     <tr>
+       <td><tt class="LITERAL">SDL_HAT_UP</tt></td>
+     </tr>
+     <tr>
+       <td><tt class="LITERAL">SDL_HAT_RIGHT</tt></td>
+     </tr>
+     <tr>
+       <td><tt class="LITERAL">SDL_HAT_DOWN</tt></td>
+     </tr>
+     <tr>
+       <td><tt class="LITERAL">SDL_HAT_LEFT</tt></td>
+     </tr>
+     <tr>
+       <td><tt class="LITERAL">SDL_HAT_RIGHTUP</tt></td>
+     </tr>
+     <tr>
+       <td><tt class="LITERAL">SDL_HAT_RIGHTDOWN</tt></td>
+     </tr>
+     <tr>
+       <td><tt class="LITERAL">SDL_HAT_LEFTUP</tt></td>
+     </tr>
+     <tr>
+       <td><tt class="LITERAL">SDL_HAT_LEFTDOWN</tt></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<p></p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN5854"></a> 
+<h2>See Also</h2>
+ 
+<p><a href="sdljoysticknumhats.html"><tt class="FUNCTION">SDL_JoystickNumHats</tt></a></p>
+ </div>
+ 
+<div class="NAVFOOTER"> 
+<hr align="Left" width="100%"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <td width="31%" align="Left" valign="Top"><a href="sdljoystickgetaxis.html">
+ Prev</a></td>
+       <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+       <td width="31%" align="Right" valign="Top"><a href="sdljoystickgetbutton.html">
+ Next</a></td>
+     </tr>
+     <tr>
+       <td width="31%" align="Left" valign="Top">SDL_JoystickGetAxis</td>
+       <td width="34%" align="Center" valign="Top"><a href="joystick.html">
+ Up</a></td>
+       <td width="31%" align="Right" valign="Top">SDL_JoystickGetButton</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ </div>
+ 
+</body>
+</html>

@@ -1,0 +1,33 @@
+object Form1: TForm1
+  Left = 205
+  Top = 159
+  Width = 269
+  Height = 159
+  HorzScrollBar.Range = 245
+  VertScrollBar.Range = 145
+  ActiveControl = Button1
+  Caption = 'Form1'
+  Color = clBackground
+  OnClose = FormClose
+  OnShow = FormShow
+  PixelsPerInch = 108
+  TextHeight = 15
+  TextWidth = 7
+  object Button1: TButton
+    Left = 40
+    Top = 24
+    Width = 75
+    Height = 25
+    Caption = 'Start'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object Memo1: TMemo
+    Left = 24
+    Top = 64
+    Width = 221
+    Height = 81
+    ScrollBars = ssAutoBoth
+    TabOrder = 1
+  end
+end

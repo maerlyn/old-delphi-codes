@@ -1,0 +1,80 @@
+10/98
+================================================================
+
+Model Name              : Blade
+
+Installation directory  : quake2/baseq2/players/blade
+
+Author                  : Ryan "MrRogers" Butts / Brian "Evilbastard" Collins (animations)
+
+Skin Author             : Ryan "MrRogers" Butts
+
+Email Address           : ryan@sunstorm.net/ icq: 1079912
+
+Model description       : Well, its supposed to be Wesley Snipes from the movie Blade.
+
+Other info              : N/A
+
+Additional Credits to   : ID Software, Wesley Snipes, New Line Cinema, and Marvel Comics
+
+Thanks to               : Rogue13, Npherno, Thump, and Dark Rogue (preview pimp) 
+			 
+			
+
+================================================================
+
+* Play Information *
+
+
+
+New Sounds              : not yet
+
+CTF Skins               : no
+
+VWEP Support            : not yet
+
+* Construction *
+
+Poly Count              : 699 + 56 = 755
+
+Vert Count              : 376 + 37 = 413
+
+Skin Count              : 1 Skin
+
+Base                    : New model + ID q2 male hands. (yeah, i cheated)
+
+Editor used             : Qme/Photoshop/Nst/Lightwave/Puppetmaster/Skinview 
+
+
+* How to use this model *
+
+Unzip all files to your quake2\baseq2\players\ directory, 
+and select at player setup in multiplayer menu.  
+
+* Copyright / Permissions *
+
+QUAKE(R) and QUAKE II(R) are registered trademarks of id Software, Inc. Do what you want with him. Just give the proper credits...oh yeah...don't sell it. Well, I doubt you could sell it and get away with it anyways, seeings as how the character is owned by New Line Cinema...not to mention Marvel Comics. 
+
+Author's notes (and excuses):  
+
+I started this model the moment I got back from seeing the movie. I mean the literal moment. On our way back from the theater I mentioned to Npherno, Rogue13, and Thump about how cool a blade player model would be. They poked fun at me for a bit...yeah, it was pretty obvious that I was really jazzed about seeing him running around in Q2. I figured that someone would do it eventually...but I just couldn't wait that long...besides...I may not have liked with what they came up with...so I started on it that evening and worked till 7 in the morning. 6 agonizing hours later I had a complete base frame and skin up and running in NST.
+
+There you have it, the story of how Blade came to be. 
+
+I think I can honestly say that I have learned alot from this model (i.e. methods of construction, proper joint construction, skin setup, etc.)and I'll definitely put that knowledge to work with my future releases (Ash, Slith). Oh yeah, and to this day...after every movie we come back from...Thump or Rogue13 make it a point to crack some kind of smart-@$$ remark on how I should make a model of a character from the film. The sad thing is...I actually think it would work half the time. Have you ever found yourself watching a movie just thinking about how cool this guy/gal would look Dm'ing in q2? I know, I know...I'm a sick man. Leave me alone. I have models to finish.
+
+This is the lamest text info file ever created in the history of q2 models. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

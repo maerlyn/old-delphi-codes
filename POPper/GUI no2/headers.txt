@@ -1,0 +1,156 @@
+1
+Delivered-To: mailuser-maerlyn@mailbox.hu
+Return-Path: <noa86@emitelnet.hu>
+Received: (qmail 9557 invoked from network); 6 Apr 2004 15:55:47 -0000
+Received: from brutus.emitel.hu (195.228.182.1)
+  by web1.mailbox.hu with SMTP; 6 Apr 2004 15:55:47 -0000
+Received: (from smap@localhost)
+	by brutus.emitel.hu (8.9.3p3/8.9.1) id RAA12563
+	for <maerlyn@mailbox.hu>; Tue, 6 Apr 2004 17:55:46 +0200 (MEST)
+Received: from dial-3-236.emitel.hu(194.149.57.236) by brutus via csmap (V6.0)
+	id srcAAAb2aGGy; Tue, 6 Apr 04 17:55:45 +0200
+Message-ID: <001301c41bf0$4f6ab230$ec3995c2@imeon>
+From: "Imeon" <noa86@emitelnet.hu>
+To: <maerlyn@mailbox.hu>
+References: <200404021951.i32JpVcS028523@fe02.axelero.hu>
+Subject: vdsu,m67mdsd7
+Date: Tue, 6 Apr 2004 17:57:11 +0200
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 8bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2800.1106
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1106
+Status: RO
+
+.
+
+
+
+
+2
+Delivered-To: mailuser-maerlyn@mailbox.hu
+Return-Path: <noa86@emitelnet.hu>
+Received: (qmail 28098 invoked from network); 6 Apr 2004 18:45:53 -0000
+Received: from brutus.emitel.hu (195.228.182.1)
+  by web1.mailbox.hu with SMTP; 6 Apr 2004 18:45:53 -0000
+Received: (from smap@localhost)
+	by brutus.emitel.hu (8.9.3p3/8.9.1) id UAA19045
+	for <maerlyn@mailbox.hu>; Tue, 6 Apr 2004 20:45:52 +0200 (MEST)
+Received: from dial-r-153.emitel.hu(194.149.58.153) by brutus via csmap (V6.0)
+	id srcAAALHayhL; Tue, 6 Apr 04 20:45:51 +0200
+Message-ID: <000901c41c08$137a3a30$993a95c2@imeon>
+From: "Imeon" <noa86@emitelnet.hu>
+To: <maerlyn@mailbox.hu>
+References: <200404061753.i36Hrc7R013007@fe07.axelero.hu>
+Subject: Re: e-mail
+Date: Tue, 6 Apr 2004 20:50:45 +0200
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 8bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2800.1106
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1106
+Status: RO
+
+.
+
+
+
+
+
+3
+Delivered-To: mailuser-maerlyn@mailbox.hu
+Return-Path: <noa86@emitelnet.hu>
+Received: (qmail 7811 invoked from network); 7 Apr 2004 20:36:24 -0000
+Received: from brutus.emitel.hu (195.228.182.1)
+  by web1.mailbox.hu with SMTP; 7 Apr 2004 20:36:24 -0000
+Received: (from smap@localhost)
+	by brutus.emitel.hu (8.9.3p3/8.9.1) id WAA16855
+	for <maerlyn@mailbox.hu>; Wed, 7 Apr 2004 22:36:23 +0200 (MEST)
+Received: from dial-3-167.emitel.hu(194.149.57.167) by brutus via csmap (V6.0)
+	id srcAAAakai5G; Wed, 7 Apr 04 22:36:22 +0200
+Message-ID: <000901c41ce0$af9fe440$a73995c2@imeon>
+From: "Imeon" <noa86@emitelnet.hu>
+To: <maerlyn@mailbox.hu>
+References: <200404061909.i36J9qPI004530@fe04.axelero.hu>
+Subject: =?iso-8859-1?Q?Bocsi_a_k=E9soi_lev=E9l=E9rt!?=
+Date: Wed, 7 Apr 2004 22:39:53 +0200
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 8bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2800.1106
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1106
+Status: RO
+
+.
+
+
+
+
+15
+Delivered-To: mailuser-maerlyn@mailbox.hu
+Return-Path: <noa86@emitelnet.hu>
+Received: (qmail 23430 invoked from network); 19 Apr 2004 19:57:20 -0000
+Received: from brutus.emitel.hu (195.228.182.1)
+  by via.mailbox.hu with SMTP; 19 Apr 2004 19:57:19 -0000
+Received: (from smap@localhost)
+	by brutus.emitel.hu (8.9.3p3/8.9.1) id WAA24509
+	for <maerlyn@mailbox.hu>; Mon, 19 Apr 2004 22:00:49 +0200 (MEST)
+Received: from dial-3-72.emitel.hu(194.149.57.72) by brutus via csmap (V6.0)
+	id srcAAAHHaGYV; Mon, 19 Apr 04 22:00:45 +0200
+Message-ID: <000d01c42649$c0855c50$483995c2@imeon>
+From: "Imeon" <noa86@emitelnet.hu>
+To: <maerlyn@mailbox.hu>
+References: <200404191818.i3JIIBNi053095@fe05.axelero.hu>
+Subject: Re: e-mail
+Date: Mon, 19 Apr 2004 22:03:02 +0200
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 8bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2800.1106
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1106
+Status: RO
+
+.
+
+
+
+42
+Delivered-To: mailuser-maerlyn@mailbox.hu
+Return-Path: <noa86@emitelnet.hu>
+Received: (qmail 3713 invoked from network); 25 May 2004 19:45:40 -0000
+Received: from brutus.emitel.hu (195.228.182.1)
+  by via.mailbox.hu with SMTP; 25 May 2004 19:45:40 -0000
+Received: (from smap@localhost)
+	by brutus.emitel.hu (8.9.3p3/8.9.1) id VAA13571
+	for <maerlyn@mailbox.hu>; Tue, 25 May 2004 21:45:44 +0200 (MEST)
+Received: from dial-2-134.emitel.hu(194.149.58.134) by brutus via csmap (V6.0)
+	id srcAAAHbaOyA; Tue, 25 May 04 21:45:42 +0200
+Message-ID: <001d01c44291$0d699190$863a95c2@imeon>
+From: "Imeon" <noa86@emitelnet.hu>
+To: <maerlyn@mailbox.hu>
+References: <200405251920.i4PJKUNs018113@fe07.axelero.hu>
+Subject: Re: e-mail
+Date: Tue, 25 May 2004 21:46:20 +0200
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 8bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2800.1106
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1106
+Status:  O
+
+.

@@ -1,0 +1,85 @@
+<html>
+<head>
+  <title>SDL_SetGammaRamp</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Video" href="video.html">
+  <link rel="PREVIOUS" title="SDL_GetGammaRamp" href="sdlgetgammaramp.html">
+  <link rel="NEXT" title="SDL_MapRGB" href="sdlmaprgb.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlgetgammaramp.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlmaprgb.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLSETGAMMARAMP">SDL_SetGammaRamp</a></h1>
+<div class="REFNAMEDIV"><a name="AEN1242"></a>
+<h2>Name</h2>
+SDL_SetGammaRamp&nbsp;--&nbsp;Sets the color gamma lookup tables for the
+display</div>
+<div class="REFSYNOPSISDIV"><a name="AEN1245"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN1246"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+<p><code><code class="FUNCDEF">function <b>SDL_SetGammaRamp</b>( var redtable
+: Uint16; var greentable : Uint16; var bluetable : Uint16 ): Integer;</code></code></p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN1252"></a>
+<h2>Description</h2>
+<p>Sets the gamma lookup tables for the display for each color component. 
+Each table is an array of 256 Uint16 values, representing a mapping between
+the input and output for that channel. The input is the index into the array,
+and the output is the 16-bit gamma value at that index, scaled to the output
+color precision. You may pass <b>nil</b> to any of the channels to leave
+them unchanged.</p>
+<p>This function adjusts the gamma based on lookup tables, you can also have
+the gamma calculated based on a "gamma function" parameter with <a href="sdlsetgamma.html">
+SDL_SetGamma</a>.</p>
+<p>Not all display hardware is able to change gamma.</p>
+</div>
+<div class="REFSECT1"><a name="AEN1258"></a>
+<h2>Return Value</h2>
+<p>Returns -1 on error (or if gamma adjustment is not supported).</p>
+</div>
+<div class="REFSECT1"><a name="AEN1261"></a>
+<h2>See Also</h2>
+<p><a href="sdlsetgamma.html">SDL_SetGamma</a> <a href="sdlgetgammaramp.html">
+SDL_GetGammaRamp</a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdlgetgammaramp.html">
+Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="sdlmaprgb.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">SDL_GetGammaRamp</td>
+      <td width="34%" align="Center" valign="Top"><a href="video.html">Up</a></td>
+      <td width="32%" align="Right" valign="Top">SDL_MapRGB</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

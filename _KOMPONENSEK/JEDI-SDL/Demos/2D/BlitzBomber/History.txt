@@ -1,0 +1,17 @@
+- Blitz Bomber -
+
+History:
+
+Version 1.3 (14-Sep-2001) Dominique Louis <Dominique@SavageSoftware.com.au>
+Added Kylix Code                     
+Removed need for QForms and added Logging
+
+Version 1.2 (11-aug-2001)
+Major speed improvements: the game runs app. 40% faster on a p200!
+Some graphic routinges were changed
+
+Version 1.1 (23-july-2001)
+Fixed a bug and some speed-ups happened.
+
+Version 1.0 (13-july-2001):
+The first public version. No music, no sound effects (maybe later?).

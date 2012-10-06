@@ -1,0 +1,31 @@
+<gi2project>
+ <packages>
+  <package filename="CDNySet2" main="1">
+   <components>
+    <component id="Main">
+     <files>
+      <file src="CDNy2\data\main\*.*" dst="%InstallPath%\*.*"/>
+      <file src="CDNy2\data\data\Data.mdb" dst="%InstallPath%\Data.mdb"/>
+      <file src="CDNy2\data\skins\default\*.*" dst="%InstallPath%\skins\default\*.*"/>
+     </files>
+     <shortcuts>
+      <shortcut name="%Desktop%\CD-Nyilvántartó" cmdline="%InstallPath%\CDNyilvantarto.exe"/>
+      <shortcut name="%ProgramsMenu%\%ProgramGroup%\CD-Nyilvántartó" cmdLine="%InstallPath%\CDNyilvantarto.exe"/>
+      <shortcut name="%ProgramsMenu%\%ProgramGroup%\Súgó" cmdLine="%InstallPath%\CDNyilvantarto.hlp"/>
+      <shortcut name="%ProgramsMenu%\%ProgramGroup%\Eltávolítás" cmdLine="%InstallPath%\Uninstall.exe"/>
+     </shortcuts>
+    </component>
+   </components>
+   <plugins>
+    <plugin id="StdUI" configfile="CDNy2\presetup\StdUI.cfg"/>
+   </plugins>
+  </package>
+ </packages>
+ <variables>
+  <var name="AppID" value="CDNyilvantarto"/>
+  <var name="AppName" value="CD-Nyilvántartó"/>
+  <var name="InstallPath" value="%ProgramFiles%\Putra Ware\CDNyilvantarto"/>
+  <var name="Uninstall" value="1"/>
+  <var name="ProgramGroup" value="CD-Nyilvántartó"/>
+ </variables>
+</gi2project>

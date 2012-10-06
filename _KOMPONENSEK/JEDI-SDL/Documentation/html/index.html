@@ -1,0 +1,825 @@
+<html>
+<head>
+  <title>JEDI-SDL HTML Documentation Page</title>
+                    
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+           
+  <link rel="NEXT" title="SDL Guide" href="guide.html">
+   
+  <meta name="author" content="Dominique Louis">
+   
+  <meta name="description" content="JEDI-SDL is the Object Pascal translation of the SDL ( Simple DirectMedia Layer ) headers. So crank up Delphi, Kylix or FreePascal and download these headers">
+</head>
+ <body class="BOOK" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+     
+<div class="BOOK"><a name="AEN1"></a>   
+<div class="TOC">   
+<dl>
+<dt><b>Table of Contents</b></dt>
+  <dt>I. <a href="guide.html">SDL Guide</a></dt>
+    <dd><br>
+         </dd>
+      <dl>
+      <dt><a href="guidepreface.html">Preface</a></dt>
+        <dd><br>
+             </dd>
+          <dl>
+          <dt><a href="guidepreface.html#GUIDEABOUTSDL">About SDL</a></dt>
+            <dt><a href="guideaboutsdldoc.html">About SDLdoc</a></dt>
+              <dt><a href="guidecredits.html">Credits</a></dt>
+                </dl>
+                <dt>1. <a href="guidethebasics.html">The Basics</a></dt>
+                  <dd><br>
+                       </dd>
+                    <dl>
+                    <dt><a href="guidethebasics.html#GUIDEINTRODUCTION">Introduction</a></dt>
+                      <dt><a href="guidebasicsinit.html">Initializing SDL</a></dt>
+                        </dl>
+                        <dt>2. <a href="guidevideo.html">Graphics and Video</a></dt>
+                          <dd><br>
+                               </dd>
+                            <dl>
+                            <dt><a href="guidevideo.html#GUIDEVIDEOINTRO">
+   Introduction to SDL Video</a></dt>
+                              <dt><a href="guidevideoopengl.html">Using OpenGL 
+ With SDL</a></dt>
+                                </dl>
+                                <dt>3. <a href="guideinput.html">Input handling</a></dt>
+                                  <dd><br>
+                                       </dd>
+                                    <dl>
+                                    <dt><a href="guideinput.html#GUIDEINPUTJOYSTICK">
+   Handling Joysticks</a></dt>
+                                      <dt><a href="guideinputkeyboard.html">
+   Handling the Keyboard</a></dt>
+                                        </dl>
+                                        <dt>4. <a href="guideexamples.html">
+   Examples</a></dt>
+                                          <dd><br>
+                                               </dd>
+                                            <dl>
+                                            <dt><a href="guideexamples.html#AEN369">
+   Introduction</a></dt>
+                                              <dt><a href="guidevideoexamples.html">
+   Video Examples</a></dt>
+                                                <dt><a href="guideeventexamples.html">
+   Event Examples</a></dt>
+                                                  <dt><a href="guideaudioexamples.html">
+   Audio Examples</a></dt>
+                                                    <dt><a href="guidecdromexamples.html">
+   CDROM Examples</a></dt>
+                                                      <dt><a href="guidetimeexamples.html">
+   Time Examples</a></dt>
+                                                        </dl>
+                                                        </dl>
+                                                        <dt>II. <a href="reference.html">
+   SDL Reference</a></dt>
+                                                          <dd><br>
+                                                               </dd>
+                                                            <dl>
+                                                            <dt>5. <a href="general.html">
+   General</a></dt>
+                                                              <dd><br>
+                                                                   </dd>
+                                                                <dl>
+                                                                <dt><a href="sdlinit.html">
+   SDL_Init</a> &mdash; Initializes SDL</dt>
+                                                                  <dt><a href="sdlinitsubsystem.html">
+  SDL_InitSubSystem</a> &mdash; Initialize subsystems</dt>
+                                                                    <dt><a href="sdlquitsubsystem.html">
+   SDL_QuitSubSystem</a> &mdash; Shut down a subsystem</dt>
+                                                                      <dt><a href="sdlquit.html">
+   SDL_Quit</a> &mdash; Shut down SDL</dt>
+                                                                        <dt><a href="sdlwasinit.html">
+   SDL_WasInit</a> &mdash; Check which subsystems are initialized</dt>
+                                                                          </dl>
+                                                                          <dt>
+   6. <a href="video.html">Video</a></dt>
+                                                                            <dd><br>
+                                                                        
+        </dd>
+                                                                              <dl>
+                                                                              <dt><a href="sdlgetvideosurface.html">
+   SDL_GetVideoSurface</a> &mdash; returns a pointer to the current display 
+ surface</dt>
+                                                                                <dt><a href="sdlgetvideoinfo.html">
+   SDL_GetVideoInfo</a> &mdash; returns a pointer to information about the
+ video hardware</dt>
+                                                                                  <dt><a href="sdlvideodrivername.html">
+   SDL_VideoDriverName</a> &mdash; Obtain the name of the video driver</dt>
+                                                                                    <dt><a href="sdllistmodes.html">
+   SDL_ListModes</a> &mdash; Returns a pointer to an array of available screen 
+ dimensions for  the given format and video flags</dt>
+                                                                                      <dt><a href="sdlvideomodeok.html">
+   SDL_VideoModeOK</a> &mdash; Check to see if a particular video mode is 
+supported.</dt>
+                                                                                        <dt><a href="sdlsetvideomode.html">
+   SDL_SetVideoMode</a> &mdash; Set up a video mode with the specified width, 
+ height and bits-per-pixel.</dt>
+                                                                                          <dt><a href="sdlupdaterect.html">
+   SDL_UpdateRect</a> &mdash; Makes sure the given area is updated on the 
+given  screen.</dt>
+                                                                                            <dt><a href="sdlupdaterects.html">
+   SDL_UpdateRects</a> &mdash; Makes sure the given list of rectangles is 
+updated  on the given screen.</dt>
+                                                                                              <dt><a href="sdlflip.html">
+   SDL_Flip</a> &mdash; Swaps screen buffers</dt>
+                                                                                                <dt><a href="sdlsetcolors.html">
+   SDL_SetColors</a> &mdash; Sets a portion of the colormap for the given 
+8-bit  surface.</dt>
+                                                                                                  <dt><a href="sdlsetpalette.html">
+   SDL_SetPalette</a> &mdash; Sets the colors in the palette of an 8-bit
+surface.</dt>
+                                                                                                    <dt><a href="sdlsetgamma.html">
+   SDL_SetGamma</a> &mdash; Sets the color gamma function for the display</dt>
+                                                                                                      <dt><a href="sdlgetgammaramp.html">
+   SDL_GetGammaRamp</a> &mdash; Gets the color gamma lookup tables for the
+ display</dt>
+                                                                                                        <dt><a href="sdlsetgammaramp.html">
+   SDL_SetGammaRamp</a> &mdash; Sets the color gamma lookup tables for the
+ display</dt>
+                                                                                                          <dt><a href="sdlmaprgb.html">
+   SDL_MapRGB</a> &mdash; Map a RGB color value to a pixel format.</dt>
+                                                                                                            <dt><a href="sdlmaprgba.html">
+   SDL_MapRGBA</a> &mdash; Map a RGBA color value to a pixel format.</dt>
+                                                                                                              <dt><a href="sdlgetrgb.html">
+   SDL_GetRGB</a> &mdash; Get RGB values from a pixel in the specified pixel 
+ format.</dt>
+                                                                                                                <dt><a href="sdlgetrgba.html">
+   SDL_GetRGBA</a> &mdash; Get RGBA values from a pixel in the specified
+pixel  format.</dt>
+                                                                                                                  <dt><a href="sdlcreatergbsurface.html">
+   SDL_CreateRGBSurface</a> &mdash; Create an empty SDL_Surface</dt>
+                                                                                                                    <dt><a href="sdlcreatergbsurfacefrom.html">
+   SDL_CreateRGBSurfaceFrom</a> &mdash; Create an SDL_Surface from pixel
+data</dt>
+                                                                                                                      <dt><a href="sdlfreesurface.html">
+   SDL_FreeSurface</a> &mdash; Frees (deletes) a SDL_Surface</dt>
+                                                                                                                        <dt><a href="sdllocksurface.html">
+   SDL_LockSurface</a> &mdash; Lock a surface for directly access.</dt>
+                                                                                                                          <dt><a href="sdlunlocksurface.html">
+   SDL_UnlockSurface</a> &mdash; Unlocks a previously locked surface.</dt>
+                                                                                                                            <dt><a href="sdlloadbmp.html">
+   SDL_LoadBMP</a> &mdash; Load a Windows BMP file into an SDL_Surface.</dt>
+                                                                                                                              <dt><a href="sdlsavebmp.html">
+   SDL_SaveBMP</a> &mdash; Save an SDL_Surface as a Windows BMP file.</dt>
+                                                                                                                                <dt><a href="sdlsetcolorkey.html">
+   SDL_SetColorKey</a> &mdash; Sets the color key (transparent pixel) in
+a  blittable surface and RLE acceleration.</dt>
+                                                                                                                                  <dt><a href="sdlsetalpha.html">
+   SDL_SetAlpha</a> &mdash; Adjust the alpha properties of a surface</dt>
+                                                                                                                                    <dt><a href="sdlsetcliprect.html">
+   SDL_SetClipRect</a> &mdash; Sets the clipping rectangle for a surface.</dt>
+                                                                                                                                      <dt><a href="sdlgetcliprect.html">
+   SDL_GetClipRect</a> &mdash; Gets the clipping rectangle for a surface.</dt>
+                                                                                                                                        <dt><a href="sdlconvertsurface.html">
+   SDL_ConvertSurface</a> &mdash; Converts a surface to the same format as
+ another surface.</dt>
+                                                                                                                                          <dt><a href="sdlblitsurface.html">
+   SDL_BlitSurface</a> &mdash; This performs a fast blit from the source
+surface  to the destination surface.</dt>
+                                                                                                                                            <dt><a href="sdlfillrect.html">
+   SDL_FillRect</a> &mdash; This function performs a fast fill of the given 
+ rectangle with some color</dt>
+                                                                                                                                              <dt><a href="sdldisplayformat.html">
+   SDL_DisplayFormat</a> &mdash; Convert a surface to the display format</dt>
+                                                                                                                                                <dt><a href="sdldisplayformatalpha.html">
+   SDL_DisplayFormatAlpha</a> &mdash; Convert a surface to the display format</dt>
+                                                                                                                                                  <dt><a href="sdlwarpmouse.html">
+   SDL_WarpMouse</a> &mdash; Set the position of the mouse cursor.</dt>
+                                                                                                                                                    <dt><a href="sdlcreatecursor.html">
+   SDL_CreateCursor</a> &mdash; Creates a new mouse cursor.</dt>
+                                                                                                                                                      <dt><a href="sdlfreecursor.html">
+   SDL_FreeCursor</a> &mdash; Frees a cursor created with SDL_CreateCursor.</dt>
+                                                                                                                                                        <dt><a href="sdlsetcursor.html">
+   SDL_SetCursor</a> &mdash; Set the currently active mouse cursor.</dt>
+                                                                                                                                                          <dt><a href="sdlgetcursor.html">
+   SDL_GetCursor</a> &mdash; Get the currently active mouse cursor.</dt>
+                                                                                                                                                            <dt><a href="sdlshowcursor.html">
+   SDL_ShowCursor</a> &mdash; Toggle whether or not the cursor is shown on
+ the screen.</dt>
+                                                                                                                                                              <dt><a href="sdlglloadlibrary.html">
+   SDL_GL_LoadLibrary</a> &mdash; Specify an OpenGL library</dt>
+                                                                                                                                                                <dt><a href="sdlglgetprocaddress.html">
+   SDL_GL_GetProcAddress</a> &mdash; Get the address of a GL function</dt>
+                                                                                                                                                                  <dt><a href="sdlglgetattribute.html">
+   SDL_GL_GetAttribute</a> &mdash; Get the value of a special SDL/OpenGL
+attribute</dt>
+                                                                                                                                                                    <dt><a href="sdlglsetattribute.html">
+   SDL_GL_SetAttribute</a> &mdash; Set a special SDL/OpenGL attribute</dt>
+                                                                                                                                                                      <dt><a href="sdlglswapbuffers.html">
+   SDL_GL_SwapBuffers</a> &mdash; Swap OpenGL framebuffers/Update Display</dt>
+                                                                                                                                                                        <dt><a href="sdlcreateyuvoverlay.html">
+   SDL_CreateYUVOverlay</a> &mdash; Create a YUV video overlay</dt>
+                                                                                                                                                                          <dt><a href="sdllockyuvoverlay.html">
+   SDL_LockYUVOverlay</a> &mdash; Lock an overlay</dt>
+                                                                                                                                                                            <dt><a href="sdlunlockyuvoverlay.html">
+   SDL_UnlockYUVOverlay</a> &mdash; Unlock an overlay</dt>
+                                                                                                                                                                              <dt><a href="sdldisplayyuvoverlay.html">
+   SDL_DisplayYUVOverlay</a> &mdash; Blit the overlay to the display</dt>
+                                                                                                                                                                                <dt><a href="sdlfreeyuvoverlay.html">
+   SDL_FreeYUVOverlay</a> &mdash; Free a YUV video overlay</dt>
+                                                                                                                                                                                  <dt><a href="sdlglattr.html">
+  TSDL_GLAttr</a> &mdash; SDL GL Attributes</dt>
+                                                                                                                                                                                    <dt><a href="sdlrect.html">
+   TSDL_Rect</a> &mdash; Defines a rectangular area</dt>
+                                                                                                                                                                                      <dt><a href="sdlcolor.html">
+   TSDL_Color</a> &mdash; Format independent color description</dt>
+                                                                                                                                                                                        <dt><a href="sdlpalette.html">
+   TSDL_Palette</a> &mdash; Color palette for 8-bit pixel formats</dt>
+                                                                                                                                                                                          <dt><a href="sdlpixelformat.html">
+   TSDL_PixelFormat</a> &mdash; Stores surface format information</dt>
+                                                                                                                                                                                            <dt><a href="sdlsurface.html">
+   TSDL_Surface</a> &mdash; Graphical Surface Structure</dt>
+                                                                                                                                                                                              <dt><a href="sdlvideoinfo.html">
+   TSDL_VideoInfo</a> &mdash; Video Target information</dt>
+                                                                                                                                                                                                <dt><a href="sdloverlay.html">
+  TSDL_Overlay</a> &mdash; YUV video overlay</dt>
+                                                                                                                                                                                                  </dl>
+                                                                                                                                                                                                  <dt>
+   7. <a href="wm.html">Window Management</a></dt>
+                                                                                                                                                                                                    <dd><br>
+                                                                        
+                                                                        
+                                                       </dd>
+                                                                                                                                                                                                      <dl>
+                                                                                                                                                                                                      <dt><a href="sdlwmsetcaption.html">
+   SDL_WM_SetCaption</a> &mdash; Sets the window tile and icon name.</dt>
+                                                                                                                                                                                                        <dt><a href="sdlwmgetcaption.html">
+   SDL_WM_GetCaption</a> &mdash; Gets the window title and icon name.</dt>
+                                                                                                                                                                                                          <dt><a href="sdlwmseticon.html">
+   SDL_WM_SetIcon</a> &mdash; Sets the icon for the display window.</dt>
+                                                                                                                                                                                                            <dt><a href="sdlwmiconifywindow.html">
+   SDL_WM_IconifyWindow</a> &mdash; Iconify/Minimise the window</dt>
+                                                                                                                                                                                                              <dt><a href="sdlwmtogglefullscreen.html">
+   SDL_WM_ToggleFullScreen</a> &mdash; Toggles fullscreen mode</dt>
+                                                                                                                                                                                                                <dt><a href="sdlwmgrabinput.html">
+   SDL_WM_GrabInput</a> &mdash; Grabs mouse and keyboard input.</dt>
+                                                                                                                                                                                                                  </dl>
+                                                                                                                                                                                                                  <dt>
+   8. <a href="event.html">Events</a></dt>
+                                                                                                                                                                                                                    <dd><br>
+                                                                        
+                                                                        
+                                                                       </dd>
+                                                                                                                                                                                                                      <dl>
+                                                                                                                                                                                                                      <dt><a href="event.html#AEN3275">
+   Introduction</a></dt>
+                                                                                                                                                                                                                        <dt><a href="eventstructures.html">
+   SDL Event Structures.</a></dt>
+                                                                                                                                                                                                                          <dt><a href="eventfunctions.html">
+   Event Functions.</a></dt>
+                                                                                                                                                                                                                            </dl>
+                                                                                                                                                                                                                            <dt>
+   9. <a href="joystick.html">Joystick</a></dt>
+                                                                                                                                                                                                                              <dd><br>
+                                                                        
+                                                                        
+                                                                        
+        </dd>
+                                                                                                                                                                                                                                <dl>
+                                                                                                                                                                                                                                <dt><a href="sdlnumjoysticks.html">
+   SDL_NumJoysticks</a> &mdash; Count available joysticks.</dt>
+                                                                                                                                                                                                                                  <dt><a href="sdljoystickname.html">
+   SDL_JoystickName</a> &mdash; Get joystick name.</dt>
+                                                                                                                                                                                                                                    <dt><a href="sdljoystickopen.html">
+   SDL_JoystickOpen</a> &mdash; Opens a joystick for use.</dt>
+                                                                                                                                                                                                                                      <dt><a href="sdljoystickopened.html">
+   SDL_JoystickOpened</a> &mdash; Determine if a joystick has been opened</dt>
+                                                                                                                                                                                                                                        <dt><a href="sdljoystickindex.html">
+   SDL_JoystickIndex</a> &mdash; Get the index of an SDL_Joystick.</dt>
+                                                                                                                                                                                                                                          <dt><a href="sdljoysticknumaxes.html">
+   SDL_JoystickNumAxes</a> &mdash; Get the number of joystick axes</dt>
+                                                                                                                                                                                                                                            <dt><a href="sdljoysticknumballs.html">
+   SDL_JoystickNumBalls</a> &mdash; Get the number of joystick trackballs</dt>
+                                                                                                                                                                                                                                              <dt><a href="sdljoysticknumhats.html">
+   SDL_JoystickNumHats</a> &mdash; Get the number of joystick hats</dt>
+                                                                                                                                                                                                                                                <dt><a href="sdljoysticknumbuttons.html">
+   SDL_JoystickNumButtons</a> &mdash; Get the number of joysitck buttons</dt>
+                                                                                                                                                                                                                                                  <dt><a href="sdljoystickupdate.html">
+   SDL_JoystickUpdate</a> &mdash; Updates the state of all joysticks</dt>
+                                                                                                                                                                                                                                                    <dt><a href="sdljoystickgetaxis.html">
+   SDL_JoystickGetAxis</a> &mdash; Get the current state of an axis</dt>
+                                                                                                                                                                                                                                                      <dt><a href="sdljoystickgethat.html">
+   SDL_JoystickGetHat</a> &mdash; Get the current state of a joystick hat</dt>
+                                                                                                                                                                                                                                                        <dt><a href="sdljoystickgetbutton.html">
+   SDL_JoystickGetButton</a> &mdash; Get the current state of a given button 
+ on a given joystick</dt>
+                                                                                                                                                                                                                                                          <dt><a href="sdljoystickgetball.html">
+   SDL_JoystickGetBall</a> &mdash; Get relative trackball motion</dt>
+                                                                                                                                                                                                                                                            <dt><a href="sdljoystickclose.html">
+   SDL_JoystickClose</a> &mdash; Closes a previously opened joystick</dt>
+                                                                                                                                                                                                                                                              </dl>
+                                                                                                                                                                                                                                                              <dt>
+   10. <a href="audio.html">Audio</a></dt>
+                                                                                                                                                                                                                                                                <dd><br>
+                                                                        
+                                                                        
+                                                                        
+                                          </dd>
+                                                                                                                                                                                                                                                                  <dl>
+                                                                                                                                                                                                                                                                  <dt><a href="sdlaudiospec.html">
+ TSDL_AudioSpec</a> &mdash; Audio Specification Structure</dt>
+                                                                                                                                                                                                                                                                    <dt><a href="sdlopenaudio.html">
+   SDL_OpenAudio</a> &mdash; Opens the audio device with the desired parameters.</dt>
+                                                                                                                                                                                                                                                                      <dt><a href="sdlpauseaudio.html">
+   SDL_PauseAudio</a> &mdash; Pauses and unpauses the audio callback processing</dt>
+                                                                                                                                                                                                                                                                        <dt><a href="sdlgetaudiostatus.html">
+   SDL_GetAudioStatus</a> &mdash; Get the current audio state</dt>
+                                                                                                                                                                                                                                                                          <dt><a href="sdlloadwav.html">
+   SDL_LoadWAV</a> &mdash; Load a WAVE file</dt>
+                                                                                                                                                                                                                                                                            <dt><a href="sdlfreewav.html">
+   SDL_FreeWAV</a> &mdash; Frees previously opened WAV data</dt>
+                                                                                                                                                                                                                                                                              <dt><a href="sdlaudiocvt.html">
+   SDL_AudioCVT</a> &mdash; Audio Conversion Structure</dt>
+                                                                                                                                                                                                                                                                                <dt><a href="sdlbuildaudiocvt.html">
+   SDL_BuildAudioCVT</a> &mdash; Initializes a SDL_AudioCVT structure for 
+conversion</dt>
+                                                                                                                                                                                                                                                                                  <dt><a href="sdlconvertaudio.html">
+   SDL_ConvertAudio</a> &mdash; Convert audio data to a desired audio format.</dt>
+                                                                                                                                                                                                                                                                                    <dt><a href="sdlmixaudio.html">
+   SDL_MixAudio</a> &mdash; Mix audio data</dt>
+                                                                                                                                                                                                                                                                                      <dt><a href="sdllockaudio.html">
+   SDL_LockAudio</a> &mdash; Lock out the callback function</dt>
+                                                                                                                                                                                                                                                                                        <dt><a href="sdlunlockaudio.html">
+   SDL_UnlockAudio</a> &mdash; Unlock the callback function</dt>
+                                                                                                                                                                                                                                                                                          <dt><a href="sdlcloseaudio.html">
+   SDL_CloseAudio</a> &mdash; Shuts down audio processing and closes the
+audio  device.</dt>
+                                                                                                                                                                                                                                                                                            </dl>
+                                                                                                                                                                                                                                                                                            <dt>
+   11. <a href="cdrom.html">CD-ROM</a></dt>
+                                                                                                                                                                                                                                                                                              <dd><br>
+                                                                        
+                                                                        
+                                                                        
+                                                                        </dd>
+                                                                                                                                                                                                                                                                                                <dl>
+                                                                                                                                                                                                                                                                                                <dt><a href="sdlcdnumdrives.html">
+   SDL_CDNumDrives</a> &mdash; Returns the number of CD-ROM drives on the 
+system.</dt>
+                                                                                                                                                                                                                                                                                                  <dt><a href="sdlcdname.html">
+   SDL_CDName</a> &mdash; Returns a human-readable, system-dependent identifier 
+ for the CD-ROM.</dt>
+                                                                                                                                                                                                                                                                                                    <dt><a href="sdlcdopen.html">
+   SDL_CDOpen</a> &mdash; Opens a CD-ROM drive for access.</dt>
+                                                                                                                                                                                                                                                                                                      <dt><a href="sdlcdstatus.html">
+   SDL_CDStatus</a> &mdash; Returns the current status of the given drive.</dt>
+                                                                                                                                                                                                                                                                                                        <dt><a href="sdlcdplay.html">
+   SDL_CDPlay</a> &mdash; Play a CD</dt>
+                                                                                                                                                                                                                                                                                                          <dt><a href="sdlcdplaytracks.html">
+   SDL_CDPlayTracks</a> &mdash; Play the given CD track(s)</dt>
+                                                                                                                                                                                                                                                                                                            <dt><a href="sdlcdpause.html">
+   SDL_CDPause</a> &mdash; Pauses a CDROM</dt>
+                                                                                                                                                                                                                                                                                                              <dt><a href="sdlcdresume.html">
+   SDL_CDResume</a> &mdash; Resumes a CDROM</dt>
+                                                                                                                                                                                                                                                                                                                <dt><a href="sdlcdstop.html">
+   SDL_CDStop</a> &mdash; Stops a CDROM</dt>
+                                                                                                                                                                                                                                                                                                                  <dt><a href="sdlcdeject.html">
+   SDL_CDEject</a> &mdash; Ejects a CDROM</dt>
+                                                                                                                                                                                                                                                                                                                    <dt><a href="sdlcdclose.html">
+   SDL_CDClose</a> &mdash; Closes a SDL_CD handle</dt>
+                                                                                                                                                                                                                                                                                                                      <dt><a href="sdlcd.html">
+   TSDL_CD</a> &mdash; CDROM Drive Information</dt>
+                                                                                                                                                                                                                                                                                                                        <dt><a href="sdlcdtrack.html">
+   TSDL_CDtrack</a> &mdash; CD Track Information Structure</dt>
+                                                                                                                                                                                                                                                                                                                          </dl>
+                                                                                                                                                                                                                                                                                                                          <dt>
+   12. <a href="thread.html">Multi-threaded Programming</a></dt>
+                                                                                                                                                                                                                                                                                                                            <dd><br>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                             </dd>
+                                                                                                                                                                                                                                                                                                                              <dl>
+                                                                                                                                                                                                                                                                                                                              <dt><a href="sdlcreatethread.html">
+   SDL_CreateThread</a> &mdash; Creates a new thread of execution that shares 
+ its parent's properties.</dt>
+                                                                                                                                                                                                                                                                                                                                <dt><a href="sdlthreadid.html">
+   SDL_ThreadID</a> &mdash; Get the 32-bit thread identifier for the current 
+ thread.</dt>
+                                                                                                                                                                                                                                                                                                                                  <dt><a href="sdlgetthreadid.html">
+   SDL_GetThreadID</a> &mdash; Get the SDL thread ID of a SDL_Thread</dt>
+                                                                                                                                                                                                                                                                                                                                    <dt><a href="sdlwaitthread.html">
+   SDL_WaitThread</a> &mdash; Wait for a thread to finish.</dt>
+                                                                                                                                                                                                                                                                                                                                      <dt><a href="sdlkillthread.html">
+   SDL_KillThread</a> &mdash; Gracelessly terminates the thread.</dt>
+                                                                                                                                                                                                                                                                                                                                        <dt><a href="sdlcreatemutex.html">
+   SDL_CreateMutex</a> &mdash; Create a mutex</dt>
+                                                                                                                                                                                                                                                                                                                                          <dt><a href="sdldestroymutex.html">
+   SDL_DestroyMutex</a> &mdash; Destroy a mutex</dt>
+                                                                                                                                                                                                                                                                                                                                            <dt><a href="sdlmutexp.html">
+   SDL_mutexP</a> &mdash; Lock a mutex</dt>
+                                                                                                                                                                                                                                                                                                                                              <dt><a href="sdlmutexv.html">
+   SDL_mutexV</a> &mdash; Unlock a mutex</dt>
+                                                                                                                                                                                                                                                                                                                                                <dt><a href="sdlcreatesemaphore.html">
+   SDL_CreateSemaphore</a> &mdash; Creates a new semaphore and assigns an 
+initial  value to it.</dt>
+                                                                                                                                                                                                                                                                                                                                                  <dt><a href="sdldestroysemaphore.html">
+   SDL_DestroySemaphore</a> &mdash; Destroys a semaphore that was created 
+by                                                                       
+                                                                        
+                                                                        
+                                                                        
+                                                   <a href="sdlcreatesemaphore.html">
+   SDL_CreateSemaphore</a>.</dt>
+                                                                                                                                                                                                                                                                                                                                                    <dt><a href="sdlsemwait.html">
+   SDL_SemWait</a> &mdash; Lock a semaphore and suspend the thread if the 
+semaphore  value is zero.</dt>
+                                                                                                                                                                                                                                                                                                                                                      <dt><a href="sdlsemtrywait.html">
+   SDL_SemTryWait</a> &mdash; Attempt to lock a semaphore but don't suspend 
+ the thread.</dt>
+                                                                                                                                                                                                                                                                                                                                                        <dt><a href="sdlsemwaittimeout.html">
+   SDL_SemWaitTimeout</a> &mdash; Lock a semaphore, but only wait up to a 
+specified  maximum time.</dt>
+                                                                                                                                                                                                                                                                                                                                                          <dt><a href="sdlsempost.html">
+   SDL_SemPost</a> &mdash; Unlock a semaphore.</dt>
+                                                                                                                                                                                                                                                                                                                                                            <dt><a href="sdlsemvalue.html">
+   SDL_SemValue</a> &mdash; Return the current value of a semaphore.</dt>
+                                                                                                                                                                                                                                                                                                                                                              <dt><a href="sdlcreatecond.html">
+   SDL_CreateCond</a> &mdash; Create a condition variable</dt>
+                                                                                                                                                                                                                                                                                                                                                                <dt><a href="sdldestroycond.html">
+   SDL_DestroyCond</a> &mdash; Destroy a condition variable</dt>
+                                                                                                                                                                                                                                                                                                                                                                  <dt><a href="sdlcondsignal.html">
+   SDL_CondSignal</a> &mdash; Restart a thread wait on a condition variable</dt>
+                                                                                                                                                                                                                                                                                                                                                                    <dt><a href="sdlcondbroadcast.html">
+   SDL_CondBroadcast</a> &mdash; Restart all threads waiting on a condition 
+ variable</dt>
+                                                                                                                                                                                                                                                                                                                                                                      <dt><a href="sdlcondwait.html">
+   SDL_CondWait</a> &mdash; Wait on a condition variable</dt>
+                                                                                                                                                                                                                                                                                                                                                                        <dt><a href="sdlcondwaittimeout.html">
+   SDL_CondWaitTimeout</a> &mdash; Wait on a condition variable, with timeout</dt>
+                                                                                                                                                                                                                                                                                                                                                                          </dl>
+                                                                                                                                                                                                                                                                                                                                                                          <dt>
+   13. <a href="time.html">Time</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                            <dd><br>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+    </dd>
+                                                                                                                                                                                                                                                                                                                                                                              <dl>
+                                                                                                                                                                                                                                                                                                                                                                              <dt><a href="sdlgetticks.html">
+   SDL_GetTicks</a> &mdash; Get the number of milliseconds since the SDL
+library  initialization.</dt>
+                                                                                                                                                                                                                                                                                                                                                                                <dt><a href="sdldelay.html">
+   SDL_Delay</a> &mdash; Wait a specified number of milliseconds before returning.</dt>
+                                                                                                                                                                                                                                                                                                                                                                                  <dt><a href="sdladdtimer.html">
+   SDL_AddTimer</a> &mdash; Add a timer which will call a callback after
+the  specified number of milliseconds has elapsed.</dt>
+                                                                                                                                                                                                                                                                                                                                                                                    <dt><a href="sdlremovetimer.html">
+   SDL_RemoveTimer</a> &mdash; Remove a timer which was added with <a href="sdladdtimer.html">
+   SDL_AddTimer</a>.</dt>
+                                                                                                                                                                                                                                                                                                                                                                                      <dt><a href="sdlsettimer.html">
+   SDL_SetTimer</a> &mdash; Set a callback to run after the specified number 
+ of milliseconds has elapsed.</dt>
+                                                                                                                                                                                                                                                                                                                                                                                        </dl>
+                                                                                                                                                                                                                                                                                                                                                                                        </dl>
+                                                                                                                                                                                                                                                                                                                                                                                        </dl>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+              </div>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                      
+                                                                                                                                                                                                                                                                                                                                                                                        <div class="LOT">
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                      
+                                                                                                                                                                                                                                                                                                                                                                                        <dl class="LOT">
+                                                                                                                                                                                                                                                                                                                                                                                        <dt><b>
+   List of Tables</b></dt>
+                                                                                                                                                                                                                                                                                                                                                                                          <dt>
+   8-1. <a href="sdlkey.html#AEN4258">SDL Keysym definitions</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                            <dt>
+   8-2. <a href="sdlkey.html#SDLMOD">SDL modifier definitions</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                              </dl>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                    </div>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                        
+                                                                                                                                                                                                                                                                                                                                                                                              <div class="LOT">
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                        
+                                                                                                                                                                                                                                                                                                                                                                                              <dl class="LOT">
+                                                                                                                                                                                                                                                                                                                                                                                              <dt><b>
+   List of Examples</b></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                <dt>
+   1-1. <a href="guidebasicsinit.html#AEN60">Initializing SDL</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                  <dt>
+   2-1. <a href="guidevideo.html#AEN71">Initializing the Video Display</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                    <dt>
+   2-2. <a href="guidevideo.html#AEN77">Initializing the Best Video Mode</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                      <dt>
+   2-3. <a href="guidevideo.html#AEN83">Loading and Displaying a BMP File</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                        <dt>
+   2-4. <a href="guidevideo.html#AEN90">getpixel()</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                          <dt>
+   2-5. <a href="guidevideo.html#AEN93">putpixel()</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                            <dt>
+   2-6. <a href="guidevideo.html#AEN97">Using putpixel()</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                              <dt>
+   2-7. <a href="guidevideoopengl.html#AEN114">Initializing SDL with OpenGL</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                                <dt>
+   2-8. <a href="guidevideoopengl.html#AEN128">SDL and OpenGL</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                                  <dt>
+   3-1. <a href="guideinput.html#AEN141">Initializing SDL with Joystick Support</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                                    <dt>
+   3-2. <a href="guideinput.html#AEN154">Querying the Number of Available 
+Joysticks</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                                      <dt>
+   3-3. <a href="guideinput.html#AEN183">Opening a Joystick</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                                        <dt>
+   3-4. <a href="guideinput.html#AEN191">Joystick Axis Events</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                                          <dt>
+   3-5. <a href="guideinput.html#AEN195">More Joystick Axis Events</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                                            <dt>
+   3-6. <a href="guideinput.html#AEN203">Joystick Button Events</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                                              <dt>
+   3-7. <a href="guideinput.html#AEN217">Joystick Ball Events</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                                                <dt>
+   3-8. <a href="guideinput.html#AEN244">Joystick Hat Events</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                                                  <dt>
+   3-9. <a href="guideinput.html#AEN265">Querying Joystick Characteristics</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                                                    <dt>
+   3-10. <a href="guideinputkeyboard.html#AEN334">Reading Keyboard Events</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                                                      <dt>
+   3-11. <a href="guideinputkeyboard.html#AEN351">Interpreting Key Event
+Information</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                                                        <dt>
+   3-12. <a href="guideinputkeyboard.html#AEN363">Proper Game Movement</a></dt>
+                                                                                                                                                                                                                                                                                                                                                                                                                                          </dl>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                </div>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                </div>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                          
+                                                                                                                                                                                                                                                                                                                                                                                                                                          <div class="NAVFOOTER">
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                          
+                                                                                                                                                                                                                                                                                                                                                                                                                                          <hr align="Left" width="100%">
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                          
+                                                                                                                                                                                                                                                                                                                                                                                                                                          <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                  <tbody>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                    <tr>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                      <td width="31%" align="Left" valign="Top">
+   &nbsp;</td>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                      <td width="34%" align="Center" valign="Top">
+   &nbsp;</td>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                      <td width="31%" align="Right" valign="Top"><a href="guide.html">
+   Next</a></td>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                    </tr>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                    <tr>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                      <td width="31%" align="Left" valign="Top">
+   &nbsp;</td>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                      <td width="34%" align="Center" valign="Top">
+   &nbsp;</td>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                      <td width="31%" align="Right" valign="Top">
+   SDL Guide</td>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                    </tr>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                            </tbody>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                          
+                                                                                                                                                                                                                                                                                                                                                                                                                                          </table>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                </div>
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                              
+                                                                                                                                                                                                                                                                                                                                                                                                                                          </body>
+                                                                                                                                                                                                                                                                                                                                                                                                                                          </html>

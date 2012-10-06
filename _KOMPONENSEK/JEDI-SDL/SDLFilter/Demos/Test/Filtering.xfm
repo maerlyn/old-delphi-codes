@@ -1,0 +1,184 @@
+object Form1: TForm1
+  Left = 196
+  Top = 252
+  Width = 482
+  Height = 440
+  HorzScrollBar.Range = 465
+  VertScrollBar.Range = 429
+  ActiveControl = btnLoadImage
+  Caption = 'Image Filters'
+  Color = clButton
+  Font.Color = clText
+  Font.Height = 11
+  Font.Name = 'arial'
+  Font.Pitch = fpVariable
+  Font.Style = []
+  Font.Weight = 0
+  ParentFont = False
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 18
+  TextWidth = 5
+  object btnLoadImage: TButton
+    Left = 8
+    Top = 8
+    Width = 81
+    Height = 25
+    Caption = 'Load Image'
+    TabOrder = 0
+    OnClick = btnLoadImageClick
+  end
+  object btnApplyFilter: TButton
+    Left = 8
+    Top = 300
+    Width = 105
+    Height = 25
+    Caption = 'Apply Filter'
+    TabOrder = 1
+    OnClick = btnApplyFilterClick
+  end
+  object btnQuit: TButton
+    Left = 388
+    Top = 376
+    Width = 75
+    Height = 25
+    Caption = 'Quit'
+    TabOrder = 2
+    OnClick = btnQuitClick
+  end
+  object rdgSelectFilter: TRadioGroup
+    Left = 8
+    Top = 36
+    Width = 457
+    Height = 253
+    Items.Strings = (
+      'Lowpass - Uniform'
+      'Lowpass - Peaked'
+      'Lowpass - Strongly Peaked'
+      'HighPass - V. Weak'
+      'HighPass - Weak'
+      'HighPass - Strong'
+      'HighPass - V. Strong'
+      'Prewitt Edge - NW-SE'
+      'Prewitt Edge - N-S'
+      'Prewitt Edge - NE-SW'
+      'Prewitt Edge - E-W'
+      'Prewitt Edge - SE-NW'
+      'Prewitt Edge - S-N'
+      'Prewitt Edge - SW-NE'
+      'Prewitt Edge - W-E'
+      'Lapiacian Edge - Weak'
+      'Lapiacian Edge - Strong'
+      'Lapiacian Edge - V.Strong')
+    Caption = '[ Select Filter ]'
+    Columns = 3
+    TabOrder = 3
+    OnClick = rdgSelectFilterClick
+  end
+  object btnOutlineImage: TButton
+    Left = 144
+    Top = 300
+    Width = 105
+    Height = 25
+    Caption = 'Outline Image'
+    TabOrder = 4
+    OnClick = btnOutlineImageClick
+  end
+  object chkTransparent: TCheckBox
+    Left = 96
+    Top = 8
+    Width = 97
+    Height = 17
+    Caption = 'use key (0,0)'
+    Checked = True
+    State = cbChecked
+    TabOrder = 5
+  end
+  object chkCombine: TCheckBox
+    Left = 8
+    Top = 336
+    Width = 105
+    Height = 25
+    Caption = 'Combine Output'
+    TabOrder = 6
+  end
+  object rgpOutputTypes: TRadioGroup
+    Left = 144
+    Top = 332
+    Width = 105
+    Height = 97
+    Items.Strings = (
+      'Blit'
+      'Add'
+      'Sutract')
+    Caption = 'Output'
+    ItemIndex = 0
+    TabOrder = 7
+  end
+  object GroupBox1: TGroupBox
+    Left = 272
+    Top = 300
+    Width = 93
+    Height = 101
+    Caption = '[ Outline Colour ]'
+    TabOrder = 8
+    object Label1: TLabel
+      Left = 8
+      Top = 24
+      Width = 18
+      Height = 18
+      Caption = 'Red'
+    end
+    object Label2: TLabel
+      Left = 8
+      Top = 48
+      Width = 28
+      Height = 18
+      Caption = 'Green'
+    end
+    object Label3: TLabel
+      Left = 8
+      Top = 72
+      Width = 19
+      Height = 18
+      Caption = 'Blue'
+    end
+    object eR: TEdit
+      Left = 44
+      Top = 20
+      Width = 41
+      Height = 26
+      TabOrder = 0
+      Text = '255'
+    end
+    object eG: TEdit
+      Left = 44
+      Top = 44
+      Width = 41
+      Height = 26
+      TabOrder = 1
+      Text = '0'
+    end
+    object eB: TEdit
+      Left = 44
+      Top = 68
+      Width = 41
+      Height = 26
+      TabOrder = 2
+      Text = '0'
+    end
+  end
+  object dlgOpenFile: TOpenDialog
+    DefaultExt = 'bmp'
+    Filter = 
+      'Windows Bitmap|*.bmp|JPG|*.jpg|Portable Network Graphic|*.png|GI' +
+      'F|*.gif'
+    FilterIndex = 0
+    Height = 0
+    Title = 'Open'
+    Width = 0
+    Left = 404
+    Top = 308
+  end
+end

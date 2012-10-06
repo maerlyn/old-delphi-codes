@@ -1,0 +1,296 @@
+ExeMod FAQ  (this is the first draft of this FAQ.. please send me your questions so I can expand it!)
+
+Q-Is ExeMod freeware?
+
+A-Yes, you are free to use this unit in any program..commercial or otherwise without
+any restrictions. Treat is as public domain code. You do NOT need to assign credit to
+me as the author of this code. Feel free to make changes and improvements... I'd like
+to see any improvements you make so send them to me if you feel so inclined :-) I'd also
+like to get an email if you want to thank me or curse me for the quality of this code ;-)
+send all praise/changes/curses/gripes/suggestions/questions/jokes...etc to me at 
+gacarpenter386@yahoo.com  <gwen carpenter (Gwena)>
+
+Q-What exactly is ExeMod?
+
+A-In a nutshell, ExeMod is a pascal unit that will let your Delphi programs alter
+themselves at runtime... actually it does not occur at runtime since ExeMod effects
+the changes by ejecting a copy of the running exe which then deletes the original exe
+and replaces it with a new and altered copy. The temporary copy then shuts down after
+running the new exe and passing it a message that tells it to delete the temporary copy.
+This sounds a bit whacky but it seems to work just fine. ExeMod also contains many
+procedures and functions that make adding data and files to the exe easier... these
+can also be used to store data inside external files and other programs.
+
+
+Q-Won't an ExeMod program fail if it is placed onto a CD since it cannot replace itself
+with a new version on a read-only media?
+
+A-No ..if an ExeMod program is run from a cd it will create a dir on the drive where
+windows is installed and move a copy of itself there, then it runs that copy and shuts
+down. The new copy continues running normally and the user won't be aware of any of
+this. The directory created has the name of the original exe... for example, if you have
+an ExeMod program on cd named MyProgram.exe and Windows is on drive D then a new dir
+is created on d as D:\MyProgram.exe\  and a new copy of the program is created in this
+dir ... D:\MyProgram.exe\MyProgram.exe  A directory name containing '.exe' is rather
+unusual and so there is little chance of there being an existing dir with the same
+name.  After the first run from the CD the exe on the CD will act only as a shortcut
+to the version that is on the HD.
+
+Q-Hey! this unit does not actually change an exe at runtime, it just looks like it does that,
+is it possible to actually change an exe on disk while it runs?
+
+A-Yes it is! Contrary to the opinion of many, it is easy to alter the exe file on disk
+while an exe is actually executing in ram. You can just write new data to the disk sectors
+that hold the exe file...windows should keep you from doing this, but windows seems
+blissfully unaware of such actions. But I found this method to be both quirky and dangerous!
+I recommend you only do this with programs that are running on a floppy or something like a
+zip disk... doing it to an exe on a hd is asking for trouble. Also you will run into problems
+like compressed hd's, ntfs partitions and encrypted disks... these will cause you headaches :-/
+I wrote a simple demo that creates an actual self-modifying exe on a floppy. You can look
+at this here...
+
+http://groups.google.com/groups?selm=MPG.15e542556a67a1a798968d%40newsgroups.borland.com&output=gplain
+
+Don't expect much... it was just a qwik-n-dirty demo to show the possibility :-)
+
+Q-Why did you write such a strange unit???
+
+A-I wanted to make programs that could create other programs. What I wanted was an easy way to
+modify the running exe and then save the modified version to disk with a new name. The result
+would look like an entirely different program. I could not find any code to do this so I just
+started whacking away at it myself, ExeMod is the end result of this. Along the way I kept
+getting more ideas for strange things that could be done with such code.. so I just kept 
+on adding more stuff :-)
+
+Q-If I want to read a byte of data from my exe at runtime does the exe file always need to
+be loaded from disk first?
+
+A-Most of the functions and procedures in ExeMod load the exe file from disk and into a
+global string named 'Exe' this places the data in ram and lets you use all the pascal string
+handling routines to make changes to it. I could have just as easily loaded the data into
+a MemoryStream but the pascal string routines made a string the best choice. But you can
+also read bytes, words and strings from the exe at runtime directly from the exe in ram,
+just use these functions and procedures.
+
+function  PeekExeByte(Byte2Get: Integer): byte;
+function  PeekExeWord(Word2Get: Integer): word;
+procedure PeekExeString(StartByte,Count: Integer; var ReturnedStr: String);
+
+For example.. to display the first byte of your running exe from the ram do this
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+ShowMessage(chr(PeekExeByte(1)));
+end;
+
+This displays 'M'
+
+The byte was pulled directly from ram, from where windows loaded the running exe.
+
+To get an entire string of data from the ram do this
+
+procedure TForm1.Button1Click(Sender: TObject);
+var Temp: String;
+begin
+PeekExeString(81,36,Temp);
+ShowMessage(Temp);
+end;
+
+This displays the familiar DOS exe stub message 'This program must be run under Win32'
+
+There are corresponding Poke functions but they do NOT store data into ram at runtime.
+Instead they write the data into the global string 'Exe', The Poke functions that end
+with an 'I' immediately replace the exe file and do a quick restart of the program.
+Simply storing the data into ram at runtime would not work well since the exe file on
+disk would remain unchanged.
+
+procedure PokeExeByte(Byte2set: Integer; ByteVal: Byte);
+procedure PokeExeByteI(Byte2set: Integer; ByteVal: Byte);
+procedure PokeExeString(StartByte: Integer; String2Insert: String);
+procedure PokeExeStringI(StartByte: Integer; String2Insert: String);
+
+This code would actually change the DOS stub message in the exe file on disk...and do
+a quick re-start.
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+PokeExeStringI(81,'This will be the new DOS stub text!!');
+end;
+
+Q-Can I easily add an image to my exe at runtime and later display it?
+
+A-This is very easy to do, just use this sort of code....
+
+This handler will add the image to your exe.
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+OpenDialog1.Execute;
+AddFile2Exe('MyJpg',OpenDialog1.FileName);
+AlterExe;//store the jpg in the exe and restart
+end;
+
+and this code will load the jpg from the exe at runtime and display it.
+
+procedure TForm1.Button2Click(Sender: TObject);
+var
+Temp: String;
+MyStream: TMemoryStream;
+MyPic: TJpegImage;
+begin
+ExtractFromExe('MyJpg',Temp);
+MyPic := TJpegImage.Create;
+MyStream := TMemoryStream.Create;
+try
+String2Stream(temp,MyStream);
+MyPic.LoadFromStream(MyStream);
+Form1.Image1.Picture.Assign(MyPic);
+finally
+MyStream.Free;
+MyPic.Free;
+Exe := ''//set Exe to '' to save space when it's no longer needed
+end;
+end;
+
+
+Q-Can I use ExeMod to make changes to another Exe?
+
+A-Yes.. this is very easy. But you must not try to alter another exe on disk
+while that exe is running! to do that you would need to write directly to
+the HD sectors, and to the other programs process space...
+and that is not wise :-/
+
+This code would change the 3rd byte of any exe you select to the value zero.
+Then it would re-load the changed exe and display the 3rd byte ordinal
+value to prove that it had been changed.
+(the 3rd byte of any exe can be changed to any value without ill effect
+this byte is usually occupied by 90hex(nop) or in the case of a delphi
+app it contains 'P' for pascal) This snippet is especially useful since
+it will make a simple util that can disable the CD handling abilities
+of an ExeMod program... this is sometimes desirable... see the notes
+in the Interface section of ExeMod for more info.
+
+procedure TForm1.Button1Click(Sender: TObject);
+Var
+Temp: String;
+begin
+OpenDialog1.Execute;
+Temp := File2String(OpenDialog1.FileName);
+Temp[3] := chr(0);
+String2File(Temp,OpenDialog1.FileName);
+Temp := File2String(OpenDialog1.FileName);//re-load the exe
+ShowMessage(IntToStr(ord(Temp[3])));//display ordinal pos of the byte
+end;
+
+
+Q-I see the word 'demarc' everywhere in the source for ExeMod..what the #$%^
+is this???
+
+A-A demarc is used as a name to access data that was stored in the exe using ExeMod.
+Think of it as a variable name. Demarc is short for Demarcation... the demarc names
+serve as demarcation lines in the exe file... providing an easy way to locate the
+data.   If you were to store a string of data containing 'hello world' in a demarc
+data string named 'MyData' then this is exactly what would be added to the exe file.
+
+SO!#MYDATA¶hello worldEO!#MYDATA
+
+You can easily see how the 'demarc' creates an actual demarcation point in the exe
+file...allowing for easy location using pascal string handling routines.
+
+Q-Is there an easy way to find out how many demarc delimited data strings have been
+added to an exe?
+
+A-Yes... this function gets you the number of demarc delimited data strings in your
+exe.
+
+function  GetDemarcCount: integer;
+
+This code will display the DemarcCount
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+ShowMessage(IntToStr(GetDemarcCount));
+end;
+
+Q-Is there a way to get the demarc names of the demarc delimited strings that
+are in an exe?
+
+A-Yes use this procedure...
+
+procedure GetDemarcName(DNumber: Integer; var DName: String);
+
+using this in combination with GetDemarcCount will allow you to get the number
+of demarc data strings in an exe and also all the demarc names.
+
+This code will get the name of the first demarc delimited data string that
+is stored in the exe and then display it.
+
+procedure TForm1.Button1Click(Sender: TObject);
+Var
+Temp: String;
+begin
+GetDemarcName(1,Temp);
+ShowMessage(Temp);
+end;
+
+
+
+Q-How can I completely remove a demarc delimited data string?
+
+A-Use these procedures...
+
+procedure DelFromString(DemarcStr: string; var String2Change: string);
+procedure DelFromExe(DemarcStr: string);
+procedure DelFromFile(DemarcStr, FileName: string);
+
+Remember to flush the results to disk in order to finalize a deletion from the
+running exe!  Use AlterExe; to flush the running exe to disk
+ 
+
+Q-How can I replace a demarc delimited data string in my exe, or in a file?
+
+A-Use these procedures...
+
+procedure ReplaceInFile(DemarcStr, FileName, ReplacementString: string);
+procedure ReplaceInString(DemarcStr, ReplacementString:
+ string; var String2Alter: string);
+procedure ReplaceInExe(DemarcStr, ReplacementString: string);
+procedure InsOrReplaceInString(DemarcStr, ReplacementString:
+procedure InsOrReplaceInExe(DemarcStr, ReplacementString: string);
+
+
+You must first remove an existing demarc data string before saving another
+with the same name! Otherwise you will be adding useless data to your exe/file
+and will only be able to locate the first instance. The 5 procedures above
+take care of the needed deletions. DON'T JUST KEEP ADDING STUFF WITH THE
+SAME NAMES!!! or you will be in a real mess :-) 
+
+There is one time when you may want to add several data strings under the
+same demarc name.... and that is when you want to make a sort of FIFO
+stack of data strings...deleting one will pop the next one up so it
+can than be retrieved.
+
+As before... be sure to flush any changes to disk!
+
+Q-The data that is added to an exe by ExeMod seemes to all be stuck onto the
+end of the exe file. Is there any way to store the same data inside the exe?
+
+A-At this time..not really. Although you can use the poke functions to stick
+data anywhere in the exe file this is really only useful for storing data
+into 'data caves' inside the exe (like the dos stub) But I am working on the
+procedures right now that will let you add new sections to an exe file and
+put the demarc data there if you wish... these will work on any exe...not just
+a delphi exe... you will be able to store any data inside any exe on disk you
+wish to use. I will release these procedures as soon as I am done debugging
+them and making sure they don't corrupt any exe files.... I am going to make
+sure to 'do no harm' before I put this code out :-)
+
+procedure MakeNewExeSect(Name: String; Size: Integer); 
+procedure DeleteExeSect(Name: String; Size: Integer);
+procedure ResizeExeSect(Name: String; Size: Integer); 
+procedure ReplaceExeSect(Name,NewData: String); //automatically re-sizes section
+
+
+Q-???? send me your questions and I will put them here :-)
+ 
+

@@ -1,0 +1,103 @@
+<html>
+<head>
+  <title>SDL_GetEventFilter</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="Event Functions." href="eventfunctions.html">
+   
+  <link rel="PREVIOUS" title="SDL_SetEventFilter" href="sdlseteventfilter.html">
+   
+  <link rel="NEXT" title="SDL_EventState" href="sdleventstate.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="sdlseteventfilter.html">
+ Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom"><br>
+       </td>
+       <td width="8%" align="Right" valign="Bottom"><a href="sdleventstate.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<h1><a name="SDLGETEVENTFILTER">SDL_GetEventFilter</a></h1>
+ 
+<div class="REFNAMEDIV"><a name="AEN5078"></a> 
+<h2>Name</h2>
+ SDL_GetEventFilter&nbsp;--&nbsp;Retrieves a pointer to he event filter</div>
+ 
+<div class="REFSYNOPSISDIV"><a name="AEN5081"></a><br>
+ 
+<h2>Synopsis</h2>
+ 
+<div class="FUNCSYNOPSIS"><a name="AEN5082"></a> 
+<p></p>
+ <pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+ 
+<p>function <b>SDL_GetEventFilter</b> : TSDL_EventFilter;</p>
+ 
+<p></p>
+ </div>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN5088"></a> 
+<h2>Description</h2>
+ 
+<p>This function retrieces a pointer to the event filter that was previously 
+set using <a href="sdlseteventfilter.html"><tt class="FUNCTION">SDL_SetEventFilter</tt></a>
+ . An SDL_EventFilter function is defined as: <pre class="PROGRAMLISTING"><b>TSDL_EventFilter</b> = function( event : PSDL_Event ) : Integer; cdecl;</pre>
+ </p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN5094"></a> 
+<h2>Return Value</h2>
+ 
+<p>Returns a pointer to the event filter or <tt class="LITERAL">NULL</tt>
+  if no filter has been set.</p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN5098"></a> 
+<h2>See Also</h2>
+ 
+<p><a href="sdlevent.html"><span class="STRUCTNAME">SDL_Event</span></a>,
+ <a href="sdlseteventfilter.html"><tt class="FUNCTION">SDL_SetEventFilter</tt></a></p>
+ </div>
+ 
+<div class="NAVFOOTER"> 
+<hr align="Left" width="100%"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <td width="31%" align="Left" valign="Top"><a href="sdlseteventfilter.html">
+ Prev</a></td>
+       <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+       <td width="31%" align="Right" valign="Top"><a href="sdleventstate.html">
+ Next</a></td>
+     </tr>
+     <tr>
+       <td width="31%" align="Left" valign="Top">SDL_SetEventFilter</td>
+       <td width="34%" align="Center" valign="Top"><a href="eventfunctions.html">
+ Up</a></td>
+       <td width="31%" align="Right" valign="Top">SDL_EventState</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ </div>
+ 
+</body>
+</html>

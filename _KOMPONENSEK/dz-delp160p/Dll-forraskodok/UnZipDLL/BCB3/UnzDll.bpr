@@ -1,0 +1,137 @@
+# ---------------------------------------------------------------------------
+VERSION = BCB.03
+# ---------------------------------------------------------------------------
+!ifndef BCB
+BCB = $(MAKEDIR)\..
+!endif
+# ---------------------------------------------------------------------------
+PROJECT = UnzDll.dll
+OBJFILES = UnzDll.obj List.obj Explode.obj Match.obj Extract.obj Fileio.obj Unshrink.obj Dllmain.obj \
+  Crctab.obj Crc32.obj Win32.obj Globals.obj Inflate.obj Process.obj Crypt.obj Passmsg.obj
+RESFILES = UnzDlg.res
+RESDEPEN = $(RESFILES)
+LIBFILES =
+LIBRARIES = VCLX35.lib vcl35.lib
+SPARELIBS = vcl35.lib VCLX35.lib
+PACKAGES = VCLX35.bpi VCL35.bpi
+PATHASM = .;
+PATHCPP = .;
+PATHPAS = .;
+PATHRC = .;
+DEBUGLIBPATH = $(BCB)\lib\debug
+RELEASELIBPATH = $(BCB)\lib\release
+DEFFILE =
+# ---------------------------------------------------------------------------
+CFLAG1 = -WD -O2 -w -Ve -x- -d -k- -vi -c -b- -w-par -w-inl -Vx
+CFLAG2 = -DWIN32;NDEBUG;NO_ASM;DOS;MSDOS;REENTRANT;CRTL_CP_IS_ISO;USE_STRM_OUTPUT \
+  -I..\..\..\bin;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\projects;$(BCB)\projects\zipbuilder\UnzipDll
+CFLAG3 = -xd- -f-
+PFLAGS = -AWinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE \
+  -DWIN32;NDEBUG;NO_ASM;DOS;MSDOS;REENTRANT;CRTL_CP_IS_ISO;USE_STRM_OUTPUT \
+  -U..\..\..\bin;..\..\..\lib\release;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\projects;$(BCB)\projects\zipbuilder\Unzipdll;$(RELEASELIBPATH) \
+  -I..\..\..\bin;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\projects;$(BCB)\projects\zipbuilder\UnzipDll \
+  -H -W -$L- -$I- -$D- -$C- -JPHNV -M
+RFLAGS = -DWIN32;NDEBUG;NO_ASM;DOS;MSDOS;REENTRANT;CRTL_CP_IS_ISO;USE_STRM_OUTPUT \
+  -i..\..\..\bin;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\projects;$(BCB)\projects\zipbuilder\UnzipDll
+AFLAGS = /i..\..\..\bin /i$(BCB)\include /i$(BCB)\include\vcl /i$(BCB)\projects \
+  /i$(BCB)\projects\zipbuilder\UnzipDll /dWIN32 /dNDEBUG /dNO_ASM /dDOS /dMSDOS /dREENTRANT \
+  /dCRTL_CP_IS_ISO /dUSE_STRM_OUTPUT /mx /w2 /zn
+LFLAGS = -L..\..\..\bin;..\..\..\lib\release;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\projects;$(BCB)\projects\zipbuilder\Unzipdll;$(RELEASELIBPATH) \
+  -aa -Tpd -x -Gl -Gi -w
+IFLAGS =
+LINKER = ilink32
+# ---------------------------------------------------------------------------
+ALLOBJ = c0d32.obj sysinit.obj $(OBJFILES)
+ALLRES = $(RESFILES)
+ALLLIB = $(LIBFILES) $(LIBRARIES) import32.lib cw32mt.lib
+# ---------------------------------------------------------------------------
+.autodepend
+
+!ifdef IDEOPTIONS
+
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=5
+Release=2
+Build=8
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1043
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.5.2.8
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.5.2.8
+Comments=
+
+[Excluded Packages]
+
+[HistoryLists\hlIncludePath]
+Count=2
+Item0=..\..\..\bin;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\projects;$(BCB)\projects\zipbuilder\UnzipDll
+Item1=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\projects;$(BCB)\projects\zipbuilder\UnzipDll
+
+[HistoryLists\hlLibraryPath]
+Count=3
+Item0=..\..\..\bin;..\..\..\lib\release;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\projects;$(BCB)\projects\zipbuilder\Unzipdll
+Item1=..\..\..\lib\release;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\projects;$(BCB)\projects\zipbuilder\Unzipdll
+Item2=$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\projects;$(BCB)\projects\zipbuilder\Unzipdll
+
+[HistoryLists\hlConditionals]
+Count=1
+Item0=WIN32;NDEBUG;NO_ASM;DOS;MSDOS;REENTRANT;CRTL_CP_IS_ISO
+
+[HistoryLists\hlUnitAliases]
+Count=1
+Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE
+
+[HistoryLists\hlHostApplication]
+Count=0
+
+[Debugging]
+DebugSourceDirs=
+
+[Parameters]
+RunParams=
+HostApplication=
+
+!endif
+
+$(PROJECT): $(OBJFILES) $(RESDEPEN) $(DEFFILE)
+    $(BCB)\BIN\$(LINKER) @&&!
+    $(LFLAGS) +
+    $(ALLOBJ), +
+    $(PROJECT),, +
+    $(ALLLIB), +
+    $(DEFFILE), +
+    $(ALLRES)
+!
+
+.pas.hpp:
+    $(BCB)\BIN\dcc32 $(PFLAGS) { $** }
+
+.pas.obj:
+    $(BCB)\BIN\dcc32 $(PFLAGS) { $** }
+
+.cpp.obj:
+    $(BCB)\BIN\bcc32 $(CFLAG1) $(CFLAG2) -o$* $*
+
+.c.obj:
+    $(BCB)\BIN\bcc32 $(CFLAG1) $(CFLAG2) -o$* $**
+
+.rc.res:
+    $(BCB)\BIN\brcc32 $(RFLAGS) $<
+#-----------------------------------------------------------------------------
+

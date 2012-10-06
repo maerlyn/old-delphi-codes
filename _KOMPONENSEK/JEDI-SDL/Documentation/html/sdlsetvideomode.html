@@ -1,0 +1,197 @@
+<html>
+<head>
+  <title>SDL_SetVideoMode</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="Video" href="video.html">
+   
+  <link rel="PREVIOUS" title="SDL_VideoModeOK" href="sdlvideomodeok.html">
+   
+  <link rel="NEXT" title="SDL_UpdateRect" href="sdlupdaterect.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="sdlvideomodeok.html">
+ Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom"><br>
+       </td>
+       <td width="8%" align="Right" valign="Bottom"><a href="sdlupdaterect.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<h1><a name="SDLSETVIDEOMODE">SDL_SetVideoMode</a></h1>
+ 
+<div class="REFNAMEDIV"><a name="AEN867"></a> 
+<h2>Name</h2>
+ SDL_SetVideoMode&nbsp;--&nbsp;Set up a video mode with the specified width, 
+height and bits-per-pixel.</div>
+ 
+<div class="REFSYNOPSISDIV"><a name="AEN870"></a> 
+<h2>Synopsis</h2>
+ 
+<div class="FUNCSYNOPSIS"><a name="AEN871"></a> 
+<p></p>
+ <pre class="FUNCSYNOPSISINFO"><b>uses</b><br> SDL;</pre>
+ 
+<p>function <b>SDL_SetVideoMode</b>( width, height, bpp : Integer; flags :
+UInt32) : PSDL_Surface;</p>
+ 
+<p></p>
+ </div>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN877"></a> 
+<h2>Description</h2>
+ 
+<p>Set up a video mode with the specified width, height and bits-per-pixel.</p>
+ 
+<p>If <tt class="PARAMETER"><i>bpp</i></tt> is 0, it is treated as the  current 
+display bits per pixel.</p>
+ 
+<p>The <tt class="PARAMETER"><i>flags</i></tt> parameter is the same as the 
+<tt class="STRUCTFIELD"><i>flags</i></tt> field of the <a href="sdlsurface.html"><span class="STRUCTNAME">
+TSDL_Surface</span></a> structure. OR'd combinations of the following values 
+are valid.</p>
+ 
+<div class="INFORMALTABLE"><a name="AEN887"></a> 
+<p></p>
+ 
+<table border="1" class="CALSTABLE">
+   <tbody>
+     <tr>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_SWSURFACE</tt></td>
+       <td align="Left" valign="Top">Create the video surface in system memory</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_HWSURFACE</tt></td>
+       <td align="Left" valign="Top">Create the video surface in video memory</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_ASYNCBLIT</tt></td>
+       <td align="Left" valign="Top">Enables the use of asynchronous to the 
+display surface. This will usually slow down blitting on single CPU machines, 
+but may provide a speed increase on SMP systems.</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_ANYFORMAT</tt></td>
+       <td align="Left" valign="Top">Normally, if a video surface of the
+requested depth (<tt class="PARAMETER"><i>bpp</i></tt>) is not available,
+SDL will emulate one with a shadow surface. Passing <tt class="LITERAL">SDL_ANYFORMAT</tt>
+  prevents this and causes SDL to use the video surface, regardless of its 
+depth.</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_HWPALETTE</tt></td>
+       <td align="Left" valign="Top">Give SDL exclusive palette access. Without 
+this flag you may not always get the the colors you request with <a href="sdlsetcolors.html"><tt class="FUNCTION">
+ SDL_SetColors</tt></a>.</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_DOUBLEBUF</tt></td>
+       <td align="Left" valign="Top">Enable double buffering; only valid
+with SDL_HWSURFACE. Calling <a href="sdlflip.html"><tt class="FUNCTION">SDL_Flip</tt></a>
+  will flip the buffers and update the screen. If double buffering could
+not be enabled then <tt class="FUNCTION">SDL_Flip</tt> will just perform
+a <a href="sdlupdaterect.html"><tt class="FUNCTION"> SDL_UpdateRect</tt></a>
+ on the entire screen.</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_FULLSCREEN</tt></td>
+       <td align="Left" valign="Top">SDL will attempt to use a fullscreen 
+mode</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_OPENGL</tt></td>
+       <td align="Left" valign="Top">Create an OpenGL rendering context.
+You should have previously set OpenGL video attributes with <a href="sdlglsetattribute.html"><tt class="FUNCTION">
+ SDL_GL_SetAttribute</tt></a>.</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_OPENGLBLIT</tt></td>
+       <td align="Left" valign="Top">Create an OpenGL rendering context,
+like above, but allow normal blitting operations.</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_RESIZABLE</tt></td>
+       <td align="Left" valign="Top">Create a resizable window. When the
+window is resized by the user a <a href="sdlresizeevent.html"><tt class="LITERAL">
+ SDL_VIDEORESIZE</tt></a> event is generated and <tt class="FUNCTION">SDL_SetVideoMode</tt>
+  can be called again with the new size.</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_NOFRAME</tt></td>
+       <td align="Left" valign="Top">If possible, <tt class="LITERAL">SDL_NOFRAME</tt>
+  causes SDL to create a window with no title bar or frame decoration. Fullscreen 
+modes automatically have this flag set.</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<p></p>
+ </div>
+ 
+<div class="NOTE"> 
+<blockquote class="NOTE">   
+  <p><b>Note: </b>Whatever <tt class="PARAMETER"><i>flags</i></tt> <tt class="FUNCTION">
+ SDL_SetVideoMode</tt> could satisfy are set in the <tt class="STRUCTFIELD"><i>
+ flags</i></tt> member of the returned surface.</p>
+   </blockquote>
+   </div>
+   </div>
+   
+  <div class="REFSECT1"><a name="AEN954"></a>   
+  <h2>Return Value</h2>
+   
+  <p>The framebuffer surface, or <b>nil</b> if it fails.</p>
+   </div>
+   
+  <div class="REFSECT1"><a name="AEN958"></a>   
+  <h2>See Also</h2>
+   
+  <p><a href="sdllocksurface.html"><tt class="FUNCTION">SDL_LockSurface</tt></a>
+ , <a href="sdlsetcolors.html"><tt class="FUNCTION">SDL_SetColors</tt></a>
+ , <a href="sdlflip.html"><tt class="FUNCTION">SDL_Flip</tt></a>, <a href="sdlsurface.html"><span class="STRUCTNAME">
+TSDL_Surface</span></a></p>
+   </div>
+   
+  <div class="NAVFOOTER">   
+  <hr align="Left" width="100%">   
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+     <tbody>
+       <tr>
+         <td width="31%" align="Left" valign="Top"><a href="sdlvideomodeok.html">
+ Prev</a></td>
+         <td width="34%" align="Center" valign="Top"><a href="index.html">
+ Home</a></td>
+         <td width="31%" align="Right" valign="Top"><a href="sdlupdaterect.html">
+ Next</a></td>
+       </tr>
+       <tr>
+         <td width="31%" align="Left" valign="Top">SDL_VideoModeOK</td>
+         <td width="34%" align="Center" valign="Top"><a href="video.html">
+ Up</a></td>
+         <td width="31%" align="Right" valign="Top">SDL_UpdateRect</td>
+       </tr>
+     
+    </tbody>   
+  </table>
+   </div>
+   
+  </body>
+  </html>

@@ -1,0 +1,58 @@
+{ Copyrigth 2000-2001
+  TGNWater DLL version ver. 2.3 - water fx alike java applet
+  Gancerenco Nicolai Eduard
+  e-mail : nick@decebal.ro
+
+To run the exe demo you must have the Delphi started .
+
+Install info :
+
+Put a copy of dll in Windows\System folder . Then install the gnWater.dpk .
+Don't forget to add path for this package ( Tools - Environment Options -
+Library - Library Path ).
+Thats all .
+
+How to use:
+
+Drop it in your form and set a picture .
+For best quality and real time effects I have limited the image size to maximum 320x240 .
+
+DROP property :
+DROP water in your image . Set the SIZE of drop , the range of DISPERSION , and the point of 
+dropping ( LEFT and TOP ) . Then just gnwater1.DROPPED .
+
+WAVE property :
+
+Here you can set the REFLECTION , the SIZE , the range of DISPERSION and the INTENSITY of wave .
+This effect start himself ( you don't need to start it ) . If you wish to stop the animation 
+use gnWater1.Fine . To restart use gnWater1.Start .
+
+
+VERY IMPORTANT . Free the component onDestroy and stop the animation ( gnwater.Fine )
+before close ( OnClose ).
+
+Price : 25$
+
+I don't test it , but I think that the Dll must work with any compiler .
+
+
+=============================================
+ Limited warranty and disclaimer of warranty ===============================================
+=============================================
+This software and accompanying written materials are provided "as is" without warranty of any
+kind. Further, the author does not warrant, guarantee, or take any representations regarding
+the use, or the results of use, of the software or written materials in terms of correctness,
+accuracy, reliability, currentness or otherwise.
+
+****************************************************************************************
+* The entire risk as to the results and performance of the software is assumed by you. *
+****************************************************************************************
+
+Neither the author nor anyone else who has been involved in the creation, production or
+delivery of this product shall be liable for any direct, indirect, consequential or incidental
+damages (including damages for loss of business profits, business interruption, loss of
+business information and the like) arising out of the use or inability to use the product
+even if the author has been advised of the possibility of such damages.
+By using the TgnWater component you acknowledge that you have read this limited warranty,
+understand it, and agree to be bound by its' terms and conditions.
+}

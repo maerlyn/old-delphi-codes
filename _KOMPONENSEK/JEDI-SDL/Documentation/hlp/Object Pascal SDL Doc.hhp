@@ -1,0 +1,22 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=Object Pascal SDL Doc.chm
+Contents file=TOC 4 Object Pascal SDL Doc.hhc
+Default Window=Main
+Default topic=..\html\index.html
+Display compile progress=Yes
+Error log file=Log.txt
+Full-text search=Yes
+Index file=D:\Program Files\Borland\Delphi7\Headers\JEDI-SDL\Documentation\hlp\Index 4 Object Pascal SDL Doc.hhk
+Language=0x809 English (United Kingdom)
+Title=JEDI-SDL Help
+
+[WINDOWS]
+Main="JEDI-SDL Help","TOC 4 Object Pascal SDL Doc.hhc","Index 4 Object Pascal SDL Doc.hhk","..\html\index.html",,,,,,0x3520,,0x3006,,,,,,,,0
+
+
+[FILES]
+..\html\index.html
+
+[INFOTYPES]
+

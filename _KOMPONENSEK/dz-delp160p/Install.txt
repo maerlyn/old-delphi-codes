@@ -1,0 +1,280 @@
+Delphi Zip
+Version 1.6p beta
+
+NEW: Now supports Delphi 6!
+
+If you already have an earlier version installed, then install this
+update right over the top of it.  Make sure you rebuild the Component
+library with the updated VCLs included with this release.
+
+
+This is a complete release, so you DO NOT need to have any prior   
+version before installing this release.
+
+
+  IMPORTANT NOTE FOR C++ BUILDER (BCB) DEVELOPERS
+  -----------------------------------------------
+  This package only has the Delphi files.  Get this archive for the
+  BCB files:  DZ-BCB160.ZIP  from these web pages:
+  http://www.geocities.com/SiliconValley/Network/2114/zipbeta.html
+  
+
+This ZIP should go into a base directory of \ZipBeta.
+
+
+IMPORTANT!
+----------
+You need to copy the redistributable modules to your desired
+directory on your development computer.  
+
+Copy \ZipBeta\DLL\*.DLL to your Windows System directory.
+Copy \ZipBeta\SFX\*.BIN to your Windows System directory.
+
+
+Unsupported Properties
+----------------------
+Since I normally use the latest Delphi release, sometimes new properties
+of Delphi's VCLs will get saved with DFM files.  Please tell it to
+"Ignore" and "Property not found" type of error you may see.
+
+
+Installation
+------------
+
+This is one of the biggest freeware software releases for Delphi and
+C++ Builder.  To get going quickly and correctly, please follow these
+instructions.  Read them over once before starting.  If you don't
+understand a step, get help before you start the install!
+
+
+1. You MUST install this package on a computer that has Delphi (any 
+   version from 2 thru 6).
+
+2. The VCLs included with this release are:
+      TZipMaster - the main ZIP support VCL
+      TSortGrid  - a very handy descendant from TStringGrid
+
+    The files required to support these VCLs are located in the
+    VCL subdirectory.  You have two choices for how to proceed
+    (option A is recommended):
+
+      A) add the directory C:\ZipBeta\VCL to your VCL search path
+         IMPORTANT! If you have the non-beta C:\ZIP\VCL path on
+         your system, you should remove it from the search path.
+                             or
+      B) copy the files in C:\ZipBeta\VCL to another directory already
+         in your VCL search path
+
+    If you want to use option A, the instructions for this are
+    included below.  If you want option B, then please copy those
+    files now.
+  
+
+3.  Install the VCLs       
+
+    This procedure will install the VCLs into the IDE.  After
+    this, you will be able to see them on the "Samples" tab.
+
+    Delphi 2:
+      a) Close any Files or Projects that are open.
+      b) Select the "Component...Install" choice.
+      c) If you want to add C:\ZipBeta\VCL to the library search
+         path, you may do it now using the second edit box.
+
+      d) Click on the Add button.  
+      e) Enter the path and filename of where the ZIPMSTR.PAS 
+         file is located, or find it now with Browse. 
+
+      f) Click on the Add button.  
+      g) Enter the path and filename of where the SORTGRID.PAS 
+         file is located, or find it now with Browse. 
+
+      h) Click on OK.  The component library will rebuilt.
+
+
+    Delphi 3:
+      These instructions assume you will place the VCLs into
+      the standard user package "DCLUSR30.DPK".  Advanced 
+      developers may want to use a different package, or to
+      make a new package.  Packages can be confusing, so I will
+      only document the simplest case, of putting them into 
+      "DCLUSR30.DPK", which will work fine for most developers.
+ 
+      a) Close any Files or Projects that are open.
+      b) Select the "Component, Install Component" choice. Make
+         sure the "Into existing package" tab is selected.
+      c) Check to see if package: "DCLUSR30.DPK" is already 
+         selected.  If not, you should now locate "dclusr30.dpk".
+      d) Add the C:\ZIP\VCL directory to the search path
+         box (unless you copied the files to a path already
+         in the search path).
+
+      e) In the Unit name block, enter ZIPMSTR.PAS. Click OK.
+      f) It will ask if you want to rebuild the Component Library.
+         ANSWER NO (saves time to do it only 1 time later).
+
+      g) Click on Add.
+      h) In the Unit name block, enter SORTGRID.PAS. Click OK.
+
+      i) Click on "Compile" to rebuild the Component Library.
+         If it does not automatically install the new VCLs to the
+         component palette, then click on the "install" button of
+         the package option dialog box.
+
+      j) When done, close the package option dialog box by
+         clicking on it's upper right corner.  Say "Yes" to
+         keep the changes.
+
+    Delphi 4, 5, and 6:
+      Here's some new instructions that will install into a new package.
+
+      1) Menu | Component | Install Component...
+        a) Tab->Into New package
+        b)   Package file name:   ZipMaster
+        c)   Package description: Freeware Zip and Unzip package
+        d)   Unit Filename:  Choose Browse and select SortGrid.pas
+                             from the directory where you put it in.
+        e)   Click Ok
+
+     ( Message "ZipMaster.bpl will be built then installed", Continue )
+
+     2) Click No
+
+     3) Menu |Comoponent | Install Component...
+        a) Tab->Into Existing package
+        b)   Unit Filename:  Choose Browse and select ZipMstr.pas
+                             from the directory where you put it in.
+        c)   Click Ok
+
+    ( Message "ZipMaster.bpl will be built then installed", Continue )
+
+     4) Click Yes
+
+       After the compilation a message should popup that TSortGrid and 
+       TZipMaster have been installed and registered.
+
+     You will get 4 warnings about implicit imported units. This is not
+     a problem you can and may ignore them.  If you like, you can add the
+     units ZipDll.pas, UnzDll.pas, ZCallBck.pas and ZipMsg.pas to this
+     package to eliminate the warnings.
+
+
+                      DELPHI 3 HELP INSTALLATION
+
+(there is no Delphi 2 integrated help, but you can double-click on the .hlp
+file from Explorer to see it)
+[Or build a .kwf file, for this you need the .rtf source file which is also
+ available on one of our websites.]
+
+(for Delphi4, just change 3 to 4 in these instructions)
+
+1) Make sure Delphi is NOT running now.
+
+2) Copy ZipMstr.hlp and ZipMstr.cnt from \ZipBeta\help
+   to Delphi 3's help subdirectory.
+
+3) In Delphi 3's Help subdirectory, edit Delphi3.cnt and add the
+   following two lines (add each one to the appropriate section in
+   that small file):
+
+:Index ZipMaster Component Help=ZipMstr.hlp
+:include ZipMstr.cnt
+
+4) In Delphi 3's Help subdirectory, delete the old 
+   DELPHI3.GID and DELPHI3.FTS files.  This can be done easily 
+   from Explorer.  Make sure Delphi is NOT running when you do 
+   this. If you want to do it from an MS-DOS prompt, 
+   you may need to un-hide them first:
+      C>attrib -r -h -s delphi3.gid 
+      C>del delphi3.gid
+      C>attrib -r -h -s delphi3.fts 
+      C>del delphi3.fts
+
+5) The next time you use Delphi's Help feature, it'll say
+   "preparing help file for first use".  This is when it is
+   rebuilding the .GID file to include the new Help topics.
+   The next time you do a full text search in Help, it'll 
+   rebuild DELPHI3.FTS.  
+
+
+                            DELPHI DEMO
+
+   NOTE: You should have the compiler option "break on exception"
+   turned off because the demos that use the SortGrid VCL use 
+   exceptions to determine datatypes.  This is only a concern 
+   when running the demo programs from the IDE.
+
+1.  From the IDE, open the project C:\ZipBeta\Demo1\ZipDemo1.DPR.
+
+    Examine the forms and decide if you need to resize any of
+    the controls, or change the position of anything. This is
+    sometimes necessary if I developed the forms at a different
+    screen resolution than you are using.
+
+    The demo1 program is a fairly straight-forward example
+    of what you can do with this package!  Everything revolves
+    around the TSortGrid, which always shows you the contents 
+    of your ZIP archive.  Use right-click on a column header to
+    do an descending sort, or a left-click for an ascending sort.
+ 
+
+7.  There is a new requirement for programs that you write.  We have
+    put most of our error messages put into a resource file.  You
+    need to add the desired resource file to your project file.
+    Simply add a line like this to your project file:
+
+       {$R ZipMsgUS.res}
+
+    You can see how this was done by checking Demo1's .DPR file.
+    The beta release only suppports US / English:
+
+       ZipMsgUS.res - US / English
+       
+
+                  Deployment of Your Programs
+
+Any program you write using this package will require the two 
+DLLs: ZIPDLL.DLL and UNZDLL.DLL to be present of each user's
+hard disk.  You should have your install procedures put these
+files into the WINDOWS SYSTEM directory (which is named differently
+on some systems - especially WinNT systems).  If that isn't 
+possible, then you should put them into the same directory as 
+your .EXE program that uses them.
+
+Also, the ZipSFX.BIN module must be installed into the same
+directory as the DLLs.  This module is only needed if your
+application program needs to make .EXE archives.
+
+IMPORTANT: Any .EXE archives you make with this package do
+NOT need any supporting files on the end-user's computer!
+This is very handy!
+
+Of course, there are no distribution fees for the DLLs, or
+any other part of the package.  This whole package is 
+freeware, but does have some minor distribution restrictions
+(mainly that you can't profit from the ZIP DLLs, and you need
+to document where users can get source code).  Please see 
+README.TXT for these restrictions.
+
+See README.TXT for more general information about this release,
+and also check out the DOC subdirectory.
+
+
+                Problem Reports or Suggestions
+
+We DO want to hear your ideas!  If you find a problem with
+any part of this project, or if you just have an idea for us
+to consider, send us e-mail!
+
+But, please make sure that your bug has not already been
+reported.  Check our "official" web sites often:
+
+My main web page:
+http://www.geocities.com/SiliconValley/Network/2114/
+
+My Delphi Zip Beta Page:
+http://www.geocities.com/SiliconValley/Network/2114/zipbeta.html
+
+
+Eric Engler
+englere@abraxis.com

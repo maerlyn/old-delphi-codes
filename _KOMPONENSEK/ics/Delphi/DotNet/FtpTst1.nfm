@@ -1,0 +1,1093 @@
+object FtpReceiveForm: TFtpReceiveForm
+  Caption = 'FTP - http://www.overbyte.be'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Height = 464
+  Width = 647
+  Left = 13
+  Top = 13
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DisplayMemo: TMemo
+    Align = alClient
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Courier New'
+    Font.Style = []
+    Lines.Strings = (
+      'DisplayMemo')
+    ParentFont = False
+    ParentShowHint = False
+    ScrollBars = ssBoth
+    ShowHint = True
+    TabOrder = 0
+    Left = 0
+    Top = 301
+    Width = 639
+    Height = 129
+    Hint = 'This area show the activity with the host'
+  end
+  object Panel1: TPanel
+    Align = alTop
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    Left = 0
+    Top = 149
+    Width = 639
+    Height = 152
+    object InfoLabel: TLabel
+      Caption = 'InfoLabel'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      Left = 512
+      Top = 6
+      Width = 44
+      Height = 13
+    end
+    object StateLabel: TLabel
+      Caption = 'StateLabel'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      Left = 512
+      Top = 25
+      Width = 51
+      Height = 13
+    end
+    object Label7: TLabel
+      Caption = 'Resume at'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      Left = 96
+      Top = 124
+      Width = 51
+      Height = 13
+    end
+    object ExitButton: TButton
+      Caption = '&Exit Program'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      Left = 512
+      Top = 88
+      Width = 105
+      Height = 25
+      Hint = 'Terminate the program'
+      OnClick = ExitButtonClick
+    end
+    object OpenAsyncButton: TButton
+      Caption = 'Open'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      Left = 8
+      Top = 6
+      Width = 81
+      Height = 17
+      OnClick = OpenAsyncButtonClick
+    end
+    object QuitAsyncButton: TButton
+      Caption = 'Quit'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      Left = 8
+      Top = 24
+      Width = 81
+      Height = 17
+      OnClick = QuitAsyncButtonClick
+    end
+    object CwdAsyncButton: TButton
+      Caption = 'Cwd'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+      Left = 254
+      Top = 6
+      Width = 81
+      Height = 17
+      OnClick = CwdAsyncButtonClick
+    end
+    object UserAsyncButton: TButton
+      Caption = 'User'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 4
+      Left = 90
+      Top = 6
+      Width = 81
+      Height = 17
+      OnClick = UserAsyncButtonClick
+    end
+    object PassAsyncButton: TButton
+      Caption = 'Pass'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 5
+      Left = 172
+      Top = 6
+      Width = 81
+      Height = 17
+      OnClick = PassAsyncButtonClick
+    end
+    object ConnectAsyncButton: TButton
+      Caption = 'Connect'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 6
+      Left = 90
+      Top = 24
+      Width = 81
+      Height = 17
+      OnClick = ConnectAsyncButtonClick
+    end
+    object GetAsyncButton: TButton
+      Caption = 'Get'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 7
+      Left = 8
+      Top = 42
+      Width = 81
+      Height = 17
+      OnClick = GetAsyncButtonClick
+    end
+    object ReceiveAsyncButton: TButton
+      Caption = 'Receive'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 8
+      Left = 8
+      Top = 60
+      Width = 81
+      Height = 17
+      OnClick = ReceiveAsyncButtonClick
+    end
+    object AbortAsyncButton: TButton
+      Caption = 'Abort'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 9
+      Left = 172
+      Top = 24
+      Width = 81
+      Height = 17
+      OnClick = AbortAsyncButtonClick
+    end
+    object DirAsyncButton: TButton
+      Caption = 'Dir'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 10
+      Left = 172
+      Top = 78
+      Width = 81
+      Height = 17
+      OnClick = DirAsyncButtonClick
+    end
+    object DirectoryAsyncButton: TButton
+      Caption = 'Directory'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 11
+      Left = 172
+      Top = 96
+      Width = 81
+      Height = 17
+      OnClick = DirectoryAsyncButtonClick
+    end
+    object LsAsyncButton: TButton
+      Caption = 'Ls'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 12
+      Left = 254
+      Top = 78
+      Width = 81
+      Height = 17
+      OnClick = LsAsyncButtonClick
+    end
+    object ListAsyncButton: TButton
+      Caption = 'List'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 13
+      Left = 254
+      Top = 96
+      Width = 81
+      Height = 17
+      OnClick = ListAsyncButtonClick
+    end
+    object SystAsyncButton: TButton
+      Caption = 'Syst'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 14
+      Left = 418
+      Top = 6
+      Width = 81
+      Height = 17
+      OnClick = SystAsyncButtonClick
+    end
+    object SystemAsyncButton: TButton
+      Caption = 'System'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 15
+      Left = 418
+      Top = 24
+      Width = 81
+      Height = 17
+      OnClick = SystemAsyncButtonClick
+    end
+    object FileSizeAsyncButton: TButton
+      Caption = 'FileSize'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 16
+      Left = 336
+      Top = 60
+      Width = 81
+      Height = 17
+      OnClick = FileSizeAsyncButtonClick
+    end
+    object SizeAsyncButton: TButton
+      Caption = 'Size'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 17
+      Left = 336
+      Top = 42
+      Width = 81
+      Height = 17
+      OnClick = SizeAsyncButtonClick
+    end
+    object MkdAsyncButton: TButton
+      Caption = 'Mkd'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 18
+      Left = 418
+      Top = 42
+      Width = 81
+      Height = 17
+      OnClick = MkdAsyncButtonClick
+    end
+    object MkdirAsyncButton: TButton
+      Caption = 'Mkdir'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 19
+      Left = 418
+      Top = 60
+      Width = 81
+      Height = 17
+      OnClick = MkdirAsyncButtonClick
+    end
+    object RmdAsyncButton: TButton
+      Caption = 'Rmd'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 20
+      Left = 418
+      Top = 78
+      Width = 81
+      Height = 17
+      OnClick = RmdAsyncButtonClick
+    end
+    object RmdirAsyncButton: TButton
+      Caption = 'Rmdir'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 21
+      Left = 418
+      Top = 96
+      Width = 81
+      Height = 17
+      OnClick = RmdirAsyncButtonClick
+    end
+    object RenAsyncButton: TButton
+      Caption = 'Ren'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 22
+      Left = 8
+      Top = 78
+      Width = 81
+      Height = 17
+      OnClick = RenAsyncButtonClick
+    end
+    object RenameAsyncButton: TButton
+      Caption = 'Rename'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 23
+      Left = 8
+      Top = 96
+      Width = 81
+      Height = 17
+      OnClick = RenameAsyncButtonClick
+    end
+    object DeleAsyncButton: TButton
+      Caption = 'Dele'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 24
+      Left = 90
+      Top = 78
+      Width = 81
+      Height = 17
+      OnClick = DeleAsyncButtonClick
+    end
+    object DeleteAsyncButton: TButton
+      Caption = 'Delete'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 25
+      Left = 90
+      Top = 96
+      Width = 81
+      Height = 17
+      OnClick = DeleteAsyncButtonClick
+    end
+    object PwdAsyncButton: TButton
+      Caption = 'Pwd'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 26
+      Left = 254
+      Top = 24
+      Width = 81
+      Height = 17
+      OnClick = PwdAsyncButtonClick
+    end
+    object QuoteAsyncButton: TButton
+      Caption = 'Quote'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 27
+      Left = 336
+      Top = 78
+      Width = 81
+      Height = 17
+      OnClick = QuoteAsyncButtonClick
+    end
+    object DoQuoteAsyncButton: TButton
+      Caption = 'DoQuote'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 28
+      Left = 336
+      Top = 96
+      Width = 81
+      Height = 17
+      OnClick = DoQuoteAsyncButtonClick
+    end
+    object PutAsyncButton: TButton
+      Caption = 'Put'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 29
+      Left = 90
+      Top = 42
+      Width = 81
+      Height = 17
+      OnClick = PutAsyncButtonClick
+    end
+    object TransmitAsyncButton: TButton
+      Caption = 'Transmit'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 30
+      Left = 90
+      Top = 60
+      Width = 81
+      Height = 17
+      OnClick = TransmitAsyncButtonClick
+    end
+    object TypeSetAsyncButton: TButton
+      Caption = 'TypeSet'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 31
+      Left = 336
+      Top = 6
+      Width = 81
+      Height = 17
+      OnClick = TypeSetAsyncButtonClick
+    end
+    object RestGetAsyncButton: TButton
+      Caption = 'RestGet'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 32
+      Left = 172
+      Top = 42
+      Width = 81
+      Height = 17
+      OnClick = RestGetAsyncButtonClick
+    end
+    object RestartGetAsyncButton: TButton
+      Caption = 'RestartGet'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 33
+      Left = 172
+      Top = 60
+      Width = 81
+      Height = 17
+      OnClick = RestartGetAsyncButtonClick
+    end
+    object CDupAsyncButton: TButton
+      Caption = 'CDup'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 34
+      Left = 336
+      Top = 24
+      Width = 81
+      Height = 17
+      OnClick = CDupAsyncButtonClick
+    end
+    object ClearButton: TButton
+      Caption = 'Clear Display'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 35
+      Left = 512
+      Top = 60
+      Width = 105
+      Height = 25
+      OnClick = ClearButtonClick
+    end
+    object AppendFileAsyncButton: TButton
+      Caption = 'AppendFile'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 36
+      Left = 254
+      Top = 60
+      Width = 81
+      Height = 17
+      OnClick = AppendFileAsyncButtonClick
+    end
+    object AppendAsyncButton: TButton
+      Caption = 'Append'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 37
+      Left = 254
+      Top = 42
+      Width = 81
+      Height = 17
+      OnClick = AppendAsyncButtonClick
+    end
+    object Button1: TButton
+      Caption = 'Button1'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 38
+      Left = 512
+      Top = 40
+      Width = 105
+      Height = 17
+      OnClick = Button1Click
+    end
+    object RestPutAsyncButton: TButton
+      Caption = 'RestPut'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 39
+      Left = 8
+      Top = 114
+      Width = 81
+      Height = 17
+      OnClick = RestPutAsyncButtonClick
+    end
+    object RestartPutAsyncButton: TButton
+      Caption = 'RestartPut'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 40
+      Left = 8
+      Top = 132
+      Width = 81
+      Height = 17
+      OnClick = RestartPutAsyncButtonClick
+    end
+    object ResumeAtEdit: TEdit
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 41
+      Text = 'ResumeAtEdit'
+      Left = 172
+      Top = 120
+      Width = 81
+      Height = 21
+    end
+    object TransmitUsingStreamButton: TButton
+      Caption = 'Transmit using a stream'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 42
+      Left = 336
+      Top = 114
+      Width = 163
+      Height = 17
+      OnClick = TransmitUsingStreamButtonClick
+    end
+    object ReceiveUsingStreamButton: TButton
+      Caption = 'Receive using a stream'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 43
+      Left = 336
+      Top = 132
+      Width = 163
+      Height = 17
+      OnClick = ReceiveUsingStreamButtonClick
+    end
+    object StressPutButton: TButton
+      Caption = 'Stress Put'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 44
+      Left = 512
+      Top = 116
+      Width = 105
+      Height = 25
+      OnClick = StressPutButtonClick
+    end
+    object AbortXferAsyncButton: TButton
+      Caption = 'AbortXfer'
+      TabOrder = 45
+      Left = 254
+      Top = 114
+      Width = 81
+      Height = 17
+      OnClick = AbortXferAsyncButtonClick
+    end
+  end
+  object Panel2: TPanel
+    Align = alTop
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    Left = 0
+    Top = 0
+    Width = 639
+    Height = 149
+    object Label1: TLabel
+      Caption = 'HostName'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      Left = 11
+      Top = 12
+      Width = 50
+      Height = 13
+    end
+    object Label3: TLabel
+      Caption = 'Host File'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      Left = 21
+      Top = 95
+      Width = 41
+      Height = 13
+    end
+    object Label4: TLabel
+      Caption = 'UserName'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      Left = 10
+      Top = 39
+      Width = 50
+      Height = 13
+    end
+    object Label5: TLabel
+      Caption = 'PassWord'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      Left = 220
+      Top = 39
+      Width = 49
+      Height = 13
+    end
+    object Label2: TLabel
+      Caption = 'Local File'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      Left = 16
+      Top = 123
+      Width = 45
+      Height = 13
+    end
+    object Label6: TLabel
+      Caption = 'Port'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      Left = 252
+      Top = 12
+      Width = 19
+      Height = 13
+    end
+    object Label8: TLabel
+      Caption = 'Data Port Range'
+      Left = 188
+      Top = 67
+      Width = 80
+      Height = 13
+    end
+    object Label9: TLabel
+      Caption = 'to'
+      Left = 369
+      Top = 67
+      Width = 9
+      Height = 13
+    end
+    object HostNameEdit: TEdit
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      Text = 'HostNameEdit'
+      Left = 72
+      Top = 8
+      Width = 137
+      Height = 21
+      Hint = 'Host where the file is located'
+    end
+    object HostFileEdit: TEdit
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 4
+      Text = 'HostFileEdit'
+      Left = 212
+      Top = 92
+      Width = 261
+      Height = 21
+      Hint = 'Enter the host file name or directory name for Mkdir and Rmdir'
+    end
+    object UserNameEdit: TEdit
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+      Text = 'UserNameEdit'
+      Left = 72
+      Top = 36
+      Width = 137
+      Height = 21
+      Hint = 'User name used to log on the host'
+    end
+    object PassWordEdit: TEdit
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+      Text = 'PassWordEdit'
+      Left = 276
+      Top = 36
+      Width = 197
+      Height = 21
+      Hint = 'Password used to validate user access'
+    end
+    object cbDisplay: TCheckBox
+      Caption = 'Display Data'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 8
+      Left = 480
+      Top = 12
+      Width = 117
+      Height = 17
+      Hint = 'Enable data display during file transfert'
+    end
+    object LocalFileEdit: TEdit
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 5
+      Text = 'LocalFileEdit'
+      Left = 72
+      Top = 119
+      Width = 545
+      Height = 21
+      Hint = 'Enter local file name and path or new file name for rename'
+    end
+    object cbBinary: TCheckBox
+      Caption = 'Binary Mode'
+      Checked = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      State = cbChecked
+      TabOrder = 7
+      Left = 376
+      Top = 12
+      Width = 93
+      Height = 17
+      Hint = 'Select to use binary mode transfert'
+    end
+    object HostDirEdit: TEdit
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
+      Text = 'HostDirEdit'
+      Left = 72
+      Top = 92
+      Width = 137
+      Height = 21
+      Hint = 'Enter the host directory where the file is located'
+    end
+    object PortEdit: TEdit
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 6
+      Text = 'PortEdit'
+      Left = 276
+      Top = 8
+      Width = 85
+      Height = 21
+    end
+    object SyncCheckBox: TCheckBox
+      Caption = 'Synchronous'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 9
+      Left = 480
+      Top = 40
+      Width = 117
+      Height = 17
+    end
+    object PassiveCheckBox: TCheckBox
+      Caption = 'Passive Mode'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 10
+      Left = 480
+      Top = 26
+      Width = 117
+      Height = 17
+    end
+    object NoAutoResumeAtCheckBox: TCheckBox
+      Caption = 'NoAutoResumeAt'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 11
+      Left = 480
+      Top = 56
+      Width = 117
+      Height = 17
+    end
+    object DataPortRangeStartEdit: TEdit
+      TabOrder = 12
+      Text = 'DataPortRangeStartEdit'
+      Left = 276
+      Top = 64
+      Width = 85
+      Height = 21
+    end
+    object DataPortRangeEndEdit: TEdit
+      TabOrder = 13
+      Text = 'DataPortRangeEndEdit'
+      Left = 388
+      Top = 64
+      Width = 85
+      Height = 21
+    end
+  end
+end

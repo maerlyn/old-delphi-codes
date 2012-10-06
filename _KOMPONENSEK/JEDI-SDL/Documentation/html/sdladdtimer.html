@@ -1,0 +1,103 @@
+<html>
+<head>
+  <title>SDL_AddTimer</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Time" href="time.html">
+  <link rel="PREVIOUS" title="SDL_Delay" href="sdldelay.html">
+  <link rel="NEXT" title="SDL_RemoveTimer" href="sdlremovetimer.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdldelay.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlremovetimer.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLADDTIMER">SDL_AddTimer</a></h1>
+<div class="REFNAMEDIV"><a name="AEN7939"></a>
+<h2>Name</h2>
+SDL_AddTimer&nbsp;--&nbsp;Add a timer which will call a callback after the
+specified number of milliseconds has elapsed.</div>
+<div class="REFSYNOPSISDIV"><a name="AEN7942"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN7943"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+<p>function SDL_AddTimer( interval : UInt32; callback : TSDL_NewTimerCallback;
+param : Pointer ) : TSDL_TimerID;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="SDLNEWTIMERCALLBACK"></a>
+<h2>Callback</h2>
+<pre class="PROGRAMLISTING">// type definition for the "new" timer callback function<br><b>type</b> <br>  TSDL_NewTimerCallback = function( interval : UInt32; param : Pointer ) : UInt32;</pre>
+</div>
+<div class="REFSECT1"><a name="AEN7952"></a>
+<h2>Description</h2>
+<p>Adds a callback function to be run after the specified number of milliseconds
+has elapsed. The callback function is passed the current timer interval and
+the user supplied parameter from the <tt class="FUNCTION">SDL_AddTimer</tt>
+ call and returns the next timer interval. If the returned value from the
+callback is the same as the one passed in, the periodic alarm continues,
+otherwise a new alarm is scheduled.</p>
+<p>To cancel a currently running timer call <a href="sdlremovetimer.html">
+SDL_RemoveTimer</a> with the timer ID returned from <tt class="FUNCTION">
+SDL_AddTimer</tt>.</p>
+<p>The timer callback function may run in a different thread than your main
+program, and so shouldn't call any functions from within itself. You may
+always call <a href="sdlpushevent.html">SDL_PushEvent</a>, however.</p>
+<p>The granularity of the timer is platform-dependent, but you should count 
+on it being at least 10 ms as this is the most common number. This means
+that if you request a 16 ms timer, your callback will run approximately 20
+ms later on an unloaded system.  If you wanted to set a flag signaling a
+frame update at 30 frames per second (every 33 ms), you might set a timer
+for 30 ms (see example below).  If you use this function, you need to pass
+<tt class="LITERAL">SDL_INIT_TIMER</tt> to <a href="sdlinit.html">SDL_Init</a>
+.</p>
+</div>
+<div class="REFSECT1"><a name="AEN7964"></a>
+<h2>Return Value</h2>
+<p>Returns an ID value for the added timer or 0 if there was an error.</p>
+</div>
+<div class="REFSECT1"><a name="AEN7968"></a>
+<h2>Examples</h2>
+<p><pre class="PROGRAMLISTING">my_timer_id := SDL_AddTimer( ( 33 / 10 ) * 10, my_callbackfunc, my_callback_param );</pre>
+</p>
+</div>
+<div class="REFSECT1"><a name="AEN7972"></a>
+<h2>See Also</h2>
+<p><a href="sdlremovetimer.html"><tt class="FUNCTION">SDL_RemoveTimer</tt></a>
+, <a href="sdlpushevent.html"><tt class="FUNCTION">SDL_PushEvent</tt></a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdldelay.html">Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="sdlremovetimer.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">SDL_Delay</td>
+      <td width="34%" align="Center" valign="Top"><a href="time.html">Up</a></td>
+      <td width="32%" align="Right" valign="Top">SDL_RemoveTimer</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

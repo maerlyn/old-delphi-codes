@@ -1,0 +1,228 @@
+object Form1: TForm1
+  Left = 209
+  Top = 188
+  Width = 429
+  Height = 538
+  HorzScrollBar.Range = 419
+  VertScrollBar.Range = 528
+  ActiveControl = Button4
+  Caption = 'SDL Test Program'
+  Color = clButton
+  Font.Color = clText
+  Font.Height = 11
+  Font.Name = 'MS Sans Serif'
+  Font.Pitch = fpVariable
+  Font.Style = []
+  Font.Weight = 0
+  ParentFont = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 18
+  TextWidth = 5
+  object SpeedButton1: TSpeedButton
+    Left = 396
+    Top = 124
+    Width = 23
+    Height = 22
+    Caption = '...'
+    OnClick = SpeedButton1Click
+  end
+  object Button2: TButton
+    Left = 344
+    Top = 156
+    Width = 75
+    Height = 25
+    Caption = 'Quit SDL'
+    Enabled = False
+    TabOrder = 0
+    OnClick = Button2Click
+  end
+  object Button4: TButton
+    Left = 154
+    Top = 156
+    Width = 85
+    Height = 25
+    Caption = 'Start SDL Test'
+    TabOrder = 1
+    OnClick = Button4Click
+  end
+  object GroupBox1: TGroupBox
+    Left = 12
+    Top = 8
+    Width = 405
+    Height = 109
+    Caption = '[ Options ]'
+    TabOrder = 2
+    object Label1: TLabel
+      Left = 180
+      Top = 20
+      Width = 25
+      Height = 18
+      Caption = 'Delay'
+    end
+    object Label2: TLabel
+      Left = 104
+      Top = 84
+      Width = 27
+      Height = 18
+      Caption = 'Width'
+    end
+    object Label3: TLabel
+      Left = 204
+      Top = 84
+      Width = 31
+      Height = 18
+      Caption = 'Height'
+    end
+    object Label4: TLabel
+      Left = 304
+      Top = 84
+      Width = 21
+      Height = 18
+      Caption = 'BPP'
+    end
+    object cbspeedy: TCheckBox
+      Left = 8
+      Top = 20
+      Width = 97
+      Height = 17
+      Caption = 'Speedy'
+      TabOrder = 0
+    end
+    object cbfade: TCheckBox
+      Left = 104
+      Top = 20
+      Width = 53
+      Height = 17
+      Caption = 'Fade'
+      Checked = True
+      State = cbChecked
+      TabOrder = 1
+    end
+    object cbwarp: TCheckBox
+      Left = 304
+      Top = 20
+      Width = 53
+      Height = 17
+      Caption = 'Warp'
+      TabOrder = 2
+    end
+    object cbhw: TCheckBox
+      Left = 8
+      Top = 52
+      Width = 97
+      Height = 17
+      Caption = 'Hardware'
+      TabOrder = 3
+    end
+    object cbflip: TCheckBox
+      Left = 104
+      Top = 52
+      Width = 97
+      Height = 17
+      Caption = 'Flip'
+      TabOrder = 4
+    end
+    object cbfullscreen: TCheckBox
+      Left = 216
+      Top = 52
+      Width = 69
+      Height = 17
+      Caption = 'Fullscreen'
+      TabOrder = 5
+    end
+    object cbbenchmark: TCheckBox
+      Left = 304
+      Top = 52
+      Width = 77
+      Height = 17
+      Caption = 'Benchmark'
+      TabOrder = 6
+    end
+    object cbSCREENSHOT: TCheckBox
+      Left = 8
+      Top = 84
+      Width = 81
+      Height = 17
+      Caption = 'Screen Shot'
+      TabOrder = 7
+    end
+    object seDelay: TSpinEdit
+      Left = 216
+      Top = 16
+      Width = 57
+      Height = 22
+      TabOrder = 8
+      Value = 1
+    end
+    object seheight: TSpinEdit
+      Left = 240
+      Top = 80
+      Width = 57
+      Height = 22
+      Max = 480
+      TabOrder = 9
+      Value = 100
+    end
+    object seBPP: TSpinEdit
+      Left = 340
+      Top = 80
+      Width = 57
+      Height = 22
+      Increment = 8
+      TabOrder = 10
+      Value = 8
+    end
+    object seWidth: TSpinEdit
+      Left = 136
+      Top = 80
+      Width = 57
+      Height = 23
+      Max = 640
+      TabOrder = 15
+      Value = 100
+    end
+  end
+  object Edit1: TEdit
+    Left = 12
+    Top = 124
+    Width = 373
+    Height = 26
+    Color = clWhite
+    ReadOnly = True
+    TabOrder = 3
+    Text = 'C:\'
+  end
+  object Memo: TMemo
+    Left = 12
+    Top = 188
+    Width = 404
+    Height = 85
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 4
+  end
+  object Panel1: TPanel
+    Left = 12
+    Top = 288
+    Width = 405
+    Height = 240
+    TabOrder = 5
+  end
+  object cbToPanel: TCheckBox
+    Left = 12
+    Top = 152
+    Width = 100
+    Height = 30
+    Caption = 'Restrict to Panel'
+    TabOrder = 6
+  end
+  object OpenDialog: TOpenDialog
+    FilterIndex = 0
+    Height = 0
+    Title = 'Open'
+    Width = 0
+    Left = 396
+    Top = 4
+  end
+end

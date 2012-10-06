@@ -1,0 +1,118 @@
+<html>
+<head>
+  <title>SDL_JoystickGetAxis</title>
+             
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+       
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+       
+  <link rel="UP" title="Joystick" href="joystick.html">
+       
+  <link rel="PREVIOUS" title="SDL_JoystickUpdate" href="sdljoystickupdate.html">
+       
+  <link rel="NEXT" title="SDL_JoystickGetHat" href="sdljoystickgethat.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+   
+<div class="NAVHEADER">  
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+      </tr>
+      <tr>
+        <td width="7%" align="Left" valign="Bottom"><a href="sdljoystickupdate.html">
+  Prev</a></td>
+        <td width="77%" align="Center" valign="Bottom"><br>
+        </td>
+        <td width="7%" align="Right" valign="Bottom"><a href="sdljoystickgethat.html">
+  Next</a></td>
+      </tr>
+       
+  </tbody>  
+</table>
+   
+<hr align="Left" width="100%"></div>
+   
+<h1><a name="SDLJOYSTICKGETAXIS">SDL_JoystickGetAxis</a></h1>
+   
+<div class="REFNAMEDIV"><a name="AEN5779"></a>  
+<h2>Name</h2>
+  SDL_JoystickGetAxis&nbsp;--&nbsp;Get the current state of an axis</div>
+   
+<div class="REFSYNOPSISDIV"><a name="AEN5782"></a><br>
+   
+<h2>Synopsis</h2>
+   
+<div class="FUNCSYNOPSIS"><a name="AEN5783"></a>  
+<p></p>
+  <pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+   
+<p>function <b>SDL_JoystickGetAxis</b>( joystick : PSDL_Joystick; axis :
+Integer) : SInt16;</p>
+   
+<p></p>
+  </div>
+  </div>
+   
+<div class="REFSECT1"><a name="AEN5789"></a>  
+<h2>Description</h2>
+   
+<p><tt class="FUNCTION">SDL_JoystickGetAxis</tt> returns the current state
+ of the given <tt class="PARAMETER"><i>axis</i></tt> on the given <tt class="PARAMETER"><i>
+  joystick</i></tt>.</p>
+   
+<p>On most modern joysticks the X axis is usually represented by <tt class="PARAMETER"><i>
+  axis</i></tt> 0 and the Y axis by <tt class="PARAMETER"><i>axis</i></tt>
+  1. The value returned by <tt class="FUNCTION">SDL_JoystickGetAxis</tt>
+is  a signed integer (-32768 to 32768) representing the current position
+of the  <tt class="PARAMETER"><i>axis</i></tt>, it maybe necessary to impose
+certain  tolerances on these values to account for jitter. It is worth noting
+that  some joysticks use axes 2 and 3 for extra buttons.</p>
+  </div>
+   
+<div class="REFSECT1"><a name="AEN5800"></a>  
+<h2>Return Value</h2>
+   
+<p>Returns a 16-bit signed integer representing the current position of the
+ <tt class="PARAMETER"><i>axis</i></tt>.</p>
+  </div>
+   
+<div class="REFSECT1"><a name="AEN5804"></a>  
+<h2>Examples</h2>
+   
+<p><pre class="PROGRAMLISTING">x_move, y_move : SInt16;<br>joy1 : PSDL_Joystick;<br>.<br>.<br>x_move := SDL_JoystickGetAxis( joy1, 0 );<br>y_move := SDL_JoystickGetAxis( joy1, 1 );</pre>
+  </p>
+  </div>
+   
+<div class="REFSECT1"><a name="AEN5808"></a>  
+<h2>See Also</h2>
+   
+<p><a href="sdljoysticknumaxes.html"><tt class="FUNCTION">SDL_JoystickNumAxes</tt></a></p>
+  </div>
+   
+<div class="NAVFOOTER">  
+<hr align="Left" width="100%">  
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td width="31%" align="Left" valign="Top"><a href="sdljoystickupdate.html">
+  Prev</a></td>
+        <td width="34%" align="Center" valign="Top"><a href="index.html">
+Home</a></td>
+        <td width="31%" align="Right" valign="Top"><a href="sdljoystickgethat.html">
+  Next</a></td>
+      </tr>
+      <tr>
+        <td width="31%" align="Left" valign="Top">SDL_JoystickUpdate</td>
+        <td width="34%" align="Center" valign="Top"><a href="joystick.html">
+  Up</a></td>
+        <td width="31%" align="Right" valign="Top">SDL_JoystickGetHat</td>
+      </tr>
+       
+  </tbody>  
+</table>
+  </div>
+   
+</body>
+</html>

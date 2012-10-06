@@ -1,0 +1,28 @@
+{*******************************************************}
+{                                                       }
+{         Delphi VCL Extensions (RX)                    }
+{                                                       }
+{         Copyright (c) 1997, 1998 Master-Bank          }
+{                                                       }
+{*******************************************************}
+
+package DclRxCtl;
+
+{$DEBUGINFO OFF}
+{$DESCRIPTION 'RX Library Controls'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+{$I RX.INC}
+{$L-,Y-,C-,D-}
+
+requires
+  RxCtl,
+{$IFNDEF USE_PROGRESSBAR}
+  DclSmp30,
+{$ENDIF}
+  DclStd30;
+
+contains
+  RxLConst, HintProp, CheckItm, StrLEdit, RxColors, RxDsgn, RxCtlReg;
+
+end.

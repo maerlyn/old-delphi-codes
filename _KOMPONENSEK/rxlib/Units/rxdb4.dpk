@@ -1,0 +1,68 @@
+{*******************************************************}
+{                                                       }
+{         Delphi VCL Extensions (RX)                    }
+{                                                       }
+{         Copyright (c) 1998 Master-Bank                }
+{                                                       }
+{*******************************************************}
+
+package RxDB4;
+
+{$R *.RES}
+{$I RX.INC}
+{$ALIGN ON}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $00400000}
+{$DESCRIPTION 'RX Library DB Component Package'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  VclDb40,
+{$IFDEF RX_MIDAS}
+  VclMid40,
+{$ENDIF}
+  RxCtl4;
+
+contains
+  RxDBCtrl in 'RxDBCtrl.pas',
+  RxLookup in 'RxLookup.pas',
+  DBQBE in 'DBQBE.pas',
+  DBFilter in 'DBFilter.pas',
+  DBLists in 'DBLists.pas',
+  DBIndex in 'DBIndex.pas',
+  DBPrgrss in 'DBPrgrss.pas',
+  DBSecur in 'DBSecur.pas',
+  RxRemLog in 'RxRemLog.pas',
+  RxLogin in 'RxLogin.pas',
+  LoginDlg in 'LoginDlg.pas',
+  RxDConst in 'RxDConst.pas',
+  ChPswDlg in 'ChPswDlg.pas',
+  DBUtils in 'DBUtils.pas',
+  BdeUtils in 'BdeUtils.pas',
+  RxQuery in 'RxQuery.pas',
+  RxDBComb in 'RxDBComb.pas',
+  DBRichEd in 'DBRichEd.pas',
+  MemTable in 'MemTable.pas',
+  RxMemDS in 'RxMemDS.pas',
+  DBExcpt in 'DBExcpt.pas';
+
+end.

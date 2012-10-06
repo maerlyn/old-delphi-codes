@@ -1,0 +1,81 @@
+<html>
+<head>
+  <title>SDL_WasInit</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="General" href="general.html">
+  <link rel="PREVIOUS" title="SDL_Quit" href="sdlquit.html">
+  <link rel="NEXT" title="Video" href="video.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlquit.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="video.html">Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLWASINIT">SDL_WasInit</a></h1>
+<div class="REFNAMEDIV"><a name="AEN650"></a>
+<h2>Name</h2>
+SDL_WasInit&nbsp;--&nbsp;Check which subsystems are initialized</div>
+<div class="REFSYNOPSISDIV"><a name="AEN653"></a>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN654"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO">uses<br>  SDL;</pre>
+<p>function <b>SDL_WasInit</b>( flags : UInt32 ): Uint32;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN660"></a>
+<h2>Description</h2>
+<p><tt class="FUNCTION">SDL_WasInit</tt> allows you to see which SDL subsytems
+have been <a href="sdlinit.html">initialized</a>. <tt class="PARAMETER"><i>
+flags</i></tt> is a bitwise OR'd combination of the subsystems you wish to
+check (see <a href="sdlinit.html"><tt class="FUNCTION">SDL_Init</tt></a>
+for a list of subsystem flags).</p>
+</div>
+<div class="REFSECT1"><a name="AEN668"></a>
+<h2>Return Value</h2>
+<p><tt class="FUNCTION">SDL_WasInit</tt> returns a bitwised OR'd combination
+of the initialized subsystems.</p>
+</div>
+<div class="REFSECT1"><a name="AEN672"></a>
+<h2>Examples</h2>
+<pre class="PROGRAMLISTING"><br>// Here are several ways you can use SDL_WasInit<br><br>// Get init data on all the subsystems <br><b>var</b><br>  subsystem_init : Uint32;<br>.<br>.<br>.<br>subsystem_init := SDL_WasInit( SDL_INIT_EVERYTHING );<br><br><b>if</b> ( ( subsystem_init <b>and</b> SDL_INIT_VIDEO ) <b>= </b>true<b> </b>)<b> then</b><br>  Writeln( 'Video is initialized.' )<br><b>else</b><br>  Writeln( 'Video is not initialized.' );<br><br><br><br>// Just check for one specfic subsystem<br><br><b>if</b> ( SDL_WasInit( SDL_INIT_VIDEO ) &lt;&gt; 0 ) <b>then</b><br>  Writeln( 'Video is initialized. ')<br><b>else</b><br>  Writeln( 'Video is not initialized.' );<br><br><br><br><br>// Check for two subsystems<br><b>var</b><br>  subsystem_mask : UInt32;<br>.<br>.<br><br>  subsystem := SDL_INIT_VIDEO <b>or</b> SDL_INIT_AUDIO;<br><br><b>if</b> ( SDL_WasInit( subsystem_mask ) = subsystem_mask ) <b>then</b><br>  Writeln( 'Video and Audio initialized.' )<br><b>else</b><br>  Writeln( 'Video and Audio not initialized.' );<br></pre>
+</div>
+<div class="REFSECT1"><a name="AEN675"></a>
+<h2>See Also</h2>
+<p><a href="sdlinit.html"><tt class="FUNCTION">SDL_Init</tt></a>, <a href="sdlinitsubsystem.html"><tt class="FUNCTION">
+SDL_Subsystem</tt></a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdlquit.html">Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="video.html">Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">SDL_Quit</td>
+      <td width="34%" align="Center" valign="Top"><a href="general.html">
+Up</a></td>
+      <td width="32%" align="Right" valign="Top">Video</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+LENYOMOTT_O BITMAP "o.bmp"
+LENYOMOTT_X BITMAP "x.bmp"
+GOMB BITMAP "ures-gomb.bmp"
+FRISS_O BITMAP "friss-o.bmp"
+FRISS_X BITMAP "friss-x.bmp"

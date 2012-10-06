@@ -1,0 +1,121 @@
+<html>
+<head>
+  <title>Joystick</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="SDL Reference" href="reference.html">
+  <link rel="PREVIOUS" title="SDL_JoystickEventState" href="sdljoystickeventstate.html">
+  <link rel="NEXT" title="SDL_NumJoysticks" href="sdlnumjoysticks.html">
+  <meta name="KEYWORD" content="joystick">
+  <meta name="KEYWORD" content="function">
+</head>
+<body class="CHAPTER" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdljoystickeventstate.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlnumjoysticks.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<div class="CHAPTER">
+<h1><a name="JOYSTICK">Chapter 9. Joystick</a></h1>
+<div class="TOC">
+<dl>
+<dt><b>Table of Contents</b></dt>
+  <dt><a href="sdlnumjoysticks.html">SDL_NumJoysticks</a> &mdash; Count available
+joysticks.</dt>
+    <dt><a href="sdljoystickname.html">SDL_JoystickName</a> &mdash; Get joystick
+name.</dt>
+      <dt><a href="sdljoystickopen.html">SDL_JoystickOpen</a> &mdash; Opens
+a joystick for use.</dt>
+        <dt><a href="sdljoystickopened.html">SDL_JoystickOpened</a> &mdash;
+Determine if a joystick has been opened</dt>
+          <dt><a href="sdljoystickindex.html">SDL_JoystickIndex</a> &mdash;
+Get the index of an SDL_Joystick.</dt>
+            <dt><a href="sdljoysticknumaxes.html">SDL_JoystickNumAxes</a>
+ &mdash; Get the number of joystick axes</dt>
+              <dt><a href="sdljoysticknumballs.html">SDL_JoystickNumBalls</a>
+ &mdash; Get the number of joystick trackballs</dt>
+                <dt><a href="sdljoysticknumhats.html">SDL_JoystickNumHats</a>
+ &mdash; Get the number of joystick hats</dt>
+                  <dt><a href="sdljoysticknumbuttons.html">SDL_JoystickNumButtons</a>
+ &mdash; Get the number of joysitck buttons</dt>
+                    <dt><a href="sdljoystickupdate.html">SDL_JoystickUpdate</a>
+ &mdash; Updates the state of all joysticks</dt>
+                      <dt><a href="sdljoystickgetaxis.html">SDL_JoystickGetAxis</a>
+ &mdash; Get the current state of an axis</dt>
+                        <dt><a href="sdljoystickgethat.html">SDL_JoystickGetHat</a>
+ &mdash; Get the current state of a joystick hat</dt>
+                          <dt><a href="sdljoystickgetbutton.html">SDL_JoystickGetButton</a>
+ &mdash; Get the current state of a given button on a given joystick</dt>
+                            <dt><a href="sdljoystickgetball.html">SDL_JoystickGetBall</a>
+ &mdash; Get relative trackball motion</dt>
+                              <dt><a href="sdljoystickclose.html">SDL_JoystickClose</a>
+ &mdash; Closes a previously opened joystick</dt>
+                                </dl>
+                                </div>
+                                <p>Joysticks, and other similar input devices,
+have a very strong role in game playing and SDL provides comprehensive support
+for them. Axes, Buttons, POV Hats and trackballs are all supported.</p>
+                                <p>Joystick support is initialized by passed
+the <tt class="LITERAL">SDL_INIT_JOYSTICK</tt> flag to <a href="sdlinit.html"><tt class="FUNCTION">
+SDL_Init</tt></a>. Once initilized joysticks must be opened using <a href="sdljoystickopen.html"><tt class="FUNCTION">
+SDL_JoystickOpen</tt></a>.</p>
+                                <p>While using the functions describe in
+this secton may seem like the best way to access and read from joysticks,
+in most cases they aren't. Ideally joysticks should be read using the <a href="event.html">
+event</a> system. To enable this, you must set the joystick event processing
+state with <a href="sdljoystickeventstate.html"><tt class="FUNCTION">SDL_JoystickEventState</tt></a>
+. Joysticks must be <a href="sdljoystickopen.html">opened</a> before they
+can be used of course.</p>
+                                <div class="NOTE">
+                                <blockquote class="NOTE">
+                                  <p><b>Note: </b>If you are <i class="EMPHASIS">
+not</i> handling the joystick via the event queue then you must explicitly
+request a joystick update by calling <a href="sdljoystickupdate.html"><tt class="FUNCTION">
+SDL_JoystickUpdate</tt></a>.</p>
+                                  </blockquote>
+                                  </div>
+                                  <div class="NOTE">
+                                  <blockquote class="NOTE">
+                                    <p><b>Note: </b>Force Feedback is not
+yet supported. Sam (slouken@libsdl.org) is soliciting suggestions from people
+with force-feedback experience on the best way to desgin the API.</p>
+                                    </blockquote>
+                                    </div>
+                                    </div>
+                                    <div class="NAVFOOTER">
+                                    <hr align="Left" width="100%">
+                                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                      <tbody>
+                                        <tr>
+                                          <td width="32%" align="Left" valign="Top"><a href="sdljoystickeventstate.html">
+Prev</a></td>
+                                          <td width="34%" align="Center" valign="Top"><a href="index.html">
+Home</a></td>
+                                          <td width="32%" align="Right" valign="Top"><a href="sdlnumjoysticks.html">
+Next</a></td>
+                                        </tr>
+                                        <tr>
+                                          <td width="32%" align="Left" valign="Top">
+SDL_JoystickEventState</td>
+                                          <td width="34%" align="Center" valign="Top"><a href="reference.html">
+Up</a></td>
+                                          <td width="32%" align="Right" valign="Top">
+SDL_NumJoysticks</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                    </div>
+                                    </body>
+                                    </html>

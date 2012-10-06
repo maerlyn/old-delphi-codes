@@ -1,0 +1,164 @@
+TComPort component version 1.01 for Delphi 2, 3, 4
+-------------------------------------------------------
+Written by Dejan Crnila
+e-mail: emilija.crnila@guest.arnes.si, dejan@macek.si
+
+Be sure to drop me an e-mail. Give me your opinion 
+about this component. Do you like it or not?
+-------------------------------------------------------
+
+TComPort is a component that encapsulates Win API serial
+communication. Serial communication programming is one
+of the most difficult and not very well documented area
+in windows programming. Use of TComPort component makes
+serial communication programming very easy. No knowledge
+of Win API needed.
+
+-------------------------------------------------------
+
+Contents
+  1. Properties
+  2. Events
+  3. Methods
+  4. Version information
+
+-------------------------------------------------------
+
+1. Properties
+
+1.1. BaudRate
+  Baud rate is a speed at which computer communicates
+with a serial device. 
+
+1.2. DataBits
+  Number of data bits sent in one step. This is usually
+set to 8 bits.
+
+1.3. EnableDTR
+  If EnableDTR is set to true, the computer raises DTR
+signal (data terminal ready) when com port is opened.
+This should be set to true when communicating with modem.
+
+1.4. Events
+  Set of events that serial device driver will monitor.
+Selecting only used events could gain some performance
+improvement.
+
+1.5. Parity
+  Set parity to desired value to check for data errors.
+
+1.6. Port
+  Com port number: 1, 2, 3 or 4.
+
+1.7. StopBits
+  Number of stop bits that are sent or recieved after 
+data bits have arrived.
+
+1.8. ReadBufSize
+  Size of the input buffer.
+
+1.9. WriteBufSize
+  Size of the ouput buffer.
+
+1.10. FlowControl
+  FlowControl is type of control for buffer overflow checking.
+
+BaudRate, DataBits, StopBits, Parity, FlowControl should be
+synchronized with a serial device parameters.
+
+
+2. Events
+
+2.1. OnOpen
+  OnOpen is triggered when com port is succesfully opened with
+Open method
+
+2.2. OnClose
+  OnClose is triggered when com port is closed.
+
+2.3. OnRxChar
+  This is the most used event. It is launched when a charachter(s)
+arrives in input buffer. InQue parameter is number of bytes 
+waiting in the input buffer.
+
+2.4. OnRxFlag.
+  OnRxChar is triggered when event charachter arrives.
+
+2.5. OnTxEmpty.
+  OnTxEmpty is Launched when ouput buffer is flushed.
+
+2.6. OnCTS, OnDSR, OnRLSD
+  These events detect a change on CTS, DSR, RLSD signals.
+
+2.7. OnRing
+  OnRing is triggered when a ring signal is detected. Used only
+  with modems.
+
+2.8. OnError
+  OnError is triggered when a line error ocurs.
+
+2.9. OnBreak
+  OnBreak is triggered when a line break is detected. Input and
+output is suspended until break is cleared.
+
+
+3. Methods.
+
+3.1. procedure Open;
+  Open method opens com port
+
+3.2. procedure Close;
+  Close method closes com port
+
+3.3. function Write(var Buffer; Count: Integer): Integer;
+  Write method writes to com port ouput buffer. Buffer is data, which
+will be send to output buffer. Count is a number of bytes that will be
+send. Return value is number of actually written bytes.
+
+3.4. function WriteString(Str: String): Integer;
+  Similar to Write, but it sends a string to ouput buffer.
+
+3.5. function Read(var Buffer; Count: Integer): Integer;
+  Read method reads Count number of bytes and writes them do Buffer
+variable. Return value is number of actually read bytes.
+
+3.6. function ReadString(var Str: String; Count: Integer): Integer;
+  Similar to Read, but bytes are read into a variable of type String
+
+3.7. procedure PurgeIn;
+  PurgeIn clears input buffer and stops all input functions.
+
+3.8. procedure PurgeOut;
+  PurgeOut clears ouput buffer and stops all ouput functions
+
+3.9. function InQue: Integer;
+  InQue method returns number of bytes waiting in input buffer.
+
+3.10. function OutQue: Integer;
+  OutQue method returns number of bytes waiting in ouput buffer
+for transmission.
+
+3.11 procedure ActiveCTS/DSR/RLSD;
+  These methods return the state of CTS/DSR/RLSD signals.
+True for high state and False for Low state.
+
+3.12. function GetComHandle: THandle;
+  GetComHandle returns com port handle.
+
+
+4. Version information
+
+1.01 (24.10.1998)
+  Added more signal detection functions.
+  Added this documentation.
+  Added PurgeOut function.
+  Fixed some minor bugs.
+
+1.00 (29.09.1998)
+  Basic version of the component
+
+
+5. Other information
+
+This component is a freeware. You are allowed to distribute it, however,
+you are not allowed do change the code for distribution.

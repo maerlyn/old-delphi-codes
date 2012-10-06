@@ -1,0 +1,130 @@
+KiCHY dESiGN presents...
+
+Oxygene v1.1
+=======
+
+-=+ Legal Bits & Others +=---------------------------------------------
+
+This game is released as FREEWARE and I except no responsibility for
+any damage caused by using this programme. You can distribute it
+freely and please send a copy to your friends. All I ask is for you to
+send me an e-mail with your opinion about this game, ideas,
+bug-reports or anything you want. Write me if you can draw nice
+graphics because I can't draw nice sprites, tiles, backgrounds, etc.
+
+
+-=+ Description +=-----------------------------------------------------
+
+With your character named Clyde you must collect all the diamonds in
+all of the undersea caverns. Avoid almost everything what moves. The
+small fishes don't hurt you and the small bubbles increase your oxygene
+level. The rocks are useful but can be dangerous too.
+
+
+-=+ Controls +=--------------------------------------------------------
+
+* Title screen:  ESC - exit game
+                 SPACE - start game
+* in game: ESC - return to title
+           CURSORS - move your hero
+           P - pause
+* "Do You Wanna Quit?" bubble: Y or ENTER - yes
+                               N or ESC - no.
+Remark: if you use hungarian keyboard where the Y and Z keys are
+swapped hit Z instead of Y or use ENTER. Sorry for this, maybe it will
+fixed in a later version.
+
+
+-=+ System Requirements +=---------------------------------------------
+
+Minimal System Requirements:  
+ * Pentium-166, 
+ * Windows 95/98/ME/2000/Linux (The OS you compiled)
+ * DirectX 6.0, 
+ * DirectX compatible video (must support 640x480) and sound system.
+
+
+-=+ If a problem occured... +=-----------------------------------------
+
+- The default video mode is fullscreen. The program automatically
+  detects the color depth in this order:
+
+   * The game attempt to start with the desktop's color depth
+   * 15 bpp (32k colors) parameter: "15bpp"
+   * 16 bpp (64k colors) parameter: "16bpp"
+   * 24 bpp (16m colors) parameter: "24bpp"
+   * 32 bpp (16m colors) parameter: "32bpp"
+   * 8  bpp (256 colors) parameter: "8bpp"
+
+  P.e. "Oxygene.exe 32bpp" will start the game with 16m colors (and if
+  not available then emulate it (SLOW!).
+
+  If the game starts with ugly and noisy colours when windowed then
+  check your desktop's color depth is greater than 256 colours.
+
+  The 8 bit colour depth will improve performance but some visual
+  effect will disappear.
+
+- You can change the fullscreen mode to windowed with this parameter:
+  "windowed".
+
+  P.e. "Oxygene.exe windowed"
+
+- You can turn off the sound and music with this parameter:
+  "nosound".
+
+  P.e. "Oxygene.exe nosound"
+
+- If you have an older soundcard you can use these parameters:
+  "22khz" for 22KHz mixing frequency (default is 44KHz),
+  "11khz" for 11Khz mixing frequency,
+  "mono" for mono mixing (default is stereo).
+  "8bit" for 8 bit sound cards (default is 16 bit).
+
+These parameters can be combined.
+P.e. "Oxygene nosound 8bpp" will start the game in 256 color mode,
+fullscreen and without sounds and music.
+
+- Here are listed all the parameters:
+  * 8bpp
+  * 15bpp
+  * 16bpp
+  * 24bpp
+  * 32bpp
+  * windowed
+  * 11khz
+  * 22khz
+  * 8bit
+  * mono
+  * nosound
+
+
+-=+ Contact info +=----------------------------------------------------
+
+Please feel free to contact me. You can send comments and suggestions
+to:
+
+* mikrobi@freemail.hu *
+
+Thank you for your interest and have fun!
+
+
+-=+ Addresses +=-------------------------------------------------------
+
+If you want to recompile the executable file:
+- Please compile it with Delphi5 under Windows or with Kylix under Linux
+- You must download the Delphi/Kylix SDL Header files from:
+
+JEDI-SDL : Delphi bindings for SDL
+ http://www.delphi-jedi.org/Jedi:TEAM_SDL_HOME
+
+SDL libraries downloadable from:
+SDL: Simple Directmedia Layer
+http://www.libsdl.org/
+
+BASS sound library (for windows) downloadable from:
+BASS:
+http://www.un4seen.com/music/
+
+This code is distributed under the terms of the GNU GPL license
+(see www.gnu.org)

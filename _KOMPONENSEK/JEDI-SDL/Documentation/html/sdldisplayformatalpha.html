@@ -1,0 +1,84 @@
+<html>
+<head>
+  <title>SDL_DisplayFormatAlpha</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Video" href="video.html">
+  <link rel="PREVIOUS" title="SDL_DisplayFormat" href="sdldisplayformat.html">
+  <link rel="NEXT" title="SDL_WarpMouse" href="sdlwarpmouse.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdldisplayformat.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlwarpmouse.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLDISPLAYFORMATALPHA">SDL_DisplayFormatAlpha</a></h1>
+<div class="REFNAMEDIV"><a name="AEN2019"></a>
+<h2>Name</h2>
+SDL_DisplayFormatAlpha&nbsp;--&nbsp;Convert a surface to the display format</div>
+<div class="REFSYNOPSISDIV"><a name="AEN2022"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN2023"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b> <br>  SDL;</pre>
+<p>function <b>SDL_DisplayFormatAlpha</b>( surface : PSDL_Surface ) : PSDL_Surface;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN2029"></a>
+<h2>Description</h2>
+<p>This function takes a surface and copies it to a new surface of the pixel
+format and colors of the video framebuffer plus an alpha channel, suitable
+for fast blitting onto the display surface.  It calls <a href="sdlconvertsurface.html">
+SDL_ConvertSurface</a></p>
+<p>If you want to take advantage of hardware colorkey or alpha blit acceleration,
+you should set the colorkey and alpha value before calling this function.</p>
+<p>This function can be used to convert a colourkey to an alpha channel, if
+the <tt class="LITERAL">SDL_SRCCOLORKEY</tt> flag is set on the surface. The
+generated surface will then be transparent (alpha=0) where the pixels match
+the colourkey, and opaque (alpha=255) elsewhere.</p>
+</div>
+<div class="REFSECT1"><a name="AEN2036"></a>
+<h2>Return Value</h2>
+<p>If the conversion fails or runs out of memory, it returns <b>nil</b>.</p>
+</div>
+<div class="REFSECT1"><a name="AEN2040"></a>
+<h2>See Also</h2>
+<p><a href="sdlconvertsurface.html">SDL_ConvertSurface</a>, <a href="sdlsetalpha.html">
+SDL_SetAlpha</a>, <a href="sdlsetcolorkey.html">SDL_SetColorKey</a>, <a href="sdldisplayformat.html">
+SDL_DisplayFormat</a>, <a href="sdlsurface.html">TSDL_Surface</a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdldisplayformat.html">
+Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="sdlwarpmouse.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">SDL_DisplayFormat</td>
+      <td width="34%" align="Center" valign="Top"><a href="video.html">Up</a></td>
+      <td width="32%" align="Right" valign="Top">SDL_WarpMouse</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

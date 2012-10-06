@@ -1,0 +1,127 @@
+<html>
+<head>
+  <title>TSDL_CDTrack</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="CD-ROM" href="cdrom.html">
+   
+  <link rel="PREVIOUS" title="SDL_CD" href="sdlcd.html">
+   
+  <link rel="NEXT" title="Multi-threaded Programming" href="thread.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="sdlcd.html">Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom"><br>
+       </td>
+       <td width="8%" align="Right" valign="Bottom"><a href="thread.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<h1><a name="SDLCDTRACK">TSDL_CDTrack</a></h1>
+ 
+<div class="REFNAMEDIV"><a name="AEN7085"></a> 
+<h2>Name</h2>
+T SDL_CDTrack -- CD Track Information Structure</div>
+ 
+<div class="REFSECT1"><a name="AEN7088"></a> 
+<h2>Structure Definition</h2>
+ <pre class="PROGRAMLISTING">  TSDL_CDTrack = <b>record</b><br>    id: Integer;    // Track number<br>    type_: UInt8;   // Data or audio track<br>    unused: UInt16;<br>    length: UInt32; // Length, in frames, of this track<br>    offset: UInt32; // Offset, in frames, from start of disk<br>  <b>end;</b></pre>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN7091"></a> 
+<h2>Structure Data</h2>
+ 
+<div class="INFORMALTABLE"><a name="AEN7093"></a> 
+<p></p>
+ 
+<table border="0" class="CALSTABLE">
+   <tbody>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>id</i></tt></td>
+       <td align="Left" valign="Top">Track number (0-99)</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>type</i></tt></td>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_AUDIO_TRACK</tt>
+  or <tt class="LITERAL">SDL_DATA_TRACK</tt></td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>length</i></tt></td>
+       <td align="Left" valign="Top">Length, in frames, of this track</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>offset</i></tt></td>
+       <td align="Left" valign="Top">Frame offset to the beginning of this 
+track</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<p></p>
+ </div>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN7114"></a> 
+<h2>Description</h2>
+ 
+<p><span class="STRUCTNAME">TSDL_CDtrack</span> stores data on each track 
+on a CD, its fields should be pretty self explainatory. It is a member a the
+<a href="sdlcd.html"><span class="STRUCTNAME">TSDL_CD</span></a> structure.</p>
+ 
+<div class="NOTE"> 
+<blockquote class="NOTE">   
+  <p><b>Note: </b>Frames can be converted to standard timings. There are 
+ <tt class="LITERAL">CD_FPS</tt> frames per second, so <span class="STRUCTNAME">
+ SDL_CDtrack</span>.<tt class="STRUCTFIELD"><i>length</i></tt>/<tt class="LITERAL">
+ CD_FPS</tt>=length_in_seconds.</p>
+   </blockquote>
+   </div>
+   </div>
+   
+  <div class="REFSECT1"><a name="AEN7126"></a>   
+  <h2>See Also</h2>
+   
+  <p><a href="sdlcd.html"><span class="STRUCTNAME">TSDL_CD</span></a></p>
+   </div>
+   
+  <div class="NAVFOOTER">   
+  <hr align="Left" width="100%">   
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+     <tbody>
+       <tr>
+         <td width="31%" align="Left" valign="Top"><a href="sdlcd.html">Prev</a></td>
+         <td width="34%" align="Center" valign="Top"><a href="index.html">
+ Home</a></td>
+         <td width="31%" align="Right" valign="Top"><a href="thread.html">
+ Next</a></td>
+       </tr>
+       <tr>
+         <td width="31%" align="Left" valign="Top">TSDL_CD</td>
+         <td width="34%" align="Center" valign="Top"><a href="cdrom.html">
+ Up</a></td>
+         <td width="31%" align="Right" valign="Top">Multi-threaded Programming</td>
+       </tr>
+     
+    </tbody>   
+  </table>
+   </div>
+   
+  </body>
+  </html>

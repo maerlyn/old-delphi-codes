@@ -1,0 +1,141 @@
+<html>
+<head>
+  <title>SDL_CreateCursor</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="Video" href="video.html">
+   
+  <link rel="PREVIOUS" title="SDL_WarpMouse" href="sdlwarpmouse.html">
+   
+  <link rel="NEXT" title="SDL_FreeCursor" href="sdlfreecursor.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="sdlwarpmouse.html">
+ Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom"><br>
+       </td>
+       <td width="8%" align="Right" valign="Bottom"><a href="sdlfreecursor.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<h1><a name="SDLCREATECURSOR">SDL_CreateCursor</a></h1>
+ 
+<div class="REFNAMEDIV"><a name="AEN2074"></a> 
+<h2>Name</h2>
+ SDL_CreateCursor&nbsp;--&nbsp;Creates a new mouse cursor.</div>
+ 
+<div class="REFSYNOPSISDIV"><a name="AEN2077"></a><br>
+ 
+<h2>Synopsis</h2>
+ 
+<div class="FUNCSYNOPSIS"><a name="AEN2078"></a> 
+<p></p>
+ <pre class="FUNCSYNOPSISINFO"><b>uses</b> <br>  SDL;</pre>
+ 
+<p>function <b>SDL_CreateCursor</b>( data, mask : PUInt8; w, h, hot_x, hot_y 
+: Integer ) : PSDL_Cursor;</p>
+ 
+<p></p>
+ </div>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN2084"></a> 
+<h2>Description</h2>
+ 
+<p>Create a cursor using the specified <tt class="PARAMETER"><i>data</i></tt>
+  and <tt class="PARAMETER"><i>mask</i></tt> (in MSB format). The cursor
+width must be a multiple of 8 bits.</p>
+ 
+<p>The cursor is created in black and white according to the following: </p>
+ 
+<div class="INFORMALTABLE"><a name="AEN2090"></a> 
+<p></p>
+ 
+<table border="1" class="CALSTABLE">
+   <thead><tr>
+     <th align="Left" valign="Top">Data / Mask</th>
+     <th align="Left" valign="Top">Resulting pixel on screen</th>
+   </tr>
+   </thead><tbody>
+     <tr>
+       <td align="Left" valign="Top">0 / 1</td>
+       <td align="Left" valign="Top">White</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top">1 / 1</td>
+       <td align="Left" valign="Top">Black</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top">0 / 0</td>
+       <td align="Left" valign="Top">Transparent</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top">1 / 0</td>
+       <td align="Left" valign="Top">Inverted color if possible, black if 
+not.</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<p></p>
+ </div>
+ 
+<p></p>
+ 
+<p>Cursors created with this function must be freed with <a href="sdlfreecursor.html">
+ SDL_FreeCursor</a>.</p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN2111"></a> 
+<h2>Example</h2>
+ <pre class="PROGRAMLISTING">// Stolen from the mailing list <br>// Creates a new mouse cursor from an XPM <br><br><br>// XPM <br><b>const</b> <br>  arrow : <b>array</b> <b>of</b> Byte = {<br>  // width height num_colors chars_per_pixel <br>  "    32    32        3            1",<br>  // colors <br>  "X c #000000",<br>  ". c #ffffff",<br>  "  c None",<br>  // pixels <br>  "X                               ",<br>  "XX                              ",<br>  "X.X                             ",<br>  "X..X                            ",<br>  "X...X                           ",<br>  "X....X                          ",<br>  "X.....X                         ",<br>  "X......X                        ",<br>  "X.......X                       ",<br>  "X........X                      ",<br>  "X.....XXXXX                     ",<br>  "X..X..X                         ",<br>  "X.X X..X                        ",<br>  "XX  X..X                        ",<br>  "X    X..X                       ",<br>  "     X..X                       ",<br>  "      X..X                      ",<br>  "      X..X                      ",<br>  "       XX                       ",<br>  "                                ",<br>  "                                ",<br>  "                                ",<br>  "                                ",<br>  "                                ",<br>  "                                ",<br>  "                                ",<br>  "                                ",<br>  "                                ",<br>  "                                ",<br>  "                                ",<br>  "                                ",<br>  "                                ",<br>  "0,0"<br>};<br><br><b>function</b> init_system_cursor(<b> const</b> image : <b>array</b> <b>of</b> Byte ) : PSDL_Cursor;<br><b>var</b><br>  i, row, col : integer;<br>  data : <b>array</b>[0..4 * 32 - 1] <b>of</b> UInt8;<br>  mask : <b>array</b>[0..4 * 32 - 1] <b>of</b> UInt8;<br>  hot_x, hot_y : integer;<br><b>begin</b><br>  i := -1;<br>  <b>for</b> row := 0 <b>to</b> 31 <b>do</b><br>  <b>begin</b><br>    <b>for</b> col := 0 <b>to</b> 31 <b>do</b><br>    <b>begin</b><br>      <b>if</b> ( ( col <b>mod</b> 8 ) = 0 ) <b>then</b><br>      <b>begin</b><br>        data[i] := data[i] <b>shl</b> 1;<br>        mask[i] := mask[i] <b>shl</b> 1;<br>      <b>end</b><br>      <b>else</b> <br>      <b>begin</b><br>        inc( i );<br>        data[i] := 0<br>        mask[i] := 0;<br>      <b>end;</b><br><br>      <b>case</b> image[4+row][col] <b>of</b><br>        'X':<br>        <b>begin</b><br>          data[i] := data[i] <b>or</b> $01;<br>          k[i] := k[i] <b>or</b> $01;<br>        <b>end;</b><br><br>        '.':<br>        <b>begin</b><br>          mask[i] := mask[i] <b>or</b> $01;<br>        <b>end;</b><br><br>        ' ':<br>        <b>begin</b><br>          //<br>        <b>end;</b><br>      <b>end;</b><br>    <b>end;</b><br>  <b>end;</b><br>  sscanf(image[4+row], "%d,%d", &amp;hot_x, &amp;hot_y);<br>  result := SDL_CreateCursor( data, mask, 32, 32, hot_x, hot_y );<br><b>end;</b><br></pre>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN2114"></a> 
+<h2>See Also</h2>
+ 
+<p><a href="sdlfreecursor.html"><tt class="FUNCTION">SDL_FreeCursor</tt></a>
+ , <a href="sdlsetcursor.html"><tt class="FUNCTION">SDL_SetCursor</tt></a>
+ , <a href="sdlshowcursor.html"><tt class="FUNCTION">SDL_ShowCursor</tt></a></p>
+ </div>
+ 
+<div class="NAVFOOTER"> 
+<hr align="Left" width="100%"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <td width="31%" align="Left" valign="Top"><a href="sdlwarpmouse.html">
+ Prev</a></td>
+       <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+       <td width="31%" align="Right" valign="Top"><a href="sdlfreecursor.html">
+ Next</a></td>
+     </tr>
+     <tr>
+       <td width="31%" align="Left" valign="Top">SDL_WarpMouse</td>
+       <td width="34%" align="Center" valign="Top"><a href="video.html">Up</a></td>
+       <td width="31%" align="Right" valign="Top">SDL_FreeCursor</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ </div>
+ 
+</body>
+</html>

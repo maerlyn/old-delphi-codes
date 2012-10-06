@@ -1,0 +1,35 @@
+{*******************************************************}
+{                                                       }
+{         Delphi VCL Extensions (RX)                    }
+{                                                       }
+{         Copyright (c) 1997, 1998 Master-Bank          }
+{                                                       }
+{*******************************************************}
+
+package RxCtl;
+
+{$DEBUGINFO OFF}
+{$DESCRIPTION 'RX Library Component Package'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+{$I RX.INC}
+{$L-,Y-,C-,D-}
+
+requires
+  Vcl30,
+{$IFNDEF USE_PROGRESSBAR}
+  VclSmp30,
+{$ENDIF}
+  Vclx30;
+
+contains
+  RxCtrls, RxGrids, CurrEdit, ToolEdit, DateUtil, RXSplit, RxSlider, RxClock,
+  Animate, RxSpin, RxSwitch, RxDice, VCLUtils, AniFile, IcoList, ObjStr,
+  RxCombos, PickDate, MaxMin, RxConst, RxCConst, AppUtils, StrUtils,
+  FileUtil, RxTimer, RxHook, Placemnt, RxProps, RxPrgrss, RxHints, RxCalc,
+  RxRichEd, ExcptDlg, BoxProcs, ClipIcon, ClipMon, RxGraph
+{$IFDEF USE_RX_GIF}, 
+  RxGConst, RxGIF, GIFCtrl 
+{$ENDIF};
+
+end.

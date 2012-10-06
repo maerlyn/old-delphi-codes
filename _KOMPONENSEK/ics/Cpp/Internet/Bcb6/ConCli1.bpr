@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="ConCli1.exe"/>
+    <OBJFILES value="Concli1.obj ..\..\..\delphi\vc32\WSocket.obj"/>
+    <RESFILES value="Concli1.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES)"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="teeqr.lib qrpt.lib nmfast.lib ibxpress.lib soaprtl.lib dclocx.lib 
+      dbxcds.lib bdecds.lib inetdbxpress.lib inetdbbde.lib dss.lib tee.lib 
+      teedb.lib teeui.lib dbexpress.lib dsnapcon.lib dsnapcrba.lib 
+      visualdbclx.lib vcldbx.lib bdertl.lib cds.lib adortl.lib vcldb.lib 
+      indy.lib IcsBcb60.lib vcl.lib rtl.lib"/>
+    <SPARELIBS value="rtl.lib vcl.lib IcsBcb60.lib indy.lib vcldb.lib adortl.lib cds.lib 
+      bdertl.lib vcldbx.lib visualdbclx.lib dsnapcrba.lib dsnapcon.lib 
+      dbexpress.lib teeui.lib teedb.lib tee.lib dss.lib inetdbbde.lib 
+      inetdbxpress.lib bdecds.lib dbxcds.lib dclocx.lib soaprtl.lib ibxpress.lib 
+      nmfast.lib qrpt.lib teeqr.lib"/>
+    <PACKAGES value="rtl.bpi vcl.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;..\..\..\delphi\vc32"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="NO_STRICT;_VIS_NOLIB"/>
+    <MAINSOURCE value="Concli1.cpp"/>
+    <INCLUDEPATH value="..\..\..\delphi\vc32;$(BCB)\include;$(BCB)\include\vcl"/>
+    <LIBPATH value="$(BCB)\Projects\Lib;..\..\..\delphi\vc32;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par -w-8027 -w-8026"/>
+    <WARNOPTSTR value=""/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I..\..\..\delphi\vc32 -I$(BCB)\include -I$(BCB)\include\vcl -src_suffix 
+      cpp -boa"/>
+    <CFLAG1 value="-Od -Vx -Ve -Tkh30000 -X- -r- -a8 -b- -k -y -v -vi- -c -tWC -tWM"/>
+    <PFLAGS value="-$YD -$W -$O- -v -M -JPHNE"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zd"/>
+    <LFLAGS value="-D&quot;&quot; -ap -Tpe -x -Gn -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0x32.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="Concli1.cpp" FORMNAME="" UNITNAME="Concli1" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\delphi\vc32\WSocket.pas" FORMNAME="" UNITNAME="WSocket" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Concli1.res" FORMNAME="" UNITNAME="Concli1" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=1
+MajorVer=1
+MinorVer=0
+Release=0
+Build=3
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=2060
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=OverByte (F. Piette)
+FileDescription=Executable (Console)
+FileVersion=1.0.0.3
+InternalName=
+LegalCopyright=(c) 1997-2000 by François PIETTE
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=http://www.rtfm.be/fpiette/indexuk.htm
+
+[HistoryLists\hlIncludePath]
+Count=5
+Item0=..\..\..\delphi\vc32;$(BCB)\include;$(BCB)\include\vcl
+Item1=..\..\..\delphi;..\..\..\delphi\vc32;$(BCB)\include;$(BCB)\include\vcl
+Item2=..\..\..\delphi;..\..\..;..\..;..;..\..\..\delphi\vc32;$(BCB)\include;$(BCB)\include\vcl
+Item3=..\..\..\delphi;D:\FPiette;..\..\..\cpp;..\..\Internet;..\..\..\delphi\vc32;$(BCB)\include;$(BCB)\include\vcl
+Item4=..\..\delphi\vc32;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=6
+Item0=$(BCB)\Projects\Lib;..\..\..\delphi\vc32;$(BCB)\lib\obj;$(BCB)\lib
+Item1=$(BCB)\Projects\Lib;..\..\..\delphi;..\..\..\delphi\vc32;$(BCB)\lib\obj;$(BCB)\lib
+Item2=$(BCB)\Projects\Lib;..\..\..\delphi;..\..\..;..\..;..;..\..\..\delphi\vc32;$(BCB)\lib\obj;$(BCB)\lib
+Item3=$(BCB)\Projects\Lib;..\..\..\delphi;D:\FPiette;..\..\..\cpp;..\..\Internet;..\..\..\delphi\vc32;$(BCB)\lib\obj;$(BCB)\lib
+Item4=..\..\..\delphi\vc32;$(BCB)\lib\obj;$(BCB)\lib
+Item5=..\..\delphi\vc32;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=1
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>

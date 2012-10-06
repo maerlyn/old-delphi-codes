@@ -1,0 +1,111 @@
+<html>
+<head>
+  <title>SDL_GetModState</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="Event Functions." href="eventfunctions.html">
+   
+  <link rel="PREVIOUS" title="SDL_GetKeyState" href="sdlgetkeystate.html">
+   
+  <link rel="NEXT" title="SDL_SetModState" href="sdlsetmodstate.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="sdlgetkeystate.html">
+ Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom"><br>
+       </td>
+       <td width="8%" align="Right" valign="Bottom"><a href="sdlsetmodstate.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<h1><a name="SDLGETMODSTATE">SDL_GetModState</a></h1>
+ 
+<div class="REFNAMEDIV"><a name="AEN5184"></a> 
+<h2>Name</h2>
+ SDL_GetModState&nbsp;--&nbsp;Get the state of modifier keys.</div>
+ 
+<div class="REFSYNOPSISDIV"><a name="AEN5187"></a> 
+<h2>Synopsis</h2>
+ 
+<div class="FUNCSYNOPSIS"><a name="AEN5188"></a> 
+<p></p>
+ <pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+ 
+<p>function <b>SDL_GetModState</b> : TSDLMod;</p>
+ 
+<p></p>
+ </div>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN5194"></a> 
+<h2>Description</h2>
+ 
+<p>Returns the current of the modifier keys (CTRL, ALT, etc.).</p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN5197"></a> 
+<h2>Return Value</h2>
+ 
+<p>The return value can be an OR'd combination of the SDLMod enum.</p>
+ 
+<p><a name="AEN5201"></a></p>
+ 
+<blockquote class="BLOCKQUOTE">   
+  <p><b>TSDLMod</b></p>
+   <pre class="PROGRAMLISTING">TSDLMod = DWord;<br><br><b>const</b><br>  KMOD_NONE  = $0000;<br>  KMOD_LSHIFT= $0001;<br>  KMOD_RSHIFT= $0002;<br>  KMOD_LCTRL = $0040;<br>  KMOD_RCTRL = $0080;<br>  KMOD_LALT  = $0100;<br>  KMOD_RALT  = $0200;<br>  KMOD_LMETA = $0400;<br>  KMOD_RMETA = $0800;<br>  KMOD_NUM   = $1000;<br>  KMOD_CAPS  = $2000;<br>  KMOD_MODE  = $4000;<br></pre>
+   </blockquote>
+  SDL also defines the following symbols for convenience: <a name="AEN5204"></a>
+   
+  <blockquote class="BLOCKQUOTE"><pre class="PROGRAMLISTING"><b>const</b><br>  KMOD_CTRL  = ( KMOD_LCTRL <b>or</b> KMOD_RCTRL );<br>  KMOD_SHIFT = ( KMOD_LSHIFT <b>or</b> KMOD_RSHIFT );<br>  KMOD_ALT   = ( KMOD_LALT <b>or</b> KMOD_RALT );<br>  KMOD_META  = ( KMOD_LMETA <b>or</b> KMOD_RMETA );</pre>
+     </blockquote>
+     
+    <p></p>
+     </div>
+     
+    <div class="REFSECT1"><a name="AEN5206"></a>     
+    <h2>See Also</h2>
+     
+    <p><a href="sdlgetkeystate.html"><tt class="FUNCTION">SDL_GetKeyState</tt></a></p>
+     </div>
+     
+    <div class="NAVFOOTER">     
+    <hr align="Left" width="100%">     
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+       <tbody>
+         <tr>
+           <td width="31%" align="Left" valign="Top"><a href="sdlgetkeystate.html">
+ Prev</a></td>
+           <td width="34%" align="Center" valign="Top"><a href="index.html">
+ Home</a></td>
+           <td width="31%" align="Right" valign="Top"><a href="sdlsetmodstate.html">
+ Next</a></td>
+         </tr>
+         <tr>
+           <td width="31%" align="Left" valign="Top">SDL_GetKeyState</td>
+           <td width="34%" align="Center" valign="Top"><a href="eventfunctions.html">
+ Up</a></td>
+           <td width="31%" align="Right" valign="Top">SDL_SetModState</td>
+         </tr>
+       
+      </tbody>     
+    </table>
+     </div>
+     
+    </body>
+    </html>

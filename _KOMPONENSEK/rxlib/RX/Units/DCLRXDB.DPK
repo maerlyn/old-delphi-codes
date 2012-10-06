@@ -1,0 +1,31 @@
+{*******************************************************}
+{                                                       }
+{         Delphi VCL Extensions (RX)                    }
+{                                                       }
+{         Copyright (c) 1997, 1998 Master-Bank          }
+{                                                       }
+{*******************************************************}
+
+package DclRxDb;
+
+{$I RX.INC}
+{$DEBUGINFO OFF}
+{$DESCRIPTION 'RX Library Database Components'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+{$L-,Y-,C-,D-}
+
+requires
+{$IFDEF DCS}
+  DclDb30,
+{$ENDIF}
+  DclRxCtl,
+  RxDB;
+
+contains
+  QBndDlg,
+  SelDSFrm,
+  RxDBReg,
+  RxBDEReg;
+
+end.

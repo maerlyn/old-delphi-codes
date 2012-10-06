@@ -1,0 +1,87 @@
+<html>
+<head>
+  <title>SDL_GetKeyState</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Event Functions." href="eventfunctions.html">
+  <link rel="PREVIOUS" title="SDL_EventState" href="sdleventstate.html">
+  <link rel="NEXT" title="SDL_GetModState" href="sdlgetmodstate.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdleventstate.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlgetmodstate.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLGETKEYSTATE">SDL_GetKeyState</a></h1>
+<div class="REFNAMEDIV"><a name="AEN5149"></a>
+<h2>Name</h2>
+SDL_GetKeyState&nbsp;--&nbsp;Get a snapshot of the current keyboard state</div>
+<div class="REFSYNOPSISDIV"><a name="AEN5152"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN5153"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+<p>function <b>SDL_GetKeyState</b>( numkeys : PInt ) : PUInt8;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN5159"></a>
+<h2>Description</h2>
+<p>Gets a snapshot of the current keyboard state. The current state is return
+as a pointer to an array, the size of this array is stored in <tt class="PARAMETER"><i>
+numkeys</i></tt>. The array is indexed by the <a href="sdlkey.html"><tt class="LITERAL">
+SDLK_*</tt></a> symbols. A value of 1 means the key is pressed and a value
+of 0 means its not.</p>
+<div class="NOTE">
+<blockquote class="NOTE">
+  <p><b>Note: </b>Use <a href="sdlpumpevents.html"><tt class="FUNCTION">SDL_PumpEvents</tt></a>
+ to update the state array.</p>
+  </blockquote>
+  </div>
+  </div>
+  <div class="REFSECT1"><a name="AEN5169"></a>
+  <h2>Example</h2>
+  <p><pre class="PROGRAMLISTING">keystate : PUint8;<br>keystate := SDL_GetKeyState( <b>nil</b> );<br><b>if</b> ( keystate[SDLK_RETURN] ) <b>then</b><br>  WriteLn( 'Return Key Pressed.' );</pre>
+  </p>
+  </div>
+  <div class="REFSECT1"><a name="AEN5173"></a>
+  <h2>See Also</h2>
+  <p><a href="sdlkey.html"><tt class="LITERAL">SDL Key Symbols</tt></a>, <a href="sdlpumpevents.html"><tt class="FUNCTION">
+SDL_PumpEvents</tt></a></p>
+  </div>
+  <div class="NAVFOOTER">
+  <hr align="Left" width="100%">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td width="32%" align="Left" valign="Top"><a href="sdleventstate.html">
+Prev</a></td>
+        <td width="34%" align="Center" valign="Top"><a href="index.html">
+Home</a></td>
+        <td width="32%" align="Right" valign="Top"><a href="sdlgetmodstate.html">
+Next</a></td>
+      </tr>
+      <tr>
+        <td width="32%" align="Left" valign="Top">SDL_EventState</td>
+        <td width="34%" align="Center" valign="Top"><a href="eventfunctions.html">
+Up</a></td>
+        <td width="32%" align="Right" valign="Top">SDL_GetModState</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  </body>
+  </html>

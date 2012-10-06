@@ -1,0 +1,74 @@
+<html>
+<head>
+  <title>SDL_GetClipRect</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Video" href="video.html">
+  <link rel="PREVIOUS" title="SDL_SetClipRect" href="sdlsetcliprect.html">
+  <link rel="NEXT" title="SDL_ConvertSurface" href="sdlconvertsurface.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlsetcliprect.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlconvertsurface.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLGETCLIPRECT">SDL_GetClipRect</a></h1>
+<div class="REFNAMEDIV"><a name="AEN1821"></a>
+<h2>Name</h2>
+SDL_GetClipRect&nbsp;--&nbsp;Gets the clipping rectangle for a surface.</div>
+<div class="REFSYNOPSISDIV"><a name="AEN1824"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN1825"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b> <br>  SDL;</pre>
+<p>procedure<b> SDL_GetClipRect</b>( surface : PSDL_Surface; rect : PSDL_Rect);</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN1831"></a>
+<h2>Description</h2>
+<p>Gets the clipping rectangle for a surface.  When this surface is the destination
+of a blit, only the area within the clip rectangle is drawn into.</p>
+<p>The rectangle pointed to by <tt class="PARAMETER"><i>rect</i></tt> will
+be filled with the clipping rectangle of the surface.</p>
+</div>
+<div class="REFSECT1"><a name="AEN1836"></a>
+<h2>See Also</h2>
+<p><a href="sdlsetcliprect.html"><tt class="FUNCTION">SDL_SetClipRect</tt></a>
+, <a href="sdlblitsurface.html"><tt class="FUNCTION">SDL_BlitSurface</tt></a>
+, <a href="sdlsurface.html"><span class="STRUCTNAME">TSDL_Surface</span></a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdlsetcliprect.html">
+Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="sdlconvertsurface.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">SDL_SetClipRect</td>
+      <td width="34%" align="Center" valign="Top"><a href="video.html">Up</a></td>
+      <td width="32%" align="Right" valign="Top">SDL_ConvertSurface</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

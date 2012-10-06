@@ -1,0 +1,62 @@
+Ez a file tartalmazza a CD-Nyilvántartó "történelmét".
+Használt jelek:
+ >: javítás
+ +: új lehetõség
+ -: eltávolított lehetõség
+__________________________________________________________________________________
+
+2.4
+ > Mégújabb fileformátum (az elõzõnél hatékonyabb, de a sebességen még próbálok javítani)
+ + Kölcsönkapott CDk nyilvántartásának lehetõsége
+
+2.3
+ > Javított számlanyomtatás (aki próbálta, tudja, mirõl beszélek :))
+ - Exportálás szövegfileba
+ > Újfajta fileformátum -> minden gépen elindul & kétharmadakkora program!
+
+2.2.1
+ + Minden skinnelhetõ!
+ + Új beállítások ablak
+ + Ablakok elrendezése (jobbról a 3. gomb)
+ + Kilépési effektek
+ + Visszakapás elõtt is meg lehet nézni, hogy a CD mióta
+   van egy embernél, és mennyivel lóg
+
+2.2
+ + Skinnelõ (mint eddig + gombok + fülek, szóval:
+   mostmár (szinte) minden skinnelhetõ)
+
+2.1.1
+ + Számla nyomtatása
+ + Skinnelõ (csak gombok + fõform háttér + formok háttérszíne)
+
+2.1
+ Hibajavító verzió
+ - Exportálás Wordbe (sok gépen nem indult miatta a prg)
+ - Exportálás Excelbe (lásd fent)
+ + Exportálás szövegfileba
+
+2.0
+ Nagyon sokat dolgoztam vele, ezért a 2.0-ás verziószám
+ + Exportálás Microsoft Word 97-be
+ + Exportálás Microsoft Excel 97-be
+ + Tökéletes, bár egy kicsit lassú keresõ
+ + Beállítások ablak(türelmi idõ, kategóriák)
+ + Kibõvített súgó, integrálva a programhoz
+ + Meg lehet szakítani a névjegyet
+
+1.1
+ > A CDk lapon helyesen jeleníti meg a kölcsönkérõt
+ - Lista (nem sikerült megtalálni a benne levõ hiba okát,
+   ami fagyasztotta a gépet)
+ + Magyar nyelvû help
+ + Újfajta névjegy
+ + Kezdetleges keresõ algoritmus
+
+1.0
+ A legelsõ publikált verzió
+ + Kölcsönkérõk nyilvántartása
+ + CDk nyilvántartása
+ + CD kölcsönadása
+ + CD visszakapása
+ + Lista

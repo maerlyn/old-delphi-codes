@@ -1,0 +1,1 @@
+copy /b SFX.exe + test.add SFXTest.exe

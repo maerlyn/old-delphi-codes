@@ -1,0 +1,137 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = glmovie.exe glfont.exe JediSDLBlockOut.exe JEDISDLOpenGLClothSim.exe \
+  DTT.exe DTTD.exe JEDISDLOpenGLDynamicLights.exe JEDISDLOpenGLEnvMap.exe \
+  JEDISDLOpenGLMetaBalls.exe JEDISDL_MDLViewer.exe JEDISDLOpenGLMotionBlur.exe \
+  JEDISDLHeightMapTerrain8.exe JEDISDLHeightMapTerrain10.exe ParticalTest.exe \
+  JEDISDLOpenGLPicking.exe JEDISDL_Puntos.exe JEDISDLShadows.exe \
+  JEDISDLOpenGLSkyBox.exe JEDISDLTestGL.exe YaSr.exe JEDISDLOpenGL2.exe \
+  JEDISDLOpenGL3.exe JEDISDLOpenGL4.exe JEDISDLOpenGL5.exe JEDISDLOpenGL6.exe \
+  JEDISDLOpenGL7.exe JEDISDLOpenGL8.exe JEDISDLOpenGL9.exe JEDISDLOpenGL10.exe \
+  JEDISDLOpenGL11.exe JEDISDLOpenGL12.exe JEDISDLOpenGL16.exe JEDISDLOpenGL17.exe \
+  JEDISDLOpenGL18.exe JEDISDLOpenGL19.exe JEDISDLOpenGL20.exe JEDISDLOpenGL21.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+glmovie.exe: ..\..\smpeg\Demos\GLMovie\glmovie.dpr
+  $(DCC)
+
+glfont.exe: ..\..\SDL_ttf\Demos\GLFont\glfont.dpr
+  $(DCC)
+
+JediSDLBlockOut.exe: BlockOut\JediSDLBlockOut.dpr
+  $(DCC)
+
+JEDISDLOpenGLClothSim.exe: ClothSim\JEDISDLOpenGLClothSim.dpr
+  $(DCC)
+
+DTT.exe: DeathTruckTion\DTT.dpr
+  $(DCC)
+
+DTTD.exe: DeathTruckTion\Network\DTTD.dpr
+  $(DCC)
+
+JEDISDLOpenGLDynamicLights.exe: Dynamic Lights\JEDISDLOpenGLDynamicLights.dpr
+  $(DCC)
+
+JEDISDLOpenGLEnvMap.exe: Environment Map\JEDISDLOpenGLEnvMap.dpr
+  $(DCC)
+
+JEDISDLOpenGLMetaBalls.exe: MetaBalls\JEDISDLOpenGLMetaBalls.dpr
+  $(DCC)
+
+JEDISDL_MDLViewer.exe: ModelViewer\JEDISDL_MDLViewer.dpr
+  $(DCC)
+
+JEDISDLOpenGLMotionBlur.exe: Motion Blur\JEDISDLOpenGLMotionBlur.dpr
+  $(DCC)
+
+JEDISDLHeightMapTerrain8.exe: OpenGL Game Programming\Chapter 8\Height Map Terrain\JEDISDLHeightMapTerrain8.dpr
+  $(DCC)
+
+JEDISDLHeightMapTerrain10.exe: OpenGL Game Programming\Chapter 10\Height Map Terrain\JEDISDLHeightMapTerrain10.dpr
+  $(DCC)
+
+ParticalTest.exe: ParticleEngine\ParticalTest.dpr
+  $(DCC)
+
+JEDISDLOpenGLPicking.exe: Picking\JEDISDLOpenGLPicking.dpr
+  $(DCC)
+
+JEDISDL_Puntos.exe: Puntos\JEDISDL_Puntos.dpr
+  $(DCC)
+
+JEDISDLShadows.exe: Shadows\JEDISDLShadows.dpr
+  $(DCC)
+
+JEDISDLOpenGLSkyBox.exe: SkyBox\JEDISDLOpenGLSkyBox.dpr
+  $(DCC)
+
+JEDISDLTestGL.exe: TestGL\JEDISDLTestGL.dpr
+  $(DCC)
+
+YaSr.exe: YaSr\YaSr.dpr
+  $(DCC)
+
+JEDISDLOpenGL2.exe: NeHe\Tutorial 2\JEDISDLOpenGL2.dpr
+  $(DCC)
+
+JEDISDLOpenGL3.exe: NeHe\Tutorial 3\JEDISDLOpenGL3.dpr
+  $(DCC)
+
+JEDISDLOpenGL4.exe: NeHe\Tutorial 4\JEDISDLOpenGL4.dpr
+  $(DCC)
+
+JEDISDLOpenGL5.exe: NeHe\Tutorial 5\JEDISDLOpenGL5.dpr
+  $(DCC)
+
+JEDISDLOpenGL6.exe: NeHe\Tutorial 6\JEDISDLOpenGL6.dpr
+  $(DCC)
+
+JEDISDLOpenGL7.exe: NeHe\Tutorial 7\JEDISDLOpenGL7.dpr
+  $(DCC)
+
+JEDISDLOpenGL8.exe: NeHe\Tutorial 8\JEDISDLOpenGL8.dpr
+  $(DCC)
+
+JEDISDLOpenGL9.exe: NeHe\Tutorial 9\JEDISDLOpenGL9.dpr
+  $(DCC)
+
+JEDISDLOpenGL10.exe: NeHe\Tutorial 10\JEDISDLOpenGL10.dpr
+  $(DCC)
+
+JEDISDLOpenGL11.exe: NeHe\Tutorial 11\JEDISDLOpenGL11.dpr
+  $(DCC)
+
+JEDISDLOpenGL12.exe: NeHe\Tutorial 12\JEDISDLOpenGL12.dpr
+  $(DCC)
+
+JEDISDLOpenGL16.exe: NeHe\Tutorial 16\JEDISDLOpenGL16.dpr
+  $(DCC)
+
+JEDISDLOpenGL17.exe: NeHe\Tutorial 17\JEDISDLOpenGL17.dpr
+  $(DCC)
+
+JEDISDLOpenGL18.exe: NeHe\Tutorial 18\JEDISDLOpenGL18.dpr
+  $(DCC)
+
+JEDISDLOpenGL19.exe: NeHe\Tutorial 19\JEDISDLOpenGL19.dpr
+  $(DCC)
+
+JEDISDLOpenGL20.exe: NeHe\Tutorial 20\JEDISDLOpenGL20.dpr
+  $(DCC)
+
+JEDISDLOpenGL21.exe: NeHe\Tutorial 21\JEDISDLOpenGL21.dpr
+  $(DCC)
+
+

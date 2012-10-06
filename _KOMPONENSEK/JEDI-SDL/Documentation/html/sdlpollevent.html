@@ -1,0 +1,81 @@
+<html>
+<head>
+  <title>SDL_PollEvent</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Event Functions." href="eventfunctions.html">
+  <link rel="PREVIOUS" title="SDL_PeepEvents" href="sdlpeepevents.html">
+  <link rel="NEXT" title="SDL_WaitEvent" href="sdlwaitevent.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlpeepevents.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlwaitevent.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLPOLLEVENT">SDL_PollEvent</a></h1>
+<div class="REFNAMEDIV"><a name="AEN4935"></a>
+<h2>Name</h2>
+SDL_PollEvent&nbsp;--&nbsp;Polls for currently pending events.</div>
+<div class="REFSYNOPSISDIV"><a name="AEN4938"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN4939"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+<p>function <b>SDL_PollEvent</b>( event : PSDL_Event ) : Integer;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN4945"></a>
+<h2>Description</h2>
+<p>Polls for currently pending events, and returns <span class="RETURNVALUE">
+1</span>  if there are any pending events, or <span class="RETURNVALUE">0</span>
+ if there  are none available.  </p>
+<p>If <tt class="PARAMETER"><i>event</i></tt> is not <b>nil</b>, the next&nbsp;
+event is removed from the queue and stored in that area.</p>
+</div>
+<div class="REFSECT1"><a name="AEN4953"></a>
+<h2>Examples</h2>
+<p><pre class="PROGRAMLISTING">event : TSDL_Event; // Event structure<br><br>.<br>.<br>.<br>// Check for events <br><b>while</b> ( SDL_PollEvent( @event ) ) <b>do</b><br><b>begin</b>  // Loop until there are no events left on the queue <br>  <b>case</b> event.type_ <b>of</b>  // Process the appropiate event type<br>    SDL_KEYDOWN:  // Handle a KEYDOWN event<br>    <b>begin</b><br>      printf("Oh! Key press\n");<br>   <b> end;</b><br>    <br>    SDL_MOUSEMOTION:<br>    <b>begin</b><br>      .<br>      .<br>      .<br>    <b>end;</b><br>  <b>else</b> // Report an unhandled event <br>    printf("I don't know what this event is!\n");<br>  <b>end;</b><br><b>end;</b><br></pre>
+</p>
+</div>
+<div class="REFSECT1"><a name="AEN4957"></a>
+<h2>See Also</h2>
+<p><a href="sdlevent.html"><span class="STRUCTNAME">TSDL_Event</span></a>
+, <a href="sdlwaitevent.html"><tt class="FUNCTION">SDL_WaitEvent</tt></a>
+, <a href="sdlpeepevents.html"><tt class="FUNCTION">SDL_PeepEvents</tt></a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdlpeepevents.html">
+Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="sdlwaitevent.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">SDL_PeepEvents</td>
+      <td width="34%" align="Center" valign="Top"><a href="eventfunctions.html">
+Up</a></td>
+      <td width="32%" align="Right" valign="Top">SDL_WaitEvent</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

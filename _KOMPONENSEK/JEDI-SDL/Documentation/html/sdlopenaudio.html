@@ -1,0 +1,167 @@
+<html>
+<head>
+  <title>SDL_OpenAudio</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Audio" href="audio.html">
+  <link rel="PREVIOUS" title="SDL_AudioSpec" href="sdlaudiospec.html">
+  <link rel="NEXT" title="SDL_PauseAudio" href="sdlpauseaudio.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlaudiospec.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlpauseaudio.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLOPENAUDIO">SDL_OpenAudio</a></h1>
+<div class="REFNAMEDIV"><a name="AEN6109"></a>
+<h2>Name</h2>
+SDL_OpenAudio&nbsp;--&nbsp;Opens the audio device with the desired parameters.</div>
+<div class="REFSYNOPSISDIV"><a name="AEN6112"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN6113"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+<p>function <b>SDL_OpenAudio</b>( desired, obtained : PSDL_AudioSpec ) :
+Integer;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN6119"></a>
+<h2>Description</h2>
+<p>This function opens the audio device with the <tt class="PARAMETER"><i>
+desired</i></tt> parameters, and returns 0 if successful, placing the actual
+hardware parameters in the structure pointed to by <tt class="PARAMETER"><i>
+obtained</i></tt>.  If <tt class="PARAMETER"><i>obtained</i></tt> is NULL,
+the audio data passed to the callback function will be guaranteed to be in
+the requested format, and will be automatically converted to the hardware 
+audio format if necessary.  This function returns -1 if it failed  to open
+the audio device, or couldn't set up the audio thread.</p>
+<p>To open the audio device a <tt class="PARAMETER"><i>desired</i></tt> <a href="sdlaudiospec.html"><span class="STRUCTNAME">
+TSDL_AudioSpec</span></a> must be created. <pre class="PROGRAMLISTING">desired : PSDL_AudioSpec;<br>.<br>.<br>desired := PSDL_AudioSpec( malloc( SizeOf( SDL_AudioSpec ) ) );</pre>
+ You must then fill this structure with your desired audio specifications.</p>
+<p></p>
+<div class="VARIABLELIST">
+<dl>
+<dt><span class="STRUCTNAME">desired.</span><tt class="STRUCTFIELD"><i>freq</i></tt></dt>
+  <dd>
+    <p>The desired audio frequency in samples-per-second.</p>
+    </dd>
+    <dt><span class="STRUCTNAME">desired.</span><tt class="STRUCTFIELD"><i>
+format</i></tt></dt>
+      <dd>
+        <p>The desired audio format (see <a href="sdlaudiospec.html"><span class="STRUCTNAME">
+TSDL_AudioSpec</span></a>)</p>
+        </dd>
+        <dt><span class="STRUCTNAME">desired.</span><tt class="STRUCTFIELD"><i>
+samples</i></tt></dt>
+          <dd>
+            <p>The desired size of the audio buffer in samples. This number
+should be a power of two, and may be adjusted by the audio driver to a value
+more suitable for the hardware.  Good values seem to range between 512 and
+8192 inclusive, depending on the application and CPU speed.  Smaller values
+yield faster response time, but can lead to underflow if the application
+is doing heavy processing and cannot fill the audio buffer in time.  A stereo
+sample consists of both right and left channels in LR ordering.  Note that
+the number of samples is directly related to time by the following formula:
+ ms = (samples*1000)/freq</p>
+            </dd>
+            <dt><span class="STRUCTNAME">desire.callback</span></dt>
+              <dd>
+                <p>This should be set to a function that will be called when
+the audio device is ready for more data.  It is passed a pointer to the audio
+buffer, and the length in bytes of the audio buffer. This function usually
+runs in a separate thread, and so you should protect data structures that
+it accesses by calling <a href="sdllockaudio.html"><tt class="FUNCTION">SDL_LockAudio</tt></a>
+ and <a href="sdlunlockaudio.html"><tt class="FUNCTION">SDL_UnlockAudio</tt></a>
+ in your code. The callback prototype is: <pre class="PROGRAMLISTING">void callback(void *userdata, Uint8 *stream, int len);</pre>
+ <tt class="PARAMETER"><i>userdata</i></tt> is the pointer stored in <tt class="STRUCTFIELD"><i>
+userdata</i></tt> field of the <span class="STRUCTNAME">TSDL_AudioSpec</span>
+. <tt class="PARAMETER"><i>stream</i></tt> is a pointer to the audio buffer
+you want to fill with information and <tt class="PARAMETER"><i>len</i></tt>
+ is the length of the audio buffer in bytes.</p>
+                </dd>
+                <dt><span class="STRUCTNAME">desire.userdata</span></dt>
+                  <dd>
+                    <p>This pointer is passed as the first parameter to the
+                    <tt class="FUNCTION">callback</tt> function.</p>
+                    </dd>
+                    </dl>
+                    </div>
+                    <p><tt class="FUNCTION">SDL_OpenAudio</tt> reads these
+fields from the <tt class="PARAMETER"><i>desired</i></tt> <span class="STRUCTNAME">
+TSDL_AudioSpec</span> structure pass to the function and attempts to find
+an audio configuration matching your <tt class="PARAMETER"><i>desired</i></tt>
+. As mentioned above, if the <tt class="PARAMETER"><i>obtained</i></tt> parameter
+is <b><tt class="LITERAL">nil</tt></b> then SDL with convert from your <tt class="PARAMETER"><i>
+desired</i></tt> audio settings to the hardware settings as it plays.</p>
+                    <p>If <tt class="PARAMETER"><i>obtained</i></tt> is <b><tt class="LITERAL">
+nil</tt></b> then the <tt class="PARAMETER"><i>desired</i></tt> <span class="STRUCTNAME">
+TSDL_AudioSpec</span> is your working specification, otherwise the <tt class="PARAMETER"><i>
+obtained</i></tt> <span class="STRUCTNAME">TSDL_AudioSpec</span> becomes
+the working specification and the <tt class="PARAMETER"><i>desirec</i></tt>
+ specification can be deleted. The data in the working specification is used
+when building <span class="STRUCTNAME">SDL_AudioCVT</span>'s for converting
+loaded data to the hardware format.</p>
+                    <p><tt class="FUNCTION">SDL_OpenAudio</tt> calculates
+the <tt class="STRUCTFIELD"><i>size</i></tt> and <tt class="STRUCTFIELD"><i>
+silence</i></tt> fields for both the <tt class="PARAMETER"><i>desired</i></tt>
+ and <tt class="PARAMETER"><i>obtained</i></tt> specifications. The <tt class="STRUCTFIELD"><i>
+size</i></tt> field stores the total size of the audio buffer in bytes, while
+the <tt class="STRUCTFIELD"><i>silence</i></tt> stores the value used to
+represent silence in the audio buffer</p>
+                    <p>The audio device starts out playing <tt class="STRUCTFIELD"><i>
+silence</i></tt> when it's opened, and should be enabled for playing by calling
+                    <a href="sdlpauseaudio.html"><tt class="FUNCTION">SDL_PauseAudio</tt>
+(<tt class="PARAMETER"><i>0</i></tt>)</a> when you are ready for your audio
+                    <tt class="STRUCTFIELD"><i>callback</i></tt> function
+to be called.  Since the audio driver may modify the requested <tt class="STRUCTFIELD"><i>
+size</i></tt> of the audio buffer, you should allocate any local mixing buffers
+after you open the audio device.</p>
+                    </div>
+                    <div class="REFSECT1"><a name="AEN6206"></a>
+                    <h2>Examples</h2>
+                    <pre class="PROGRAMLISTING">// Prototype of our callback function <br><b>procedure</b> my_audio_callback( userdata : Pointer; stream : PUint8; len : integer );<br>.<br>.<br>.<br><b>var</b><br>  // Open the audio device<br>  desired, obtained : PSDL_AudioSpec;<br>  hardware_spec : PSDL_AudioSpec;<br>.<br>.<br>.<br>// Allocate a desired SDL_AudioSpec <br>desired := PSDL_AudioSpec( malloc( SizeOf( SDL_AudioSpec ) ) );<br><br><br>// Allocate space for the obtained SDL_AudioSpec<br>obtained := PSDL_AudioSpec( malloc( SizeOf( SDL_AudioSpec ) ) );<br><br>// 22050Hz - FM Radio quality <br>desired.freq := 22050;<br><br>// 16-bit signed audio<br>desired.format := AUDIO_S16LSB;<br><br>// Large audio buffer reduces risk of dropouts but increases response time<br>desired.samples := 8192;<br><br>// Our callback function<br>desired.callback := my_audio_callback;<br><br>desired.userdata := <b>nil</b>;<br><br>// Open the audio device<br><b>if</b> ( SDL_OpenAudio(desired, obtained) &lt; 0 ) <b>then</b><br><b>begin</b><br>  MessageBox( 0, PChar( Format( 'Couldn''t Open Audio : %s', [SDL_GetError] ) ), 'Error', MB_OK or MB_ICONHAND );<br>  halt(-1);<br><b>end;</b><br><br>// desired spec is no longer needed <br>free(desired);<br>hardware_spec := obtained;<br>.<br>.<br>// Prepare callback for playing <br>.<br>.<br>.<br>// Start playing <br>SDL_PauseAudio( 0 );</pre>
+                    </div>
+                    <div class="REFSECT1"><a name="AEN6209"></a>
+                    <h2>See Also</h2>
+                    <p><a href="sdlaudiospec.html"><tt class="FUNCTION">TSDL_AudioSpec</tt></a>
+, <a href="sdllockaudio.html"><tt class="FUNCTION">SDL_LockAudio</tt></a>
+, <a href="sdlunlockaudio.html"><tt class="FUNCTION">SDL_UnlockAudio</tt></a>
+, <a href="sdlpauseaudio.html"><tt class="FUNCTION">SDL_PauseAudio</tt></a></p>
+                    </div>
+                    <div class="NAVFOOTER">
+                    <hr align="Left" width="100%">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                      <tbody>
+                        <tr>
+                          <td width="32%" align="Left" valign="Top"><a href="sdlaudiospec.html">
+Prev</a></td>
+                          <td width="34%" align="Center" valign="Top"><a href="index.html">
+Home</a></td>
+                          <td width="32%" align="Right" valign="Top"><a href="sdlpauseaudio.html">
+Next</a></td>
+                        </tr>
+                        <tr>
+                          <td width="32%" align="Left" valign="Top">SDL_AudioSpec</td>
+                          <td width="34%" align="Center" valign="Top"><a href="audio.html">
+Up</a></td>
+                          <td width="32%" align="Right" valign="Top">SDL_PauseAudio</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    </div>
+                    </body>
+                    </html>

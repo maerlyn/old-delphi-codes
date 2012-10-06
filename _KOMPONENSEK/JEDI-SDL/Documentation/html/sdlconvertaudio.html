@@ -1,0 +1,96 @@
+<html>
+<head>
+  <title>SDL_ConvertAudio</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Audio" href="audio.html">
+  <link rel="PREVIOUS" title="SDL_BuildAudioCVT" href="sdlbuildaudiocvt.html">
+  <link rel="NEXT" title="SDL_MixAudio" href="sdlmixaudio.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlbuildaudiocvt.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlmixaudio.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLCONVERTAUDIO">SDL_ConvertAudio</a></h1>
+<div class="REFNAMEDIV"><a name="AEN6507"></a>
+<h2>Name</h2>
+SDL_ConvertAudio&nbsp;--&nbsp;Convert audio data to a desired audio format.</div>
+<div class="REFSYNOPSISDIV"><a name="AEN6510"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN6511"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+<p>function <b>SDL_ConvertAudio</b>( cvt : PSDL_AudioCVT ) : Integer;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN6517"></a>
+<h2>Description</h2>
+<p><tt class="FUNCTION">SDL_ConvertAudio</tt> takes one parameter, <tt class="PARAMETER"><i>
+cvt</i></tt>, which was previously initilized. Initilizing a <a href="sdlaudiocvt.html"><span class="STRUCTNAME">
+TSDL_AudioCVT</span></a> is a two step process. First of all, the structure
+must be passed to <a href="sdlbuildaudiocvt.html"><tt class="FUNCTION">SDL_BuildAudioCVT</tt></a>
+ along with source and destination format parameters. Secondly, the <span class="STRUCTNAME">
+cvt.</span><tt class="STRUCTFIELD"><i>buf</i></tt> and <span class="STRUCTNAME">
+cv.len</span> fields must be setup. <span class="STRUCTNAME">cvt</span>-&gt;<tt class="STRUCTFIELD"><i>
+buf</i></tt> should point to the audio data and <span class="STRUCTNAME">
+cvt</span>-&gt;<tt class="STRUCTFIELD"><i>len</i></tt> should be set to the
+length of the audio data in bytes. Remember, the length of the buffer pointed
+to by <tt class="STRUCTFIELD"><i>buf</i></tt> show be <tt class="STRUCTFIELD"><i>
+len</i></tt>*<tt class="STRUCTFIELD"><i>len_mult</i></tt> bytes in length.</p>
+<p>Once the <span class="STRUCTNAME">TSDL_AudioCVT</span> structure is initilized
+then we can pass it to <tt class="FUNCTION">SDL_ConvertAudio</tt>, which
+will convert the audio data pointer to by <span class="STRUCTNAME">cv.buf</span>
+. If <tt class="FUNCTION">SDL_ConvertAudio</tt> returned <span class="RETURNVALUE">
+0</span> then the conversion was completed successfully, otherwise <span class="RETURNVALUE">
+-1</span> is returned.</p>
+<p>If the conversion completed successfully then the converted audio data
+can be read from <span class="STRUCTNAME">cvt.</span><tt class="STRUCTFIELD"><i>
+buf</i></tt>. The amount of valid, converted, audio data in the buffer is
+equal to <span class="STRUCTNAME">cv.len</span>*<tt class="STRUCTFIELD"><i>
+cv.len_ratio</i></tt>.</p>
+</div>
+<div class="REFSECT1"><a name="AEN6552"></a>
+<h2>Examples</h2>
+<pre class="PROGRAMLISTING">// Converting some WAV data to hardware format <br><b>procedure</b> my_audio_callback( userdata : Pointer; stream : PUInt8; len : integer );<br><b>begin</b><br>.<br>.<br>.<br>desired, obtained : PSDL_AudioSpec;<br>wav_spec : TSDL_AudioSpec;<br>wav_cvt : TSDL_AudioCVT;<br>wav_len : UInt32;<br>wav_buf : PUint8;<br>ret : integer;<br><br>// Allocated audio specs<br>desired := PSDL_AudioSpec( malloc( SizeOf( TSDL_AudioSpec ) ) );<br>obtained := PSDL_AudioSpec( malloc( SizeOf( TSDL_AudioSpec ) ) );<br><br>// Set desired format <br>desired.freq := 22050;<br>desired.format := AUDIO_S16LSB;<br>desired.samples := 8192;<br>desired.callback := my_audio_callback;<br>desired.userdata := <b>nil</b>;<br><br>// Open the audio device <br><b>if</b> ( SDL_OpenAudio( desired, obtained ) &lt; 0 ) <b>then</b><br><b>begin</b><br>  MessageBox( 0, PChar( Format( 'Couldn''t open Audio : %s', [SDL_GetError] ) ), 'Error', MB_OK or MB_ICONHAND );<br>  halt( -1 );<br><b>end;</b><br>        <br>free( desired );<br><br>// Load the test.wav <br><b>if</b> ( SDL_LoadWAV( 'test.wav', @wav_spec, @wav_buf, @wav_len) = <b>nil</b> ) <b>then</b><br><b>begin</b><br>  MessageBox( 0, PChar( Format( 'Couldn''t open test.wav : %s', [SDL_GetError] ) ), 'Error', MB_OK or MB_ICONHAND );<br>  SDL_CloseAudio;<br>  free( obtained );<br>  halt( -1 );<br><b>end;</b><br>                                            <br>// Build AudioCVT <br>ret := SDL_BuildAudioCVT( @wav_cvt,<br>                        wav_spec.format, wav_spec.channels, wav_spec.freq,<br>                        obtained.format, obtained.channels, obtained.freq );<br><br>// Check that the convert was built <br><b>if</b> ( ret = -1 ) <b>then</b><br><b>begin</b><br>  MessageBox( 0, 'Coundn''t build converter!', 'Information', MB_OK or MB_ICONHAND );<br>  SDL_CloseAudio;<br>  free( obtained );<br>  SDL_FreeWAV( wav_buf );<br><b>end;</b><br><br>// Setup for conversion <br>wav_cvt.buf := PUint8( malloc( wav_len * wav_cvt.len_mult ) );<br>wav_cvt.len := wav_len;<br>Move( wav_buf, wav_cvf.buf, wav_len );<br><br>// We can delete to original WAV data now <br>SDL_FreeWAV( wav_buf );<br><br>// And now we're ready to convert <br>SDL_ConvertAudio( @wav_cvt );<br><br>// do whatever <br>.<br>.<br>.<br>.<br><b>end;</b><br><br></pre>
+</div>
+<div class="REFSECT1"><a name="AEN6555"></a>
+<h2>See Also</h2>
+<p><a href="sdlbuildaudiocvt.html"><tt class="FUNCTION">SDL_BuildAudioCVT</tt></a>
+, <a href="sdlaudiocvt.html"><tt class="FUNCTION">TSDL_AudioCVT</tt></a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdlbuildaudiocvt.html">
+Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="sdlmixaudio.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">SDL_BuildAudioCVT</td>
+      <td width="34%" align="Center" valign="Top"><a href="audio.html">Up</a></td>
+      <td width="32%" align="Right" valign="Top">SDL_MixAudio</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

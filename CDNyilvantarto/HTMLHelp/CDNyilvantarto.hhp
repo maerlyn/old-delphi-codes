@@ -1,0 +1,14 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=CDNyilvantarto.chm
+Contents file=CDNy-TOC.hhc
+Default topic=html/tartalom.html
+Display compile progress=Yes
+Error log file=CDNyilvantarto.log
+Index file=CDNy-INDEX.hhk
+Language=0x40e Magyar
+Title=CD-Nyilvántartó súgó
+
+
+[INFOTYPES]
+

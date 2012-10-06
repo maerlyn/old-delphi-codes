@@ -1,0 +1,6 @@
+body { background: green; color: #FFFFFF }
+
+a:active { color: #FFFFFF }
+a:hover {  color: #FFFFFF }
+a:link {   color: #FFFFFF; text-decoration: none }
+a:visited {color: #FFFFFF;  text-decoration: none }

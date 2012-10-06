@@ -1,0 +1,72 @@
+<html>
+<head>
+  <title>Event Examples</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="Examples" href="guideexamples.html">
+   
+  <link rel="PREVIOUS" title="Video Examples" href="guidevideoexamples.html">
+   
+  <link rel="NEXT" title="Audio Examples" href="guideaudioexamples.html">
+</head>
+ <body class="SECT1" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="guidevideoexamples.html">
+ Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom">Chapter 4. Examples</td>
+       <td width="8%" align="Right" valign="Bottom"><a href="guideaudioexamples.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<div class="SECT1"> 
+<h1 class="SECT1"><a name="GUIDEEVENTEXAMPLES">Event Examples</a></h1>
+ 
+<p></p>
+ 
+<div class="SECT2"> 
+<h2 class="SECT2"><a name="AEN408">Filtering and Handling Events</a></h2>
+ 
+<p><pre class="PROGRAMLISTING"><b>uses</b><br>   SDL;<br><br>// This function may run in a separate event thread<br><b>function</b> FilterEvents(<b> const</b> event : PSDL_Event ) : integer;<br><b>var</b><br>  boycott : integer;<br><b>begin</b><br>    boycott := 1;<br><br>    // This quit event signals the closing of the window<br>    <b>if</b> ( ( event.type_ = SDL_QUITEV ) <b>and</b> boycott ) <b>then</b><br>    <b>begin</b><br>      MessageBox( 0, 'Quit Event filtered out -- try again', 'Information', MB_OK or MB_ICONHAND );<br>      boycott := 0;<br>      result := 0;<br>      exit;<br>    <b>end;</b><br>  <br>    <b>if</b> ( event.type_ = SDL_MOUSEMOTION ) <b>then</b><br>    <b>begin</b><br>      MessageBox( 0, PChar( Format( 'Mouse moved to ( x : %d, y : %d )', [ event.motion.x, event.motion.y ] ) ), 'Information', MB_OK or MB_ICONHAND );<br>      result := 0;    // Drop it, we've handled it <br>      exit;<br><b>    end;</b><br>    result := 1;<br><b>end;</b><br><br><b>var</b><br>  event : TSDL_Event;<br>  keys : PKeyStateArr;<br><b>begin</b><br><br>    // Initialize the SDL library (starts the event loop) <br>    <b>if</b> ( SDL_Init( SDL_INIT_VIDEO ) &lt; 0 ) <b>then</b><br>    <b>begin</b><br>      MessageBox(0, PChar( Format( 'Couldn''t initialize SDL : %s', [SDL_GetError] ) ), 'Error', MB_OK or MB_ICONHAND );<br>      SQL_Quit;<br>      halt(1);<br>    <b>end;</b><br><br>    // Ignore key events<br>    SDL_EventState( SDL_KEYDOWN, SDL_IGNORE );<br>    SDL_EventState( SDL_KEYUP, SDL_IGNORE );<br><br>    // Filter quit and mouse motion events<br>    SDL_SetEventFilter( FilterEvents );<br><br>    // The mouse isn't much use unless we have a display for reference<br>    <b>if</b> ( SDL_SetVideoMode(640, 480, 8, 0) = <b>nil</b> ) <b>then</b><br>    <b>begin</b><br>      MessageBox(0, PChar( Format( 'Couldn't set 640x480x8 video mode : %s', [SDL_GetError])), 'Error', MB_OK or MB_ICONHAND);<br>      halt(1);<br>    <b>end;</b><br><br>    // Loop waiting for ESC+Mouse_Button <br>    <b>while</b> ( SDL_WaitEvent( @event ) &gt;= 0 ) <b>do</b><br>    <b>begin</b><br>        <b>case </b>event.type_ <b>of</b><br>            SDL_ACTIVEEVENT: <br>            <b>begin</b><br>                <b>if</b> ( event.active.state <b>and</b> SDL_APPACTIVE ) <b>then</b><br>                <b>begin</b><br>                    <b>if</b> ( event.active.gain ) <b>then</b><br>                    <b>begin</b><br>                      MessageBox( 0, 'App Activated', 'Information', MB_OK or MB_ICONHAND );<br>                    <b>end</b> <br>                    <b>else </b><br>                    <b>begin</b><br>                      MessageBox( 0, 'App Iconified', 'Information', MB_OK or MB_ICONHAND );<br>                    <b>end;</b><br>                <b>end;</b><br>            <b>end;</b><br>                    <br>            SDL_MOUSEBUTTONDOWN: <br>            <b>begin</b><br>                keys := PKeyStrateArr( SDL_GetKeyState( <b>nil</b> ) );<br>                <b>if</b> ( keys[SDLK_ESCAPE] = SDL_PRESSED ) <b>then</b><br>                <b>begin</b><br>                    MessageBox( 0, 'Bye bye...', 'Information', MB_OK or MB_ICONHAND );S<br>                    halt(0);<br>                <b>end;</b><br>                MessageBox( 0, 'Moused Button Pressed', 'Information', MB_OK or MB_ICONHAND );<br>            <b>end;</b><br><br>            SDL_QUITEV: <br>            <b>begin</b><br>                MessageBox( 0, 'Quit Requested, quitting.', 'Information', MB_OK or MB_ICONHAND );<br>                halt(0);<br>            <b>end;</b><br>        <b>end;</b><br>    <b>end;</b><br>    // This should never happen<br>    MessageBox( 0, PChar( Format( 'SDL_WaitEvent error : %s', [SDL_GetError] ) ), 'Error', MB_OK or MB_ICONHAND ); <br>    halt(1);<br><b>end;</b><br></pre>
+ </p>
+ </div>
+ </div>
+ 
+<div class="NAVFOOTER"> 
+<hr align="Left" width="100%"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <td width="31%" align="Left" valign="Top"><a href="guidevideoexamples.html">
+ Prev</a></td>
+       <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+       <td width="31%" align="Right" valign="Top"><a href="guideaudioexamples.html">
+ Next</a></td>
+     </tr>
+     <tr>
+       <td width="31%" align="Left" valign="Top">Video Examples</td>
+       <td width="34%" align="Center" valign="Top"><a href="guideexamples.html">
+ Up</a></td>
+       <td width="31%" align="Right" valign="Top">Audio Examples</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ </div>
+ 
+</body>
+</html>

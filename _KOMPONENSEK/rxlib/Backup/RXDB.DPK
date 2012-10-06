@@ -1,0 +1,26 @@
+{*******************************************************}
+{                                                       }
+{         Delphi VCL Extensions (RX)                    }
+{                                                       }
+{         Copyright (c) 1997, 1998 Master-Bank          }
+{                                                       }
+{*******************************************************}
+
+package RxDB;
+
+{$DEBUGINFO OFF}
+{$DESCRIPTION 'RX Library DB Component Package'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+{$L-,Y-,C-,D-}
+
+requires
+  VclDb30,
+  RxCtl;
+
+contains
+  RxDBCtrl, RxLookup, DBQBE, DBFilter, DBLists, DBIndex, DBPrgrss, DBSecur,
+  RxLogin, LoginDlg, RxDConst, ChPswDlg, DBUtils, BdeUtils, RxQuery, RxDBComb,
+  DBRichEd, MemTable, RxMemDS, DBExcpt, RxRemLog;
+
+end.

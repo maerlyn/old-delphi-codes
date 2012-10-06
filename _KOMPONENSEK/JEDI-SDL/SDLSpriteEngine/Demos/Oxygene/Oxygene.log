@@ -1,0 +1,25 @@
+STATUS INFO : @ 22:46:52 MSG : Starting Application IN : Initialization
+STATUS INFO : @ 22:46:52 MSG : Starting Initialization IN : Initialize
+STATUS INFO : @ 22:46:52 MSG : Command line not found IN : CheckCommandLine
+STATUS INFO : @ 22:46:52 MSG : SDL_MIXER Initialization was successful IN : Initialize
+STATUS INFO : @ 22:46:52 MSG : SDL_MIXER: hooking RestartMusic was successful IN : Initialize
+STATUS INFO : @ 22:46:52 MSG : Selecting automatically best videomode... IN : Initialize
+STATUS INFO : @ 22:46:52 MSG : Selected videomode: 32 bits per pixel IN : Initialize
+STATUS INFO : @ 22:46:53 MSG : Setting video mode 640x480 was successful IN : Initialize
+STATUS INFO : @ 22:46:53 MSG : Creating surfaces... IN : Initialize
+STATUS INFO : @ 22:46:53 MSG : Creating surfaces was successful IN : Initialize
+STATUS INFO : @ 22:46:53 MSG : Initialization was successful IN : Initialize
+STATUS INFO : @ 22:46:53 MSG : Loading was successful: Caverns/0.lev IN : Initialize
+STATUS INFO : @ 22:46:54 MSG : SDL_MIXER: loading Music/Title.xm was successful IN : LoadMusic
+STATUS INFO : @ 22:47:24 MSG : Loading was successful: Caverns/18.lev IN : Initialize
+STATUS INFO : @ 22:47:25 MSG : SDL_MIXER: loading Music/Ingame.xm was successful IN : LoadMusic
+STATUS INFO : @ 22:47:27 MSG : Loading was successful: Caverns/18.lev IN : Initialize
+STATUS INFO : @ 22:47:29 MSG : Loading was successful: Caverns/18.lev IN : Initialize
+STATUS INFO : @ 22:47:31 MSG : Loading was successful: Caverns/18.lev IN : Initialize
+STATUS INFO : @ 22:47:33 MSG : Loading was successful: Caverns/0.lev IN : Initialize
+STATUS INFO : @ 22:47:33 MSG : SDL_MIXER: loading Music/Game Over.xm was successful IN : LoadMusic
+STATUS INFO : @ 22:47:35 MSG : Loading was successful: Caverns/0.lev IN : Initialize
+STATUS INFO : @ 22:47:35 MSG : SDL_MIXER: loading Music/Title.xm was successful IN : LoadMusic
+STATUS INFO : @ 22:47:37 MSG : Starting finalization IN : Finalize
+STATUS INFO : @ 22:47:38 MSG : Finalization went OK IN : Finalize
+STATUS INFO : @ 22:47:38 MSG : Terminating Application IN : Finalization

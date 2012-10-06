@@ -1,0 +1,202 @@
+{* ***** BEGIN LICENSE BLOCK *****                                            *}
+{* Version: MPL 1.1                                                           *}
+{*                                                                            *}
+{* The contents of this file are subject to the Mozilla Public License        *}
+{* Version 1.1 (the "License"); you may not use this file except in           *}
+{* compliance with the License. You may obtain a copy of the License at       *}
+{* http://www.mozilla.org/MPL/                                                *}
+{*                                                                            *}
+{* Software distributed under the License is distributed on an "AS IS" basis, *}
+{* WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License   *}
+{* for the specific language governing rights and limitations under the       *}
+{* License.                                                                   *}
+{*                                                                            *}
+{* The Original Code is TurboPower Orpheus                                    *}
+{*                                                                            *}
+{* The Initial Developer of the Original Code is TurboPower Software          *}
+{*                                                                            *}
+{* Portions created by TurboPower Software Inc. are Copyright (C) 1995-2002   *}
+{* TurboPower Software Inc. All Rights Reserved.                              *}
+{*                                                                            *}
+{* Contributor(s):                                                            *}
+{*                                                                            *}
+{* ***** END LICENSE BLOCK *****                                              *}
+
+PACKAGE O406_r60;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'TurboPower Orpheus 4.06 runtime package - VCL60'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  Vcl;
+
+contains
+  ovcabtn in 'ovcabtn.pas',
+  ovcae in 'ovcae.pas',
+  ovcbase in 'OvcBase.pas',
+  ovcbtnhd in 'ovcbtnhd.pas',
+  ovccal in 'ovccal.pas',
+  ovccalc in 'ovccalc.pas',
+  ovccaldg in 'ovccaldg.pas' {ovcfrmCalendarDlg},
+  ovccaret in 'ovccaret.pas',
+  ovccklb in 'ovccklb.pas',
+  ovcclcdg in 'ovcclcdg.pas' {ovcfrmCalculatorDlg},
+  ovcclkdg in 'ovcclkdg.pas' {ovcfrmClockDlg},
+  ovcclock in 'ovcclock.pas',
+  ovcclrcb in 'ovcclrcb.pas',
+  ovccmbx in 'ovccmbx.pas',
+  ovccmd in 'ovccmd.pas',
+  ovccolor in 'ovccolor.pas',
+  ovcconst in 'ovcconst.pas',
+  ovcdata in 'ovcdata.pas',
+  ovcdate in 'ovcdate.pas',
+  ovcdlg in 'ovcdlg.pas',
+  ovcdlm in 'ovcdlm.pas',
+  ovcdrag in 'ovcdrag.pas',
+  ovcdrcbx in 'ovcdrcbx.pas',
+  ovcdrpvw in 'ovcdrpvw.pas',
+  ovcdvcbx in 'ovcdvcbx.pas',
+  ovcedcal in 'ovcedcal.pas',
+  ovcedclc in 'ovcedclc.pas',
+  ovcedit in 'ovcedit.pas',
+  o32editf in 'o32editf.pas',
+  ovceditn in 'ovceditn.pas',
+  ovceditp in 'ovceditp.pas',
+  ovceditu in 'ovceditu.pas',
+  ovcedpop in 'ovcedpop.pas',
+  ovcedsld in 'ovcedsld.pas',
+  ovcedtim in 'ovcedtim.pas',
+  ovcef in 'ovcef.pas',
+  ovcexcpt in 'ovcexcpt.pas',
+  ovcfiler in 'ovcfiler.pas',
+  ovcflcbx in 'ovcflcbx.pas',
+  ovcfmcbx in 'ovcfmcbx.pas',
+  ovcftcbx in 'ovcftcbx.pas',
+  ovcfxfnt in 'ovcfxfnt.pas',
+  ovchscbx in 'ovchscbx.pas',
+  ovcintl in 'ovcintl.pas',
+  ovciseb in 'ovciseb.pas',
+  ovcislb in 'ovcislb.pas',
+  ovclabel in 'ovclabel.pas',
+  ovclb in 'ovclb.pas',
+  ovclkout in 'ovclkout.pas',
+  ovcmeter in 'ovcmeter.pas',
+  ovcmisc in 'ovcmisc.pas',
+  ovcmodg in 'ovcmodg.pas' {ovcfrmMemoDlg},
+  ovcmru in 'ovcmru.pas',
+  ovcnbk in 'ovcnbk.pas',
+  ovcnf in 'ovcnf.pas',
+  ovcoutln in 'ovcoutln.pas',
+  ovcpb in 'ovcpb.pas',
+  ovcpeakm in 'ovcpeakm.pas',
+  ovcpf in 'ovcpf.pas',
+  ovcplb in 'ovcplb.pas',
+  ovcprcbx in 'ovcprcbx.pas',
+  ovcrlbl in 'ovcrlbl.pas',
+  ovcrptvw in 'ovcrptvw.pas',
+  ovcrvcbx in 'ovcrvcbx.pas',
+  ovcrvidx in 'ovcrvidx.pas',
+  ovcrvpdg in 'ovcrvpdg.pas' {ovcfrmRptVwPrintDlg},
+  ovcsc in 'ovcsc.pas',
+  ovcsf in 'ovcsf.pas',
+  ovcslide in 'ovcslide.pas',
+  ovcspAry in 'ovcspary.pas',
+  ovcspeed in 'ovcspeed.pas',
+  ovcspldg in 'ovcspldg.pas' {ovcfrmSplashDlg},
+  ovcsplit in 'ovcsplit.pas',
+  ovcstate in 'ovcstate.pas',
+  ovcstore in 'ovcstore.pas',
+  ovctable in 'ovctable.pas',
+  ovctbclr in 'ovctbclr.pas',
+  ovctbcls in 'ovctbcls.pas',
+  ovctbrws in 'ovctbrws.pas',
+  ovctcary in 'ovctcary.pas',
+  ovctcbef in 'ovctcbef.pas',
+  ovctcbmp in 'ovctcbmp.pas',
+  ovctcbox in 'ovctcbox.pas',
+  ovctccBx in 'ovctccbx.pas',
+  ovctcEdt in 'ovctcedt.pas',
+  ovctcell in 'ovctcell.pas',
+  ovctcgly in 'ovctcgly.pas',
+  ovctchdr in 'ovctchdr.pas',
+  ovctcico in 'ovctcico.pas',
+  ovctcmmn in 'ovctcmmn.pas',
+  ovctcnum in 'ovctcnum.pas',
+  ovctcpic in 'ovctcpic.pas',
+  ovctcsim in 'ovctcsim.pas',
+  ovctcstr in 'ovctcstr.pas',
+  ovctgpns in 'ovctgpns.pas',
+  ovctgres in 'ovctgres.pas',
+  ovctimer in 'ovctimer.pas',
+  ovctsell in 'ovctsell.pas',
+  ovcurl in 'ovcurl.pas',
+  ovcuser in 'ovcuser.pas',
+  ovcvalid in 'ovcvalid.pas',
+  ovcver in 'ovcver.pas',
+  ovcviewr in 'ovcviewr.pas',
+  ovcvlb in 'ovcvlb.pas',
+  ovcxfer in 'ovcxfer.pas',
+  ovcbcklb in 'ovcbcklb.pas',
+  o32bordr in 'o32bordr.pas',
+  ovcbedit in 'ovcbedit.pas',
+  ovcbcalc in 'ovcbcalc.pas',
+  ovcbcldr in 'ovcbcldr.pas',
+  ovcbtime in 'ovcbtime.pas',
+  ovcfsc in 'ovcfsc.pas',
+  o32vldtr in 'o32vldtr.pas',
+  ovcevents in 'ovcevents.pas',
+  o32rxvld in 'o32rxvld.pas',
+  o32intlst in 'o32intlst.pas',
+  o32intdeq in 'o32intdeq.pas',
+  o32rxngn in 'o32rxngn.pas',
+  o32sr in 'o32sr.pas',
+  o32vpool in 'o32vpool.pas',
+  o32flxed in 'o32flxed.pas',
+  ovcbordr in 'ovcbordr.pas',
+  ovceditf in 'ovceditf.pas',
+  ovcstr in 'ovcstr.pas',
+  o32tcflx in 'o32tcflx.pas',
+  o32vlop1 in 'o32vlop1.pas',
+  o32vlreg in 'o32vlreg.pas',
+  ovccoco in 'ovccoco.pas',
+  ovcrvexp in 'ovcrvexp.pas',
+  ovcviewed in 'ovcviewed.pas',
+  ovcflded in 'ovcflded.pas' {frmovcRvFldEd},
+  ovcrvexpdef in 'ovcrvexpdef.pas',
+  ovcrvpv in 'ovcrvpv.pas' {ovcRVPrintPreview},
+  o32lkout in 'o32lkout.pas',
+  o32flxbn in 'o32flxbn.pas',
+  ovcvcped in 'ovcvcped.pas' {frmViewCEd},
+  o32ledlabel in 'o32ledlabel.pas',
+  o32imgfm in 'O32ImgFm.pas',
+  O32MouseMon in 'O32MouseMon.pas',
+  o32ovldr in 'o32ovldr.pas',
+  o32pvldr in 'o32pvldr.pas',
+  OvcUtils in 'OvcUtils.pas',
+  o32igrid in 'O32IGrid.pas',
+  o32sbar in 'O32SBar.pas';
+
+end.

@@ -1,0 +1,225 @@
+<html>
+<head>
+  <title>Handling the Keyboard</title>
+             
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+       
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+       
+  <link rel="UP" title="Input handling" href="guideinput.html">
+       
+  <link rel="PREVIOUS" title="Input handling" href="guideinput.html">
+       
+  <link rel="NEXT" title="Examples" href="guideexamples.html">
+</head>
+ <body class="SECT1" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+   
+<div class="NAVHEADER">  
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+      </tr>
+      <tr>
+        <td width="7%" align="Left" valign="Bottom"><a href="guideinput.html">
+  Prev</a></td>
+        <td width="77%" align="Center" valign="Bottom">Chapter 3. Input handling</td>
+        <td width="7%" align="Right" valign="Bottom"><a href="guideexamples.html">
+  Next</a></td>
+      </tr>
+       
+  </tbody>  
+</table>
+   
+<hr align="Left" width="100%"></div>
+   
+<div class="SECT1">  
+<h1 class="SECT1"><a name="GUIDEINPUTKEYBOARD">Handling the Keyboard</a></h1>
+   
+<div class="SECT2">  
+<h2 class="SECT2"><a name="AEN271">Keyboard Related Structures</a></h2>
+   
+<p>It should make it a lot easier to understand this tutorial is you are
+familiar with the data types involved in keyboard access, so I'll explain
+them first.</p>
+   
+<div class="SECT3">  
+<h3 class="SECT3"><a name="AEN274">SDLKey</a></h3>
+   
+<p><span class="STRUCTNAME">SDLKey</span> is an enumerated type defined in
+ SDL/include/SDL_keysym.h and detailed <a href="sdlkey.html">here</a>. Each
+ <span class="STRUCTNAME">SDLKey</span> symbol represents a key, <tt class="LITERAL">
+  SDLK_a</tt> corresponds to the 'a' key on a keyboard, <tt class="LITERAL">
+  SDLK_SPACE</tt> corresponds to the space bar, and so on.</p>
+  </div>
+   
+<div class="SECT3">  
+<h3 class="SECT3"><a name="AEN282">SDLMod</a></h3>
+   
+<p>SDLMod is an enumerated type, similar to <span class="STRUCTNAME">SDLKey</span>
+  , however it enumerates keyboard modifiers (Control, Alt, Shift). The full
+ list of modifier symbols is <a href="sdlkey.html#SDLMOD">here</a>. <span class="STRUCTNAME">
+  SDLMod</span> values can be AND'd together to represent several modifiers.</p>
+  </div>
+   
+<div class="SECT3">  
+<h3 class="SECT3"><a name="AEN288">SDL_keysym</a></h3>
+  <pre class="PROGRAMLISTING">  TSDL_KeySym = <b>record</b><br>    scancode: Uint8; // hardware specific scancode<br>    sym: TSDLKey; // SDL virtual keysym<br>    modifier: TSDLMod; // current key modifiers<br>    unicode: Uint16; // translated character<br>  <b>end;</b></pre>
+   
+<p>The <span class="STRUCTNAME">SDL_keysym</span> structure describes a key
+ press or a key release. The <tt class="STRUCTFIELD"><i>scancode</i></tt>
+ field is hardware specific and should be ignored unless you know what your
+doing. The <tt class="STRUCTFIELD"><i>sym</i></tt> field is the <span class="STRUCTNAME">
+  SDLKey</span> value of the key being pressed or released. The <tt class="STRUCTFIELD"><i>
+  mod</i></tt> field describes the state of the keyboard modifiers at the 
+time the key press or release occurred. So a value of <tt class="LITERAL">
+ KMOD_NUM | KMOD_CAPS | KMOD_LSHIFT</tt> would mean that Numlock, Capslock 
+and the left shift key were all press (or enabled in the case of the lock 
+keys). Finally, the <tt class="STRUCTFIELD"><i>unicode</i></tt> field stores 
+the 16-bit unicode value of the key.</p>
+   
+<div class="NOTE">  
+<blockquote class="NOTE">      
+  <p><b>Note: </b>It should be noted and understood that this field is only
+ valid when the <span class="STRUCTNAME">SDL_keysym</span> is describing
+a  key press, not a key release. Unicode values only make sense on a key
+press  because the unicode value describes an international character and
+only key  presses produce characters. More information on Unicode can be
+found at <a href="http://www.unicode.org" target="_top">  www.unicode.org</a></p>
+    </blockquote>
+    </div>
+       
+  <div class="NOTE">      
+  <blockquote class="NOTE">          
+    <p><b>Note: </b>Unicode translation must be enabled using the <a href="sdlenableunicode.html"><tt class="FUNCTION">
+  SDL_EnableUNICODE</tt></a> function.</p>
+      </blockquote>
+      </div>
+      </div>
+           
+    <div class="SECT3">          
+    <h3 class="SECT3"><a name="AEN307">SDL_KeyboardEvent</a></h3>
+      <pre class="PROGRAMLISTING">TSDL_KeyboardEvent = <b>record</b><br>    type_: Uint8; // SDL_KEYDOWN or SDL_KEYUP<br>    which: Uint8; // The keyboard device index<br>    state: Uint8; // SDL_PRESSED or SDL_RELEASED<br>    keysym: TSDL_KeySym;<br>  <b>end;</b></pre>
+           
+    <p>The <span class="STRUCTNAME">SDL_KeyboardEvent</span> describes a
+keyboard event (obviously). The <tt class="STRUCTFIELD"><i>key</i></tt> member
+of the <a href="sdlevent.html"><span class="STRUCTNAME">SDL_Event</span></a>
+   union is a <span class="STRUCTNAME">SDL_KeyboardEvent</span> structure.
+ The <tt class="STRUCTFIELD"><i>type</i></tt> field specifies whether the
+event is a key release (<tt class="LITERAL">SDL_KEYUP</tt>) or a key press
+(<tt class="LITERAL"> SDL_KEYDOWN</tt>) event. The <tt class="STRUCTFIELD"><i>
+ state</i></tt> is largely redundant, it reports the same information as
+the     <tt class="STRUCTFIELD"><i> type</i></tt> field but uses different
+values (<tt class="LITERAL">SDL_RELEASED</tt>  and <tt class="LITERAL">SDL_PRESSED</tt>
+ ). The <tt class="STRUCTFIELD"><i> keysym</i></tt> contains information
+of the key press or release that this event represents (see above).</p>
+      </div>
+      </div>
+           
+    <div class="SECT2">          
+    <h2 class="SECT2"><a name="AEN324">Reading Keyboard Events</a></h2>
+           
+    <p>Reading keybaord events from the event queue is quite simple (the
+event queue and using it is described <a href="sdlevent.html">here</a>).
+We read events using <a href="sdlpollevent.html"><tt class="FUNCTION">SDL_PollEvent</tt></a>
+   in a <tt class="LITERAL">while()</tt> loop and check for <tt class="LITERAL">
+  SDL_KEYUP</tt> and <tt class="LITERAL">SDL_KEYDOWN</tt> events using a
+    <tt class="LITERAL">  switch</tt> statement, like so:</p>
+           
+    <div class="EXAMPLE"><a name="AEN334"></a>          
+    <p><b>Example 3-10. Reading Keyboard Events</b></p>
+      <pre class="PROGRAMLISTING">  event : TSDL_Event;<br>  .<br>  .<br>  // Poll for events. SDL_PollEvent() returns 0 when there are no  <br>  // more events on the event queue, our while loop will exit when <br>  // that occurs.                                                  <br>  <b>while </b>( SDL_PollEvent( &amp;event ) &gt; 0 ) <b>do</b><br>  <b>begin</b><br>    // We are only worried about SDL_KEYDOWN and SDL_KEYUP events<br>    <b>case</b> event.type_ <b>of</b><br>      SDL_KEYDOWN:<br>      <b>begin</b><br>        MessageBox(0, 'Key press detected', 'Error', MB_OK or MB_ICONHAND);<br>      <b>end;</b><br><br>      SDL_KEYUP:<br>      <b>begin</b><br>        MessageBox(0, 'Key release detected', 'Error', MB_OK or MB_ICONHAND);<br>      <b>end;</b><br>    <b>end;</b><br>  <b>end;</b><br>  .<br>  .</pre>
+      </div>
+           
+    <p>This is a very basic example. No information about the key press or
+ release is interpreted. We will explore the other extreme out our first
+full  example below - reporting all available information about a keyboard
+event.</p>
+      </div>
+           
+    <div class="SECT2">          
+    <h2 class="SECT2"><a name="AEN338">A More Detailed Look</a></h2>
+           
+    <p>Before we can read events SDL must be initialised with <a href="sdlinit.html"><tt class="FUNCTION">
+  SDL_Init</tt></a> and a video mode must be set using <a href="sdlsetvideomode.html"><tt class="FUNCTION">
+  SDL_SetVideoMode</tt></a>. There are, however, two other functions we must
+ use to obtain all the information required. We must enable unicode translation
+ by calling <tt class="FUNCTION">SDL_EnableUNICODE(1)</tt> and we must convert
+     <span class="STRUCTNAME">SDLKey</span> values into something printable,
+ using <a href="sdlgetkeyname.html"><tt class="FUNCTION">SDL_GetKeyName</tt></a></p>
+           
+    <div class="NOTE">          
+    <blockquote class="NOTE">              
+      <p><b>Note: </b>It is useful to note that unicode values &lt; 0x80
+translate directly a characters ASCII value. THis is used in the example
+below</p>
+        </blockquote>
+        </div>
+               
+      <div class="EXAMPLE"><a name="AEN351"></a>              
+      <p><b>Example 3-11. Interpreting Key Event Information</b></p>
+        <pre class="PROGRAMLISTING"><br>    <b>uses</b> SDL;<br><br>    // Function Prototypes<br>    <b>procedure</b> PrintKeyInfo( key : PSDL_KeyboardEvent );<br>    <b>procedure</b> PrintModifiers( mod : TSDLMod );<br><br>    <b>var</b><br>      event : TSDL_Event;<br>      quit : boolean;<br>    // main<br>    <b>begin</b><br>        quit := false;<br>        <br>        // Initialise SDL<br>        <b>if</b> ( SDL_Init( SDL_INIT_VIDEO ) &lt; 0 ) <b>then</b><br>        <b>begin</b><br>            MessageBox(0, PChar(Format('Couldn''t initialize SDL : %s', [SDL_GetError])), 'Error', MB_OK or MB_ICONHAND);<br>            halt( -1 );<br>        <b>end;</b><br><br>        // Set a video mode<br>        <b>if</b> ( SDL_SetVideoMode( 320, 200, 0, 0 ) &lt; 0 ) <b>then</b><br>        <b>begin</b><br>            MessageBox(0, PChar(Format('Couldn''t set video mode : %s', [SDL_GetError])), 'Error', MB_OK or MB_ICONHAND);<br>            SDL_Quit;<br>            halt( -1 );<br>        <b>end;</b><br><br>        // Enable Unicode translation<br>        SDL_EnableUNICODE( 1 );<br><br>        // Loop until an SDL_QUIT event is found<br>        <b>while</b> ( !quit ) <b>do</b><br>        <b>begin</b><br><br>            // Poll for events <br>            <b>while</b> ( SDL_PollEvent( &amp;event ) &gt; 0 ) <b>do</b><br>            <b>begin</b>    <br>                case event.type_  <b>of</b><br>                    // Keyboard event<br>                    // Pass the event data onto PrintKeyInfo()<br>                    SDL_KEYDOWN:<br>                    SDL_KEYUP:<br>                    <b>begin</b><br>                        PrintKeyInfo( @event.key );<br>                    <b>end;</b><br><br>                    // SDL_QUITEV event (window close)<br>                    SDL_QUITEV:<br>                    <b>begin</b><br>                        quit := true;<br>                    <b>end;</b><br>                <b>end;</b><br>            <b>end;</b><br>        <b>end;</b><br><br>        // Clean up<br>        SDL_Quit;<br>        halt( 0 );<br>    <b>end;</b><br><br>    // Print all information about a key event <br>    <b>procedure</b> PrintKeyInfo( key : PSDL_KeyboardEvent );<br>    <b>var</b><br>      KeyInfo : string;<br>    <b>begin</b><br>        // Is it a release or a press?<br>        <b>if</b> ( key.type_ = SDL_KEYUP ) <b>then</b><br>            KeyInfo := 'Release:-'<br>        <b>else</b><br>            KeyInfo := 'Press:-';<br><br>        // Print the hardware scancode first<br>        KeyInfo := KeyInfo + Format( 'Scancode: $%02X', [key.keysym.scancode] ) + #13#10;<br>        // Print the name of the key<br>        KeyInfo := KeyInfo + Format( 'Name: %s', [SDL_GetKeyName( key-&gt;keysym.sym )] ) + #13#10;<br>        // We want to print the unicode info, but we need to make <br>        // sure its a press event first (remember, release events <br>        // don't have unicode info                                <br>        <b>if</b> ( key.type_ = SDL_KEYDOWN ) <b>then</b><br>        <b>begin</b><br>            // If the Unicode value is less than 0x80 then the    <br>            // unicode value can be used to get a printable       <br>            // representation of the key, using (char)unicode.    <br>            KeyInfo := KeyInfo + 'Unicode: ';<br>            if( key.keysym.unicode &lt;  $80 ) <b>and</b> ( key-&gt;keysym.unicode &gt; 0 ) <b>then</b><br>            <b>begin</b><br>                KeyInfo := KeyInfo + Format( '%c ($%04X)', [(char)key.keysym.unicode, key.keysym.unicode] ) + #13#10;<br>            <b>end</b><br>            <b>else</b><br>            <b>begin</b><br>                KeyInfo := KeyInfo + Format( '? ($%04X)', [key.keysym.unicode] );<br>            <b>end;</b><br>        <b>end;</b><br>        <br>        // Print modifier info <br>        PrintModifiers( key.keysym.mod );<br>    <b>end;</b><br><br>    // Print modifier info<br>    <b>procedure</b> PrintModifiers( smod : TSDLMod );<br>    <b>var</b><br>      Mods : string;<br>    <b>begin</b><br>        Mods := 'Modifers: ' + #13#10;<br><br>        // If there are none then say so and return <br>        <b>if</b> ( smod = KMOD_NONE ) <b>then</b><br>        <b>begin</b><br>            Mods := Mods + 'None';<br>        <b>end<br>        else<br>        begin</b><br>          // Check for the presence of each SDLMod value<br>          // This looks messy, but there really isn't   <br>          // a clearer way.                             <br>        <b>  if</b> ( smod <b>and</b> KMOD_NUM ) <b>then<br></b>            Mods := Mods + 'NUMLOCK ' + #13#10;<br>        <b>  if</b> ( smod <b>and</b> KMOD_CAPS ) <b>then</b><br>            Mods := Mods + 'CAPSLOCK ' + #13#10;<br>        <b>  if</b> ( smod <b>and</b> KMOD_LCTRL ) <b>then</b><br>            Mods := Mods + 'LCTRL ' + #13#10;<br>        <b>  if</b> ( smod <b>and</b> KMOD_RCTRL ) <b>then</b><br>            Mods := Mods + 'RCTRL ' + #13#10;<br>        <b>  if</b> ( smod <b>and</b> KMOD_RSHIFT ) <b>then</b><br>            Mods := Mods + 'RSHIFT ' + #13#10;<br>          <b>if</b> ( smod <b>and</b> KMOD_LSHIFT ) <b>then</b><br>            Mods := Mods + 'LSHIFT ' + #13#10;<br>        <b>  if</b> ( smod <b>and</b> KMOD_RALT ) <b>then</b><br>            Mods := Mods + 'RALT ' + #13#10;<br>        <b>  if</b> ( smod <b>and</b> KMOD_LALT ) <b>then</b><br>            Mods := Mods + 'LALT ' + #13#10;<br>          <b>if</b> ( smod <b>and</b> KMOD_CTRL ) <b>then</b><br>            Mods := Mods + 'CTRL ' + #13#10;<br>        <b>  if</b> ( smod <b>and</b> KMOD_SHIFT ) <b>then</b><br>            Mods := Mods + 'SHIFT ' + #13#10;<br>        <b>  if</b> ( smod <b>and</b> KMOD_ALT ) <b>then</b><br>            Mods := Mods + 'ALT ' + #13#10;<br>        <b>end;</b><br>        MessageBox(0, PChar( Mods ), 'Error', MB_OK or MB_ICONHAND);<br>    <b>end;</b></pre>
+        </div>
+        </div>
+               
+      <div class="SECT2">              
+      <h2 class="SECT2"><a name="AEN354">Game-type Input</a></h2>
+               
+      <p>I have found that people using keyboard events for games and other
+ interactive applications don't always understand one fundemental point.</p>
+        <a name="AEN357"></a>              
+      <blockquote class="BLOCKQUOTE">                  
+        <p>Keyboard events <i class="EMPHASIS">only</i> take place when a
+ keys state changes from being unpressed to pressed, and vice versa.</p>
+          </blockquote>
+                   
+        <p>Imagine you have an image of an alien that you wish to move around
+ using the cursor keys - when you pressed the left arrow key you want him
+to slide over to the left, when you press the down key you want him to slide
+ down the screen. Examine the following code, it highlights and error that
+ many people have made. <pre class="PROGRAMLISTING"><b>var</b>    <br>    // Alien screen coordinates<br>    alien_x : integer = 0;<br>    alien_y : integer = 0;<br>    .<br>    .<br>    // Initialise SDL and video modes and all that <br>    .<br>    // Main game loop<br>    // Check for events<br>    <b>while</b> ( SDL_PollEvent( &amp;event ) ) <b>do</b><br>    <b>begin</b><br>        <b>case</b> event.type_ <b>of</b><br>            // Look for a keypress <br>            SDL_KEYDOWN:<br>            <b>begin</b><br>                // Check the SDLKey values and move change the coords <br>                <b>case</b> event.key.keysym.sym <b>of</b> <br>                    SDLK_LEFT:<br>                    <b>begin</b><br>                        dec( alien_x );<br>                    <b>end;</b><br><br>                    SDLK_RIGHT:<br>                    <b>begin</b><br>                        inc( alien_x );<br>                    <b>end;</b><br><br>                    SDLK_UP:<br>                    <b>begin</b><br>                        dec( alien_y );<br>                    <b>end;</b><br>                    <br>                    SDLK_DOWN:<br>                    <b>begin</b><br>                        inc( alien_y );<br>                    <b>end;</b><br>                <b>end;</b><br>            <b>end;</b><br>        <b>end;</b><br>    <b>end;</b><br>    .<br>    .</pre>
+   At first glance you may think this is a perfectly reasonable piece of
+code  for the task, but it isn't. Like I said keyboard events only occur
+when a  key changes state, so the user would have to press and release the
+left cursor  key 100 times to move the alien 100 pixels to the left.</p>
+                   
+        <p>To get around this problem we must not use the events to change
+ the position of the alien, we use the events to set flags which are then
+used in a seperate section of code to move the alien. Something like this:</p>
+                   
+        <div class="EXAMPLE"><a name="AEN363"></a>                  
+        <p><b>Example 3-12. Proper Game Movement</b></p>
+          <pre class="PROGRAMLISTING">    <br><b>var</b><br>    // Alien screen coordinates<br>    alien_x : integer = 0;<br>    alien_y : integer = 0;<br>    alien_xvel : integer = 0;<br>    alien_yvel : integer = 0;<br>    .<br>    .<br>    // Initialise SDL and video modes and all that <br>    .<br>    // Main game loop <br>    // Check for events <br>    <b>while</b> ( SDL_PollEvent( @event ) &gt; 0 ) <b>do</b><br>    <b>begin</b><br>        <b>case</b> event.type_  <b>of</b><br>            // Look for a keypress<br>            SDL_KEYDOWN:<br>            <b>begin</b><br>                // Check the SDLKey values and move change the coords <br>                <b>case</b> event.key.keysym.sym <b>of</b> <br>                    SDLK_LEFT:<br>                    <b>begin</b><br>                        alien_xvel := -1;<br>                    <b>end;</b><br><br>                    SDLK_RIGHT:<br>                    <b>begin</b><br>                        alien_xvel :=  1;<br>                    <b>end;</b><br><br>                    SDLK_UP:<br>                    <b>begin</b><br>                        alien_yvel := -1;<br>                    <b>end;</b><br><br>                    SDLK_DOWN:<br>                    <b>begin</b><br>                        alien_yvel :=  1;<br>                    <b>end;</b><br>                <b>end;</b><br>            <b>end;</b><br>            /* We must also use the SDL_KEYUP events to zero the x */<br>            /* and y velocity variables. But we must also be       */<br>            /* careful not to zero the velocities when we shouldn't*/<br>            SDL_KEYUP:<br>            <b>begin</b><br>                <b>case</b> event.key.keysym.sym <b>of</b><br>                    SDLK_LEFT:<br>                    <b>begin</b><br>                        // We check to make sure the alien is moving <br>                        // to the left. If it is then we zero the    <br>                        // velocity. If the alien is moving to the   <br>                        // right then the right key is still press   <br>                        // so we don't tocuh the velocity            <br>                        <b>if</b> ( alien_xvel &lt; 0 ) <b>then</b><br>                            alien_xvel := 0;<br>                    <b>end;</b><br><br>                    SDLK_RIGHT:<br>                    <b>begin</b><br>                        <b>if</b> ( alien_xvel &gt; 0 ) <b>then</b><br>                            alien_xvel := 0;<br>                    <b>end;</b><br><br>                    SDLK_UP:<br>                    <b>begin</b><br>                        <b>if</b> ( alien_yvel &lt; 0 ) <b>then</b><br>                            alien_yvel := 0;<br>                    <b>end;</b><br><br>                    SDLK_DOWN:<br>                    <b>begin</b><br>                        <b>if</b> ( alien_yvel &gt; 0 ) <b>then</b><br>                            alien_yvel := 0;<br>                    <b>end;</b><br>                <b>end;</b><br>            <b>end;</b><br>        <b>end;</b><br>    <b>end;</b><br>    .<br>    .<br>    // Update the alien position <br>    inc( alien_x, alien_xvel );<br>    inc( alien_y, alien_yvel );</pre>
+          </div>
+                   
+        <p>As can be seen, we use two extra variables, alien_xvel and alien_yvel,
+ which represent the motion of the ship, it is these variables that we update
+ when we detect keypresses and releases.</p>
+          </div>
+          </div>
+                   
+        <div class="NAVFOOTER">                  
+        <hr align="Left" width="100%">                  
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+              <tr>
+                <td width="31%" align="Left" valign="Top"><a href="guideinput.html">
+  Prev</a></td>
+                <td width="34%" align="Center" valign="Top"><a href="index.html">
+  Home</a></td>
+                <td width="31%" align="Right" valign="Top"><a href="guideexamples.html">
+  Next</a></td>
+              </tr>
+              <tr>
+                <td width="31%" align="Left" valign="Top">Input handling</td>
+                <td width="34%" align="Center" valign="Top"><a href="guideinput.html">
+  Up</a></td>
+                <td width="31%" align="Right" valign="Top">Examples</td>
+              </tr>
+                       
+          </tbody>                  
+        </table>
+          </div>
+                   
+        </body>
+        </html>

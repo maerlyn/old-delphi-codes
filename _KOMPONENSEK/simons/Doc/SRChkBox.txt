@@ -1,0 +1,90 @@
+SRCheckBox (C)opyright 2001 Version 1.02
+
+  Autor : Simon Reinhardt
+  eMail : reinhardt@picsoft.de
+  Internet : http://www.picsoft.de
+
+  Die Komponente TSRCheckBox ist eine Checkbox-Komponente mit Autosize-,
+  Transparent- und WordWrap-Eigenschaften. Außerdem wird kein OnClick-Ereignis
+  abgefeuert, wenn die Checked-Eigenschaft per Programmcode geändert wird.
+
+  Die Komponente ist abgeleteitet von TGraphicControl und ist Public Domain,
+  das Urheberrecht liegt aber beim Autor. 
+
+
+Dateiumfang:
+------------
+
+SRChkBox.txt 	- Diese Datei
+SRChkBox.pas	- Quelltext der Komponente
+SRChkBox.dcr	- Resourcendatei für das Komponenten-Icon
+
+
+Installation:
+-------------
+
+In Delphi 2:
+------------
+1. Alle Dateien in das Delphi-Komponenten-Verzeichnis entpacken.
+2. Menü Komponente :  installieren
+3. Schaltfläche Hinzufügen / Durchsuchen
+4. Datei SRChkBox.pas im Delphi-Komponenten-Verzeichnis suchen und mit
+   OK bestätigen.
+5. Die Komponente erscheint in der Komponenten-Gruppe "Simon"
+
+Ab Delphi 3:
+------------
+1. Alle Dateien in das Delphi-Komponenten-Verzeichnis entpacken.
+2. Menü Komponente :  Komponente installieren
+3. Schaltfläche Durchsuchen (hinter dem Eingabefeld für den Unit-Namen)
+4. Datei SRChkBox.pas im Delphi-Komponenten-Verzeichnis suchen und mit
+   OK bestätigen.
+5. Die Rückfrage nach dem Neukompilieren des Packages bestätigen.
+6. Die Komponente erscheint in der Komponenten-Gruppe "Simon"
+   (Evtl. muß eine bereits installierte, ältere Version von TSRCheckBox
+    zuvor entfernt werden)
+
+
+Die Komponente funktioniert ähnlich wie die Delphi-Komponente TCheckBox. 
+Zusätzlich gibt es eine "Autosize"-Eigenschaft, die dafür sorgt, daß die
+Größe der Komponente an den Text in der Eigenschaft "Caption" angepasst
+wird (wie bei TLabel). Der Text kann dank der "WordWrap"-Eigenschaft auch
+mehrzeilig sein. Auch die Eigenschaft "Transparent" hat den gleichen 
+Effekt wie bei TLabel.
+
+neue Eigenschaften:
+-------------------
+
+1. "Alignment" 	- Aurichtung des Textes und der Checkbox:
+		  taLeftJustify: Die Checkbox wird links neben dem Text angezeigt.
+		  taRightJustify: Die Checkbox wird rechts neben dem Text angezeigt.
+1. "AutoSize" 	- wie bei TLabel
+2. "CheckSize" 	- Die Größe (Höhe und Breite) der CheckBox in Pixeln
+3. "Spacing" 	- Der Abstand des Textes zur Checkbox in Pixeln
+4. "State" 	- Der Zustand der CheckBox (cbUnChecked, cbChecked, cbGrayed)
+		  Der Wert cbGrayed wird nur angenommen, wenn AllowGrayed=true.
+5. "Style" 	- Das Aussehen der Checkbox:
+		  csCheckBox: wie TCheckBox
+		  csDiamond: Die Checkbox hat die Form einer Raute
+		  csPushButton: Die Checkbox sieht aus wie ein TSpeedButton
+		  csRadioButton: wie TRadioButton
+		  csTrafficLight: Für die verscheidenen Zustände werden 
+		                  Grüne, Rote oder Gelbe Kreise gezeichnet
+6. "Transparent"- wie bei TLabel
+7. "WordWrap"	- wie bei TLabel
+
+neue Eigenschaften:
+-------------------
+
+1. "OnChange"	- dieses Ereignis wird bei jeder Änderung des Wertes der 
+		  "State"-Eigenschaft ausgelöst, auch wenn der Wert dieser 
+		  Eigenschaft per Programmcode geändert wird.
+2. "OnClick"	- dieses Ereignis wird (nur dann) ausgelöst, wenn die Komponente
+		  angeklickt wird und sich dadurch der Wert der "State"-Eigenschaft 
+		  ändert. Es wird kein OnClick-Ereignis abgefeuert, wenn die 
+		  Checked-Eigenschaft per Programmcode geändert wird.
+
+Die Ereignisse entsprechen denen von TCheckBox. Da die Komponente von TGraphicControl abgeleitet ist, kann sie keinen Eingabefokus erhalten und hat deswegen auch keine OnKey*-Ereignisse.
+
+Die Funktion der Komponente läßt sich außerdem sehr schön im beigefügten Demo-Programm 
+im Ordner "CBDemo" sehen.

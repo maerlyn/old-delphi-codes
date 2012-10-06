@@ -1,0 +1,21 @@
+0. This demo app makes use of SDL Beta 4 from the JEDI group.
+   Their full library is on this companion CD as well.
+
+1. You need to install libSDL-1.2 - www.libsdl.org if it is not already
+   installed on your system
+
+2. You need to install smpeg 0.4.4 - www.lokigames.com if it is not already
+   installed on your system.
+   Once smpeg is installed, navigate to your /usr/lib/ directory via a commandline and
+   create a symbolic link from libsmpeg-0.4.so.0 to libsmpeg.so. This is done
+   with the following command ( assuming you are in /usr/lib/ )...
+   ln -s libsmpeg-0.4.so.0 libsmpeg.so
+
+
+3. Then compile using:
+   dcc video60.dpk - Kylix or D6, video40.dpk - D4, video50 - D5
+   dcc MPEGPlay.dpr
+
+4. Run the app and play some MPEGs.
+
+

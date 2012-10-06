@@ -1,0 +1,47 @@
+[DSP upload]
+File Name=progress.zip
+Replace File=TProgress.zip
+File Status=Freeware
+Full Source Included=Y
+Version=1.0
+count=7
+1=VCL that works like TGauge (shows the progress visually like at the
+2=starting of InstallShield) but instead of using two colors (one indicates
+3=the progress and the other is the backgrouns),
+4=TProgress uses 3 colors : one for background, and the two others to
+5=make a gradient effect when the progress comes to end. (if you didn't
+6=understand, I'm sorry, I had no other idea of describing it. Just
+7=download it and you'll be satisfied) ;-)
+Note=
+Additional info=Text file ( extension txt )
+Category=Improved Components
+Platform=
+Group=Component/Code
+Delphi 1.0x=Y
+Delphi 2.0x=Y
+Delphi 3.0x=Y
+Delphi 4.0x=Y
+C++ Builder 1.0x=N
+C++ Builder 3.0x=N
+C++ Builder 4.0x=N
+
+[DSP Support]
+DSP Support=Y
+
+[Uploader_1]
+Author name=Carmi Grushko
+Contact=
+Author E-mail=your_shadow@surfree.net.il
+Author URL=
+count=0
+Author Section=
+UpdateDSP=Y
+
+[Versions available]
+Delphi 1.0x=
+Delphi 2.0x=
+Delphi 3.0x=
+Delphi 4.0x=
+C++ Builder 1.0x=
+C++ Builder 3.0x=
+C++ Builder 4.0x=

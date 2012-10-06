@@ -1,0 +1,42 @@
+CD-Nyilvántartó
+Verzió 2.4
+
+2002. november 24.
+
+A CD-Nyilvántartó letöltésével és feltelepítésével a felhasználó elfogadja
+az alábbi szerzõdést, mely a program használatával kapcsolatos:
+
+1. A program freeware, azaz szabadon felhasználható bármi féle
+korlátozás nélkül. A felhasználó által tetszõleges számú számítógépre
+feltelepíthetõ, illetve egyidejûleg használható.
+
+2. Továbbá a program szabadon másolható, de csak és kizárólag az
+eredeti, telepítõ programmal ellátott formájában. A programot
+megváltoztatni és visszafejteni tilos.
+
+3. A programról korlátlan mennyiségû másolat készíthetõ, melyek floppy
+lemezen, interneten keresztül vagy emailben továbbíthatók. A program
+felkerülhet bármely újság CD mellékletére is, melyrõl a program
+készítõjét az televonzsinor@yahoo.com címen tájékoztatni kell, továbbá meg
+kell említeni a program készítõjének nevét, email címét, és
+honlapjának címét is az újság CD mellékletén.
+
+4. A programot a készítõ megpróbálja oly módon elkészíteni, hogy az a
+lehetõ legkevesebb hibát tartalmazza, de a program sokrétûsége miatt
+nem garantálja annak hibamentességét, illetve azt sem, hogy az minden
+számítógéppel kompatibilis és azokon gond nélkül fut.
+
+5. Kiadásakor a program nem tartalmazott romboló kódot és nem
+rendelkezett ismert hibákkal, így a készítõ tudomása szerint a program
+használata nem jár káros következménnyel. Az ennek ellenére,
+esetlegesen bekövetkezendõ károkért a készítõ nem vállal felelõsséget,
+az teljes egészében a felhasználót terheli!
+
+6. A program a kiadása elõtt átfogó vírus ellenõrzésen megy át,
+azonban ez nem garancia arra, hogy a program valóban vírusmentes, a
+kár ebben az esetben is a felhasználóra hárul!
+
+
+Tele von Zsinór
+ televonzsinor@yahoo.com
+ http://putraware.ini.hu

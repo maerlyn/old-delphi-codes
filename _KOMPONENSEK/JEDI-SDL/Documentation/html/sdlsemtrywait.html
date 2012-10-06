@@ -1,0 +1,93 @@
+<html>
+<head>
+  <title>SDL_SemTryWait</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Multi-threaded Programming" href="thread.html">
+  <link rel="PREVIOUS" title="SDL_SemWait" href="sdlsemwait.html">
+  <link rel="NEXT" title="SDL_SemWaitTimeout" href="sdlsemwaittimeout.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlsemwait.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlsemwaittimeout.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLSEMTRYWAIT">SDL_SemTryWait</a></h1>
+<div class="REFNAMEDIV"><a name="AEN7526"></a>
+<h2>Name</h2>
+SDL_SemTryWait&nbsp;--&nbsp;Attempt to lock a semaphore but don't suspend
+the thread.</div>
+<div class="REFSYNOPSISDIV"><a name="AEN7529"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN7530"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+<p>function <b>SDL_SemTryWait</b>( sem : PSDL_sem ) : Integer;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN7536"></a>
+<h2>Description</h2>
+<p><tt class="FUNCTION">SDL_SemTryWait</tt> is a non-blocking varient of <a href="sdlsemwait.html"><tt class="FUNCTION">
+SDL_SemWait</tt></a>. If the value of the semaphore pointed to by <tt class="PARAMETER"><i>
+sem</i></tt> is positive it will atomically decrement the semaphore value
+and return 0, otherwise it will return <span class="RETURNVALUE">SDL_MUTEX_TIMEOUT</span>
+ instead of suspending the thread.</p>
+<p>After <tt class="FUNCTION">SDL_SemTryWait</tt> is successful, the semaphore 
+can be released and its count atomically incremented by a successful call
+to <a href="sdlsempost.html">SDL_SemPost</a>.</p>
+</div>
+<div class="REFSECT1"><a name="AEN7547"></a>
+<h2>Return Value</h2>
+<p>Returns <span class="RETURNVALUE">0</span> if the semaphore was successfully
+locked or either <span class="RETURNVALUE">SDL_MUTEX_TIMEOUT</span> or <span class="RETURNVALUE">
+-1</span> if the thread would have suspended or there was an error, respectivly.</p>
+<p>If the semaphore was not successfully locked, the semaphore will be unchanged.</p>
+</div>
+<div class="REFSECT1"><a name="AEN7554"></a>
+<h2>Examples</h2>
+<p><pre class="PROGRAMLISTING">res := SDL_SemTryWait( my_sem );<br><br><b>if</b> ( res = SDL_MUTEX_TIMEOUT ) <b>then</b><br><b>begin</b><br>  Result := TRY_AGAIN;<br>  exit;<br><b>end;</b><br><br><b>if</b> (res = -1) <b>then</b><br><b>begin</b><br>  Result := WAIT_ERROR;<br>  exit;<br><b>end;</b><br>.<br>.<br>.<br>.<br>SDL_SemPost( my_sem );</pre>
+</p>
+</div>
+<div class="REFSECT1"><a name="AEN7558"></a>
+<h2>See Also</h2>
+<p><a href="sdlcreatesemaphore.html"><tt class="FUNCTION">SDL_CreateSemaphore</tt></a>
+, <a href="sdldestroysemaphore.html"><tt class="FUNCTION">SDL_DestroySemaphore</tt></a>
+, <a href="sdlsemwait.html"><tt class="FUNCTION">SDL_SemWait</tt></a>, <a href="sdlsemwaittimeout.html"><tt class="FUNCTION">
+SDL_SemWaitTimeout</tt></a>, <a href="sdlsempost.html"><tt class="FUNCTION">
+SDL_SemPost</tt></a>, <a href="sdlsemvalue.html"><tt class="FUNCTION">SDL_SemValue</tt></a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdlsemwait.html">
+Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="sdlsemwaittimeout.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">SDL_SemWait</td>
+      <td width="34%" align="Center" valign="Top"><a href="thread.html">Up</a></td>
+      <td width="32%" align="Right" valign="Top">SDL_SemWaitTimeout</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

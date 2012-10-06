@@ -1,0 +1,122 @@
+<html>
+<head>
+  <title>SDL_BuildAudioCVT</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="Audio" href="audio.html">
+   
+  <link rel="PREVIOUS" title="SDL_AudioCVT" href="sdlaudiocvt.html">
+   
+  <link rel="NEXT" title="SDL_ConvertAudio" href="sdlconvertaudio.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="sdlaudiocvt.html">
+ Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom"><br>
+       </td>
+       <td width="8%" align="Right" valign="Bottom"><a href="sdlconvertaudio.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<h1><a name="SDLBUILDAUDIOCVT">SDL_BuildAudioCVT</a></h1>
+ 
+<div class="REFNAMEDIV"><a name="AEN6461"></a> 
+<h2>Name</h2>
+ SDL_BuildAudioCVT&nbsp;--&nbsp;Initializes a SDL_AudioCVT structure for
+conversion</div>
+ 
+<div class="REFSYNOPSISDIV"><a name="AEN6464"></a><br>
+ 
+<h2>Synopsis</h2>
+ 
+<div class="FUNCSYNOPSIS"><a name="AEN6465"></a> 
+<p></p>
+ <pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+ 
+<p>function <b>SDL_BuildAudioCVT</b>( cvt : PSDL_AudioCVT; src_format : Integer; 
+src_channels : UInt8; src_rate : Integer; dst_format : UInt16; dst_channels 
+: UInt8; dst_rate : Integer ) : Integer;</p>
+ 
+<p></p>
+ </div>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN6471"></a> 
+<h2>Description</h2>
+ 
+<p>Before an <a href="sdlaudiocvt.html"><span class="STRUCTNAME">TSDL_AudioCVT</span></a>
+&nbsp; structure can be used to convert audio data it must be initialized
+with source and destination information. </p>
+ 
+<p><tt class="PARAMETER"><i>src_format</i></tt> and <tt class="PARAMETER"><i>
+ dst_format</i></tt> are the source and destination format of the conversion. 
+(For information on audio formats see <a href="sdlaudiospec.html"><span class="STRUCTNAME">
+TSDL_AudioSpec</span></a>). <tt class="PARAMETER"><i>src_channels</i></tt>
+&nbsp; and <tt class="PARAMETER"><i>dst_channels</i></tt> are the number
+of channels in the source and destination formats. Finally, <tt class="PARAMETER"><i>
+ src_rate</i></tt> and <tt class="PARAMETER"><i>dst_rate</i></tt> are the 
+frequency or samples-per-second of the source and destination formats. Once 
+again, see <a href="sdlaudiospec.html"><span class="STRUCTNAME">TSDL_AudioSpec</span></a>
+ .</p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN6487"></a> 
+<h2>Return Values</h2>
+ 
+<p>Returns <span class="RETURNVALUE">-1</span> if the filter could not be 
+built or 1 if it could.</p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN6491"></a> 
+<h2>Examples</h2>
+ 
+<p>See <a href="sdlconvertaudio.html"><tt class="FUNCTION">SDL_ConvertAudio</tt></a>
+ .</p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN6496"></a> 
+<h2>See Also</h2>
+ 
+<p><a href="sdlconvertaudio.html"><tt class="FUNCTION">SDL_ConvertAudio</tt></a>
+ , <a href="sdlaudiocvt.html"><tt class="FUNCTION">TSDL_AudioCVT</tt></a></p>
+ </div>
+ 
+<div class="NAVFOOTER"> 
+<hr align="Left" width="100%"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <td width="31%" align="Left" valign="Top"><a href="sdlaudiocvt.html">
+ Prev</a></td>
+       <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+       <td width="31%" align="Right" valign="Top"><a href="sdlconvertaudio.html">
+ Next</a></td>
+     </tr>
+     <tr>
+       <td width="31%" align="Left" valign="Top">SDL_AudioCVT</td>
+       <td width="34%" align="Center" valign="Top"><a href="audio.html">Up</a></td>
+       <td width="31%" align="Right" valign="Top">SDL_ConvertAudio</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ </div>
+ 
+</body>
+</html>

@@ -1,0 +1,31 @@
+; This file is maintained by HCW. Do not modify this file directly.
+
+[OPTIONS]
+COMPRESS=12 Hall Zeck
+ERRORLOG=CDNyilvantarto.log
+LCID=0x40e 0x0 0x0 ; Magyar
+REPORT=Yes
+CONTENTS=TopicTartalom
+TITLE=CD-Nyilvántartó súgó
+CNT=CDNyilvantarto.cnt
+COPYRIGHT=CD-Nyilvántartó súgó|by Tele von Zsinór, 2001-2002.
+CITATION=||    -> CD-Nyilvántartó súgó
+HLP=CDNyilvantarto.hlp
+
+[FILES]
+CDNyilvantarto.rtf
+
+[MAP]
+TopicBeallitasok=9
+TopicCDk=4
+TopicCDKolcsonadasa=5
+TopicCDVisszakapasa=6
+TopicExport=3
+TopicFoablak=1
+TopicKereses=8
+TopicKilepes=7
+TopicKolcsonkerok=2
+TopicTartalom=0
+
+[WINDOWS]
+Main="",(653,102,360,600),27904,(r12058623),(r8454143),f3

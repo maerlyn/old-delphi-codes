@@ -1,0 +1,98 @@
+<html>
+<head>
+  <title>Initializing SDL</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="The Basics" href="guidethebasics.html">
+   
+  <link rel="PREVIOUS" title="The Basics" href="guidethebasics.html">
+   
+  <link rel="NEXT" title="Graphics and Video" href="guidevideo.html">
+</head>
+ <body class="SECT1" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="guidethebasics.html">
+ Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom">Chapter 1. The Basics</td>
+       <td width="8%" align="Right" valign="Bottom"><a href="guidevideo.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<div class="SECT1"> 
+<h1 class="SECT1"><a name="GUIDEBASICSINIT">Initializing SDL</a></h1>
+ 
+<p>SDL is composed of eight subsystems - Audio, CDROM, Event Handling, File 
+I/O, Joystick Handling, Threading, Timers and Video. Before you can use any 
+of these subsystems they must be initialized by calling <a href="sdlinit.html"><tt class="FUNCTION">
+ SDL_Init</tt></a> (or <a href="sdlinitsubsystem.html"><tt class="FUNCTION">
+ SDL_InitSubSystem</tt></a>. <tt class="FUNCTION">SDL_Init</tt> must be called 
+before any other SDL function. It automatically initializes the Event Handling, 
+File I/O and Threading subsystems and it takes a parameter specifying which 
+other subsystems to initialize. So, to initialize the default subsystems and
+the Video subsystems you would call: <pre class="PROGRAMLISTING">    SDL_Init ( SDL_INIT_VIDEO );</pre>
+  To initialize the default subsystems, the Video subsystem and the Timers 
+subsystem you would call: <pre class="PROGRAMLISTING">    SDL_Init ( SDL_INIT_VIDEO <b>or</b> SDL_INIT_TIMER );</pre>
+ </p>
+ 
+<p><tt class="FUNCTION">SDL_Init</tt> is complemented by <a href="sdlquit.html"><tt class="FUNCTION">
+ SDL_Quit</tt></a> (and <a href="sdlquitsubsystem.html"><tt class="FUNCTION">
+ SDL_QuitSubSystem</tt></a>). <tt class="FUNCTION">SDL_Quit</tt> shuts down 
+all subsystems, including the default ones. It should always be called before 
+a SDL application exits.</p>
+ 
+<p>With <tt class="FUNCTION">SDL_Init</tt> and <tt class="FUNCTION">SDL_Quit</tt>
+  firmly embedded in your programmers toolkit you can write your first and 
+most basic SDL application. However, we must be prepare to handle errors. 
+Many SDL functions return a value and indicates whether the function has succeeded
+or failed, <tt class="FUNCTION">SDL_Init</tt>, for instance, returns -1 if
+it could not initialize a subsystem. SDL provides a useful facility that
+allows you to determine exactly what the problem was, every time an error
+occurs within SDL an error message is stored which can be retrieved using
+<tt class="FUNCTION">SDL_GetError</tt>. Use this often, you can never know
+too much about an error.</p>
+ 
+<div class="EXAMPLE"><a name="AEN60"></a> 
+<p><b>Example 1-1. Initializing SDL</b></p>
+ <pre class="PROGRAMLISTING">uses SDL;   // All SDL App's need this<br><br><b>begin</b><br><pre class="PROGRAMLISTING">    MessageBox(0, 'Initializing SDL.', 'Error', MB_OK or MB_ICONHAND); </pre>    <br>    // Initialize defaults, Video and Audio<br>    <b>if</b>( ( SDL_Init(SDL_INIT_VIDEO <b>or</b> SDL_INIT_AUDIO)= -1 ) ) <b>then</b><br>    <b>begin</b><br>        MessageBox(0, PChar(Format('Couldn''t initialize SDL : %s',<br>          [SDL_GetError])), 'Error', MB_OK or MB_ICONHAND); <br>        exit;<br>    <b>end</b>;<br><pre class="PROGRAMLISTING"><pre class="PROGRAMLISTING">    MessageBox(0, 'SDL Initialized.', 'Error', MB_OK or MB_ICONHAND);</pre></pre><pre class="PROGRAMLISTING"><pre class="PROGRAMLISTING"><pre class="PROGRAMLISTING">    MessageBox(0, 'Quiting SDL.', 'Error', MB_OK or MB_ICONHAND);</pre></pre></pre>    // Shutdown all subsystems<br>    SDL_Quit;<br><pre class="PROGRAMLISTING"><pre class="PROGRAMLISTING"><pre class="PROGRAMLISTING"><pre class="PROGRAMLISTING">    MessageBox(0, 'Quiting.', 'Error', MB_OK or MB_ICONHAND);</pre></pre></pre></pre>    exit;<br><b>end;</b><br></pre>
+ </div>
+ </div>
+ 
+<div class="NAVFOOTER"> 
+<hr align="Left" width="100%"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <td width="31%" align="Left" valign="Top"><a href="guidethebasics.html">
+ Prev</a></td>
+       <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+       <td width="31%" align="Right" valign="Top"><a href="guidevideo.html">
+ Next</a></td>
+     </tr>
+     <tr>
+       <td width="31%" align="Left" valign="Top">The Basics</td>
+       <td width="34%" align="Center" valign="Top"><a href="guidethebasics.html">
+ Up</a></td>
+       <td width="31%" align="Right" valign="Top">Graphics and Video</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ </div>
+ 
+</body>
+</html>

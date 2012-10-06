@@ -1,0 +1,49 @@
+RLabel ( running label) - visual component for Delphi's VCL. Build RLTEST.DPR
+and run RLTEST.EXE program to see component options.
+This unit is public domain. You can add any code or modify it, but if you do
+it, please, let me know.
+
+Properties
+----------
+Direction       - moving direction ( Static, Left to Right ...)
+LabelStyle      - normal, lowered or raised label
+RText           - text of label.
+StepToView      - designing time only. View label at # step.
+Steps           - # of steps to perform running
+Speed           - one step delay
+Color           - background color
+RFont           - label font
+
+Events
+------
+OnBegin         - on first step
+OnEnd           - on last step
+OnStep          - on each step
+
+Public procedures/functions
+---------------------------
+procedure RLStart( SStep : integer);
+        Start runing. SStep is starting step number.
+        if 0<SStep<Steps then new starting step is assigned
+        else step number is not changed
+
+function RLStop : integer;
+        Stop running. Returns current step number.
+
+procedure RLReverse;
+        Reverse running direction.
+
+function GetCurrentStep : integer;
+        Get current step number.
+
+
+To add this component to component palette copy CRLABEL.PAS and CRLABEL.RES
+to the ..DELPHI\LIB directory and install it from Delphi's environment.
+
+Regards.
+
+Michael Kochiashvili
+
+Internet address:  Kochini@iberiapac.ge
+
+

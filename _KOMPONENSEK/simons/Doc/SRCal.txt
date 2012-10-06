@@ -1,0 +1,330 @@
+TSRCalendar (C)opyright 2000 Version 1.36
+Autor : Simon Reinhardt
+eMail : reinhardt@picsoft.de
+Internet : http://www.picsoft.de
+
+  Die Komponente TSRCalendar ist eine Weiterentwicklung der
+  TCalendar-Komponente aus den Beispielkomponenten der Delphi-VCL.
+  Sie enthält viele Zusatzinformationen, wie Feiertage,
+  Sternzeichen und verschiedene astronomische Daten.
+
+  Die Routinen aus der Unit TimeFunc stammen aus der TMoon-Komponente
+  von Andreas Hörstemeier : http://www.westend.de/~hoerstemeier/index_d.htm
+  Andreas hat die Routinen aus dem Buch "Astronomical Algorithms" von Jean Meeus.
+
+  Die GetWeekOfYear-Funktion, die die Wochennummer nach DIN 1355 ermittelt,
+  stammt von Christoph Kremer, Aachen.
+
+  Vielen Dank auch an:
+  - Edmund Matzke <edmund_matzke@gmx.de> für die Korrektur der
+    Schleswig-Holsteinischen Feiertage,
+  - Matthias Frey <info@Matthias-Frey.de> für die Korrektur der
+    Advents-Berechnung.
+  - Robert Rossmair für seine rrColors-Unit!
+
+  TSRClock ist die zum Kalender passende Uhr..
+
+  Diese Komponenten sind Public Domain, das Urheberrecht liegt aber beim Autor.}
+
+
+Dateiumfang:
+------------
+
+SRCal.txt 	- Diese Datei
+SRCal.pas	- Quelltext der Komponente
+SRCal.d16	- Resourcendatei der 16Bit-Komponente für Delphi 1
+SRCal.d32	- Resourcendatei der 32Bit-Komponente für Delphi 2 bis 5
+TimeFunc.pas	- Quelltext der Unit mit Zeitroutinen
+SRDefine.inc
+rr.inc		- Inculdedateien für die Komponente
+rrColors.pas	- Funktionen zur RGB-HSL-Umrechnung
+SRUtils.pas	- verschiedende Prozeduren und Funktionen für die Komponente
+                  (Eine Beschreibung findet man im Interface der Unit)  
+	
+Ordner	KalDemo		- TSRCalendar-Demo-Projekt für Delphi 2 bis 5
+	KalMain.dfm	- Formulardatei der MainForm
+	KalMain.pas	- Quelltext der MainForm-Unit
+	KalDemo.dof	- Compileroptionen des Demo-Projekts
+	KalDemo.dpr	- Quelltext des Demo-Projekts
+	KalDemo.res	- Resourcendatei des Demo-Projekts
+
+
+Installation:
+-------------
+
+In Delphi 1:
+------------
+1. Alle Dateien in das Delphi-Komponenten-Verzeichnis entpacken.
+2. Menü Optionen : Komponente installieren
+3. Schaltfläche Hinzufügen / Durchsuchen
+4. Datei SRCal.pas im Delphi-Komponenten-Verzeichnis suchen und mit
+   OK bestätigen.
+5. Die Komponente erscheint in der Komponenten-Gruppe "Simon"
+
+In Delphi 2:
+------------
+1. Alle Dateien in das Delphi-Komponenten-Verzeichnis entpacken.
+2. Menü Komponente :  installieren
+3. Schaltfläche Hinzufügen / Durchsuchen
+4. Datei SRCal.pas im Delphi-Komponenten-Verzeichnis suchen und mit
+   OK bestätigen.
+5. Die Komponente erscheint in der Komponenten-Gruppe "Simon"
+
+Ab Delphi 3:
+------------
+1. Alle Dateien in das Delphi-Komponenten-Verzeichnis entpacken.
+2. Menü Komponente :  Komponente installieren
+3. Schaltfläche Durchsuchen (hinter dem Eingabefeld für den Unit-Namen)
+4. Datei SRCal.pas im Delphi-Komponenten-Verzeichnis suchen und mit
+   OK bestätigen.
+5. Die Rückfrage nach dem Neukompilieren des Packages bestätigen.
+6. Die Komponente erscheint in der Komponenten-Gruppe "Simon"
+   (Evtl. muß eine bereits installierte, ältere Version der Komponente
+    zuvor entfernt werden)
+
+
+
+TSRCalendar:
+------------
+
+Die Komponente funktioniert genauso, wie die Delphi-Beispielkomponente TCalendar 
+mit folgenden Erweiterungen:
+
+Neue Eigenschaften:
+-------------------
+
+I. Published:
+
+1. Nur wenn die Eigenschaft "AstronomicalData" den Wert "true" hat, werden die astronmischen
+   Daten (Mond- und Sonnendaten) bei einem Datumswechsel berechnet. Wenn die Eigenschaft den 
+   Wert "false" hat, beschleunigt sich der Datumswechsel.
+2. Wenn die Eigenschaft "AutoDeleteMarks" den Wert "true" hat, werden alle Markierungen in der 
+   Eigenschaft "Marks" bei einem Monats- oder Jahreswechsel gelöscht.
+3. "BGColorHoliday" ist die Hintergrundfarbe für Feiertage.
+4. "BGColorMarked" ist die Hintergrundfarbe für in der Eigenschaft "Marks" markierte Tage.
+4. "BGColorSelected" ist die Hintergrundfarbe für das ausgewählte Datum.
+5. "BGColorToday" ist die Hintergrundfarbe für das aktuelle Systemdatum.
+6. "BGColorWeekend" ist die Hintergrundfarbe für Sonntage.
+7. Die Eigenschaft "Bundesland" ist für die korrekte Berechnung der Feiertage und der 
+   astronomischen Daten auf das gewünschte Bundesland zu setzen.
+8. "DrawStyle" kann folgende Werte annehmen:
+   - cdsColorGrid: Feiertage, Wochenenden, etc. werden in den Farben gezeichnet, die in den 
+     entsprechenden Eigenschaften festgelegt sind.
+   - cdsMonoGrid: Alle Tage im Kalender werden mit der in der Eigenschaft "Color" angegebenen 
+     Hintergrundfarbe und mit der Textfarbe der Eigenschaft "Font" gezeichnet. 
+   - cdsButtons: Die Tage im Kalender werden als anklickbare Buttons gezeichnet.
+9. "FrameColorSelected" ist die Schriftfarbe für Feiertage.
+10.Die Berechnung und Anzeige der deutschen Feiertage erfolgt nur, wenn die Eigenschaft 
+   "ShowHolidays" den Wert "true" hat.
+11.Die in der Eigenschaft "Marked" als markierte gespeicherten Tage werden nur dann farbig 
+   angezeigt, wenn die Eigenschaft "ShowMarks" den Wert "true" hat.
+12."TextColorHoliday" ist die Schriftfarbe für Feiertage.
+13."TextColorMarked" ist die Schriftfarbe für in der Eigenschaft "Marks" markierte Tage.
+14."TextColorStandard" ist die Schriftfarbe für normale Tage.
+15."TextColorToday" ist die Schriftfarbe für das aktuelle Systemdatum.
+16."TextColorWeekend" ist die Schriftfarbe für Sonntage.
+
+II. Public:
+
+1. "DayOfYear" gibt an, der wievielte Tag im Jahr das in der Eigenschaft "Date"
+   angegebene Datum ist.
+2. Falls das in der Eigenschaft "Date" gespeicherte Datum ein Feiertag oder ein Sondertag ist, 
+   enthält die Eigenschaft "Holiday" den Namen des Feier- oder Sondertages.
+3. Falls das in der Eigenschaft "Date" gespeicherte Datum ein Feiertag oder ein Sondertag ist, 
+   enthält die Eigenschaft "HolidayNr" die Nummer des Feier- oder Sondertages. Dieser Wert kann 
+   folgende Werte annehmen:
+    0 : Kein Feier- oder Sondertag
+   >0 : Feiertag
+   <0 : Sondertag
+4. Die Eigenschaft "Holidays" ist ein array[0..31] of integer, in dem alle Feiertags- und 
+   Sondertagsnummern des aktuellen Monats gespeichert werden.
+5. Die Eigenschaft "Marks" ist deklariert als "array[1..31] of boolean" und speichert 
+   markierte Tage.
+6. "MoonDistance" gibt die Entfernung des Mondes zur Erde in Kilometern an.
+7. "MoonPhase" gibt die Mondphase an und kann folgende Werte annehmen:
+   (Neumond, Zunehmend, Vollmond, Abnehmend)
+8. "MoonRise" gibt die Uhrzeit des Mondaufganges im Format TDateTime an.
+9. "MoonSet" gibt die Uhrzeit des Mondunterganges im Format TDateTime an.
+10."MoonTransit" gibt die Uhrzeit des Mondhöchststandes im Format TDateTime an.
+11."SunDistance" gibt die Entfernung der Sonne zur Erde in Kilometern an.
+12. "SunRise" gibt die Uhrzeit des Sonnenaufganges im Format TDateTime an.
+13."SunSet" gibt die Uhrzeit des Sonnenunterganges im Format TDateTime an.
+14."SunTransit" gibt die Uhrzeit des Sonnenhöchststandes im Format TDateTime an.
+15."Sternzeichen" gibt den Namen des Sternzeichens eines am in der Eigenschaft "Date"
+   angegebenen Datum geborenen an.
+16."SternzeichenNr" gibt die Nummer des Sternzeichens eines am in der Eigenschaft "Date"
+   angegebenen Datum geborenen an:
+   0  : Wassermann
+   ..
+   11 : Steinbock
+17."WeekOfYear" gibt an, in der wievielten Woche im Jahr (nach DIN 1355) das in der Eigenschaft 
+   "Date" angegebene Datum ist.
+18.Die Eigenschaft CalendarDate wurde umbenannt in "Date". Diese Eigenschaft speichert
+   das Datum im Format TDateTime.
+
+
+Ereignisse:
+-----------
+
+1. "OnBeforeChange" tritt vor der Änderung der Eigenschaft "Date" auf.
+2. Das Ereignis "OnMonthChange" tritt bei einem Wechsel des Monats oder des Jahres auf, die
+   in den Eigenschaften "Month" und "Year" bzw. "Date" gespeichert sind.
+3. OnMouseDown - wie bei TPanel
+4. OnMouseMove - wie bei TPanel
+5.OnMouseUp - wie bei TPanel
+
+Methoden:
+---------
+
+1. DaysThisMonth gibt die Anzahl der Tage im Monat zurück, der in der Eigenschaft "Month"
+   gespeichert ist.
+2. GetHoliday ermittelt, ob das in "WhatDate" übergebene Datum im der Varaibalen "Land" über-
+   gebenen Bundesland ein Feier- oder Sondertag ist und gibt als Ergebnis dessen Nummer oder 
+   null zurück:
+   function GetHoliday(WhatDate:TDateTime;Land:integer):integer;
+2. Mit der Methode "MouseToCell"  ermittelt man die Spalte und Zeile des Kalenders, über der
+   der Mauszeiger steht:
+   procedure MouseToCell(X, Y: Integer; ACol, ARow: longint);
+3. Mit der Methode "MouseToDate"  ermittelt man das Datum der Kalenderzelle, über der
+   der Mauszeiger steht:
+   function MouseToDate(X, Y: Integer):TDateTime;
+4. NextMonth setzt das Kalenderdatum auf den gleichen Tag im folgenden Monat.
+5. NextYear setzt das Kalenderdatum auf den gleichen Tag und den gleichen Monat im folgenden 
+   Jahr.
+6. PrevMonth setzt das Kalenderdatum auf den gleichen Tag im vorhergehenden Monat.
+7. PrevYear setzt das Kalenderdatum auf den gleichen Tag und den gleichen Monat im 
+   vorhergehenden Jahr.
+
+Neue Funktionen:
+----------------
+
+1. Die Navigation durch den Kalender per Tastatur wurde verbessert: 
+   -Falls die letzte Zelle einer Zeile gewählt ist und die [Pfeil-nach-rechts]-Taste 
+    gedrückt wird, wird der folgende Tag in der ersten Spalte der nächsten Zeile markiert.
+   -Falls die erste Zelle einer Zeile gewählt ist und die [Pfeil-nach-links]-Taste 
+    gedrückt wird, wird der vorherige Tag in der letzten Spalte der vorherigen Zeile markiert.
+   -Falls der letzte Tag im Monat gewählt ist und die [Pfeil-nach-rechts]-Taste 
+    gedrückt wird, wird das Datum auf den ersten Tag des folgenden Monats gesetzt.
+   -Falls der erste Tag im Monat gewählt ist und die [Pfeil-nach-links]-Taste 
+    gedrückt wird, wird das Datum auf den letzten Tag des vorherigen Monats gesetzt.
+   -Falls ein Tag in der letzten Zeile des Kalenders gewählt ist und die [Pfeil-nach-unten]-Taste 
+    gedrückt wird, wird das Datum auf den ersten Tag des folgenden Monats gesetzt.
+   -Falls ein Tag in der ersten Zeile des Kalenders gewählt ist und die [Pfeil-nach-oben]-Taste 
+    gedrückt wird, wird das Datum auf den letzten Tag des vorherigen Monats gesetzt.
+
+Alle anderen Eigenschaften und Ereignisse entsprechen denen der TCalendar-Komponente
+und sind in der Online-Hilfe nachzulesen. Die Funktion der Komponente läßt sich außerdem
+sehr schön im beigefügten Demo-Programm im Ordner "KalDemo" sehen.
+
+TSRClock
+--------
+
+Eigenschaften:
+--------------
+
+I. Published:
+
+1. Align - wie bei TPanel
+2. Anchors - wie bei TPanel
+2. AutoUpdate - Wenn  AutoUpdate=true, wird die angezeigte Uhrzeit periodisch aus der Systemzeit 
+   ausgelesen. Diese Funktion benutzt einen Timer, der in einem eigenen Thread läuft. Falls 
+   bereits ein anderer Timer im Projekt benutzt wird, kann man diesen zur Aktualisierung der 
+   Zeitanzeige nutzen und diese Eigenschaft auf false setzen. Der interne Timer wird dann 
+   deaktiviert.
+3. BorderWidth - Breite des Randes um die Uhr in Pixeln.
+4. ColorBackground - Hintergrundfarbe des Ziffernblattes.
+5. ColorBorder - Farbe des Randes der Uhr
+6. ColorHands - Farbe der Stunden- und Minutenzeiger
+7. ColorNumbers - Farbe der Ziffern und des Sekundenzeigers
+8. Cursor - wie bei TPanel
+9. DigitLineWidth - Die Dicke der Anzeigesegmente für Style=csDigital in Pixeln.
+10.Enabled - wie bei TPanel. Falls Enabled=false, wird auch der Timer für die AutoUpdate-Funktion
+   deaktivuiert.
+11.FadingColor - Wenn FadingColor=true, ändert sich die Farbe des Stunden-/Minutenzeigers 
+   abhängig von der Minutenzahl. Je näher die Minutenzahl an die volle Stunde (also >59 Minuten) 
+   rückt, desto heller wird die Zeigerfarbe. Bei der vollen Stunde (also 0 Minuten) entspricht 
+   die Zeigerfarbe der in der Eigenschaft "ColorHands" angegebenen Farbe. Bei 1 Minute wird diese 
+   Farbe um 60% abgedunkelt. Diese Funktion ist nur aktiv, wenn ClockStyle<>csClassic.
+12.Font - wie bei TPanel
+13.Height - wie bei TPanel
+14.Hint - wie bei TPanel
+15.Kind - 
+   - ckRealTime: Die Uhr zeigt die Systemzeit an.
+   - ckStopWatch: Die Uhr funktioniert als Stopuhr. Zur Steuerung der Stopuhrfunktionen dienen
+     dann die Methoden Reset, Start und Stop.
+16.LEDContrast - Kontrast zwischen leuchtender und abgeschalteter LED
+                 0: Kein Helligkeitsunterschied ..
+		 9: Maximaler Helligkeitsunterschied
+16.Left - wie bei TPanel
+17.Name - wie bei TPanel
+18.Priority - Priorität des Timer-Threads, kann folgende Werte annehmen:
+   - Higher
+   - Highest
+   - Idle
+   - Lower
+   - Lowest
+   - tpNormal
+   - TimeCritical Je höher die Priorität, desto sicherer wird die Uhrzeit regelmäßig 
+     aktualisiert.
+19.ShowNumbers - kann folgende Werte annehmen:
+   - snAll: Alle Ziffern von 1..12 werden angezeigt
+   - snNone: Es werden keine Ziffern angezeigt
+   - snQuarters: Nur die Ziffern 3, 6, 9 und 12 werden angezeigt
+   Ziffern werden generell nur bei ClockStyle=csClassic angezeigt.
+20.ShowSeconds - Nur wenn ShowSeconds=true, wird eine Sekundenzwiger angezeigt.
+21.ShowTicks - Nur wenn ShowTicks=true und ClockStyle=csClassic, werden Stundenmarken am 
+   Uhrenrand angezeigt
+22.Style - bestimmt das Aussehen der Uhr und kann folgende Werte annehmen:
+   - csClassic: Eine "klassische" analoge Uhr mit drei Zeigern
+   - csDigital: Eine Digitaluhr mit Sieben-Segment-LED-Anzeige
+   - csMovingPoints: Stunden und Minuten werden von einem Symbol angezeigt, dessen Winkel die
+     Stunden und dessen Abstand zum Uhrenmittelpunkt die Minuten repräsentieren. Die Sekunden
+     werden durch einen wandernden Punkt symbolisiert.
+   - csPieslice: Stunden und Minuten werden von einem "Kuchenstück" angezeigt, dessen Winkel die
+     Stunden und dessen Breite die Minuten repräsentieren. Die Sekunden werden durch einen 
+     wandernden Punkt symbolisiert.
+23.Tag - wie bei TPanel
+24.Top - wie bei TPanel
+25.UpdateInterval - Bestimmt das Intervall, nach dem die Uhrzeit durch den internen Timer 
+   aktualisiert wird, wenn AutoUpdate=true.
+26.Visible - wie bei TPanel
+27.Width - wie bei TPanel
+
+II. Public:
+
+1. Hour - Die aktuelle Stunde der Eigenschaft "Time" (nur lesen).
+2. Minute - Die aktuelle Minute der Eigenschaft "Time" (nur lesen).
+3. Second - Die aktuelle Sekunde der Eigenschaft "Time" (nur lesen).
+4. Summertime - Gibt an, ob die angezeigte Zeit Sommerzeit darstellt (nur lesen).
+5. Time - Die angezeigte Uhrzeit im Format TTime. Die Zeit wird als ein 24tel eines Tages 
+   angegeben. 
+   Um die Uhr z.B. auf zehn Uhr zu stellen, kann man angeben: Time:=10/24
+   Um die Uhr z.B. auf zehn Uhr dreißig zu stellen, kann man angeben: Time:=10.5/24
+
+Ereignisse:
+-----------
+
+1. OnClick - wie bei TPanel
+2. OnDblClick - wie bei TPanel
+3. OnDragDrop - wie bei TPanel
+4. OnDragOver - wie bei TPanel
+5. OnEndDrag - wie bei TPanel
+6. OnMouseDown - wie bei TPanel
+7. OnMouseEnter - wird ausgelöst, wenn die Maus über das Control bewegt wird.
+8. OnMouseExit - wird ausgelöst, wenn die Maus das Control verlässt.
+9. OnMouseMove - wie bei TPanel
+10.OnMouseUp - wie bei TPanel
+11.OnStartDrag - wie bei TPanel
+12.OnTimer - wird bei jedem Timer-Ereignis des SRClock-Timers ausgelöst (wie bei TTimer).
+
+Methoden:
+---------
+
+1. Reset
+2. Start
+3. Stop
+
+Einige Eigenschaften und Ereignisse sind in Delphiversionen<5 evtl. nicht verfügbar.
+
+Die Funktion der Komponente läßt sich außerdem sehr schön im beigefügten Demo-Programm im 
+Ordner "KalDemo" sehen.

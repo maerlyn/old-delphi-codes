@@ -1,0 +1,91 @@
+<html>
+<head>
+  <title>SDL_PeepEvents</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Event Functions." href="eventfunctions.html">
+  <link rel="PREVIOUS" title="SDL_PumpEvents" href="sdlpumpevents.html">
+  <link rel="NEXT" title="SDL_PollEvent" href="sdlpollevent.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlpumpevents.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlpollevent.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLPEEPEVENTS">SDL_PeepEvents</a></h1>
+<div class="REFNAMEDIV"><a name="AEN4888"></a>
+<h2>Name</h2>
+SDL_PeepEvents&nbsp;--&nbsp;Checks the event queue for messages and optionally
+returns them.</div>
+<div class="REFSYNOPSISDIV"><a name="AEN4891"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN4892"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+<p>function <b>SDL_PeepEvents</b>( events : PSDL_Event; numevents : Integer;
+action : TSDL_eventaction; mask : UInt32 ) : Integer;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN4898"></a>
+<h2>Description</h2>
+<p>Checks the event queue for messages and optionally returns them.</p>
+<p>If <tt class="PARAMETER"><i>action</i></tt> is <tt class="LITERAL">SDL_ADDEVENT</tt>
+, up to  <tt class="PARAMETER"><i>numevents</i></tt> events will be added
+to the back of the event  queue.</p>
+<p>If <tt class="PARAMETER"><i>action</i></tt> is <tt class="LITERAL">SDL_PEEKEVENT</tt>
+, up to <tt class="PARAMETER"><i>numevents</i></tt> events at the front of
+the event queue,  matching <a href="sdlevent.html"><tt class="PARAMETER"><i>
+mask</i></tt></a>,  will be returned and will not be removed from the queue.</p>
+<p>If <tt class="PARAMETER"><i>action</i></tt> is <tt class="LITERAL">SDL_GETEVENT</tt>
+, up to  <tt class="PARAMETER"><i>numevents</i></tt> events at the front
+of the event queue,  matching <a href="sdlevent.html"><tt class="PARAMETER"><i>
+mask</i></tt></a>,  will be returned and will be removed from the queue.</p>
+<p>This function is thread-safe.</p>
+</div>
+<div class="REFSECT1"><a name="AEN4918"></a>
+<h2>Return Value</h2>
+<p>This function returns the number of events actually stored, or  <span class="RETURNVALUE">
+-1</span> if there was an error.  </p>
+</div>
+<div class="REFSECT1"><a name="AEN4922"></a>
+<h2>See Also</h2>
+<p><a href="sdlevent.html"><span class="STRUCTNAME">TSDL_Event</span></a>
+, <a href="sdlpollevent.html"><tt class="FUNCTION">SDL_PollEvent</tt></a>
+, <a href="sdlpushevent.html"><tt class="FUNCTION">SDL_PushEvent</tt></a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdlpumpevents.html">
+Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="sdlpollevent.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">SDL_PumpEvents</td>
+      <td width="34%" align="Center" valign="Top"><a href="eventfunctions.html">
+Up</a></td>
+      <td width="32%" align="Right" valign="Top">SDL_PollEvent</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

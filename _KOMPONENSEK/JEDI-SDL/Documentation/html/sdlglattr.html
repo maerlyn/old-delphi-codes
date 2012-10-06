@@ -1,0 +1,157 @@
+<html>
+<head>
+  <title>SDL_GLattr</title>
+             
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+       
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+       
+  <link rel="UP" title="Video" href="video.html">
+       
+  <link rel="PREVIOUS" title="SDL_FreeYUVOverlay" href="sdlfreeyuvoverlay.html">
+       
+  <link rel="NEXT" title="SDL_Rect" href="sdlrect.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+   
+<div class="NAVHEADER">  
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+      </tr>
+      <tr>
+        <td width="7%" align="Left" valign="Bottom"><a href="sdlfreeyuvoverlay.html">
+  Prev</a></td>
+        <td width="77%" align="Center" valign="Bottom"><br>
+        </td>
+        <td width="7%" align="Right" valign="Bottom"><a href="sdlrect.html">
+  Next</a></td>
+      </tr>
+       
+  </tbody>  
+</table>
+   
+<hr align="Left" width="100%"></div>
+   
+<h1><a name="SDLGLATTR">TSDL_GLAttr</a></h1>
+   
+<div class="REFNAMEDIV"><a name="AEN2555"></a>  
+<h2>Name</h2>
+  TSDL_GLattr -- SDL GL Attributes</div>
+   
+<div class="REFSECT1"><a name="AEN2558"></a><br>
+   
+<h2>Attributes</h2>
+   
+<div class="INFORMALTABLE"><a name="AEN2560"></a>  
+<p></p>
+   
+<table border="0" class="CALSTABLE">
+    <tbody>
+      <tr>
+        <td align="Left" valign="Top"><tt class="LITERAL">SDL_GL_RED_SIZE</tt></td>
+        <td align="Left" valign="Top">Size of the framebuffer red component,
+ in bits</td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="LITERAL">SDL_GL_GREEN_SIZE</tt></td>
+        <td align="Left" valign="Top">Size of the framebuffer green component,
+ in bits</td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="LITERAL">SDL_GL_BLUE_SIZE</tt></td>
+        <td align="Left" valign="Top">Size of the framebuffer blue component,
+ in bits</td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="LITERAL">SDL_GL_ALPHA_SIZE</tt></td>
+        <td align="Left" valign="Top">Size of the framebuffer alpha component,
+ in bits</td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="LITERAL">SDL_GL_DOUBLEBUFFER</tt></td>
+        <td align="Left" valign="Top">0 or 1, enable or disable double buffering</td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="LITERAL">SDL_GL_BUFFER_SIZE</tt></td>
+        <td align="Left" valign="Top">Size of the framebuffer, in bits</td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="LITERAL">SDL_GL_DEPTH_SIZE</tt></td>
+        <td align="Left" valign="Top">Size of the depth buffer, in bits</td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="LITERAL">SDL_GL_STENCIL_SIZE</tt></td>
+        <td align="Left" valign="Top">Size of the stencil buffer, in bits</td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="LITERAL">SDL_GL_ACCUM_RED_SIZE</tt></td>
+        <td align="Left" valign="Top">Size of the accumulation buffer red 
+component, in bits</td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="LITERAL">SDL_GL_ACCUM_GREEN_SIZE</tt></td>
+        <td align="Left" valign="Top">Size of the accumulation buffer green
+ component, in bits</td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="LITERAL">SDL_GL_ACCUM_BLUE_SIZE</tt></td>
+        <td align="Left" valign="Top">Size of the accumulation buffer blue
+ component, in bits</td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="LITERAL">SDL_GL_ACCUM_ALPHA_SIZE</tt></td>
+        <td align="Left" valign="Top">Size of the accumulation buffer alpha
+ component, in bits</td>
+      </tr>
+       
+  </tbody>  
+</table>
+   
+<p></p>
+  </div>
+  </div>
+   
+<div class="REFSECT1"><a name="AEN2611"></a>  
+<h2>Description</h2>
+   
+<p>While you can set most OpenGL attributes normally, the attributes list
+ above must be known <i class="EMPHASIS">before</i> SDL sets the video mode.
+ These attributes a set and read with <a href="sdlglsetattribute.html"><tt class="FUNCTION">
+  SDL_GL_SetAttribute</tt></a> and <a href="sdlglgetattribute.html"><tt class="FUNCTION">
+  SDL_GL_GetAttribute</tt></a>.</p>
+  </div>
+   
+<div class="REFSECT1"><a name="AEN2619"></a>  
+<h2>See Also</h2>
+   
+<p><a href="sdlglsetattribute.html"><tt class="FUNCTION">SDL_GL_SetAttribute</tt></a>
+  , <a href="sdlglgetattribute.html"><tt class="FUNCTION">SDL_GL_GetAttribute</tt></a></p>
+  </div>
+   
+<div class="NAVFOOTER">  
+<hr align="Left" width="100%">  
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td width="31%" align="Left" valign="Top"><a href="sdlfreeyuvoverlay.html">
+  Prev</a></td>
+        <td width="34%" align="Center" valign="Top"><a href="index.html">
+Home</a></td>
+        <td width="31%" align="Right" valign="Top"><a href="sdlrect.html">
+ Next</a></td>
+      </tr>
+      <tr>
+        <td width="31%" align="Left" valign="Top">SDL_FreeYUVOverlay</td>
+        <td width="34%" align="Center" valign="Top"><a href="video.html">
+Up</a></td>
+        <td width="31%" align="Right" valign="Top">TSDL_Rect</td>
+      </tr>
+       
+  </tbody>  
+</table>
+  </div>
+   
+</body>
+</html>

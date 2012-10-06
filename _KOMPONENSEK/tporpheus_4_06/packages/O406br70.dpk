@@ -1,0 +1,89 @@
+{* ***** BEGIN LICENSE BLOCK *****                                            *}
+{* Version: MPL 1.1                                                           *}
+{*                                                                            *}
+{* The contents of this file are subject to the Mozilla Public License        *}
+{* Version 1.1 (the "License"); you may not use this file except in           *}
+{* compliance with the License. You may obtain a copy of the License at       *}
+{* http://www.mozilla.org/MPL/                                                *}
+{*                                                                            *}
+{* Software distributed under the License is distributed on an "AS IS" basis, *}
+{* WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License   *}
+{* for the specific language governing rights and limitations under the       *}
+{* License.                                                                   *}
+{*                                                                            *}
+{* The Original Code is TurboPower Orpheus                                    *}
+{*                                                                            *}
+{* The Initial Developer of the Original Code is TurboPower Software          *}
+{*                                                                            *}
+{* Portions created by TurboPower Software Inc. are Copyright (C) 1995-2002   *}
+{* TurboPower Software Inc. All Rights Reserved.                              *}
+{*                                                                            *}
+{* Contributor(s):                                                            *}
+{*                                                                            *}
+{* ***** END LICENSE BLOCK *****                                              *}
+
+PACKAGE O406br70;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'TurboPower Orpheus 4.06 data-aware runtime package - VCL70'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vclx,
+  dbrtl,
+  vcldb,
+  bdertl,
+  O406_r70;
+
+contains
+  ovcdbacb in 'ovcdbacb.pas',
+  ovcdbadg in 'ovcdbadg.pas' {OvcfrmAliasDlg},
+  ovcdbae in 'ovcdbae.pas',
+  ovcdbcal in 'ovcdbcal.pas',
+  ovcdbccb in 'ovcdbccb.pas',
+  ovcdbcl in 'ovcdbcl.pas',
+  ovcdbclk in 'ovcdbclk.pas',
+  ovcdbdat in 'ovcdbdat.pas',
+  ovcdbdlb in 'ovcdbdLb.pas',
+  ovcdbed in 'ovcdbed.pas',
+  ovcdbfcb in 'ovcdbfcb.pas',
+  ovcdbhll in 'ovcdbhll.pas',
+  ovcdbidx in 'ovcdbidx.pas',
+  ovcdbise in 'ovcdbise.pas',
+  ovcdbmdg in 'ovcdbmdg.pas' {OvcfrmDbMemoDlg},
+  ovcdbnf in 'ovcdbnf.pas',
+  ovcdbnum in 'ovcdbnum.pas',
+  ovcdbpf in 'ovcdbpf.pas',
+  ovcdbplb in 'ovcdbplb.pas',
+  ovcdbrpv in 'ovcdbrpv.pas',
+  ovcdbsed in 'ovcdbsed.pas',
+  ovcdbsf in 'ovcdbsf.pas',
+  ovcdbsld in 'ovcdbsld.pas',
+  ovcdbtbl in 'ovcdbtbl.pas',
+  ovcdbtcb in 'ovcdbtcb.pas',
+  ovcdbtim in 'ovcdbtim.pas',
+  o32dbfe in 'o32dbfe.pas';
+
+end.

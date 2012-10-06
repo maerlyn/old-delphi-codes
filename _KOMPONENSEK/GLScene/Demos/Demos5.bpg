@@ -1,0 +1,153 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = GLScene5.bpl Camera.exe Caterpillar.exe Column.exe Fading.exe \
+  Hierarchy.exe Joystick.exe Manual.exe Megacube.exe Particles.exe Pick.exe \
+  Pong.exe Screensaver.scr Torque.exe Whirlwind.exe Formula.exe Mushroom.exe \
+  Transparency.exe Actor.exe sphere.exe nutsnbolts.exe pawn.exe fxy.exe \
+  heightfield.exe actortwocam.exe bendingcyl.exe fire.exe cursor.exe portal.exe \
+  expolygon.exe keymap.exe objmove.exe splines.exe customquad.exe PathControl.exe \
+  Multitexture.exe texformat.exe terrain.exe Recorder.exe bmpfont.exe boom.exe \
+  candles.exe Thor.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+GLScene5.bpl: ..\GLScene5.dpk
+  $(DCC)
+
+Torque.exe: behaviours\torque\Torque.dpr
+  $(DCC)
+
+Megacube.exe: bench\megacube\Megacube.dpr
+  $(DCC)
+
+Whirlwind.exe: bench\whirlwind\Whirlwind.dpr
+  $(DCC)
+
+Camera.exe: interface\camera\Camera.dpr
+  $(DCC)
+
+Fading.exe: interface\fadingintf\Fading.dpr
+  $(DCC)
+
+Pick.exe: interface\pick\Pick.dpr
+  $(DCC)
+
+Column.exe: movements\column\Column.dpr
+  $(DCC)
+
+Hierarchy.exe: movements\hierarch\Hierarchy.dpr
+  $(DCC)
+
+Manual.exe: movements\manual\Manual.dpr
+  $(DCC)
+
+Pong.exe: movements\pong\Pong.dpr
+  $(DCC)
+
+Caterpillar.exe: sprites\caterpillar\Caterpillar.dpr
+  $(DCC)
+
+Particles.exe: sprites\particles\Particles.dpr
+  $(DCC)
+
+Joystick.exe: utilities\joystick\Joystick.dpr
+  $(DCC)
+
+Screensaver.scr: utilities\screensaver\Screensaver.dpr
+  $(DCC)
+
+Formula.exe: meshes\formula\Formula.dpr
+  $(DCC)
+
+Mushroom.exe: meshes\mushroom\Mushroom.dpr
+  $(DCC)
+
+Transparency.exe: materials\transparency\Transparency.dpr
+  $(DCC)
+
+Actor.exe: meshes\actor\Actor.dpr
+  $(DCC)
+
+sphere.exe: collisions\sphere\sphere.dpr
+  $(DCC)
+
+nutsnbolts.exe: extrusion\nutsnbolts\nutsnbolts.dpr
+  $(DCC)
+
+pawn.exe: extrusion\pawn\pawn.dpr
+  $(DCC)
+
+fxy.exe: graph\fxy\fxy.dpr
+  $(DCC)
+
+heightfield.exe: graph\heightfield\heightfield.dpr
+  $(DCC)
+
+actortwocam.exe: meshes\actortwocam\actortwocam.dpr
+  $(DCC)
+
+bendingcyl.exe: extrusion\bendingcyl\bendingcyl.dpr
+  $(DCC)
+
+fire.exe: specialsFX\fire\fire.dpr
+  $(DCC)
+
+cursor.exe: interface\cursor\cursor.dpr
+  $(DCC)
+
+portal.exe: meshes\portal\portal.dpr
+  $(DCC)
+
+expolygon.exe: meshes\expolygon\expolygon.dpr
+  $(DCC)
+
+keymap.exe: utilities\keymap\keymap.dpr
+  $(DCC)
+
+objmove.exe: movements\objmove\objmove.dpr
+  $(DCC)
+
+splines.exe: graph\splines\splines.dpr
+  $(DCC)
+
+customquad.exe: materials\customquad\customquad.dpr
+  $(DCC)
+
+PathControl.exe: behaviours\pathcontrol\PathControl.dpr
+  $(DCC)
+
+Multitexture.exe: materials\multitexture\Multitexture.dpr
+  $(DCC)
+
+texformat.exe: materials\texformat\texformat.dpr
+  $(DCC)
+
+terrain.exe: meshes\terrain\terrain.dpr
+  $(DCC)
+
+Recorder.exe: utilities\recorder\Recorder.dpr
+  $(DCC)
+
+bmpfont.exe: interface\bmpfont\bmpfont.dpr
+  $(DCC)
+
+boom.exe: specialsFX\boom\boom.dpr
+  $(DCC)
+
+candles.exe: specialsFX\candles\candles.dpr
+  $(DCC)
+
+Thor.exe: specialsFX\thor\Thor.dpr
+  $(DCC)
+
+

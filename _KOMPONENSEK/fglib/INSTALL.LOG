@@ -1,0 +1,78 @@
+***  Installation Started 10/15/01 21:13  ***
+Title: FGLib - Installation
+Source: E:\GABOR\VIRELL\AJAI\20011015\FGLIB.EXE
+Made Dir: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib
+Made Dir: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DOC
+Made Dir: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DOC\FGLIB
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DOC\FGLIB\DOCEN.HLP
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DOC\FGLIB\OTHER.EXE
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\AlarmDlg.dfm
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\AlarmDlg.pas
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\AnimeDlg.dfm
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\AnimeDlg.pas
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\curdlg.dfm
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\curdlg.pas
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\Dt.pas
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\FgDrawLib.pas
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\FgLib.pas
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\fglib.res
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\FgLibPackage.bpl
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\FgLibPackage.cfg
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\FgLibPackage.dof
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\FgLibPackage.dpk
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\FgLibPackage.res
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\fglibreg.dcr
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\fglibreg.pas
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\Newdlg.pas
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\OpenBmp.dfm
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\OpenBmp.pas
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\OpenWav.dfm
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\OpenWav.pas
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\Perpcal.dfm
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\Perpcal.pas
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\StrDlg.dfm
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\StrDlg.pas
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\typefglib.pas
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\Zoom.dfm
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\Zoom.pas
+Made Dir: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\SOUND
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\SOUND\ACTIVE.WAV
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\SOUND\CANCEL.WAV
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\SOUND\FIRE.WAV
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\SOUND\MATCH.WAV
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\SOUND\PRESS.WAV
+Made Dir: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO
+Made Dir: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\demo1.cfg
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\demo1.dof
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\demo1.dpr
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\demo1.dsk
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\demo1.res
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\demo2.cfg
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\demo2.dof
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\demo2.dpr
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\demo2.dsk
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\demo2.res
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\demo3.cfg
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\demo3.dof
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\demo3.dpr
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\demo3.dsk
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\demo3.res
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\FHD.dfm
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\Fhd.pas
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\main1.dfm
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\main1.pas
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\MAIN2.dfm
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\main2.pas
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\MAIN3.dfm
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\DEMO\FGLIB\main3.pas
+File Copy: C:\!Gabor\DELPHI\_KOMPONENSEK\fglib\UNWISE.EXE
+Icon Group: FGLIB Library
+Icon Name: Other components
+Icon Cmd: C:\!GABOR\DELPHI\_KOMPO~1\FGLIB\DOC\FGLIB\OTHER.EXE
+Icon Group: FGLIB Library
+Icon Name: Help - FGLib
+Icon Cmd: C:\!GABOR\DELPHI\_KOMPO~1\FGLIB\DOC\FGLIB\DOCEN.HLP
+Icon Group: FGLIB Library
+Icon Name: UnInstall FGLib
+Icon Cmd: C:\!GABOR\DELPHI\_KOMPO~1\FGLIB\unwise.exe install.log

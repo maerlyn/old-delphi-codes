@@ -1,0 +1,139 @@
+<html>
+<head>
+  <title>TSDL_CD</title>
+             
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+       
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+       
+  <link rel="UP" title="CD-ROM" href="cdrom.html">
+       
+  <link rel="PREVIOUS" title="SDL_CDClose" href="sdlcdclose.html">
+       
+  <link rel="NEXT" title="SDL_CDtrack" href="sdlcdtrack.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+   
+<div class="NAVHEADER">  
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+      </tr>
+      <tr>
+        <td width="7%" align="Left" valign="Bottom"><a href="sdlcdclose.html">
+  Prev</a></td>
+        <td width="77%" align="Center" valign="Bottom"><br>
+        </td>
+        <td width="7%" align="Right" valign="Bottom"><a href="sdlcdtrack.html">
+  Next</a></td>
+      </tr>
+       
+  </tbody>  
+</table>
+   
+<hr align="Left" width="100%"></div>
+   
+<h1><a name="SDLCD">TSDL_CD</a></h1>
+   
+<div class="REFNAMEDIV"><a name="AEN7023"></a>  
+<h2>Name</h2>
+&nbsp; TSDL_CD -- CDROM Drive Information</div>
+   
+<div class="REFSECT1"><a name="AEN7026"></a>  
+<h2>Structure Definition</h2>
+  <pre class="PROGRAMLISTING">  TSDL_CD = <b>record</b><br>    id : Integer;           // Private drive identifier<br>    status : TSDL_CDStatus; // Current drive status<br>    numtracks : Integer;    // Number of tracks on disk<br>    cur_track : Integer;    // Current track position<br>    cur_frame : Integer;    // Current frame offset within current track<br>    track : array[0..SDL_MAX_TRACKS] of TSDL_CDTrack;<br>  <b>end;</b></pre>
+  </div>
+   
+<div class="REFSECT1"><a name="AEN7029"></a>  
+<h2>Structure Data</h2>
+   
+<div class="INFORMALTABLE"><a name="AEN7031"></a>  
+<p></p>
+   
+<table border="0" class="CALSTABLE">
+    <tbody>
+      <tr>
+        <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>id</i></tt></td>
+        <td align="Left" valign="Top">Private drive identifier</td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>status</i></tt></td>
+        <td align="Left" valign="Top">Drive <a href="sdlcdstatus.html">status</a></td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>numtracks</i></tt></td>
+        <td align="Left" valign="Top">Number of tracks on the CD</td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>cur_track</i></tt></td>
+        <td align="Left" valign="Top">Current track</td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>cur_frame</i></tt></td>
+        <td align="Left" valign="Top">Current frame offset within the track</td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>track</i></tt>
+  [SDL_MAX_TRACKS+1]</td>
+        <td align="Left" valign="Top">Array of track descriptions. (see <a href="sdlcdtrack.html"><span class="STRUCTNAME">
+  TSDL_CDTrack</span></a>)</td>
+      </tr>
+       
+  </tbody>  
+</table>
+   
+<p></p>
+  </div>
+  </div>
+   
+<div class="REFSECT1"><a name="AEN7061"></a>  
+<h2>Description</h2>
+   
+<p>An <span class="STRUCTNAME">TSDL_CD</span> structure is returned by <a href="sdlcdopen.html"><tt class="FUNCTION">
+  SDL_CDOpen</tt></a>. It represents an opened CDROM device and stores information
+ on the layout of the tracks on the disc.</p>
+   
+<p>A frame is the base data unit of a CD. <tt class="LITERAL">CD_FPS</tt>
+   frames is equal to 1 second of music. SDL provides two macros for converting
+ between time and frames: <tt class="LITERAL">FRAMES_TO_MSF(f, M,S,F)</tt>
+   and <tt class="LITERAL">MSF_TO_FRAMES</tt>.</p>
+  </div>
+   
+<div class="REFSECT1"><a name="AEN7071"></a>  
+<h2>Examples</h2>
+  <pre class="PROGRAMLISTING">min, sec, frame : integer;<br>frame_offset : integer;<br><br>FRAMES_TO_MSF( cdrom.cur_frame, min, sec, frame );<br>WriteLn( Format( 'Current Position: %d minutes, %d seconds, %d frames', [ min, sec, frame ] ) );<br><br>frame_offset := MSF_TO_FRAMES( min, sec, frame );</pre>
+  </div>
+   
+<div class="REFSECT1"><a name="AEN7074"></a>  
+<h2>See Also</h2>
+   
+<p><a href="sdlcdopen.html"><tt class="FUNCTION">SDL_CDOpen</tt></a>, <a href="sdlcdtrack.html"><span class="STRUCTNAME">
+  TSDL_CDtrack</span></a></p>
+  </div>
+   
+<div class="NAVFOOTER">  
+<hr align="Left" width="100%">  
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td width="31%" align="Left" valign="Top"><a href="sdlcdclose.html">
+  Prev</a></td>
+        <td width="34%" align="Center" valign="Top"><a href="index.html">
+Home</a></td>
+        <td width="31%" align="Right" valign="Top"><a href="sdlcdtrack.html">
+  Next</a></td>
+      </tr>
+      <tr>
+        <td width="31%" align="Left" valign="Top">SDL_CDClose</td>
+        <td width="34%" align="Center" valign="Top"><a href="cdrom.html">
+Up</a></td>
+        <td width="31%" align="Right" valign="Top">TSDL_CDTrack</td>
+      </tr>
+       
+  </tbody>  
+</table>
+  </div>
+   
+</body>
+</html>

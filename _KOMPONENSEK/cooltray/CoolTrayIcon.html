@@ -1,0 +1,311 @@
+<html>
+<head>
+<title>CoolTrayIcon, ver. 3.0.0</title>
+
+<style type='text/css'>
+/*  body       { font-family: MS Sans Serif; font-size: 12pt; } */
+  h1         { font: bold 14pt Arial; margin-bottom: 10px; }
+  h2         { font: bold 12pt Arial; margin-bottom: 10px; margin-top: 25px; }
+  td.name    { background-color: #FFFFC0; width: 120px; font-weight: bold; }
+  td.desc    { background-color: #F0F0F0; }
+  td.default { background-color: #F0F0F0; }
+  ul         { margin-left: 15px; margin-top: 5px; }
+  li         { margin-bottom: 10px; }
+</style>
+
+</head>
+
+
+<body topmargin='15' bottommargin='15' leftmargin='10' rightmargin='10'>
+
+<a name='Top'><h1>CoolTrayIcon, ver. 3.0.0</h1>
+
+
+<a href='#Properties'>[Properties]</a> <a href='#Methods'>[Methods]</a> <a href='#Events'>[Events]</a>
+<br>
+<a href='#Bugs'>[Known Bugs]</a> <a href='#Hints'>[Hints]</a> <a href='#Comments'>[Comments]</a>
+<br>
+
+
+<p>
+CoolTrayIcon is a tray icon component. It allows you to easily implement tray icons 
+in your own applications, with various appearances and behaviors.
+</p>
+
+
+
+<a name='Properties'></a><h2>Properties</h2>
+
+<table cellpadding='2' cellspacing='2' border='0' width='100%'>
+<tr>
+  <td class='name' valign='top'>Hint</td>
+  <td class='desc' valign='top'>The tray icon's hint (max 64 chars), which is displayed 
+  when you move the mouse cursor over the tray icon.<br>
+  <b>NOTE:</b> The time until the hint window closes is determined by 
+  Windows, so don't bother trying to change the interval. You can't.
+  </td>
+  <td class='default' valign='top' nowrap><br></td>
+</tr>
+<tr>
+  <td class='name' valign='top'>ShowHint</td>
+  <td class='desc' valign='top'>Whether to show the hint.</td>
+  <td class='default' valign='top' nowrap>Default true</td>
+</tr>
+<tr>
+  <td class='name' valign='top'>Icon</td>
+  <td class='desc' valign='top'>The icon to display in the tray. This icon is 16x16 
+  pixels and max. 16 colors. If you use an icon file (*.ico) containing 
+  more than one icon, Delphi will use the first icon. If it's 32x32 it 
+  will be scaled down, which probably won't look good.<br>
+  <b>NOTE:</b> Assigning a new TIcon object to Icon will cause the icon 
+  in the tray to redraw. However, this is not the case if you change Icon 
+  through the TIcon.Assign method, or change it through TIcon.Handle. 
+  In those cases you must call the method Refresh (see below) to redraw it.</td>
+  <td class='default' valign='top' nowrap><br></td>
+</tr>
+<tr>
+  <td class='name' valign='top'>IconVisible</td>
+  <td class='desc' valign='top'>Whether to display the icon. This property has no effect 
+  in design mode.</td>
+  <td class='default' valign='top' nowrap>Default true</td>
+</tr>
+<tr>
+  <td class='name' valign='top'>PopupMenu</td>
+  <td class='desc' valign='top'>The popup menu you want to display when the icon is 
+  clicked.</td>
+  <td class='default' valign='top' nowrap>Default true</td>
+</tr>
+<tr>
+  <td class='name' valign='top'>LeftPopup</td>
+  <td class='desc' valign='top'>Do you want the popup menu to pop up when you click
+  the left mouse button? Default is false, meaning only the right
+  button will work.<br>
+  <b>NOTE:</b> LeftPopup must be false (or the popup menu unassigned) if 
+  you want to double click the tray icon without displaying the popup menu. 
+  LeftPopup must be false if you want CoolTrayIcon to handle a menu that 
+  has a default menu item.</td>
+  <td class='default' valign='top' nowrap>Default false</td>
+</tr>
+<tr>
+  <td class='name' valign='top'>StartMinimized</td>
+  <td class='desc' valign='top'>Should the main form be hidden when the application 
+  starts up?<br>
+  <b>NOTE:</b> Remember to set the form's Visible property to false if 
+  StartMinimized is true.</td>
+  <td class='default' valign='top' nowrap>Default false</td>
+</tr>
+<tr>
+  <td class='name' valign='top'>Enabled</td>
+  <td class='desc' valign='top'>Default true. Works like Enabled for other controls, 
+  enabling/disabling keyboard and mouse input. Useful when you want to 
+  temporarily disable the popup menu, say while you are displaying an about box 
+  or some other modal window.</td>
+  <td class='default' valign='top' nowrap>Default true</td>
+</tr>
+<tr>
+  <td class='name' valign='top'>IconList</td>
+  <td class='desc' valign='top'>An ImageList containing icons. If it contains other 
+  images than icons, the tray icon won't change when using CycleIcons, 
+  but no error occurs.<br>
+  <b>NOTE:</b> When you assign to IconList IconIndex is set to 0.</td>
+  <td class='default' valign='top' nowrap><br></td>
+</tr>
+<tr>
+  <td class='name' valign='top'>IconIndex</td>
+  <td class='desc' valign='top'>The current icon in the assigned iconlist (or 0 if 
+  no iconlist is assigned).</td>
+  <td class='default' valign='top' nowrap><br></td>
+</tr>
+<tr>
+  <td class='name' valign='top'>CycleIcons</td>
+  <td class='desc' valign='top'>Animate tray icon by cycling through all the icons stored 
+  in IconList and assigning them to Icon. When you set CycleIcons to true, 
+  it will begin with the first icon in IconList.<br>
+  <b>NOTE:</b> CycleIcons can be true even though you have no IconList. 
+  No cycling will occur in that case, but the cycle timer is still active, 
+  which will consume some resources.</td>
+  <td class='default' valign='top' nowrap>Default false</td>
+</tr>
+<tr>
+  <td class='name' valign='top'>CycleInterval</td>
+  <td class='desc' valign='top'>The time interval in milisecs. before selecting a new icon 
+  from IconList.</td>
+  <td class='default' valign='top' nowrap><br></td>
+</tr>
+<tr>
+  <td class='name' valign='top'>DesignPreview</td>
+  <td class='desc' valign='top'>When true, enables you to preview the tray icon in design 
+  mode. You can watch what the icon looks like, see its hint, enable/disable it, 
+  test the popupmenu, and animate it via CycleIcons.<br>
+  <b>NOTE:</b> Set DesignPreview to false to avoid the design time icon 
+  appearing when you run your program. This is only a problem in the Delphi IDE, 
+  not in the finished exe-file. I couldn't find a way to kill the design icon 
+  in run-time, so you'll have to do it yourself.<br>
+  <b>NOTE:</b> Setting DesignPreview in run-time has no effect.</td>
+  <td class='default' valign='top' nowrap>Default false</td>
+</tr>
+<tr>
+  <td class='name' valign='top'>MinimizeToTray</td>
+  <td class='desc' valign='top'>Do you want to hide the main form instead of minimizing it?</td>
+  <td class='default' valign='top' nowrap>Default false</td>
+</tr>
+<tr>
+  <td class='name' valign='top'>Handle</td>
+  <td class='desc' valign='top'>The tray icon's handle.</td>
+  <td class='default' valign='top' nowrap><br></td>
+</tr>
+<tr>
+  <td class='name' valign='top'>WindowHandle</td>
+  <td class='desc' valign='top'>The tray icon's window handle.</td>
+  <td class='default' valign='top' nowrap><br></td>
+</tr>
+</table>
+
+
+
+<a name='Methods'></a><h2>Methods</h2>
+
+<table cellpadding='2' cellspacing='2' border='0' width='100%'>
+<tr>
+  <td class='name' valign='top'>ShowMainForm</td>
+  <td class='desc' valign='top'>Show the main form.<br>
+  <b>NOTE:</b> It is important that you use this method when displaying the
+  form, as it contains important calls that affect how the form and the 
+  application display themselves. See the demo app.</td>
+  <td class='default' valign='top'><br></td>
+</tr>
+<tr>
+  <td class='name' valign='top'>HideMainForm</td>
+  <td class='desc' valign='top'>Hide the main form.</td>
+  <td class='default' valign='top'><br></td>
+</tr>
+<tr>
+  <td class='name' valign='top'>Refresh</td>
+  <td class='desc' valign='top'>Redraw the tray icon. May be necessary when changing 
+  the icon, depending on how you do it (see above).</td>
+  <td class='default' valign='top'>Returns true or false</td>
+</tr>
+<tr>
+  <td class='name' valign='top'>ShowBalloonHint</td>
+  <td class='desc' valign='top'>Show a balloon hint (a kind of "sticky" popup hint).<br>
+  <b>NOTE:</b> Balloon hints are available in WinME, Win2000, and WinXP only. 
+  Calling this method in other Windows versions has no effect.<br>
+  <b>NOTE:</b> You can use a max. of 64 chars for the title and max. 255 
+  chars for the text. The hint is visible for 10-60 seconds, or until the user 
+  clicks it.</td>
+  <td class='default' valign='top'>Returns true or false</td>
+</tr>
+<tr>
+  <td class='name' valign='top'>BitmapToIcon</td>
+  <td class='desc' valign='top'>Renders and returns an existing icon based on the bitmap 
+  given as parameter. The bitmap should be 16x16 pixels. Specify a color to be shown 
+  transparently or clNone for no transparency.<br>
+  <b>NOTE:</b> Bitmaps that are not exactly 16x16 will be scaled up or down.</td>
+  <td class='default' valign='top'>Returns true or false</td>
+</tr>
+</table>
+
+
+
+<a name='Events'></a><h2>Events</h2>
+
+<table cellpadding='2' cellspacing='2' border='0' width='100%'>
+<tr>
+  <td class='name' valign='top'>OnClick,<br>
+  OnDblClick,<br>
+  OnMouseDown,<br>
+  OnMouseUp,<br>
+  OnMouseMove</td>
+  <td class='desc' valign='top'>Work like the similar events for other controls.</td>
+</tr>
+<tr>
+  <td class='name' valign='top'>OnCycle</td>
+  <td class='desc' valign='top'>Fired just before the icon changes via CycleIcons.
+  Returns the next index in the assigned imagelist.</td>
+</tr>
+</table>
+
+
+
+<a name='Bugs'></a><h2>Known Bugs</h2>
+
+<ul>
+<li>No known bugs at this point.
+</li>
+
+<!--
+<li>A few people have experienced problems after changing the main form's 
+  BorderStyle property. This in fact recreates the form with a new handle. 
+  CoolTrayIcon would sometimes reference the old handle, thus cutting the new form 
+  out of the message loop. This should be fixed by now, but let me know of any 
+  problems connected to the BorderStyle property.
+</li>
+-->
+
+</ul>
+
+
+
+<a name='Hints'></a><h2>Hints</h2>
+
+<ul>
+<li><i>How do you start your app. with the tray icon visible and the main form 
+invisible?</i><br>
+Very simple: at design time set StartMinimized and IconVisible to true 
+and set the form's Visible property to false.
+</li>
+
+<li><i>What is the proper way to restore the form?</i><br>
+ALWAYS use the method ShowMainForm! This method contains important calls 
+that affect how the form and the application display themselves.
+</li>
+
+<li><i>How do I hide the application's icon from the taskbar?</i><br>
+  Well, it's very simple:
+  <pre>  ShowWindow(Application.Handle, SW_HIDE);</pre>
+  To show it again, use SW_RESTORE or SW_SHOW as parameter. Also, if you display 
+  a child form the application icon will become visible again automatically.
+</li>
+
+<li><i>Can you retrieve the client coordinates of the tray icon and not just the 
+  screen coordinates? (In other words, can you determine where the cursor is 
+  situated inside the trayicon itself?)</i><br>
+  To the best of my knowledge, you cannot. The parent of the tray icon is the 
+  TASKBAR (you would think it was the TRAYBAR, but that seems to be some 
+  dummy canvas that the taskbar uses in its paint method). The best I can do is 
+  retrieve the tray icon's position in the traybar, but this is not much use.
+</li>
+</ul>
+
+
+
+<a name='Comments'></a><h2>Comments</h2>
+
+The CoolTrayIcon component is <i>freeware</i>. Feel free to use and improve it, 
+but <i>please include all original files if you redistribute the zip-file</i>. 
+If you have any comments or corrections to the component I would very much like 
+to hear them. A lot of Delphi programmers have already told me they like the 
+component and use it, which is a huge boost for my ego. Thanks a lot, guys - 
+especially those of you who gave suggestions and pointed out the bugs.
+</p>
+
+<p>
+The component should work on any Windows platform (Win9x, ME, NT, 2000, XP). 
+The demo exe-file may have to be recompiled (?), though I don't think so. If you 
+experience any problems related to the operating system you use, please tell me. 
+Also, it should work in Delphi 4 and up (2 and 3?) and C++Builder 3 and up. 
+Again, tell me if I'm wrong.
+</p>
+
+<p>
+Get the latest version from <a href='http://www3.ewebcity.com/troels/delphi.asp'>
+http://www3.ewebcity.com/troels/delphi.asp</a>.
+</p>
+
+<p>
+Troels Jakobsen<br>
+<a href='mailto:delphiuser@get2net.dk'>delphiuser@get2net.dk</a>
+</p>
+
+</body>
+</html>

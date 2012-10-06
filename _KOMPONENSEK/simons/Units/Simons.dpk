@@ -1,0 +1,51 @@
+package Simons;
+
+{$R *.RES}
+{$R 'SRDlgs.dcr'}
+{$R 'SRChkBox.dcr'}
+{$ALIGN ON}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Simons Komponenten'}
+{$DESIGNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  vcl50,
+  VCLX50;
+
+contains
+  TimeFunc in 'TimeFunc.pas',
+  OvalBtn in 'OvalBtn.pas',
+  RackCtls in 'RackCtls.pas',
+  RRColors in 'RRColors.pas',
+  SRCal in 'SRCal.pas',
+  SRColBtn in 'SRColBtn.pas',
+  SRDlgs in 'SRDlgs.pas',
+  SRGrad in 'SRGrad.pas',
+  SRLabel in 'SRLabel.pas',
+  SRWave in 'SRWave.pas',
+  EnhEdit in 'EnhEdit.pas',
+  SRUtils in 'SRUtils.pas',
+  MyMath in 'MyMath.pas',
+  SRChkBox in 'SRChkBox.pas';
+
+end.

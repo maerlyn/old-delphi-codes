@@ -1,0 +1,1089 @@
+Изменения после версии RX 2.60 (от 27.01.99)
+--------------------------------------------
+20.09.99 все модули
+  - Библиотека подготовлена для использования с Delphi 5.0 и установлена
+    в Delphi 5 build 5.62.
+
+10.07.99 rxlogin.pas
+  - Новая компонента TRxLoginDialog.
+
+30.05.99 все модули
+  - Библиотека подготовлена для использования с Borland C++Builder 4.0.
+
+Изменения после версии RX 2.50 (от 22.07.98)
+--------------------------------------------
+20.01.98 fileutil.pas
+  - Устранена ошибка в функии DeleteFilesEx.
+
+17.12.98 rxslider.pas
+  - Добавлены новые возможные значения свойства Options компоненты
+    TRxSlider (тип TSliderOption).
+
+12.12.98 animate.pas, gifctrl.pas
+  - В компоненты TAnimatedImage и TRxGIFAnimator добавлено свойство
+    AsyncDrawing (для Delphi версии 3.0 и выше).
+
+07.12.98 mrgmngr.pas
+  - Новая компонента TMergeManager.
+
+04.12.98 parsing.pas
+  - В класс TRxMathParser добавлена возможность использования функций,
+    определяемых пользователем.
+
+25.11.98 pagemngr.pas
+  - В компоненту TPageManager добавлены свойства PageHistory, UseHistory,
+    HistoryCommand и метод GotoHistoryPage.
+
+12.11.98 rxmenus.pas
+  - Исправлена ошибка в вычислении размеров пунктов меню в Windows98.
+
+01.11.98 rxcombos.pas
+  - В компоненты TColorComboBox, TFontComboBox добавлено свойство Style.
+
+28.10.98 rxriched.pas
+  - Написана компонента TRxRichEdit с поддержкой возможностей OLE и
+    RichEdit версии 2.0.
+
+24.10.98 rxremlog.pas
+  - Написана компонента TRxRemoteLogin (доступна в версиях для Delphi 3 и
+    выше - в редакции C/S).
+
+22.10.98 pagemngr.pas
+  - В компоненту TPageManager добавлено свойство DestroyHandles.
+
+10.10.98 gifctrl.pas
+  - Добавлено кеширование, ускоряющее отрисовку анимированных GIF изображений,
+    содержащих большое количество фреймов.
+
+08.10.98 rxmenus.pas
+  - Исправлена ошибка в RxMenus, не позволявшая пользоваться "горячими"
+    клавишими в Owner-Draw меню.
+
+05.10.98 rxgrdcpt.pas
+  - Компонента TRxGradientCaption теперь правильно отрисовывает градиент в
+    заголовке окна в Windows 98.
+
+22.09.98 rxgraph.pas
+  - Добавлены функции TileImage, ZoomImage.
+
+20.09.98 rxctrls.pas
+  - В компоненту TSecretPanel добавлено свойство ScrollDirection и событие
+    OnPaintClient.
+  - В компоненту TSecretPanel добавлено свойство AsyncDrawing.
+
+20.09.98 rxlookup.pas
+  - В компоненту TRxLookupEdit добавлено свойство PopupOnlyLocate и событие
+    OnGetImage.
+
+18.09.98 rxnotify.pas
+  - Исправлена ошибка в компоненте TRxFolderMonitor, проявлявшаяся в
+    Windows NT 4 (не вызывалось событие OnChange).
+
+15.09.98 memtable.pas
+  - В компоненте TMemoryTable для Delphi 3 и выше теперь числовые поля с
+    нулевыми значениями не воспринимаются как NULL-поля.
+
+06.09.98 rxmemds.pas, seldsfrm.pas
+  - Написана новая компонента TRxMemoryData для Delphi 3 и выше.
+  - Написан component editor для компонент TRxMemoryData и TMemoryTable для
+    копирования структуры из других наборов данных.
+
+02.09.98 rxspin.pas
+  - Устранена ошибка в компоненте TRxSpinEdit, приводящая к исключению "Access
+    violation" в C++Builder 3.0 при создании или уничтожении компоненты со
+    значением свойства ButtonKind = bkStandard.
+
+01.09.98 dbriched.pas
+  - Устранена ошибка "Access violation" при помещении компоненты TRxDBRichEdit
+    на форму в Delphi 3, 4.
+
+25.08.98 rxverinf.pas
+  - Модуль VerInfo.pas переименован в RxVerInf.pas для устранения конфликта
+    с модулем VerInfo, входящим в стандартный package Dbx30.
+
+17.08.98 rxdbctrl.pas
+  - Устранена ошибка с неправильной отрисовкой заголовков колонок в TRxDBGrid
+    в Delphi 4.0 при значении свойства FixedCols > 0.
+
+06.08.98 rxctrls.pas
+  - Устранена ошибка memory leak в TRxCheckListBox.
+
+31.07.98 rxquery.pas
+  - Исправлена ошибка с сохранением/чтением Params у TRxQuery в Delphi 4.
+
+31.07.98 rxmenus.pas
+  - Исправлена отрисовка popup-меню при ShowCheckMarks = True и значении
+    LeftMargin > 0.
+
+31.07.98 rxctlreg.pas
+  - Исправлена ошибка в редакторе свойств TRxIntegerProperty, не позволявшая
+    в Delphi 4 редактировать свойства типа Cardinal.
+
+31.07.98 gradedit.pas
+  - Исправлен редактор компоненты TRxGradientCaption для совместимости с
+    редакциями Standard и Professional Delphi 3.
+
+30.07.98 memtable.pas
+  - Исправлена ошибка в компоненте TMemoryTable, вызывавшая "Access
+    violation..." при открытии таблицы в Delphi 4.
+
+Изменения после версии RX 2.40 (от 11.02.98)
+--------------------------------------------
+10.07.98 rxslider.pas
+  - В компоненту TRxSlider добавлено свойство BevelStyle.
+
+03.07.98 все модули
+  - Библиотека подготовлена для использования с Delphi 4.0 и установлена
+    в Delphi 4 build 5.33.
+
+01.07.98 rxdbctrl.pas
+  - Добавлена возможность использования компонент TRxDBCalcEdit, TDBDateEdit
+    и TRxDBComboEdit в TDBCtrlGrid.
+
+22.06.98 rxdbctrl.pas
+  - Изменен тип TGetBtnParamsEvent, в метод - обработчик события OnGetBtnParams
+    компоненты TRxDBGrid добавлен параметр SortMarker.
+
+20.06.98 rxlookup.pas
+  - В компоненты TRxDBLookupList и TRxDBLookupCombo добавлено свойство
+    FieldsDelimiter.
+  - В компоненту TRxDBLookupCombo добавлено свойство DisplayAllFields.
+  - При отрицательных значениях свойства DropDownWidth компонент
+    TRxDBLookupCombo и TRxDBLookupEdit ширина выпадающего списка
+    теперь подбирается автоматически по ширине всех отображаемых в
+    списке полей.
+
+14.06.98 rxgrdcpt.pas
+  - Компонента TRxGradientCaption расширена, перенесена из демо-приложения
+    RXDEMO в состав библиотеки и зарегистрирована в "RX Tools".
+
+11.06.98 rxnotify.pas
+  - Добавлена новая компонента TRxFolderMonitor.
+
+09.06.98 tooledit.pas, curredit.pas, rxspin.pas
+  - В компоненты TFilenameEdit, TDirectoryEdit, TDateEdit, TRxSpinEdit
+    добавлено "забытое" свойство BorderStyle. У всех наследников
+    TCustomComboEdit исправлена отрисовка кнопки при значении свойства
+    BorderStyle = bsNone.
+
+07.06.98 speedbar.pas
+  - Компонента TSpeedbar теперь правильно обрабатывает scaling при значении
+    свойства родительской формы Scaling = True.
+
+07.06.98 apputils.pas
+  - Функции Save/RestoreFormPlacement не считывают из INI-файла или Registry
+    размеры формы, если они были сохранены при другом значении свойства
+    PixelsPerInch.
+
+04.06.98 animate.pas
+  - В компоненту TAnimatedImage добавлено свойство Center.
+
+03.06.98 dbsecur.pas
+  - В компоненту TDBSecutiry добавлено событие OnIconDblClick.
+
+27.05.98 rxclock.pas
+  - В компоненту TRxClock добавлено событие OnGetTime.
+
+27.05.98 rxctrls.pas
+  - Исправлена ошибка с неправильным сохранением в DFM свойства
+    ParentShowHint компоненты TRxSpeedButton.
+
+27.05.98 objstr.pas
+  - В класс TObjectStrings добавлен метод SortList.
+
+11.05.98 rxctrls.pas, rxgrids.pas
+  - Компонента TRxDrawGrid перенесена в модуль RxGrids.
+  - В компоненту TRxDrawGrid добавлено свойство FixedButtons и события
+    OnFixedCellClick, OnCheckButtons.
+
+15.04.98 rxgif.pas
+  - В класс TGIFFrame добавлены read-only свойства Interlaced и Corrupted.
+  - В класс TGIFImage добавлены свойства Looping и RepeatCount.
+
+03.04.98 dateutil.pas
+  - Исправлена функция IncTime для правильной работы с отрицательными
+    значениями, превышающими переданное значение ATime.
+
+02.04.98 tooledit.pas
+  - Исправлена ошибка в компоненте TDateEdit при использовании popup-
+    календаря, если значение ShortDateFormat определяет порядок следования
+    частей даты (D,M,Y), отличный от системных установок Windows.
+
+02.04.98 rxdbctrl.pas
+  - Добавлен вызов события OnChange при выборе значения из popup-окошка
+    в компонентах TRxDBCalcEdit и TDBDateEdit.
+  - Исправлена ошибка в компоненте TRxDBCalcEdit, приводившая в некоторых
+    случаях к исключению "Dataset is not in edit or insert mode" при потере
+    фокуса строкой редактирования.
+
+31.03.98 appevent.pas
+  - Исправлена ошибка в компоненте TAppEvents, приводящая к неправильному
+    поведению кнопок на speedbar'е в среде Delphi 3.x.
+
+30.03.98 rxctrls.pas
+  - В компоненте TRxCheckListBox исправлена неверная установка свойства
+    Checked при установке Sorted := True.
+
+25.03.98 speedbar.pas
+  - В 32-разрядную реализацию компоненты TSpeedbar добавлено свойство Images,
+    в компоненту TSpeedItem - свойство ImageIndex.
+
+23.03.98 tooledit.pas, rxclock.pas
+  - Исправлены ошибки в TDateEdit, TRxClock, приводившие к исключению
+    "Acces violation" при изменении системных настроек Windows после
+    уничтожения компоненты и к memory-leak (8 байт).
+
+18.03.98 rxquery.pas
+  - Исправлена ошибка в TRxQuery, приводящая к 'No SQL statement available'
+    для запросов без макросов, записанных в dfm с Active = True.
+
+14.03.98 *.cpp; *.bpk
+  - Написаны packages для C++Builder 3.0. Сделаны изменения в некоторых
+    модулях для совместимости с C++Builder 3.0 (build 3.70).
+
+13.03.98 rxdice.pas
+  - В компоненту TRxDice добавлено свойство AutoStopInterval и события
+    OnStart, OnStop.
+
+10.03.98 curredit.pas
+  - В компоненте TRxCalcEdit теперь вызывается событие OnChange при
+    вводе числа с помощью popup-калькулятора.
+  - Создание popup-калькулятора перенесено из компоненты TCustomNumEdit
+    в компоненту TRxCalcEdit.
+
+04.03.98 sbedit.pas
+  - Исправлена ошибка в TSpeedbarEditor, приводившая в C++Builder к
+    неправильной записи в .CPP-файл заголовка обработчика события
+    OnClick при создании этого метода двойным нажатием мыши из редактора
+    компоненты TSpeedbar.
+
+03.03.98 rxctrls.pas, speedbar.pas
+  - В компоненты TRxSpeedButton, TSpeedItem добавлены события OnMouseEnter
+    и OnMouseLeave.
+
+03.03.98 dateutil.pas
+  - В модуль DateUtil.pas добавлена типизированная константа CenturyOffset.
+
+28.02.98 rxmenus.pas
+  - Написаны компоненты TRxMainMenu и TRxPopupMenu.
+
+23.02.98 fileutil.pas
+  - Устранена ошибка в функции ClearDir при значении параметра Delete=True
+    в Windows NT 4.0.
+
+23.02.98 rxlookup.pas
+  - Обработан случай когда DataSource является master-набором данных для
+    LookupSource.
+
+23.02.98 rxresexp.pas
+  - Добавлено приведение имен ресурсов к верхнему регистру при редактировании,
+    т.к. TIResourceFile не чувствителен к регистру.
+  - Добавлено сохранение ресурсов в файл.
+
+23.02.98 rxdbctrl.pas
+  - Исправлена ошибка в TRxDBComboEdit, не позволявшая обрабатывать
+    событие OnButtonClick когда data-set не находится в режиме
+    редактирования.
+
+17.02.98 rxlookup.pas
+  - Написана новая компонента TRxLookupEdit.
+
+Изменения после версии RX 2.32 (от 30.07.97)
+--------------------------------------------
+03.02.98 rxsplit.pas
+  - Исправлены неверная отрисовка и сдвиги при перемещении "широкого"
+    сплиттера.
+
+13.01.98 splshwnd.pas
+  - Глобальная переменная SplashStayOnTop.
+
+06.01.98 rxctrls.pas, rxdbctrl.pas
+  - В компоненты TRxDrawGrid, TRxDBGrid добавлено событие OnEditChange.
+  - В компоненту TRxDrawGrid (32-битная версия) добавлены события
+    OnGetPicklist, OnEditButtonClick, OnGetEditStyle, OnGetEditAlign,
+    OnShowEditor.
+
+05.01.98 curredit.pas
+  - В компоненты TCurrencyEdit, TRxCalcEdit, TRxDBCalcEdit добавлено
+    свойство FormatOnEditing.
+
+04.12.98 rxresexp.pas
+  - Написан Resource Expert для Delphi 3.0.
+
+26.12.97 rxslider.pas
+  - EdgeSize объявлено после Orientation для правильной установки
+    этого свойства при загрузке формы.
+
+26.12.97 strutils.pas
+  - В объявлении всех функций, принимающих параметр типа TCharSet этот
+    параметр теперь объявлен как const для совместимости с C++Builder.
+
+24.12.97 timerlst.pas
+  - Исправлена ошибка в компоненте TRxTimerList, проявлявшаяся при установке 
+    в design-time значения интервала, большего, чем 65535 - событие не
+    обрабатывалось.
+
+16.12.97 rxctrls.pas, speedbar.pas
+  - В компоненты TRxSpeedButton, TSpeedItem добавлен метод
+    CheckBtnMenuDropDown.
+  - В компоненту TSpeedItem добавлено свойство Stored.
+
+12.12.97 vclutils.pas
+  - Функция ActivatePrevInstance теперь проверяет запуск приложения из
+    под среды Delphi.
+
+11.12.97 logindlg.pas, chpswdlg.pas
+  - Исправлена ошибка в компоненте TDBSecurity при работе с локальными
+    БД, когда связанный объект TDatabase привязан к сессии, отличной
+    от Default.
+
+09.12.97 tooledit.pas, rxdbctrl.pas, curredit.pas
+  - В компоненты T(DB)DateEdit, TRx(DB)CalcEdit добавлено свойство
+    PopupAlign.
+
+05.12.97 clipview.pas
+  - Исправлена ошибка с неправильной установкой обработчика следующего
+    окна - получателя сообщений от Clipboard.
+  - Добавлена возможность отображения палитры в компоненте TClipboardViewer.
+
+01.12.97 ole2auto.pas
+  - Исправлена ошибка при вызове методов по именам в 32-разрядной версии
+    класса TOleController.
+
+01.12.97 timerlst.pas
+  - Исправлена ошибка, проявлявшаяся при добавлении события в run-time с
+    параметром Cycled = False (при RepeatCount = 0, полученном по умолчанию,
+    событие выполнялось, как если бы свойство Cycled имело значение True).
+
+27.11.97 rxlookup.pas
+  - Исправлена ошибка с потерей в некоторых случаях значения Value при
+    переоткрытии lookup-набора данных.
+
+22.11.97 dbutils.pas, bdeutils.pas
+  - Модуль DBUtils.pas разделен на два модуля - DbUtils.pas и BdeUtils.pas
+    (для разделения DB-компонент, разботающих с BDE и с любыми другими 
+    источниками данных).
+  - Исправлена неточность в функции PackTable, приводящая к снятию паролей
+    с таблиц Paradox при их упаковке.
+
+21.11.97 gifctrl.pas
+  - Написана компонента TRxGIFAnimator.
+
+20.11.97 rxctrls.pas
+  - Устранен exception при смене значения свойства Enabled (в run-time)
+    у кнопки TRxSpeedButton с пустым свойством Glyph.
+
+13.11.97 tooledit.pas
+  - В компоненту TFilenameEdit добавлено свойство DialogKind.
+  - В 32-битную реализацию компоненты TDirectoryEdit добавлено свойство
+    DialogKind.
+
+12.11.97 rxctrls.pas
+  - В компоненту TRxSpeedButton добавлено свойство MenuPosition (для
+    DropDownMenu).
+
+11.11.97 rxclock.pas
+  - Исправлена ошибка, из-за которой не вызывалось событие OnAlarm при
+    значении AlarmTime = 00:00:00.
+
+08.11.97 curredit.pas, rxdbctrl.pas
+  - Написаны новые компоненты TRxCalcEdit и TRxDBCalcEdit с
+    popup-калькулятором.
+
+08.11.97 tooledit.pas, pickdate.pas
+  - В компоненты TDateEdit, TDBDateEdit добавлено свойство CalendarHints
+    для смены хинтов в календаре, по умолчанию загружаемых из ресурсов.
+  - В функции SetupPopupCalendar, SelectDate, SelectDateStr добавлен
+    параметр BtnHints.
+
+08.11.97 rxcalc.pas
+  - В компоненту TRxCalculator добавлены свойства Title и Memory.
+
+31.10.97 objstr.pas, rxdbctrl.pas
+  - Исправлена ошибка в классе THugeList, проявлявшаяся в Win 3.1 в 
+    компоненте TRxDBGrid (при значении MultiSelect = True) как "Invalid
+    pointer operation".
+  - В класс TObjectStrings добавлен метод Remove.
+
+23.10.97 curredit.pas
+  - В компоненту TCurrencyEdit добавлено свойство ZeroEmpty.
+
+22.10.97 rxctrls.pas
+  - Добавлены свойства Alignment и ModalResult в компоненту TRxSpeedButton.
+
+22.10.97 rxshell.pas
+  - Компонента TRxTrayIcon теперь доступна и в 16-разрядной версии (при 
+    работе приложения в Win95 или WinNT 4.x).
+
+16.10.97 rxdbctrl.pas
+  - Исправлена ошибка при отрисовке FocusRect в TRxDBGrid при наличии
+    флага dgRowSelected в свойстве Options.
+
+14.10.97 speedbar.pas
+  - Для TSpeedItem вынесены в секцию published свойства Font и ParentFont.
+  - В компоненту TSpeedBar добавлены события OnCustomize и OnVisibleChanged.
+
+10.10.97 timlsted.pas, presrdsn.pas
+  - Исправлены редакторы компонент TRxTimerList и TFormStorage для
+    правильной работы при помещении этих компонентов в data-module.
+
+08.10.97 rxgif.pas, rxgraph.pas, vclutils.pas
+  - Написан класс TGIFImage для работы с изображениями формата GIF.
+  - Написаны функции для изменения формата пикселя (bits-per-pixel) и для
+    преобразования "grayscale" у объекта TBitmap.
+  - Функции BitmapToMemory и SaveBitmapToFile перенесены из модуля VCLUtils
+    в новый модуль RxGraph.
+
+05.10.96 rxhints.pas
+  - Новый модуль содержащий класс для изменения стиля "выпадающих" хинтов.
+    Процедуры SetHintStyle, SetStandardHints, RegisterHintWindow,
+    GetHintControl.
+
+02.10.97 dbutils.pas
+  - Исправлена ошибка в TDBLocate, не позволявшая осуществлять поиск в
+    таблицах, принадлежащих не основной сессии BDE. Проявлялась в
+    TRxDBLookup..., если DataSource - таблица в другой сессии.
+
+01.10.97 rxshell.pas
+  - При обработке popup-menu в TRxTrayIcon добавлена проверка свойства
+    Enabled у пункта меню с Default = True.
+
+01.10.97 tooledit.pas, curredit.pas
+  - В компонентах TCustomComboEdit, TCustomNumEdit (и у их наследников)
+    добавлено изменение цвета текста на clGrayText при значении свойства
+    Enabled = False (как у стандартного TEdit).
+
+24.09.97 parsing.pas
+  - Добавлена функция GetFormulaValue.
+  - В компоненте TRxMathParser изменен формат вызова метода Exec и
+    убрано свойство ResValue.
+
+23.09.97 rxtimer.pas
+  - Устранена ошибка, вызывавшая memory-leak при использовании RxTimer в
+    32-разрядной версии с Threaded = True. Проявлялась в TRxDice.
+
+22.09.97 fileutil.pas
+  - Устранена ошибка в 32-разрядной реализации функции ClearDir.
+
+16.09.97 rxprops.pas
+  - В компоненту TFormStorage добавлена возможность сохранения свойств типа
+    TCollection (в 32-битной версии) и исправлена ошибка в обработке свойств
+    типа TComponent.
+
+15.09.97 mrulist.pas
+  - Добавлено свойство Mode (rmInsert, rmAppend).
+
+15.09.97 clipicon.pas
+  - Устранена ошибка с неосвобождением объектов в процедуре GetIconSize.
+
+11.09.97 rxlookup.pas
+  - В компоненты TRxDBLookupList, TRxDBLookupCombo в 32-битной версии
+    добавлено свойство KeyValue: Variant.
+
+09.09.97 rxctrls.pas, rxcombos.pas
+  - Компоненты TFontComboBox, TColorComboBox перенесены из модуля RxCtrls
+    в модуль RxCombos (в связи с тем, что выросший модуль RxCtrls перестал
+    компилироваться в 16-битной версии).
+  - В компоненту TRxDrawGrid добавлено событие OnGetEditLimit и свойство
+    IniStorage.
+  - В компоненту TRxCheckListBox добавлено свойство IniStorage.
+  - Компонента TRxCheckListBox теперь переключает состояние "checked" 
+    только при нажатии на левую кнопку мыши.
+
+05.09.97 pickdate.pas
+  - Исправлена ошибка, вызывавшая GPF в design-time при использовании
+    компонент TDateEdit, TDBDateEdit при установленных Large Fonts.
+
+04.09.97 dbprgrss.pas
+  - В компоненту TDBProgress добавлена обработка недокументированного
+    callback-вызова BDE, позволяющего показывать ход выполнения SQL и QBE
+    запросов на локальных таблицах (в 32-битной версии - только QBE).
+
+02.09.97 rxdbctrl.pas
+  - Компонента TDBStatusLabel теперь наследуется от TRxLabel и имеет все
+    дополнительные свойства родителя.
+  - В компоненту TDBStatusLabel добавлены свойства Captions, ShowOptions,
+    GlyphAlign.
+  - Добавлена компонента TRxDBComboEdit.
+
+01.09.97 rxspin.pas
+  - Исправлена ошибка в компоненте TRxSpinButton (неправильно отрабатывалось
+    нажатие мыши при не-квадратной кнопке).
+
+27.08.97 rxslider.pas
+  - Исправлена отрисовка слайдера при больших значениях MaxValue, MinValue
+    (сравнимых с MaxLongint).
+
+27.08.97 dbutils.pas
+  - Добавлены процедуры DataSetShowDeleted, CurrentRecordDeleted для
+    dBase-таблиц.
+  - Добавлены классы TCloneDataset, TCloneTable.
+
+27.08.97 rxctlreg.pas
+  - Новые property editors для ввода числовых значений MaxLong, MinLong,
+    MaxWord и т.д.
+
+25.08.97 rxsplit.pas
+  - Исправлена ошибка в вычислении прямоугольника, ограничивающего
+    перемещение сплиттера.
+
+24.08.97 tooledit.pas
+  - В компоненты TDateEdit, TDBDateEdit добавлено свойство YearDigits со
+    значениями dyDefault (в зависимости от константы FourDigitYears или
+    ShortDateFormat), dyFour, dyTwo. Использование FourDigitYears
+    регулируется определением в RX.INC.
+  - Добавлена процедура DateFormatChanged.
+  - В компоненты TFilenameEdit, TDirectoryEdit добавлено изменение режима
+    обработки ошибок Windows для предотвращения появления системного"белого"
+    диалога (например, при отсутствии дискеты в дисководе). Добавлены
+    run-time свойства ShortName и LongName для 32-битной версии.
+
+23.08.97 appevents.pas
+  - В компоненту TAppEvents добавлены события OnSettingsChanged,
+    OnActiveFormChange, OnActiveControlChange.
+
+23.08.97 speedbar.pas, rxctrls.pas
+  - Добавлен public-метод SetFontDefault и свойство BoundLines в 
+    компоненту TSpeedBar.
+  - Немного изменена отрисовка Caption в TRxSpeedButton, когда их ширина
+    превышает ширину кнопки и свойство WordWrap = False.
+  - В компоненте TRxSpeedButton исправлена ошибка с неверной обработкой
+    нажатия на кнопку при Down = True и GroupIndex <> 0.
+
+20.08.97 rxshell.pas
+  - Добавлены события OnMouseMove, OnMouseDown, OnMouseUp в компоненту
+    TRxTrayIcon.
+  - Добавлены функции FileExecute, FileExecuteWait.
+
+20.08.97 rxctrls.pas
+  - Добавлены события OnMouseEnter, OnMouseLeave в компоненту TRxLabel.
+
+20.08.97 rxquery.pas
+  - В компоненте TRxQuery убраны "лишние" вызовы ExpandMacros при отсутствии
+    макросов, что не давало возможности использовать метод Prepare.
+  - В компоненту TSQLScript добавлен метод ExecStatement.
+
+19.08.97 vclutils.pas
+  - Исправлена ошибка в процедуре ActivatePrevInstance при активизации
+    минимизированного приложения.
+  - Добавлены процедура MergeForm и функция PointInPolyRgn.
+  - Функция GetPaletteEntries переименована в PaletteEntries для устранения
+    конфликта со стандартной функцией Windows API.
+
+19.08.97 dbfilter.pas
+  - Исправлена иногда возникавшая ошибка "Access violation" при пустом 
+    наборе данных (Query) в 32-битной версии.
+  - Исправлена ошибка с попыткой активизации фильтра при изменении
+    содержимого свойства Filter.
+  - Исправлена ошибка в методе SetCapture, проявлявшаяся на некоторых 
+    таблицах MSAccess при использовании DAO и BDE 4.x.
+
+16.08.97 все dfm-файлы
+  - Цвет шрифта во всех формах и демо-программах изменен с clBlack на
+    clWindowText.
+
+14.08.97 ole2auto.pas
+  - В класс TOleController добавлено свойство OleObject и методы
+    GetActiveObject и AssignIDispatch. В версии для Delphi 3 теперь вместо
+    устаревших модулей Ole2 и OleAuto используются модули ActiveX и ComObj.
+
+10.08.97 tooledit.pas
+  - В компоненте TFileDirEdit исправлен вызов API-функции DragQueryFile в
+    32-битной версии.
+
+==============================================================================
+
+Изменения после версии RX 2.31 (от 08.05.97)
+--------------------------------------------
+29.07.97 speedbar.pas
+  - Убрано появление пустой иконки в TaskBar при перетаскивании кнопки из
+    диалога настройки TSpeedBar (для 32-разрядной версии).
+
+29.07.97 apputils.pas, placemnt.pas
+  - Исправлена неправильная обработка окон с BorderStyle = wsToolWindow,
+    wsSizeToolWnd (для 32-разрядной версии).
+
+29.07.97 rxdbctrl.pas
+  - В TRxDBGrid добавлена прорисовка FocusRect при включенной опции
+    dgRowSelected (как у обычного Grid'а).
+
+28.07.97 rxlookup.pas
+  - В TRxDBLookupCombo, TRxDBLookupList добавлено public-свойство Field.
+
+25.07.97 rxctrls.pas
+  - Устранена необходимость двойного нажатия для срабатывания TRxSpeedButton
+    при вызове формы из DLL.
+
+20.07.97 rxsplit.pas
+  - Свойство LimitOffset заменено на два свойства TopLeftLimit и
+    BottomRightLimit.
+
+16.07.97 rxslider.pas
+  - При вертикальной ориентации слайдера начало координат теперь находится
+    внизу, а не вверху.
+
+14.07.97 rxctrls.pas
+  - Устранен возможный GPF при Delete для TRxCheckListBox.
+
+10.07.97 placemnt.pas
+  - Устранен бесконечный цикл при использованни визуального наследования
+    для TFormPlacement. Loaded вызывается несколько раз (только один раз с
+    csLoading). Возможно, это важно и для других компонент, использующих
+    Loaded!
+
+09.07.97 strutils.pas
+  - Устранен GPF при передаче в IsWild пустой строки.
+
+26.06.97 timerlst.pas
+  - Устранена ошибка с деактивацией списка в компоненте TRxTimerList в случае,
+    когда у первого события в списке свойство Enabled установлено в False.
+  - Исправлена ошибка возможного создания таймера Windows для несуществующего 
+    окна.
+
+25.06.97 rxctrls.pas
+  - Устранен возможный GPF при вызове метода Clear для TRxCheckListBox.
+
+25.06.97 rxhook.pas
+  - Устранена ошибка, приводившая в некоторых случаях к GPF в TFormPlacement
+    при работе с дочерними окнами MDI.
+
+22.06.97 demo programs
+  - Написана демо-программа для C++Builder.
+
+22.06.97 dbprgrss.pas, rxprgrss.pas, fileutil.pas
+  - Написаны функции (в модуле rxprgrss.pas), делающие возможным использование
+    сразу нескольких типов контролов в качестве ProgressBar. По умолчанию
+    регистрируются TGauge и (в 32-битной версии) TProgressBar.
+
+17.06.97 mrulist.pas
+  - В компоненту TMRUManager добавлено свойство RemoveOnSelect.
+
+17.06.97 placemnt.pas
+  - Исправлена ошибка с неверным присвоением полей для структуры MinMaxInfo.
+
+11.06.97
+  - В компонентах, использующих перекрытие метода WriteProperties, устранены
+    ошибки с неправильной записью и чтением свойств при использовании
+    визуального наследования форм (в 32-битной версии).
+
+07.06.97 rxdbctrl.pas
+  - В компоненту TRxDBGrid добавлено свойство FixedCols.
+  - В компоненте TDBStatusLabel в секцию "public" вынесено свойство Caption.
+
+06.06.97 speedbar.pas, pagemngr.pas, timerlst.pas
+  - Устранена ошибка, делающая невозможным применение компонент TSpeedbar,
+    TPageManager, TTimerList при визуальном наследовании форм в 32-битной
+    версии.
+
+06.06.97 rxspin.pas
+  - В реализации для C++Builder переименованы элементы типа TValueType.
+
+03.06.97 rxquery.pas
+  - В компоненту TSQLScript добавлено событие OnScriptError.
+
+02.06.97 imagprvw.pas
+  - Устранена ошибка с неосвобождением памяти при использовании preview-формы
+    в редакторе свойств TGraphic, TPicture.
+
+02.06.97 rxctrls.pas
+  - В компоненту TRxCheckListBox добавлены свойства CheckKind, CheckedIndex.
+
+29.05.97 rx.inc и др.
+  - Достигнута полная совместимость с релизом Borland C++ Builder Pro 1.0
+    (изменены некоторые условные определения и их обработка).
+
+29.05.97 rxdbctrl.pas
+  - Восстановлен нормальный вызов события OnKeyPress в компоненте TRxDBGrid 
+    при значении EditorMode = True.
+
+28.05.97 rxlookup.pas
+  - В компоненты TRxDBLookupList, TRxDBLookupCombo добавлено свойство
+    EmptyItemColor.
+  - Добавлена возможность работы Lookup-control'ов с Lookup-полями и 
+    использование TRxDBLookupCombo в TDBCtrlGrid (с Lookup-полем).
+
+28.05.97 pickdate.pas, tooledit.pas, dateutil.pas
+  - В модуль dateutil.pas добавлены типы TDayOfWeekName, TDaysOfWeek.
+  - В компоненту TCustomDateEdit добавлены свойства StartOfWeek, Weekends,
+    WeekendColor.
+
+23.05.97 tooledit.pas
+  - В компоненту TDirectoryEdit добавлено свойство MultipleDirs.
+  - Сделаны дополнительные проверки при вызове метода SetFocus в наследниках
+    TCustomComboEdit.
+
+22.05.97 rxctrls.pas
+  - В TRxSpeedButton добавлено свойство AllowTimer, уничтожен ненужный теперь
+    класс TRxTimerSpeedButton.
+
+21.05.97 anifile.pas
+  - Исправлена ошибка в методе AssignToBitmap, неправильно работавшая при
+    загрузке цветных курсоров в монохромный Bitmap.
+
+21.05.97 rxlookup.pas
+  - Добавлено свойство EscapeClear.
+  - Исправлена отрисовка "запрещенной" кнопки в TRxDBLookupCombo в 16-битной
+    версии.
+
+20.05.97 rxdbreg.pas, qbnddlg.pas, dclrxdb.dpk
+  - Добавлена совместимость с редакциями Delphi 3.0 Professional & Developer
+    (до этого DB-компоненты устанавливались только в C/S).
+
+19.05.97 dbfilter.pas
+  - Устранен GPF при попытке активизации фильтра с незаданным значением
+    свойства DataSource.
+
+16.05.97 apputils.pas
+  - Добавлена функция InstantiateForm.
+
+14.05.97 rxlookup.pas
+  - Исправлена неверная обработка DblClick компонентой TRxDBLookupList.
+
+13.05.97 icoledit.pas
+  - Исправлена неверная отрисовка изображений в Delphi 3.0.
+
+12.05.97 vclutils.pas
+  - Устранена ошибка в функции Delay, проявлявшаяся при работе Windows более
+    49 дней подряд.
+
+10.05.97 rxctrls.pas
+  - В компоненту TRxSpeedButton добавлен метод ButtonClick.
+
+10.05.97 rxcalc.pas
+  - В компоненту TRxCalculator добавлены свойства Precision, BeepOnEror и
+    HelpContext, событие OnChange.
+
+==============================================================================
+
+Изменения после версии RX 2.30 (от 22.04.97)
+--------------------------------------------
+
+05.05.97 placemnt.pas
+  - Устранен GPF в деструкторе TFormStorage (появившийся в вер. 2.30).
+  - Исправлена не совсем правильная максимизация формы компонентой
+    TFormPlacement.
+
+02.05.97 rxdbctrl.pas
+  - Событие TRxDBGrid.OnTitleClick переименовано в OnTitleBtnClick для
+    устранения конфликта с новым событием в Delphi 3.0.
+
+02.05.97 rxctrls.pas
+  - В компоненту TSecretPanel добавлены свойства TextStyle, Alignment, Cycled
+    и Interval.
+
+30.04.97 pickdate.pas
+  - Добавлена константа PopupCalendarSize для изменения размера
+    popup-календаря в компонентах TDateEdit, TDBDateEdit.
+
+30.04.97 все модули
+  - Совместимость с релизом Delphi 3.0 (build 5.53).
+
+29.04.97 rxctrls.pas, speedbar.pas
+  - Добавлено свойство WordWrap в компоненты TRxSpeedButton, TSpeedbarItem.
+
+28.04.97 tooledit.pas, rxdbctrl.pas
+  - Метод TCustomDateEdit.GetDateMask теперь не является методом класса
+    (class function).
+  - Добавлено свойство BlanksChar в TDateEdit, TDBDateEdit.
+
+28.04.97 mrulist.pas
+  - Добавлено свойство TMRUManager.AccelDelimiter.
+
+28.04.97 rxslider.pas
+  - Исправлено несколько ошибок.
+
+25.04.97 rxlookup.pas
+  - Устранен GPF при переоткрытии Lookup-набора данных в блоке
+    DisableControls/EnableGontrols.
+  - При закрытом списке компонента TRxDBLookupCombo теперь отдает нажатие
+    клавиши ENTER форме-владельцу.
+
+24.04.97 rxdemo.dpr
+  - В демонстрационную программу добавлен пример использования TPageManager'а.
+
+23.04.97 rxshell.pas
+  - В компоненте TRxTrayIcon теперь используется для анимации thread вместо
+    таймера.
+
+==============================================================================
+
+Изменения после версии RX 2.02 (от 10.03.97)
+--------------------------------------------
+
+17.04.97 dbindex.pas
+  - Устранена ошибка с неправильной обработкой свойства TTable.IndexName
+    компонентой TDBIndexCombo.
+
+11.04.97 rxhook.pas
+  - Новый модуль rxhook.pas с компонентой TRxWindowHook.
+
+11.04.97 strutils.pas
+  - Добавлена функция AnsiProperCase.
+
+09.04.97 tooledit.pas
+  - В TDateEdit, TDBDateEdit добавлены метод CheckValidDate и свойство
+    CheckOnExit.
+
+06.04.97 файлы ресурсов
+  - Файлы ресурсов библиотеки переименованы в *.r16, *.r32, *.d16, *.d32,
+    теперь в одном каталоге одновременно могут находиться ресурсы для 16 и
+    32-битной версии.
+
+05.04.97 placemnt.pas, speedbar.pas, mrulist.pas, rxdbctrl.pas
+  - Добавлено свойство IniStorage: TFormPlacement в компоненты TSpeedbar,
+    TMRUManager, TRxDBGrid для автоматического сохранения данных в
+    INI-файлах или системном регистре.
+
+04.04.97 mrulist.pas
+  - Новая компонента TMRUManager.
+
+03.04.97 placemnt.pas
+  - Добавлена обработка исключений для обязательного вызова оригинальных
+    обработчиков событий.
+
+03.04.97 rxctrls.pas
+  - При стилях lbOwnerDraw... TRxCheckListBox теперь центрирует строки по
+    вертикали.
+  - Устранена ошибка с потерей значений свойств State и EnableItems компоненты
+    TRxCheckListBox при вызове методов Items.Move и Items.Exchange.
+  - В компоненту TRxCheckListBox добавлено событие OnStateChange.
+
+03.04.97 dbexcpt.pas
+  - Изменен внешний вид диалога для обработки исключений EDBEngineError, в
+    диалог добавлено событие OnErrorMsg.
+
+02.04.97 rxlookup.pas
+  - В компоненты TRxDBLookupList, TRxDBLookupCombo добавлено событие
+    OnGetImage и свойство ItemHeight.
+  - Теперь в Lookup-ах при значении (DisplayEmpty <> '') это значение
+    появляется как отдельная строка в списке.
+  - Исправлена ошибка с потерей фокуса модальным диалогом, содержащим
+    TRxDBLookupCombo.
+
+31.03.97 rxshell.pas, icolist.pas
+  - Написан класс TIconList для хранения списков иконок.
+  - В компоненту TRxTrayIcon добавлена возможность показа анимированных
+    иконок в tray-области (новые свойства Icons, Interval, Animated).
+
+31.03.97 splshwnd.pas
+  - Устранено возможное ошибочное переключение с активной формы.
+
+28.03.97 dbfilter.pas
+  - Устранена ошибка в 32-разрядной версии в методе ReadCaptureControls,
+    позволявшая создание фильтра для Lookup-полей.
+
+20.03.97 rxdbctrl.pas
+  - Устранена ошибка с "неожиданным" переводом DataSet'а в состояние
+    редактирования компонентой TDBDateEdit при значении DefaultToday = True.
+  - Методы TRxDBGrid SaveLayout... и RestoreLayout... в 32-разрядной версии
+    теперь сохраняют параметры Columns, если они созданы в дизайнере.
+  - При установленных обработчиках OnGetText, OnSetText Blob-полей
+    соответствующие им колонки в TRxDbGrid могут быть отредактированы, а
+    картинка не отображается. 
+  - Добавлена возможность MultiSelect в 16-битной версии TRxDBGrid, свойства
+    MultiSelect и ClearSelection для всех версий Delphi, методы SelectAll,
+    UnselectAll, GotoSelection.
+  - В компоненту TRxDBGrid добавлены кнопки в заголовки колонок - свойство
+    TitleButtons, события OnGetBtnParams, OnTitleClick, OnCheckButton.
+
+19.03.97 anifile.pas, animate.pas, rxctlreg.pas
+  - Написан Component Editor для TAnimatedImage, позволяющий загружать иконки
+    из ANI-файлов (animated cursors).
+
+17.03.97 speedbar.pas
+  - Убрана ошибка при установке свойства Align (в design-time) в значения
+    alClient, alNone;
+  - Убрано устаревшее свойство AllowDrag (используйте опцию sbAllowDrag).
+  - Добавлена опция sbStretchBitmap.
+  - Устранена ошибка с неправильным сохранением в DFM свойства Layout кнопки.
+
+15.03.97 memtable.pas
+  - Добавлен метод SetFieldValues для изменения значений заданных полей во
+    всех записях таблицы.
+  - Убраны вызовы событий Before/After Close/Open при удалении записи.
+  - Перекрыто свойство RecordCount для Delphi 2.0 (исправляет ошибку
+    "Capability not supported").
+
+14.03.97 dbutils.pas
+  - Добавлена процедура AssignRecord.
+  - Исправлена ошибка в 32-разрядной версии с неправильным определением пути
+    к таблице в процедуре PackTable.
+
+14.03.97 pgmngred.pas
+  - Устранен GPF при удалении компоненты TPageManager из формы при открытом
+    редакторе компоненты.
+
+13.03.97 rxquery.pas
+  - Вызов TRxQuery.ExecDirect теперь правильно устанавливает значение свойства
+    OpenStatus.
+
+12.03.97 все модули
+  - Добавлены conditional defines для совместимости с доступной на текущий
+    момент версией Delphi 3.0 (3.0.4.78). Созданы packages для Delphi 3.0.
+  - Для совместимости с Delphi 3.0 переписаны некоторые процедуры и методы,
+    объявлен ряд вспомогательных типов.
+
+12.03.97 timerlst.pas, timlsted.pas
+  - Новая компонента TRxTimerList.
+
+==============================================================================
+
+Изменения после версии RX 2.01 (от 12.02.97)
+--------------------------------------------
+
+09.03.97 rxctrls.pas, speedbar.pas
+  - Новая компонента TRxSpeedButton.
+  - Компонента TSpeedBar теперь использует TRxSpeedButton. Добавлены новые
+    свойства Options, BtnWidth, BtnHeight, Wallpaper и события OnPosChanged,
+    OnApplyAlign в компоненту TSpeedBar.
+
+06.03.97 rxctrls.pas
+  - В компоненту TFontListBox добавлено свойство Options.
+
+05.03.97 rxprops.pas
+  - Сделаны изменения для того, чтобы TFormStorage мог сохранять содержимое
+    свойств типа TStrings.
+
+04.03.97 curredit.pas
+  - Добавлено новое run-time свойство AsInteger.
+
+04.03.97 dbindex.pas
+  - Добавлено свойство DisplayMode в компоненту TDBIndexCombo.
+
+04.03.97 checklst.pas, rxctrls.pas
+  - Модуль уничтожен, компоненты перенесены в RxCtrls.pas (для совместимости
+    с Delphi 3.0).
+  - В TRxCheckListBox добавлены новое событие OnClickCheck и свойство
+    AllowGrayed.
+
+03.03.97 memtable.pas
+  - Добавлена возможность задания структуры таблицы не только через Fields,
+    но и через FieldDefs (если Fields не заданы).
+
+03.03.97 dateutil.pas
+  - Устранена ошибка в функции IncDate при отрицательных значениях параметра
+    Days, превышающих текущее число месяца.
+
+02.03.97 rxlookup.pas
+  - Исправлено неправильное поведение скроллбара в TRxDBLookupList при малом
+    количестве записей.
+
+28.02.97 rxdbctrl.pas
+  - В компоненту TRxDBGrid добавлено событие OnGetCellParams (вместо
+    OnGetCellProps, старое событие сохранено для совместимости).
+
+26.02.97 apputils.pas
+  - Добавлена функция AppBroadcast.
+
+26.02.97 animate.pas
+  - В компоненту TAnimatedImage добавлены свойства Opaque и Orientation,
+    возможность отображать "прозрачные" изображения.
+
+25.02.97 appevent.pas
+  - Добавлено событие OnPaintIcon в компоненту TAppEvents.
+
+25.02.97 dbriched.pas
+  - Написана компонента TRxDBRichEdit.
+
+25.02.97 tooledit.pas, rxdbctrl.pas
+  - Исправлена ошибка в popup-календаре в TDBDateEdit с неправильным
+    поведением при значении DataSource.AutoEdit = True.
+
+24.02.97 dbqbe.pas
+  - Исправлена ошибка Invalid pointer operation в 32-разрядной версии
+    метода SetPrepared компоненты TQBEQuery.
+
+22.02.97 vclutils.pas
+  - Добавлены функции для работы с большими блоками памяти (больше 64K) в
+    16-разрядной версии, совместимые с 32-разрядной версией.
+
+22.02.97 rxclock.pas
+  - Добавлены свойства LeadingZero и TwelveHour, исправлена неправильная
+    отрисовка часовой стрелки в промежутке от 12 до 13 часов, исправлена
+    неправильная реакция на изменение цвета шрифта при аналоговом отображении
+    часов.
+
+20.02.97 dateutil.pas
+  - Добавлены новые функции IncTime, IncHour, IncMinute, IncSecond и IncMSec.
+
+20.02.97 checkitm.pas, checklst.pas
+  - Поправлен property editor для свойства TRxCheckListBox.Items,
+    В TRxCheckListBox добавлен новый метод ApplyState.
+
+19.02.97 dbutils.pas
+  - Исправлено неверное преобразование значений полей типа TDateTime в функции
+    ConvertStringToLogicType в 32-битной версии Delphi.
+  - Добавлены функции IsBookmarkStable, SetToBookmark, AsyncQrySupported.
+
+18.02.97 rxsplit.pas
+  - Исправлена ошибка с неправильным восстановлением значений свойств Height
+    и Width, отличных от значений по умолчанию.
+
+==============================================================================
+
+Изменения после версии RX 2.00 (от 24.01.97)
+--------------------------------------------
+
+11.02.97 pictedit.pas, imagprvw.pas
+  - В редактор свойств TPictureEditor добавлена (по многочисленным просьбам)
+    возможность использования диалога открытия файлов с предварительным
+    просмотром изображений.
+
+11.02.97 checklst.pas, checkitm.pas
+  - В TRxCheckListBox добавлено новое свойство State.
+
+11.02.97 curredit.pas
+  - Исправлена ошибка, не позволявшая вводить отрицательные числа в
+    TCurrencyEdit.
+
+11.02.97 rxctrls.pas
+  - Исправлена ошибка в TRxTimerSpeedButton в Delphi 2.0, проявлявшаяся в
+    календаре компоненты TDateEdit.
+
+10.02.97 appevent.pas
+  - В компоненте TAppEvents сделан вызов обработчика исключений по умолчанию,
+    если не установлено события OnException.
+
+10.02.97 dateutil.pas
+  - Добавлена типизированная Boolean константа FourDigitYear, по умолчанию
+    True. Влияет на маски для DateEdit, если False, позволяет вводить год
+    двумя цифрами.
+
+10.02.97 tooledit.pas
+  - В TCustomComboEdit добавлен public метод DoClick, имитирующий нажатие на
+    кнопку.
+
+08.02.97 tooledit.pas, pickdate.pas
+  - В компоненте TDateEdit добавлена обработка клавиатуры в popup-календаре.
+
+02.02.97 vclutils.pas
+  - Добавлены функции LoadDLL и DefineCursor.
+
+02.02.97 rxdbctrl.pas
+  - В компоненту TDBStatusLabel добавлено свойство EditColor.
+  - В 16-битной реализации TRxDBGrid исправлена ошибка Delphi 1.0, не
+    позволяющая изменить значение FixedColor.
+
+31.01.97 strutils.pas
+  - Убрана рекурсия из функции ReplaceStr, исправлена ошибка в функции
+    MakeStr (16-битный вариант).
+
+31.01.97 fileutil.pas
+  - Добавлены функции DeleteFiles, DirExists, ClearDir, FileLock, FileUnlock.
+
+31.01.97 rxquery.pas
+  - Исправлена ошибка в компоненте TSQLScript, вызывающая "Access violation"
+    в Delphi32 при использовании транзакций.
+
+27.01.97 tooledit.pas, rxdbctl.pas
+  - Изменен порядок объявления свойств GlyphKind, Glyph и ButtonWidth
+    в наследниках TCustomComboEdit для логически правильного считывания.
+  - Исправлена ошибка, делавшая бесполезным присвоение Glyph := nil.
+
+27.01.97 rxshell.pas
+  - В компоненте TRxTrayIcon исправлена ошибка, не позволявшая использовать
+    клавиатуру для работы с PopupMenu.
+
+27.01.97 dbfilter.pas
+  - Добавлена проверка Bookmark на nil при деактивации фильтра (в некоторых
+    случаях возникал GPF).

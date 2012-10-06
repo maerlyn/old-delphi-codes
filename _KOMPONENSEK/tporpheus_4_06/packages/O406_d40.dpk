@@ -1,0 +1,96 @@
+{* ***** BEGIN LICENSE BLOCK *****                                            *}
+{* Version: MPL 1.1                                                           *}
+{*                                                                            *}
+{* The contents of this file are subject to the Mozilla Public License        *}
+{* Version 1.1 (the "License"); you may not use this file except in           *}
+{* compliance with the License. You may obtain a copy of the License at       *}
+{* http://www.mozilla.org/MPL/                                                *}
+{*                                                                            *}
+{* Software distributed under the License is distributed on an "AS IS" basis, *}
+{* WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License   *}
+{* for the specific language governing rights and limitations under the       *}
+{* License.                                                                   *}
+{*                                                                            *}
+{* The Original Code is TurboPower Orpheus                                    *}
+{*                                                                            *}
+{* The Initial Developer of the Original Code is TurboPower Software          *}
+{*                                                                            *}
+{* Portions created by TurboPower Software Inc. are Copyright (C) 1995-2002   *}
+{* TurboPower Software Inc. All Rights Reserved.                              *}
+{*                                                                            *}
+{* Contributor(s):                                                            *}
+{*                                                                            *}
+{* ***** END LICENSE BLOCK *****                                              *}
+
+PACKAGE O406_d40;
+
+{$R *.RES}
+{$ALIGN ON}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $00400000}
+{$DESCRIPTION 'TurboPower Orpheus 4.06 designtime package - VCL40'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  Vcl40,
+  Vclx40,
+  O406_R40;
+
+contains
+  OvcAbot0 in 'Ovcabot0.pas' {OvcfrmAboutForm},
+  OvcAEPE in 'OvcAEPE.pas' {OvcfrmAeRange},
+  OvcBtnH0 in 'OvcBtnH0.pas',
+  OvcCmdP0 in 'OvcCmdP0.pas',
+  OvcCmdP1 in 'OvcCmdP1.pas',
+  ovccole0 in 'ovccole0.pas' {OvcfrmCollEditor},
+  OvcColr0 in 'OvcColr0.pas',
+  OvcDock0 in 'OvcDock0.pas' {OvcfrmDock},
+  OvcDRpVE in 'Ovcdrpve.pas' {OvcfrmRvDataItemEditor},
+  OvcEfPe in 'OvcEfPe.pas',
+  OvcFNPE in 'OvcFNPE.pas',
+  OvcFxFPE in 'OvcFxFPE.pas',
+  OvcLbl0 in 'OvcLbl0.pas' {OvcLabelFrm},
+  OvcLbl1 in 'OvcLbl1.pas' {SaveSchemeFrm},
+  OvcLbl2 in 'OvcLbl2.pas',
+  OvcLkOu0 in 'OvcLkOu0.pas',
+  OvcLkOu1 in 'Ovclkou1.pas' {OvcfrmLkOutEd},
+  OvcNbk0 in 'OvcNbk0.pas',
+  OvcNfPe in 'OvcNfPe.pas',
+  OvcOutlE in 'Ovcoutle.pas' {OvcfrmOLItemsEditor},
+  OvcPfPe in 'OvcPfPe.pas',
+  OvcReg in 'OvcReg.pas',
+  OvcRvCEd in 'OvcRvCEd.pas' {RVCmpEd},
+  OvcRvPEd in 'OvcRvPEd.pas' {RVCmpEd2},
+  OvcSfPe in 'OvcSfPe.pas',
+  OvcStat0 in 'OvcStat0.pas' {OvcfrmPropsDlg},
+  OvcTBPE1 in 'Ovctbpe1.pas' {OvcfrmRowEditor},
+  OvcTBPE2 in 'Ovctbpe2.pas' {OvcfrmColEditor},
+  OvcTCPE in 'OvcTCPE.pas' {OvcfrmTCRange},
+  OvcXfrC0 in 'OvcXfrC0.pas',
+  OvcXfrC1 in 'OvcXfrC1.pas',
+  o32vldpe in 'o32vldpe.pas',
+  O32LobEd in 'O32LobEd.pas',
+  o32coled in 'O32ColEd.pas',
+  O32IGridEditor1 in 'O32IGridEditor1.pas',
+  O32IGridItemEd in 'O32IGridItemEd.pas' {FormIGridItemEditor};
+
+end.

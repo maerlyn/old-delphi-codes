@@ -1,0 +1,18 @@
+[CopyFiles]
+CopyAppFiles=%InstallPath%
+
+[CopyAppFiles]
+main\*.*=*.*
+data\*.*=*.*,DONT_OVERWRITE
+attach\*.*=AttachFiles\*.*
+
+[Shortcuts]
+ikonasztal=%Desktop%
+ikonstart=%ProgramsMenu%\%ProgramGroup%
+
+[ikonasztal]
+Putra POPper=%InstallPath%\POPper.exe
+
+[ikonstart]
+Putra POPper eltávolítása="%Windows%\UnGins.exe","%InstallPath%\Install.log"
+Putra POPper=%InstallPath%\POPper.exe

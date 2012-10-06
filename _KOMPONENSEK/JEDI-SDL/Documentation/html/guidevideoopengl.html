@@ -1,0 +1,109 @@
+<html>
+<head>
+  <title>Using OpenGL With SDL</title>
+             
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+       
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+       
+  <link rel="UP" title="Graphics and Video" href="guidevideo.html">
+       
+  <link rel="PREVIOUS" title="Graphics and Video" href="guidevideo.html">
+       
+  <link rel="NEXT" title="Input handling" href="guideinput.html">
+</head>
+ <body class="SECT1" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+   
+<div class="NAVHEADER">  
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+      </tr>
+      <tr>
+        <td width="7%" align="Left" valign="Bottom"><a href="guidevideo.html">
+  Prev</a></td>
+        <td width="77%" align="Center" valign="Bottom">Chapter 2. Graphics
+ and Video</td>
+        <td width="7%" align="Right" valign="Bottom"><a href="guideinput.html">
+  Next</a></td>
+      </tr>
+       
+  </tbody>  
+</table>
+   
+<hr align="Left" width="100%"></div>
+   
+<div class="SECT1">  
+<h1 class="SECT1"><a name="GUIDEVIDEOOPENGL">Using OpenGL With SDL</a></h1>
+   
+<p>SDL has the ability to create and use OpenGL contexts on several platforms(Linux/X11,
+ Win32, BeOS, MacOS Classic/Toolbox, MacOS X, FreeBSD/X11 and Solaris/X11).
+ This allows you to use SDL's audio, event handling, threads and times in
+your OpenGL applications (a function often performed by GLUT).</p>
+   
+<div class="SECT2">  
+<h2 class="SECT2"><a name="AEN103">Initialisation</a></h2>
+   
+<p>Initialising SDL to use OpenGL is not very different to initialising SDL
+ normally. There are three differences; you must pass <tt class="LITERAL">
+  SDL_OPENGL</tt> to <a href="sdlsetvideomode.html"><tt class="FUNCTION">
+SDL_SetVideoMode</tt></a>  , you must specify several GL attributes (depth
+buffer size, framebuffer  sizes) using <a href="sdlglsetattribute.html"><tt class="FUNCTION">
+SDL_GL_SetAttribute</tt></a>   and finally, if you wish to use double buffering
+you must specify it as  a GL attribute, <i class="EMPHASIS">not</i> by passing
+the <tt class="LITERAL">  SDL_DOUBLEBUF</tt> flag to <tt class="FUNCTION">
+SDL_SetVideoMode</tt>.</p>
+   
+<div class="EXAMPLE"><a name="AEN114"></a>  
+<p><b>Example 2-7. Initializing SDL with OpenGL</b></p>
+  <pre class="PROGRAMLISTING">    // Information about the current video settings.<br><b>const</b> <br>      info : PSDL_VideoInfo = <b>nil</b>;<br>    // Dimensions of our window. <br><b>var</b><br>    width : integer := 0;<br>    height : integer := 0;<br>    // Color depth in bits of our window.<br>    bpp : integer := 0;<br>    // Flags we will pass into SDL_SetVideoMode.<br>    flags : integer := 0;<br><b>begin</b><br>    // First, initialize SDL's video subsystem.<br>    <b>if</b>( SDL_Init( SDL_INIT_VIDEO ) &lt; 0 ) <b>then<br></b>    <b>begin</b><br>        // Failed, exit.<br>        MessageBox(0, PChar(Format('Video initialization failed : %s', [SDL_GetError])), 'Error', MB_OK or MB_ICONHAND);<br>        quit_tutorial( 1 );<br>    <b>end;</b><br><br>    // Let's get some video information.<br>    info := SDL_GetVideoInfo;<br><br>    <b>if</b>( info = nil ) <b>then</b><br>    <b>begin</b><br>        // This should probably never happen.<br>        MessageBox(0, PChar(Format('Video query failed : %s', [SDL_GetError])), 'Error', MB_OK or MB_ICONHAND);<br>        quit_tutorial( 1 );<br>    <b>end;</b><br><br>    <br>    {* Set our width/height to 640/480 (you would<br>     * of course let the user decide this in a normal<br>     * app). We get the bpp we will request from<br>     * the display. On X11, VidMode can't change<br>     * resolution, so this is probably being overly<br>     * safe. Under Win32, ChangeDisplaySettings<br>     * can change the bpp.<br>     *}<br>    width := 640;<br>    height := 480;<br>    bpp := info.vfmt.BitsPerPixel;<br><br>    {*<br>     * Now, we want to setup our requested<br>     * window attributes for our OpenGL window.<br>     * We want *at least* 5 bits of red, green<br>     * and blue. We also want at least a 16-bit<br>     * depth buffer.<br>     *<br>     * The last thing we do is request a double<br>     * buffered window. '1' turns on double<br>     * buffering, '0' turns it off.<br>     *<br>     * Note that we do not use SDL_DOUBLEBUF in<br>     * the flags to SDL_SetVideoMode. That does<br>     * not affect the GL attribute state, only<br>     * the standard 2D blitting setup.<br>     *}<br>    SDL_GL_SetAttribute( SDL_GL_RED_SIZE, 5 );<br>    SDL_GL_SetAttribute( SDL_GL_GREEN_SIZE, 5 );<br>    SDL_GL_SetAttribute( SDL_GL_BLUE_SIZE, 5 );<br>    SDL_GL_SetAttribute( SDL_GL_DEPTH_SIZE, 16 );<br>    SDL_GL_SetAttribute( SDL_GL_DOUBLEBUFFER, 1 );<br><br>    {*<br>     * We want to request that SDL provide us<br>     * with an OpenGL window, in a fullscreen<br>     * video mode.<br>     *<br>     * EXERCISE:<br>     * Make starting windowed an option, and<br>     * handle the resize events properly with<br>     * glViewport.<br>     *}<br>    flags := SDL_OPENGL <b>or</b> SDL_FULLSCREEN;<br><br>    {*<br>     * Set the video mode<br>     *}<br>    <b>if</b> ( SDL_SetVideoMode( width, height, bpp, flags ) = 0 ) <b>then      <br>    begin</b><br>        {* <br>         * This could happen for a variety of reasons,<br>         * including DISPLAY not being set, the specified<br>         * resolution not being available, etc.<br>         *}<br><pre class="PROGRAMLISTING">        MessageBox(0, PChar(Format('Video mode set failed : %s', [SDL_GetError])), 'Error', MB_OK or MB_ICONHAND);</pre>        quit_tutorial( 1 );<br>    <b>end;</b></pre>
+  </div>
+  </div>
+   
+<div class="SECT2">  
+<h2 class="SECT2"><a name="AEN117">Drawing</a></h2>
+   
+<p>Apart from initialisation, using OpenGL within SDL is the same as using
+ OpenGL with any other API, e.g. GLUT. You still use all the same function
+ calls and data types. However if you are using a double-buffered display,
+ then you must use <a href="sdlglswapbuffers.html"><tt class="FUNCTION">SDL_GL_SwapBuffers()</tt></a>
+   to swap the buffers and update the display. To request double-buffering 
+with OpenGL, use <a href="sdlglsetattribute.html"><tt class="FUNCTION">SDL_GL_SetAttribute</tt></a>
+   with <tt class="LITERAL">SDL_GL_DOUBLEBUFFER</tt>, and use <a href="sdlglgetattribute.html"><tt class="FUNCTION">
+  SDL_GL_GetAttribute</tt></a> to see if you actually got it.</p>
+   
+<p>A full example code listing is now presented below.</p>
+   
+<div class="EXAMPLE"><a name="AEN128"></a>  
+<p><b>Example 2-8. SDL and OpenGL</b></p>
+  <pre class="PROGRAMLISTING">{*<br> * SDL OpenGL Tutorial.<br> * (c) Michael Vance, 2000<br> * briareos@lokigames.com<br> *<br> * Distributed under terms of the LGPL. <br> *}<br><br><b>uses</b> SDL,<br>     OpenGL;<br><b>var</b><br>  should_rotate : TGLboolean := GL_TRUE;<br><br><b>procedure</b> quit_tutorial( code : integer );<br><b>begin</b><br>    {*<br>     * Quit SDL so we can release the fullscreen<br>     * mode and restore the previous video settings,<br>     * etc.<br>     *}<br>    SDL_Quit;<br><br>    // Exit program.<br>    halt( code );<br><b>end;</b><br><br><b>procedure</b> handle_key_down( keysym : PSDL_keysym );<br><b>begin</b><br>    {* <br>     * We're only interested if 'Esc' has<br>     * been presssed.<br>     *<br>     * EXERCISE: <br>     * Handle the arrow keys and have that change the<br>     * viewing position/angle.<br>     *}<br>    <b>case</b> keysym.sym  <b>of</b> <br>      SDLK_ESCAPE:<br>        quit_tutorial( 0 );<br>      SDLK_SPACE:<br>        should_rotate := <b>not</b> should_rotate;<br>    <b>else</b><br>        break;<br>    <b>end;</b><br><br><b>end;</b><br><br><b>procedure</b> process_events;<br><b>var</b><br><pre class="PROGRAMLISTING">    // Our SDL event placeholder.<br>    event : TSDL_Event;</pre><b>begin</b><br>    <br>    // Grab all the events off the queue. <br>    <b>while</b>( SDL_PollEvent( @event ) ) <b>do</b><br>    <b>begin</b><br><br>        <b>case</b> event.type_ <b>of</b> <br>          SDL_KEYDOWN:<br>            /* Handle key presses. */<br>            handle_key_down( &amp;event.key.keysym );<br><br>          SDL_QUIT:<br>            /* Handle quit requests (like Ctrl-c). */<br>            quit_tutorial( 0 );<br>        <b>end;</b><br><br>    <b>end;</b><br><br><b>end;</b><br><br><b>procedure</b> draw_screen;<br><b>var</b><br>  angle : single;<br>  v0, v1, v2, v3, v4, v5, v6, v7 : array[0..2] of TGLFloat;<br>  red, green, blue, white, yellow, black, orange, purple : TGLuByte;<br><b>begin</b><br>    // Our angle of rotation.<br>    angle := 0.0;<br><br>    {*<br>     * EXERCISE:<br>     * Replace this awful mess with vertex<br>     * arrays and a call to glDrawElements.<br>     *<br>     * EXERCISE:<br>     * After completing the above, change<br>     * it to use compiled vertex arrays.<br>     *<br>     * EXERCISE:<br>     * Verify my windings are correct here ;).<br>     *}<br>    v0[] := { -1.0f, -1.0f,  1.0f };<br>    v1[] := {  1.0f, -1.0f,  1.0f };<br>    v2[] := {  1.0f,  1.0f,  1.0f };<br>    v3[] := { -1.0f,  1.0f,  1.0f };<br>    v4[] := { -1.0f, -1.0f, -1.0f };<br>    v5[] := {  1.0f, -1.0f, -1.0f };<br>    v6[] := {  1.0f,  1.0f, -1.0f };<br>    v7[] := { -1.0f,  1.0f, -1.0f };<br>    red[]    := { 255,   0,   0, 255 };<br>    green[]  := {   0, 255,   0, 255 };<br>    blue[]   := {   0,   0, 255, 255 };<br>    white[]  := { 255, 255, 255, 255 };<br>    yellow[] := {   0, 255, 255, 255 };<br>    black[]  := {   0,   0,   0, 255 };<br>    orange[] := { 255, 255,   0, 255 };<br>    purple[] := { 255,   0, 255,   0 };<br><br>    // Clear the color and depth buffers.<br>    glClear( GL_COLOR_BUFFER_BIT <b>or</b> GL_DEPTH_BUFFER_BIT );<br><br>    // We don't want to modify the projection matrix.<br>    glMatrixMode( GL_MODELVIEW );<br>    glLoadIdentity;<br><br>    // Move down the z-axis.<br>    glTranslatef( 0.0, 0.0, -5.0 );<br><br>    // Rotate.<br>    glRotatef( angle, 0.0, 1.0, 0.0 );<br><br>    <b>if</b> ( should_rotate ) <b>then</b><br>    <b>begin</b><br><br>        inc( angle, 1 );<br>        if ( angle &gt; 360.0 ) <b>then</b><br>        <b>begin</b><br>            angle := 0.0;<br>        <b>end;</b><br><br>    <b>end;</b><br><br>    // Send our triangle data to the pipeline. <br>    glBegin( GL_TRIANGLES );<br><br>    glColor4ubv( red );<br>    glVertex3fv( v0 );<br>    glColor4ubv( green );<br>    glVertex3fv( v1 );<br>    glColor4ubv( blue );<br>    glVertex3fv( v2 );<br><br>    glColor4ubv( red );<br>    glVertex3fv( v0 );<br>    glColor4ubv( blue );<br>    glVertex3fv( v2 );<br>    glColor4ubv( white );<br>    glVertex3fv( v3 );<br><br>    glColor4ubv( green );<br>    glVertex3fv( v1 );<br>    glColor4ubv( black );<br>    glVertex3fv( v5 );<br>    glColor4ubv( orange );<br>    glVertex3fv( v6 );<br><br>    glColor4ubv( green );<br>    glVertex3fv( v1 );<br>    glColor4ubv( orange );<br>    glVertex3fv( v6 );<br>    glColor4ubv( blue );<br>    glVertex3fv( v2 );<br><br>    glColor4ubv( black );<br>    glVertex3fv( v5 );<br>    glColor4ubv( yellow );<br>    glVertex3fv( v4 );<br>    glColor4ubv( purple );<br>    glVertex3fv( v7 );<br><br>    glColor4ubv( black );<br>    glVertex3fv( v5 );<br>    glColor4ubv( purple );<br>    glVertex3fv( v7 );<br>    glColor4ubv( orange );<br>    glVertex3fv( v6 );<br><br>    glColor4ubv( yellow );<br>    glVertex3fv( v4 );<br>    glColor4ubv( red );<br>    glVertex3fv( v0 );<br>    glColor4ubv( white );<br>    glVertex3fv( v3 );<br><br>    glColor4ubv( yellow );<br>    glVertex3fv( v4 );<br>    glColor4ubv( white );<br>    glVertex3fv( v3 );<br>    glColor4ubv( purple );<br>    glVertex3fv( v7 );<br><br>    glColor4ubv( white );<br>    glVertex3fv( v3 );<br>    glColor4ubv( blue );<br>    glVertex3fv( v2 );<br>    glColor4ubv( orange );<br>    glVertex3fv( v6 );<br><br>    glColor4ubv( white );<br>    glVertex3fv( v3 );<br>    glColor4ubv( orange );<br>    glVertex3fv( v6 );<br>    glColor4ubv( purple );<br>    glVertex3fv( v7 );<br><br>    glColor4ubv( green );<br>    glVertex3fv( v1 );<br>    glColor4ubv( red );<br>    glVertex3fv( v0 );<br>    glColor4ubv( yellow );<br>    glVertex3fv( v4 );<br><br>    glColor4ubv( green );<br>    glVertex3fv( v1 );<br>    glColor4ubv( yellow );<br>    glVertex3fv( v4 );<br>    glColor4ubv( black );<br>    glVertex3fv( v5 );<br><br>    glEnd;<br><br>    {*<br>     * EXERCISE:<br>     * Draw text telling the user that 'Spc'<br>     * pauses the rotation and 'Esc' quits.<br>     * Do it using vetors and textured quads.<br>     *}<br><br>    {*<br>     * Swap the buffers. This this tells the driver to<br>     * render the next frame from the contents of the<br>     * back-buffer, and to set all rendering operations<br>     * to occur on what was the front-buffer.<br>     *<br>     * Double buffering prevents nasty visual tearing<br>     * from the application drawing on areas of the<br>     * screen that are being updated at the same time.<br>     *}<br>    SDL_GL_SwapBuffers;<br><b>end;</b><br><br><b>procedure</b> setup_opengl( width : integer; height : integer );<br><b>var</b><br>  ration : single;<br><b>begin</b><br>    ratio := width / height;<br><br>    // Our shading model--Gouraud (smooth).<br>    glShadeModel( GL_SMOOTH );<br><br>    // Culling. <br>    glCullFace( GL_BACK );<br>    glFrontFace( GL_CCW );<br>    glEnable( GL_CULL_FACE );<br><br>    // Set the clear color.<br>    glClearColor( 0, 0, 0, 0 );<br><br>    // Setup our viewport.<br>    glViewport( 0, 0, width, height );<br><br>    {*<br>     * Change to the projection matrix and set<br>     * our viewing volume.<br>     *}<br>    glMatrixMode( GL_PROJECTION );<br>    glLoadIdentity;<br>    {*<br>     * EXERCISE:<br>     * Replace this with a call to glFrustum.<br>     *}<br>    gluPerspective( 60.0, ratio, 1.0, 1024.0 );<br><b>end;</b><br><br><b>var</b><br>  width, height, bpp : integer;<br>  flags : integer;<br>  info : PSDL_VideoInfo;<br><b>begin</b><br>    // Information about the current video settings.<br>    info := <b>nil</b>;<br>    // Dimensions of our window.<br>    width := 0;<br>    height := 0;<br>    // Color depth in bits of our window.<br>    bpp := 0;<br>    // Flags we will pass into SDL_SetVideoMode.<br>    flags := 0;<br><br>    // First, initialize SDL's video subsystem. <br>    if( SDL_Init( SDL_INIT_VIDEO ) &lt; 0 ) then<br>    begin<br>        // Failed, exit.<br>        MessageBox(0, PChar(Format('Video initialization failed : %s', [SDL_GetError])), 'Error', MB_OK or MB_ICONHAND);<br>        quit_tutorial( 1 );<br>    end;<br><br>    // Let's get some video information.<br>    info := SDL_GetVideoInfo;<br><br>    if( info &lt;&gt; <b>nil</b> ) then<br>    <b>begin</b><br>        // This should probably never happen.<br>        MessageBox(0, PChar(Format('Video query failed : %s', [SDL_GetError])), 'Error', MB_OK or MB_ICONHAND);<br>        quit_tutorial( 1 );<br>    <b>end;</b><br><br>    {*<br>     * Set our width/height to 640/480 (you would<br>     * of course let the user decide this in a normal<br>     * app). We get the bpp we will request from<br>     * the display. On X11, VidMode can't change<br>     * resolution, so this is probably being overly<br>     * safe. Under Win32, ChangeDisplaySettings<br>     * can change the bpp.<br>     *}<br>    width := 640;<br>    height := 480;<br>    bpp = info.vfmt.BitsPerPixel;<br><br>    {*<br>     * Now, we want to setup our requested<br>     * window attributes for our OpenGL window.<br>     * We want *at least* 5 bits of red, green<br>     * and blue. We also want at least a 16-bit<br>     * depth buffer.<br>     *<br>     * The last thing we do is request a double<br>     * buffered window. '1' turns on double<br>     * buffering, '0' turns it off.<br>     *<br>     * Note that we do not use SDL_DOUBLEBUF in<br>     * the flags to SDL_SetVideoMode. That does<br>     * not affect the GL attribute state, only<br>     * the standard 2D blitting setup.<br>     *}<br>    SDL_GL_SetAttribute( SDL_GL_RED_SIZE, 5 );<br>    SDL_GL_SetAttribute( SDL_GL_GREEN_SIZE, 5 );<br>    SDL_GL_SetAttribute( SDL_GL_BLUE_SIZE, 5 );<br>    SDL_GL_SetAttribute( SDL_GL_DEPTH_SIZE, 16 );<br>    SDL_GL_SetAttribute( SDL_GL_DOUBLEBUFFER, 1 );<br><br>    {*<br>     * We want to request that SDL provide us<br>     * with an OpenGL window, in a fullscreen<br>     * video mode.<br>     *<br>     * EXERCISE:<br>     * Make starting windowed an option, and<br>     * handle the resize events properly with<br>     * glViewport.<br>     *}<br>    flags := SDL_OPENGL <b>or</b> SDL_FULLSCREEN;<br><br>    {*<br>     * Set the video mode<br>     *}<br>    <b>if</b> ( SDL_SetVideoMode( width, height, bpp, flags ) = 0 ) <b>then</b><br>    <b>begin</b><br>        /* <br>         * This could happen for a variety of reasons,<br>         * including DISPLAY not being set, the specified<br>         * resolution not being available, etc.<br>         */<br>        MessageBox(0, PChar(Format('Video mode set failed : %s', [SDL_GetError])), 'Error', MB_OK or MB_ICONHAND);<br>        quit_tutorial( 1 );<br>    <b>end;</b><br><br>    {*<br>     * At this point, we should have a properly setup<br>     * double-buffered window for use with OpenGL.<br>     *}<br>    setup_opengl( width, height );<br><br>    {*<br>     * Now we want to begin our normal app process--<br>     * an event loop with a lot of redrawing.<br>     *}<br>    <b>while</b>( true ) <b>do</b><br>    <b>begin</b><br>        // Process incoming events.<br>        process_events;<br>        // Draw the screen.<br>        draw_screen;<br>    <b>end;</b><br><br>    {*<br>     * EXERCISE:<br>     * Record timings using SDL_GetTicks() and<br>     * and print out frames per second at program<br>     * end.<br>     *}<br><br>    // Never reached.<br>    exit;<br><b>end;</b><br></pre>
+  </div>
+  </div>
+  </div>
+   
+<div class="NAVFOOTER">  
+<hr align="Left" width="100%">  
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td width="31%" align="Left" valign="Top"><a href="guidevideo.html">
+  Prev</a></td>
+        <td width="34%" align="Center" valign="Top"><a href="index.html">
+Home</a></td>
+        <td width="31%" align="Right" valign="Top"><a href="guideinput.html">
+  Next</a></td>
+      </tr>
+      <tr>
+        <td width="31%" align="Left" valign="Top">Graphics and Video</td>
+        <td width="34%" align="Center" valign="Top"><a href="guidevideo.html">
+  Up</a></td>
+        <td width="31%" align="Right" valign="Top">Input handling</td>
+      </tr>
+       
+  </tbody>  
+</table>
+  </div>
+   
+</body>
+</html>

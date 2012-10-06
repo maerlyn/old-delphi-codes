@@ -1,0 +1,39 @@
+package GR32_DSGN_D6;
+
+{$R *.res}
+{$R '..\G32_Reg.dcr'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Graphics32 Design Time Package'}
+{$IMPLICITBUILD ON}
+
+requires
+  designide,
+  vcl,
+  GR32_D6;
+
+contains
+  G32_Reg in '..\G32_Reg.pas',
+  G32_Dsgn_Color in '..\G32_Dsgn_Color.pas',
+  G32_Dsgn_Bitmap in '..\G32_Dsgn_Bitmap.pas' {PictureEditorForm};
+
+end.

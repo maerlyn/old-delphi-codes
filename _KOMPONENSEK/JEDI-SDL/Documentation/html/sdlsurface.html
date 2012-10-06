@@ -1,0 +1,218 @@
+<html>
+<head>
+  <title>SDL_Surface</title>
+                    
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+           
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+           
+  <link rel="UP" title="Video" href="video.html">
+           
+  <link rel="PREVIOUS" title="SDL_PixelFormat" href="sdlpixelformat.html">
+           
+  <link rel="NEXT" title="SDL_VideoInfo" href="sdlvideoinfo.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+     
+<div class="NAVHEADER">   
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+     <tbody>
+       <tr>
+         <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+       </tr>
+       <tr>
+         <td width="7%" align="Left" valign="Bottom"><a href="sdlpixelformat.html">
+   Prev</a></td>
+         <td width="76%" align="Center" valign="Bottom"><br>
+         </td>
+         <td width="7%" align="Right" valign="Bottom"><a href="sdlvideoinfo.html">
+   Next</a></td>
+       </tr>
+           
+  </tbody>   
+</table>
+     
+<hr align="Left" width="100%"></div>
+     
+<h1><a name="SDLSURFACE">TSDL_Surface</a></h1>
+     
+<div class="REFNAMEDIV"><a name="AEN2847"></a>   
+<h2>Name</h2>
+   TSDL_Surface -- Graphical Surface Structure</div>
+     
+<div class="REFSECT1"><a name="AEN2850"></a><br>
+    
+<h2>Structure Definition</h2>
+   <pre class="PROGRAMLISTING">  TSDL_Surface = <b>record</b><br>    flags: uint32;            // Read-only<br>    format: PSDL_PixelFormat; // Read-only<br>    w, h: Integer;            // Read-only<br>    pitch: Uint16;            // Read-only<br>    pixels: Pointer;          // Read-write<br>    offset: Integer;          // Private<br>    hwdata: Pointer;          //TPrivate_hwdata;  Hardware-specific surface info<br><br>    // clipping information:<br>    clip_rect: TSDL_Rect;     // Read-only<br>    unused1: Uint32;          // for binary compatibility<br>    // Allow recursive locks<br>    locked: Uint32;           // Private<br>    // info for fast blit mapping to other surfaces<br>    Blitmap: Pointer;         // PSDL_BlitMap; //   Private<br>    // format version, bumped at every change to invalidate blit maps<br>    format_version: Cardinal; // Private<br>    refcount: Integer;<br>  <b>end;</b></pre>
+   </div>
+     
+<div class="REFSECT1">   
+<h2>Structure Data</h2>
+     
+<div class="INFORMALTABLE"><a name="AEN2855"></a>   
+<p></p>
+     
+<table border="0" class="CALSTABLE">
+     <tbody>
+       <tr>
+         <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>flags</i></tt></td>
+         <td align="Left" valign="Top">Surface flags</td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>format</i></tt></td>
+         <td align="Left" valign="Top">Pixel <a href="sdlpixelformat.html">
+  format</a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>w, h</i></tt></td>
+         <td align="Left" valign="Top">Width and height of the surface</td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>pitch</i></tt></td>
+         <td align="Left" valign="Top">Length of a surface scanline in bytes</td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>pixels</i></tt></td>
+         <td align="Left" valign="Top">Pointer to the actual pixel data</td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>clip_rect</i></tt></td>
+         <td align="Left" valign="Top">surface clip <a href="sdlrect.html">
+  rectangle</a></td>
+       </tr>
+           
+  </tbody>   
+</table>
+     
+<p></p>
+   </div>
+   </div>
+     
+<div class="REFSECT1"><a name="AEN2884"></a>   
+<h2>Description</h2>
+     
+<p><span class="STRUCTNAME">TSDL_Surface</span>'s represent areas of "graphical"
+&nbsp; memory, memory that can be drawn to. The video framebuffer is returned
+as&nbsp; a <span class="STRUCTNAME">SDL_Surface</span> by <a href="sdlsetvideomode.html"><tt class="FUNCTION">
+ SDL_SetVideoMode</tt></a> and <a href="sdlgetvideosurface.html"><tt class="FUNCTION">
+ SDL_GetVideoSurface</tt></a>. Most of the fields should be pretty obvious.
+&nbsp; <tt class="STRUCTFIELD"><i>w</i></tt> and <tt class="STRUCTFIELD"><i>
+h</i></tt> &nbsp;&nbsp; are the width and height of the surface in pixels.
+<tt class="STRUCTFIELD"><i> &nbsp; pixels</i></tt> is a pointer to the actual
+pixel data, the surface should&nbsp; be <a href="sdllocksurface.html">locked</a>
+ before accessing this field. The <tt class="STRUCTFIELD"><i>clip_rect</i></tt>
+ field is the clipping rectangle&nbsp; as set by <a href="sdlsetcliprect.html"><tt class="FUNCTION">
+SDL_SetClipRect</tt></a> &nbsp; .</p>
+     
+<p>The following are supported in the <tt class="STRUCTFIELD"><i>flags</i></tt>
+    field.</p>
+     
+<div class="INFORMALTABLE"><a name="AEN2902"></a>   
+<p></p>
+     
+<table border="1" class="CALSTABLE">
+     <tbody>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_SWSURFACE</tt></td>
+         <td align="Left" valign="Top">Surface is stored in system memory</td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_HWSURFACE</tt></td>
+         <td align="Left" valign="Top">Surface is stored in video memory</td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_ASYNCBLIT</tt></td>
+         <td align="Left" valign="Top">Surface uses asynchronous blits if 
+possible</td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_ANYFORMAT</tt></td>
+         <td align="Left" valign="Top">Allows any pixel-format (Display surface)</td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_HWPALETTE</tt></td>
+         <td align="Left" valign="Top">Surface has exclusive palette</td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_DOUBLEBUF</tt></td>
+         <td align="Left" valign="Top">Surface is double buffered (Display
+ surface)</td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_FULLSCREEN</tt></td>
+         <td align="Left" valign="Top">Surface is full screen (Display Surface)</td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_OPENGL</tt></td>
+         <td align="Left" valign="Top">Surface has an OpenGL context (Display 
+ Surface)</td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_OPENGLBLIT</tt></td>
+         <td align="Left" valign="Top">Surface supports OpenGL blitting (Display 
+ Surface)</td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_RESIZABLE</tt></td>
+         <td align="Left" valign="Top">Surface is resizable (Display Surface)</td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_HWACCEL</tt></td>
+         <td align="Left" valign="Top">Surface blit uses hardware acceleration</td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_SRCCOLORKEY</tt></td>
+         <td align="Left" valign="Top">Surface use colorkey blitting</td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_RLEACCEL</tt></td>
+         <td align="Left" valign="Top">Colorkey blitting is accelerated with 
+ RLE</td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_SRCALPHA</tt></td>
+         <td align="Left" valign="Top">Surface blit uses alpha blending</td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_PREALLOC</tt></td>
+         <td align="Left" valign="Top">Surface uses preallocated memory</td>
+       </tr>
+           
+  </tbody>   
+</table>
+     
+<p></p>
+   </div>
+   </div>
+     
+<div class="REFSECT1"><a name="AEN2965"></a>   
+<h2>See Also</h2>
+     
+<p><a href="sdlpixelformat.html"><span class="STRUCTNAME">TSDL_PixelFormat</span></a></p>
+   </div>
+     
+<div class="NAVFOOTER">   
+<hr align="Left" width="100%">   
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+     <tbody>
+       <tr>
+         <td width="31%" align="Left" valign="Top"><a href="sdlpixelformat.html">
+   Prev</a></td>
+         <td width="34%" align="Center" valign="Top"><a href="index.html">
+ Home</a></td>
+         <td width="31%" align="Right" valign="Top"><a href="sdlvideoinfo.html">
+   Next</a></td>
+       </tr>
+       <tr>
+         <td width="31%" align="Left" valign="Top">TSDL_PixelFormat</td>
+         <td width="34%" align="Center" valign="Top"><a href="video.html">
+ Up</a></td>
+         <td width="31%" align="Right" valign="Top">TSDL_VideoInfo</td>
+       </tr>
+           
+  </tbody>   
+</table>
+   </div>
+     
+</body>
+</html>

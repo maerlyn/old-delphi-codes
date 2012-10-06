@@ -1,0 +1,140 @@
+<html>
+<head>
+  <title>TSDL_KeyboardEvent</title>
+                           
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+               
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+               
+  <link rel="UP" title="SDL Event Structures." href="eventstructures.html">
+               
+  <link rel="PREVIOUS" title="SDL_ActiveEvent" href="sdlactiveevent.html">
+               
+  <link rel="NEXT" title="SDL_MouseMotionEvent" href="sdlmousemotionevent.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+       
+<div class="NAVHEADER">    
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+        </tr>
+        <tr>
+          <td width="7%" align="Left" valign="Bottom"><a href="sdlactiveevent.html">
+    Prev</a></td>
+          <td width="75%" align="Center" valign="Bottom"><br>
+          </td>
+          <td width="7%" align="Right" valign="Bottom"><a href="sdlmousemotionevent.html">
+    Next</a></td>
+        </tr>
+               
+  </tbody>    
+</table>
+       
+<hr align="Left" width="100%"></div>
+       
+<h1><a name="SDLKEYBOARDEVENT">TSDL_KeyboardEvent</a></h1>
+       
+<div class="REFNAMEDIV"><a name="AEN3584"></a>    
+<h2>Name</h2>
+ &nbsp;&nbsp; TSDL_KeyboardEvent -- Keyboard event structure</div>
+       
+<div class="REFSECT1"><a name="AEN3587"></a><br>
+       
+<h2>Structure Definition</h2>
+    <pre class="PROGRAMLISTING">  TSDL_KeyboardEvent = <b>record</b><br>    type_: UInt8; // SDL_KEYDOWN or SDL_KEYUP<br>    which: UInt8; // The keyboard device index<br>    state: UInt8; // SDL_PRESSED or SDL_RELEASED<br>    keysym: TSDL_KeySym;<br>  <b>end;</b></pre>
+    </div>
+       
+<div class="REFSECT1"><a name="AEN3590"></a>    
+<h2>Structure Data</h2>
+       
+<div class="INFORMALTABLE"><a name="AEN3592"></a>    
+<p></p>
+       
+<table border="0" class="CALSTABLE">
+      <tbody>
+        <tr>
+          <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>type</i></tt></td>
+          <td align="Left" valign="Top"><tt class="LITERAL">SDL_KEYDOWN</tt>
+    or <tt class="LITERAL">SDL_KEYUP</tt></td>
+        </tr>
+        <tr>
+          <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>state</i></tt></td>
+          <td align="Left" valign="Top"><tt class="LITERAL">SDL_PRESSED</tt>
+    or <tt class="LITERAL">SDL_RELEASED</tt></td>
+        </tr>
+        <tr>
+          <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>keysym</i></tt></td>
+          <td align="Left" valign="Top">Contains key press information</td>
+        </tr>
+               
+  </tbody>    
+</table>
+       
+<p></p>
+    </div>
+    </div>
+       
+<div class="REFSECT1"><a name="AEN3611"></a>    
+<h2>Description</h2>
+       
+<p><span class="STRUCTNAME">TSDL_KeyboardEvent</span> is a member of the
+<a href="sdlevent.html"><span class="STRUCTNAME">  TSDL_Event</span></a>
+union and is used when an event of type <tt class="LITERAL">  SDL_KEYDOWN</tt>
+ or <tt class="LITERAL">SDL_KEYUP</tt> is reported.</p>
+       
+<p>The <tt class="STRUCTFIELD"><i>type</i></tt> and <tt class="STRUCTFIELD"><i>
+    state</i></tt> actually report the same information, they just use different
+  values to do it! A keyboard event occurs when a key is released (<tt class="STRUCTFIELD"><i>
+    type</i></tt>=<tt class="LITERAL">SDK_KEYUP</tt> or <tt class="STRUCTFIELD"><i>
+    state</i></tt>=<tt class="LITERAL">SDL_RELEASED</tt>) and when a key
+is  pressed (<tt class="STRUCTFIELD"><i>type</i></tt>=<tt class="LITERAL">
+SDL_KEYDOWN</tt>     or <tt class="STRUCTFIELD"><i>state</i></tt>=<tt class="LITERAL">
+SDL_PRESSED</tt>    ). The information on what key was pressed or released
+is in the <a href="sdlkeysym.html"><span class="STRUCTNAME">    keysym</span></a>
+ structure.</p>
+       
+<div class="NOTE">    
+<blockquote class="NOTE">            
+  <p><b>Note: </b>Repeating <tt class="LITERAL">SDL_KEYDOWN</tt> events will
+  occur if key repeat is enabled (see <a href="sdlenablekeyrepeat.html"><tt class="FUNCTION">
+    SDL_EnableKeyRepeat</tt></a>).</p>
+      </blockquote>
+      </div>
+      </div>
+               
+  <div class="REFSECT1"><a name="AEN3637"></a>            
+  <h2>See Also</h2>
+               
+  <p><a href="sdlevent.html"><span class="STRUCTNAME">TSDL_Event</span></a>
+  &nbsp; , <a href="sdlkeysym.html"><span class="STRUCTNAME">TSDL_KeySym</span></a>
+  &nbsp; , <a href="sdlenablekeyrepeat.html"><tt class="FUNCTION">SDL_EnableKeyRepeat</tt></a>
+  &nbsp; , <a href="sdlenableunicode.html"><tt class="FUNCTION">SDL_EnableUNICODE</tt></a></p>
+      </div>
+               
+  <div class="NAVFOOTER">            
+  <hr align="Left" width="100%">            
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td width="31%" align="Left" valign="Top"><a href="sdlactiveevent.html">
+    Prev</a></td>
+            <td width="34%" align="Center" valign="Top"><a href="index.html">
+    Home</a></td>
+            <td width="31%" align="Right" valign="Top"><a href="sdlmousemotionevent.html">
+    Next</a></td>
+          </tr>
+          <tr>
+            <td width="31%" align="Left" valign="Top">TSDL_ActiveEvent</td>
+            <td width="34%" align="Center" valign="Top"><a href="eventstructures.html">
+    Up</a></td>
+            <td width="31%" align="Right" valign="Top">TSDL_MouseMotionEvent</td>
+          </tr>
+                       
+    </tbody>            
+  </table>
+      </div>
+               
+  </body>
+  </html>

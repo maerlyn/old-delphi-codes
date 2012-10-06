@@ -1,0 +1,4 @@
+pwlogo		DATA	"c:\!gabor\delphi\pwlogod.jpg"
+pwlogo_jpg	23	"c:\!gabor\delphi\pwlogod.jpg"
+save_jpg	23	"save.jpg"
+pwicon_small	ICON	"pwicon_16x16.ico"

@@ -1,0 +1,12 @@
+Hé hunok odakünn a nagyvilágban!
+
+Volt idõm, meg kedvem, úgyhogy írtam nektek egy egészen jóra sikerült
+Telefonkönyv progit. MS Access adatbázist használ, ennek a meghajtója
+pedig (elvileg) minden gépen ott van ellentétben a BDE-vel(amit a 3.0 használ),
+csak az aliasokat kell létrehozni, így sikerült jelentõsen csökkenteni a
+telepítõ méretét, ami pedig sokat jelent. A progi FREEWARE, de lenne egy
+kérésem: ha bármi ötletetek, kifogásotok van, vagy bugot találtok(mert ugye senki sem tökéletes, különösen a programozók nem), írjatok!
+eMail cím: TeleVonZsinor@webmail.hu . Asszem ennyi is lenne a mondanivalóm
+mielõtt megkezditek eme nagyszerû program telepítését, sok sikert kíván 
+a használathoz a készítõ:
+	Tele von Zsinór

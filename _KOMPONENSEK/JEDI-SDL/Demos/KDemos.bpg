@@ -1,0 +1,233 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.02.5
+#------------------------------------------------------------------------------
+ifndef ROOT
+ROOT = /home/dominique/kylix
+endif
+#------------------------------------------------------------------------------
+MAKE = make -$(MAKEFLAGS) -f$**
+DCC =dcc $<
+#------------------------------------------------------------------------------
+PROJECTS = JediSDLBlockOut JEDISDLOpenGLClothSim JEDISDLAliens BlitzBomber \
+  JEDISDLIsoDemo JEDISDLMouse JEDISDLPanAndZoom JEDISDLPlasma testalpha testgamma \
+  testjoystick JEDISDLTestWin JEDISDLUtilsTest JEDISDLPixelTest \
+  JEDISDLRotateSurface JEDISDLWormhole TimerTest JEDISDLNewVox DTT \
+  JEDISDLOpenGLDynamicLights JEDISDLOpenGLEnvMap JEDISDLOpenGLMetaBalls \
+  JEDISDL_MDLViewer JEDISDLOpenGLMotionBlur ParticalTest JEDISDLOpenGLPicking \
+  JEDISDL_Puntos JEDISDLShadows JEDISDLOpenGLSkyBox JEDISDLTestGL YaSr \
+  JEDISDLHeightMapTerrain8 JEDISDLHeightMapTerrain10 JEDISDLOpenGL2 \
+  JEDISDLOpenGL3 JEDISDLOpenGL4 JEDISDLOpenGL5 JEDISDLOpenGL6 JEDISDLOpenGL7 \
+  JEDISDLOpenGL8 JEDISDLOpenGL9 JEDISDLOpenGL10 JEDISDLOpenGL11 JEDISDLOpenGL12 \
+  JEDISDLOpenGL16 JEDISDLOpenGL17 JEDISDLOpenGL18 JEDISDLOpenGL19 JEDISDLOpenGL20 \
+  JEDISDLOpenGL21 JEDISDLOpenGL37 FilterTest JEDISDLMixer MonoFonts_Test \
+  CollisionTest Oxygene Shooting ZTest showfont glfont JediSFontTest1 \
+  JediSFontTest2 JediSFontTest3 JediSFontTest4 glmovie bplvideo60.so MPEGPlay DTTD
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+JediSDLBlockOut: 3D/BlockOut/JediSDLBlockOut.dpr
+	$(DCC)
+
+JEDISDLOpenGLClothSim: 3D/ClothSim/JEDISDLOpenGLClothSim.dpr
+	$(DCC)
+
+JEDISDLAliens: 2D/Aliens/JEDISDLAliens.dpr
+	$(DCC)
+
+BlitzBomber: 2D/BlitzBomber/BlitzBomber.dpr
+	$(DCC)
+
+JEDISDLIsoDemo: 2D/Isometric/JEDISDLIsoDemo.dpr
+	$(DCC)
+
+JEDISDLMouse: 2D/Mouse/JEDISDLMouse.dpr
+	$(DCC)
+
+JEDISDLPanAndZoom: 2D/PanAndZoom/JEDISDLPanAndZoom.dpr
+	$(DCC)
+
+JEDISDLPlasma: 2D/Plasma/JEDISDLPlasma.dpr
+	$(DCC)
+
+testalpha: 2D/SDLTests/testalpha/testalpha.dpr
+	$(DCC)
+
+testgamma: 2D/SDLTests/testgamma/testgamma.dpr
+	$(DCC)
+
+testjoystick: 2D/SDLTests/testjoystick/testjoystick.dpr
+	$(DCC)
+
+JEDISDLTestWin: 2D/SDLTests/testwin/JEDISDLTestWin.dpr
+	$(DCC)
+
+JEDISDLUtilsTest: 2D/SDLUtilsTests/MainTest/JEDISDLUtilsTest.dpr
+	$(DCC)
+
+JEDISDLPixelTest: 2D/SDLUtilsTests/PixelTest/JEDISDLPixelTest.dpr
+	$(DCC)
+
+JEDISDLRotateSurface: 2D/SDLUtilsTests/RotateSurface/JEDISDLRotateSurface.dpr
+	$(DCC)
+
+JEDISDLWormhole: 2D/SDLUtilsTests/WormHole/JEDISDLWormhole.dpr
+	$(DCC)
+
+TimerTest: 2D/TimerTest/TimerTest.dpr
+	$(DCC)
+
+JEDISDLNewVox: 2D/Voxel/JEDISDLNewVox.dpr
+	$(DCC)
+
+DTT: 3D/DeathTruckTion/DTT.dpr
+	$(DCC)
+
+JEDISDLOpenGLDynamicLights: 3D/Dynamic Lights/JEDISDLOpenGLDynamicLights.dpr
+	$(DCC)
+
+JEDISDLOpenGLEnvMap: 3D/Environment Map/JEDISDLOpenGLEnvMap.dpr
+	$(DCC)
+
+JEDISDLOpenGLMetaBalls: 3D/MetaBalls/JEDISDLOpenGLMetaBalls.dpr
+	$(DCC)
+
+JEDISDL_MDLViewer: 3D/ModelViewer/JEDISDL_MDLViewer.dpr
+	$(DCC)
+
+JEDISDLOpenGLMotionBlur: 3D/Motion Blur/JEDISDLOpenGLMotionBlur.dpr
+	$(DCC)
+
+ParticalTest: 3D/ParticleEngine/ParticalTest.dpr
+	$(DCC)
+
+JEDISDLOpenGLPicking: 3D/Picking/JEDISDLOpenGLPicking.dpr
+	$(DCC)
+
+JEDISDL_Puntos: 3D/Puntos/JEDISDL_Puntos.dpr
+	$(DCC)
+
+JEDISDLShadows: 3D/Shadows/JEDISDLShadows.dpr
+	$(DCC)
+
+JEDISDLOpenGLSkyBox: 3D/SkyBox/JEDISDLOpenGLSkyBox.dpr
+	$(DCC)
+
+JEDISDLTestGL: 3D/TestGL/JEDISDLTestGL.dpr
+	$(DCC)
+
+YaSr: 3D/YaSr/YaSr.dpr
+	$(DCC)
+
+JEDISDLHeightMapTerrain8: 3D/OpenGL Game Programming/Chapter 8/Height Map Terrain/JEDISDLHeightMapTerrain8.dpr
+	$(DCC)
+
+JEDISDLHeightMapTerrain10: 3D/OpenGL Game Programming/Chapter 10/Height Map Terrain/JEDISDLHeightMapTerrain10.dpr
+	$(DCC)
+
+JEDISDLOpenGL2: 3D/NeHe/Tutorial 2/JEDISDLOpenGL2.dpr
+	$(DCC)
+
+JEDISDLOpenGL3: 3D/NeHe/Tutorial 3/JEDISDLOpenGL3.dpr
+	$(DCC)
+
+JEDISDLOpenGL4: 3D/NeHe/Tutorial 4/JEDISDLOpenGL4.dpr
+	$(DCC)
+
+JEDISDLOpenGL5: 3D/NeHe/Tutorial 5/JEDISDLOpenGL5.dpr
+	$(DCC)
+
+JEDISDLOpenGL6: 3D/NeHe/Tutorial 6/JEDISDLOpenGL6.dpr
+	$(DCC)
+
+JEDISDLOpenGL7: 3D/NeHe/Tutorial 7/JEDISDLOpenGL7.dpr
+	$(DCC)
+
+JEDISDLOpenGL8: 3D/NeHe/Tutorial 8/JEDISDLOpenGL8.dpr
+	$(DCC)
+
+JEDISDLOpenGL9: 3D/NeHe/Tutorial 9/JEDISDLOpenGL9.dpr
+	$(DCC)
+
+JEDISDLOpenGL10: 3D/NeHe/Tutorial 10/JEDISDLOpenGL10.dpr
+	$(DCC)
+
+JEDISDLOpenGL11: 3D/NeHe/Tutorial 11/JEDISDLOpenGL11.dpr
+	$(DCC)
+
+JEDISDLOpenGL12: 3D/NeHe/Tutorial 12/JEDISDLOpenGL12.dpr
+	$(DCC)
+
+JEDISDLOpenGL16: 3D/NeHe/Tutorial 16/JEDISDLOpenGL16.dpr
+	$(DCC)
+
+JEDISDLOpenGL17: 3D/NeHe/Tutorial 17/JEDISDLOpenGL17.dpr
+	$(DCC)
+
+JEDISDLOpenGL18: 3D/NeHe/Tutorial 18/JEDISDLOpenGL18.dpr
+	$(DCC)
+
+JEDISDLOpenGL19: 3D/NeHe/Tutorial 19/JEDISDLOpenGL19.dpr
+	$(DCC)
+
+JEDISDLOpenGL20: 3D/NeHe/Tutorial 20/JEDISDLOpenGL20.dpr
+	$(DCC)
+
+JEDISDLOpenGL21: 3D/NeHe/Tutorial 21/JEDISDLOpenGL21.dpr
+	$(DCC)
+
+JEDISDLOpenGL37: 3D/NeHe/Tutorial 37/JEDISDLOpenGL37.dpr
+	$(DCC)
+
+FilterTest: ../SDLFilter/Demos/Test/FilterTest.dpr
+	$(DCC)
+
+JEDISDLMixer: ../SDL_Mixer/Demos/WavTest/JEDISDLMixer.dpr
+	$(DCC)
+
+MonoFonts_Test: ../SDLMonoFonts/Demos/Test/MonoFonts_Test.dpr
+	$(DCC)
+
+CollisionTest: ../SDLSpriteEngine/Demos/CollisionTest/CollisionTest.dpr
+	$(DCC)
+
+Oxygene: ../SDLSpriteEngine/Demos/Oxygene/Oxygene.dpr
+	$(DCC)
+
+Shooting: ../SDLSpriteEngine/Demos/Shooting/Shooting.dpr
+	$(DCC)
+
+ZTest: ../SDLSpriteEngine/Demos/ZTest/ZTest.dpr
+	$(DCC)
+
+showfont: ../SDL_ttf/Demos/ShowFont/showfont.dpr
+	$(DCC)
+
+glfont: ../SDL_ttf/Demos/GLFont/glfont.dpr
+	$(DCC)
+
+JediSFontTest1: ../SFont/Demos/Tests/JediSFontTest1.dpr
+	$(DCC)
+
+JediSFontTest2: ../SFont/Demos/Tests/JediSFontTest2.dpr
+	$(DCC)
+
+JediSFontTest3: ../SFont/Demos/Tests/JediSFontTest3.dpr
+	$(DCC)
+
+JediSFontTest4: ../SFont/Demos/Tests/JediSFontTest4.dpr
+	$(DCC)
+
+glmovie: ../smpeg/Demos/GLMovie/glmovie.dpr
+	$(DCC)
+
+bplvideo60.so: ../smpeg/Demos/MpegPlayer/video60.dpk
+	$(DCC)
+
+MPEGPlay: ../smpeg/Demos/MpegPlayer/MPEGPlay.dpr
+	$(DCC)
+
+DTTD: 3D/DeathTruckTion/Network/DTTD.dpr
+	$(DCC)
+
+

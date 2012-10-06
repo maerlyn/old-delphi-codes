@@ -1,0 +1,11 @@
+load skybox delirious
+load landscape delirious_heightfield7.tex delirious_floor.tex
+load model tree2.tnt
+load model barrel.tnt
+load model tree.tnt
+load object 5 500 0 600
+load object 6 150 0 900
+load object 6 150 0 910
+load object 6 600 0 150
+load object 7 600 0 250
+end

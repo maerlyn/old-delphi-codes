@@ -1,0 +1,57 @@
+<html>
+<head>
+  <title>Time Examples</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Examples" href="guideexamples.html">
+  <link rel="PREVIOUS" title="CDROM Examples" href="guidecdromexamples.html">
+  <link rel="NEXT" title="SDL Reference" href="reference.html">
+</head>
+<body class="SECT1" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="guidecdromexamples.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom">Chapter 4. Examples</td>
+      <td width="9%" align="Right" valign="Bottom"><a href="reference.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<div class="SECT1">
+<h1 class="SECT1"><a name="GUIDETIMEEXAMPLES">Time Examples</a></h1>
+<p></p>
+<div class="SECT2">
+<h2 class="SECT2"><a name="AEN445">Time based game loop</a></h2>
+<p><pre class="PROGRAMLISTING"><b>var<br>  </b>next_time : UInt32 = 0;<br><br><b>const</b><br>   TICK_INTERVAL  =  30;<br><br><b>function</b> TimeLeft : UInt32;<br><b>var</b><br>  now : UInt32;<br><b>begin</b><br>    now := SDL_GetTicks;<br>    <b>if</b> ( next_time &lt;= now ) <b>then</b> <br>    <b>begin</b><br>        next_time := now + TICK_INTERVAL;<br>        result := 0;<br>        exit;<br>    <b>end;</b><br>    result := next_time - now;<br><b>end;</b><br><br><br>// main game loop<br><br>    <b>while</b> ( game_running ) <b>do</b><br>    <b>begin</b><br>        UpdateGameState;<br>        SDL_Delay( TimeLeft );<br>    <b>end;</b><br></pre>
+</p>
+</div>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="guidecdromexamples.html">
+Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="reference.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">CDROM Examples</td>
+      <td width="34%" align="Center" valign="Top"><a href="guideexamples.html">
+Up</a></td>
+      <td width="32%" align="Right" valign="Top">SDL Reference</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

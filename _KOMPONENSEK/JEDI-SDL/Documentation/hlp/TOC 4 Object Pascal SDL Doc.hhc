@@ -1,0 +1,1188 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SDL Guide">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Preface">
+			<param name="Local" value="guidepreface.html">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="About SDLDoc">
+				<param name="Local" value="guideaboutsdldoc.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Credits">
+				<param name="Local" value="guidecredits.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="The Basics">
+			<param name="Local" value="guidethebasics.html">
+			<param name="ImageNumber" value="2">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Initializing SDL">
+				<param name="Local" value="guidebasicsinit.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Graphics and Video">
+			<param name="Local" value="guidevideo.html">
+			<param name="ImageNumber" value="2">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Introduction to SDL Video">
+				<param name="Local" value="guidevideo.html#GUIDEVIDEOINTRO">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Using OpenGL with SDL">
+				<param name="Local" value="guidevideoopengl.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Input Handling">
+			<param name="Local" value="guideinput.html">
+			<param name="ImageNumber" value="2">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Handling Joysticks">
+				<param name="Local" value="guideinput.html#GUIDEINPUTJOYSTICK">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Handling the Keyboard">
+				<param name="Local" value="guideinputkeyboard.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Examples">
+			<param name="Local" value="guideexamples.html">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Video Examples">
+				<param name="Local" value="guidevideoexamples.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Event Examples">
+				<param name="Local" value="guideeventexamples.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Audio Examples">
+				<param name="Local" value="guideaudioexamples.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CDROM Examples">
+				<param name="Local" value="guidecdromexamples.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Time Examples">
+				<param name="Local" value="guidetimeexamples.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+		</UL>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SDL Reference">
+		<param name="Local" value="reference.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="General">
+			<param name="Local" value="general.html">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_Init">
+				<param name="Local" value="sdlinit.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Chapter 2. Graphics and Video">
+				<param name="Local" value="guidevideo.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Chapter 3. Input handling">
+				<param name="Local" value="guideinput.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_InitSubSystem">
+				<param name="Local" value="sdlinitsubsystem.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_QuitSubSystem">
+				<param name="Local" value="sdlquitsubsystem.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_Quit">
+				<param name="Local" value="sdlquit.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_WasInit">
+				<param name="Local" value="sdlwasinit.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Video">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_GetVideoSurface">
+				<param name="Local" value="sdlgetvideosurface.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_GetVideoInfo">
+				<param name="Local" value="sdlgetvideoinfo.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_VideoDriverName">
+				<param name="Local" value="sdlvideodrivername.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_ListModes">
+				<param name="Local" value="sdllistmodes.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_VideoModeOK">
+				<param name="Local" value="sdlvideomodeok.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_SetVideoMode">
+				<param name="Local" value="sdlsetvideomode.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_UpdateRect">
+				<param name="Local" value="sdlupdaterect.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_UpdateRects">
+				<param name="Local" value="sdlupdaterects.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_Flip">
+				<param name="Local" value="sdlflip.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_SetColors">
+				<param name="Local" value="sdlsetcolors.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_SetPalette">
+				<param name="Local" value="sdlsetpalette.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_SetGamma">
+				<param name="Local" value="sdlsetgamma.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_GetGammaRamp">
+				<param name="Local" value="sdlgetgammaramp.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_SetGammaRamp">
+				<param name="Local" value="sdlsetgammaramp.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_MapRGB">
+				<param name="Local" value="sdlmaprgb.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_MapRGBA">
+				<param name="Local" value="sdlmaprgba.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_GetRGB">
+				<param name="Local" value="sdlgetrgb.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_GetRGBA">
+				<param name="Local" value="sdlgetrgba.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CreateRGBSurface">
+				<param name="Local" value="sdlcreatergbsurface.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CreateRGBSurfaceFrom">
+				<param name="Local" value="sdlcreatergbsurfacefrom.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_FreeSurface">
+				<param name="Local" value="sdlfreesurface.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_LockSurface">
+				<param name="Local" value="sdllocksurface.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_UnlockSurface">
+				<param name="Local" value="sdlunlocksurface.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_LoadBMP">
+				<param name="Local" value="sdlloadbmp.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_SaveBMP">
+				<param name="Local" value="sdlsavebmp.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_SetColorKey">
+				<param name="Local" value="sdlsetcolorkey.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_SetAlpha">
+				<param name="Local" value="sdlsetalpha.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_SetClipRect">
+				<param name="Local" value="sdlsetcliprect.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_GetClipRect">
+				<param name="Local" value="sdlgetcliprect.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_ConvertSurface">
+				<param name="Local" value="sdlconvertsurface.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_BlitSurface">
+				<param name="Local" value="sdlblitsurface.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_FillRect">
+				<param name="Local" value="sdlfillrect.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_DisplayFormat">
+				<param name="Local" value="sdldisplayformat.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_DisplayFormatAlpha">
+				<param name="Local" value="sdldisplayformatalpha.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_WarpMouse">
+				<param name="Local" value="sdlwarpmouse.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CreateCursor">
+				<param name="Local" value="sdlcreatecursor.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_FreeCursor">
+				<param name="Local" value="sdlfreecursor.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_SetCursor">
+				<param name="Local" value="sdlsetcursor.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_GetCursor">
+				<param name="Local" value="sdlgetcursor.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_ShowCursor">
+				<param name="Local" value="sdlshowcursor.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_GL_LoadLibrary">
+				<param name="Local" value="sdlglloadlibrary.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_GL_GetProcAddress">
+				<param name="Local" value="sdlglgetprocaddress.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_GL_GetAttribute">
+				<param name="Local" value="sdlglgetattribute.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_GL_SetAttribute">
+				<param name="Local" value="sdlglsetattribute.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_GL_SwapBuffers">
+				<param name="Local" value="sdlglswapbuffers.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CreateYUVOverlay">
+				<param name="Local" value="sdlcreateyuvoverlay.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_LockYUVOverlay">
+				<param name="Local" value="sdllockyuvoverlay.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_UnlockYUVOverlay">
+				<param name="Local" value="sdlunlockyuvoverlay.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_DisplayYUVOverlay">
+				<param name="Local" value="sdldisplayyuvoverlay.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_FreeYUVOverlay">
+				<param name="Local" value="sdlfreeyuvoverlay.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="TSDL_GLAttr">
+				<param name="Local" value="sdlglattr.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="TSDL_Rect">
+				<param name="Local" value="sdlrect.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="TSDL_Color">
+				<param name="Local" value="sdlcolor.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="TSDL_Palette">
+				<param name="Local" value="sdlpalette.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="TSDL_PixelFormat">
+				<param name="Local" value="sdlpixelformat.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="TSDL_Surface">
+				<param name="Local" value="sdlsurface.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="TSDL_VideoInfo">
+				<param name="Local" value="sdlvideoinfo.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="TSDL_Overlay">
+				<param name="Local" value="sdloverlay.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Window Management">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_WM_SetCaption">
+				<param name="Local" value="sdlwmsetcaption.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_WM_GetCaption">
+				<param name="Local" value="sdlwmgetcaption.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_WM_SetIcon">
+				<param name="Local" value="sdlwmseticon.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_WM_IconifyWindow">
+				<param name="Local" value="sdlwmiconifywindow.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_WM_ToggleFullScreen">
+				<param name="Local" value="sdlwmtogglefullscreen.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_WM_GrabInput">
+				<param name="Local" value="sdlwmgrabinput.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Events">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL Event Structures">
+				<param name="Local" value="eventstructures.html">
+				<param name="ImageNumber" value="2">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="TSDL_Event">
+					<param name="Local" value="sdlevent.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="TSDL_ActiveEvent">
+					<param name="Local" value="sdlactiveevent.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="TSDL_KeyboardEvent">
+					<param name="Local" value="sdlkeyboardevent.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="TSDL_MouseMotionEvent">
+					<param name="Local" value="sdlmousemotionevent.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="TSDL_MouseButtonEvent">
+					<param name="Local" value="sdlmousebuttonevent.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="TSDL_JoyAxisEvent">
+					<param name="Local" value="sdljoyaxisevent.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="TSDL_JoyButtonEvent">
+					<param name="Local" value="sdljoybuttonevent.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="TSDL_JoyHatEvent">
+					<param name="Local" value="sdljoyhatevent.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="TSDL_JoyBallEvent">
+					<param name="Local" value="sdljoyballevent.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="TSDL_ResizeEvent">
+					<param name="Local" value="sdlresizeevent.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="TSDL_SysWMEvent">
+					<param name="Local" value="sdlsyswmevent.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="TSDL_UserEvent">
+					<param name="Local" value="sdluserevent.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="TSDL_QuitEvent">
+					<param name="Local" value="sdlquitevent.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="TSDL_KeySym">
+					<param name="Local" value="sdlkeysym.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="TSDLKey">
+					<param name="Local" value="sdlkey.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Event Functions">
+				<param name="Local" value="eventfunctions.html">
+				<param name="ImageNumber" value="2">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SDL_PumpEvents">
+					<param name="Local" value="sdlpumpevents.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SDL_PeepEvents">
+					<param name="Local" value="sdlpeepevents.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SDL_PollEvent">
+					<param name="Local" value="sdlpollevent.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SDL_WaitEvent">
+					<param name="Local" value="sdlwaitevent.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SDL_PushEvent">
+					<param name="Local" value="sdlpushevent.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SDL_SetEventFilter">
+					<param name="Local" value="sdlseteventfilter.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SDL_GetEventFilter">
+					<param name="Local" value="sdlgeteventfilter.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SDL_EventState">
+					<param name="Local" value="sdleventstate.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SDL_GetKeyState">
+					<param name="Local" value="sdlgetkeystate.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SDL_GetModState">
+					<param name="Local" value="sdlgetmodstate.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SDL_SetModState">
+					<param name="Local" value="sdlsetmodstate.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SDL_GetKeyName">
+					<param name="Local" value="sdlgetkeyname.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SDL_EnableUNICODE">
+					<param name="Local" value="sdlenableunicode.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SDL_EnableKeyRepeat">
+					<param name="Local" value="sdlenablekeyrepeat.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SDL_GetMouseState">
+					<param name="Local" value="sdlgetmousestate.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SDL_GetRelativeMouseState">
+					<param name="Local" value="sdlgetrelativemousestate.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SDL_GetAppState">
+					<param name="Local" value="sdlgetappstate.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SDL_JoystickEventState">
+					<param name="Local" value="sdljoystickeventstate.html">
+					<param name="ImageNumber" value="11">
+					</OBJECT>
+			</UL>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Joystick">
+			<param name="Local" value="joystick.html">
+			<param name="ImageNumber" value="2">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_NumJoysticks">
+				<param name="Local" value="sdlnumjoysticks.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_JoystickName">
+				<param name="Local" value="sdljoystickname.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_JoystickOpen">
+				<param name="Local" value="sdljoystickopen.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_JoystickOpened">
+				<param name="Local" value="sdljoystickopened.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_JoystickIndex">
+				<param name="Local" value="sdljoystickindex.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_JoystickNumAxes">
+				<param name="Local" value="sdljoysticknumaxes.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_JoystickNumBalls">
+				<param name="Local" value="sdljoysticknumballs.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_JoystickNumHats">
+				<param name="Local" value="sdljoysticknumhats.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_JoystickNumButtons">
+				<param name="Local" value="sdljoysticknumbuttons.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_JoystickUpdate">
+				<param name="Local" value="sdljoystickupdate.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_JoystickGetAxis">
+				<param name="Local" value="sdljoystickgetaxis.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_JoystickGetHat">
+				<param name="Local" value="sdljoystickgethat.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_JoystickGetButton">
+				<param name="Local" value="sdljoystickgetbutton.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_JoystickGetBall">
+				<param name="Local" value="sdljoystickgetball.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_JoystickClose">
+				<param name="Local" value="sdljoystickclose.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Audio">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="TSDL_AudioSpec">
+				<param name="Local" value="sdlaudiospec.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_OpenAudio">
+				<param name="Local" value="sdlopenaudio.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_PauseAudio">
+				<param name="Local" value="sdlpauseaudio.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_GetAudioStatus">
+				<param name="Local" value="sdlgetaudiostatus.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_LoadWAV">
+				<param name="Local" value="sdlloadwav.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_FreeWAV">
+				<param name="Local" value="sdlfreewav.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="TSDL_AudioCVT">
+				<param name="Local" value="sdlaudiocvt.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_BuildAudioCVT">
+				<param name="Local" value="sdlbuildaudiocvt.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_ConvertAudio">
+				<param name="Local" value="sdlconvertaudio.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_MixAudio">
+				<param name="Local" value="sdlmixaudio.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_LockAudio">
+				<param name="Local" value="sdllockaudio.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_UnlockAudio">
+				<param name="Local" value="sdlunlockaudio.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CloseAudio">
+				<param name="Local" value="sdlcloseaudio.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="CD-ROM">
+			<param name="Local" value="cdrom.html">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CDNumDrives">
+				<param name="Local" value="sdlcdnumdrives.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CDName">
+				<param name="Local" value="sdlcdname.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CDOpen">
+				<param name="Local" value="sdlcdopen.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CDStatus">
+				<param name="Local" value="sdlcdstatus.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CDPlay">
+				<param name="Local" value="sdlcdplay.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CDPlayTracks">
+				<param name="Local" value="sdlcdplaytracks.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CDPause">
+				<param name="Local" value="sdlcdpause.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CDResume">
+				<param name="Local" value="sdlcdresume.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CDStop">
+				<param name="Local" value="sdlcdstop.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CDEject">
+				<param name="Local" value="sdlcdeject.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CDClose">
+				<param name="Local" value="sdlcdclose.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="TSDL_CD">
+				<param name="Local" value="sdlcd.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="TSDL_CDTrack">
+				<param name="Local" value="sdlcdtrack.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Multi-threaded programming">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CreateThread">
+				<param name="Local" value="sdlcreatethread.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_ThreadID">
+				<param name="Local" value="sdlthreadid.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_GetThreadID">
+				<param name="Local" value="sdlgetthreadid.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_WaitThread">
+				<param name="Local" value="sdlwaitthread.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_KillThread">
+				<param name="Local" value="sdlkillthread.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CreateMutex">
+				<param name="Local" value="sdlcreatemutex.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_DestroyMutex">
+				<param name="Local" value="sdldestroymutex.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_mutexP">
+				<param name="Local" value="sdlmutexp.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_mutexV">
+				<param name="Local" value="sdlmutexv.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CreateSemaphore">
+				<param name="Local" value="sdlcreatesemaphore.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_DestroySemaphore">
+				<param name="Local" value="sdldestroysemaphore.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_SemWait">
+				<param name="Local" value="sdlsemwait.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_SemTryWait">
+				<param name="Local" value="sdlsemtrywait.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_SemWaitTimeout">
+				<param name="Local" value="sdlsemwaittimeout.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_SemPost">
+				<param name="Local" value="sdlsempost.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_SemValue">
+				<param name="Local" value="sdlsemvalue.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CreateCond">
+				<param name="Local" value="sdlcreatecond.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_DestroyCond">
+				<param name="Local" value="sdldestroycond.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CondSignal">
+				<param name="Local" value="sdlcondsignal.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CondBroadcast">
+				<param name="Local" value="sdlcondbroadcast.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CondWait">
+				<param name="Local" value="sdlcondwait.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_CondWaitTimeout">
+				<param name="Local" value="sdlcondwaittimeout.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Time">
+			<param name="Local" value="time.html">
+			<param name="ImageNumber" value="2">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_GetTicks">
+				<param name="Local" value="sdlgetticks.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_Delay">
+				<param name="Local" value="sdldelay.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_AddTimer">
+				<param name="Local" value="sdladdtimer.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_RemoveTimer">
+				<param name="Local" value="sdlremovetimer.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SDL_SetTimer">
+				<param name="Local" value="sdlsettimer.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+		</UL>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="List of Tables">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SDL Keysym definitions">
+			<param name="Local" value="sdlkey.html#AEN4258">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SDL Modifier definitions">
+			<param name="Local" value="sdlkey.html#SDLMOD">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="List of Examples">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Initializing SDL">
+			<param name="Local" value="guidebasicsinit.html">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Initializing the Video Display">
+			<param name="Local" value="guidevideo.html#AEN71">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Initializing the Best Video Mode">
+			<param name="Local" value="guidevideo.html#AEN77">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Loading and Displaying a BMP File">
+			<param name="Local" value="guidevideo.html#AEN83">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GetPixel()">
+			<param name="Local" value="guidevideo.html#AEN90">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="PutPixel()">
+			<param name="Local" value="guidevideo.html#AEN93">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Using putpixel()">
+			<param name="Local" value="guidevideo.html#AEN97">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Initializing SDL with OpenGL">
+			<param name="Local" value="guidevideoopengl.html#AEN114">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SDL and OpenGL">
+			<param name="Local" value="guidevideoopengl.html#AEN128">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Initializing SDL with Joystick Support">
+			<param name="Local" value="guideinput.html#AEN141">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Querying the Number of Available Joysticks">
+			<param name="Local" value="guideinput.html#AEN154">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Opening a Joystick">
+			<param name="Local" value="guideinput.html#AEN183">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Joystick Axis Events">
+			<param name="Local" value="guideinput.php#AEN191">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="More Joystick Axis Events">
+			<param name="Local" value="guideinput.html#AEN195">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Joystick Button Events">
+			<param name="Local" value="guideinput.html#AEN203">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Joystick Ball Events">
+			<param name="Local" value="guideinput.html#AEN217">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Joystick Hat Events">
+			<param name="Local" value="guideinput.html#AEN244">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Querying Joystick Characteristics">
+			<param name="Local" value="guideinput.html#AEN265">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Reading Keyboard Events">
+			<param name="Local" value="guideinputkeyboard.html#AEN334">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Interpreting Key Event Information">
+			<param name="Local" value="guideinputkeyboard.html#AEN351">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Proper Game Movement">
+			<param name="Local" value="guideinputkeyboard.html#AEN363">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="List of Links">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Delphi JEDI Home Page">
+			<param name="Local" value="http://www.delphi-jedi.org">
+			<param name="ImageNumber" value="14">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="SDL Library Home Page">
+			<param name="Local" value="http://www.libsdl.org">
+			<param name="ImageNumber" value="14">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="JEDI-SDL Home Page">
+			<param name="Local" value="http://www.SavageSoftware.com.au/DelphiGamer/JEDI-SDL">
+			<param name="ImageNumber" value="14">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="JEDI-SDL Mailing List">
+			<param name="Local" value="http://groups.yahoo.com/group/JEDI-SDL/join">
+			<param name="ImageNumber" value="14">
+			</OBJECT>
+	</UL>
+</UL>
+</BODY></HTML>

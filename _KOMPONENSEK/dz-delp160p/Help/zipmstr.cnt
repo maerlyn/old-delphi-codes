@@ -1,0 +1,107 @@
+:Base ZipMstr.hlp
+:Title ZipMaster Component Help
+1 TZipMaster component
+2 General information =TZipMaster_Object
+2 Error and warning messages=TZipMaster_Message_List
+2 Copyright, Contact information, Bug reports and more
+3 Contact information=TZipMaster_Contact
+3 Bug reports and other information=BugReports
+3 Distribution Policy and Copyright=TZipMaster_Copyright
+3 Thanks=TZipMaster_Thanks
+2 Properties
+3 Properties=Props
+3 AddCompLevel =TZipMaster_AddCompLevel_Property
+3 AddOptions =TZipMaster_AddOptions_Property
+3 AddStoreSuffixes=TZipMaster_AddStoreSuffixes_Property
+3 Cancel =TZipMaster_Cancel_Property
+3 CodePage=TZipMaster_CodePage_Property
+3 ConfirmErase=TZipMaster_ConfirmErase_Property
+3 Count =TZipMaster_Count_Property
+3 DLLDirectory =TZipMaster_DLLDirectory_Property
+3 ErrCode =TZipMaster_ErrCode_Property
+3 ExtrBaseDir =TZipMaster_ExtrBaseDir_Property
+3 ExtrOptions =TZipMaster_ExtrOptions_Property
+3 FSpecArgs =TZipMaster_FSpecArgs_Property
+3 FSpecArgsExcl=TZipMaster_FSpecArgsExcl_Property
+3 FullErrCode=TZipMaster_FullErrCode_Property
+3 Handle =TZipMaster_Handle_Property
+3 HowToDelete=TZipMaster_HowToDelete_Property
+3 IsSpanned=TZipMaster_IsSpanned_Property
+3 KeepFreeOnDisk1=TZipMaster_KeepFreeOnDisk1_Property
+3 MaxVolumeSize=TZipMaster_MaxVolumeSize_Property
+3 Message =TZipMaster_Message_Property
+3 MinFreeVolumeSize=TZipMaster_MinFreeVolumeSize_Property
+3 Password =TZipMaster_Password_Property
+3 PasswordReqCount=TZipMaster_PasswordReqCount_Property
+3 RootDir=TZipMaster_RootDir_Property
+3 SFXCaption =TZipMaster_SFXCaption_Property
+3 SFXCommandLine =TZipMaster_SFXCommandLine_Property
+3 SFXDefaultDir =TZipMaster_SFXDefaultDir_Property
+3 SFXIcon=TZipMaster_SFXIcon_Property
+3 SFXMessage=TZipMaster_SFXMessage_Property
+3 SFXOffset=TZipMaster_SFXOffset_Property
+3 SFXOptions =TZipMaster_SFXOptions_Property
+3 SFXOverWriteMode =TZipMaster_SFXOverWriteMode_Property
+3 SFXPath =TZipMaster_SFXPath_Property
+3 SuccessCnt =TZipMaster_SuccessCnt_Property
+3 TempDir=TZipMaster_TempDir_Property
+3 TotalSizeToProcess=TZipMaster_TotalSizeToProcess_Property
+3 Trace =TZipMaster_Trace_Property
+3 Unattended=TZipMaster_Unattended_Property
+3 UnzBusy =TZipMaster_UnzBusy_Property
+3 UnzVers =TZipMaster_UnzVers_Property
+3 Verbose =TZipMaster_Verbose_Property
+3 ZipBusy =TZipMaster_ZipBusy_Property
+3 ZipComment=TZipMaster_ZipComment_Property
+3 ZipContents =TZipMaster_ZipContents_Property
+3 ZipEOC=TZipMaster_ZipEOC_Property
+3 ZipFileName=TZipMaster_ZipFileName_Property
+3 ZipFileSize=TZipMaster_ZipFileSize_Property
+3 ZipSOC=TZipMaster_ZipSOC_Property
+3 ZipStream=TZipMaster_ZipStream_Property
+3 ZipVers =TZipMaster_ZipVers_Property
+2 Methods
+3 Methods=Methods
+3 Add =TZipMaster_Add_Method
+3 AddStreamToFile=TZipMaster_Add_Method
+3 AddStreamToStream=TZipMaster_Add_Method
+3 AppendSlash=TZipMaster_AppendSlash_Method
+3 ConvertSFX =TZipMaster_ConvertSFX_Method
+3 ConvertZIP =TZipMaster_ConvertZIP_Method
+3 CopyFile =TZipMaster_CopyFile_Method
+3 CopyZippedFiles=TZipMaster_CopyZippedFiles_Method
+3 Delete =TZipMaster_Delete_Method
+3 EraseFile=TZipMaster_EraseFile_Method
+3 Extract =TZipMaster_Extract_Method
+3 ExtractFileToStream=TZipMaster_ExtractFileToStream_Method
+3 ExtractStreamToStream=TZipMaster_ExtractStreamToStream_Method
+3 GetAddPassword =TZipMaster_GetAddPassword_Method
+3 GetExtrPassword =TZipMaster_GetExtrPassword_Method
+3 GetPassword=TZipMaster_GetPassword_Method
+3 List =TZipMaster_List_Method
+3 Load_Unz_Dll =TZipMaster_Load_Unz_Dll_Method
+3 Load_Zip_Dll =TZipMaster_Load_Zip_Dll_Method
+3 ReadSpan=TZipMaster_ReadSpan_Method
+3 Rename=TZipMaster_Rename_Method
+3 ShowZipMessage=TZipMaster_ShowZipMessage_Method
+3 Unload_Unz_Dll =TZipMaster_Unload_Unz_Dll_Method
+3 Unload_Zip_Dll =TZipMaster_Unload_Zip_Dll_Method
+3 WriteSpan=TZipMaster_WriteSpan_Method
+2 Events
+3 Events=Events
+3 OnCopyZipOverwrite=TZipMaster_OnCopyZipOverwrite_Event
+3 OnCRC32Error=TZipMaster_OnCRC32Error_Event
+3 OnDirUpdate =TZipMaster_OnDirUpdate_Event
+3 OnExtractOverwrite=TZipMaster_OnExtractOverwrite_Event
+3 OnExtractSkipped=TZipMaster_OnExtractSkipped_Event
+3 OnFileComment=TZipMaster_OnFileComment_Event
+3 OnGetNextDisk=TZipMaster_OnGetNextDisk_Event
+3 OnMessage =TZipMaster_OnMessage_Event
+3 OnNewName=TZipMaster_OnNewName_Event
+3 OnPasswordError=TZipMaster_OnPasswordError_Event
+3 OnProgress =TZipMaster_OnProgress_Event
+3 OnSetNewName=TZipMaster_OnSetNewName_Event
+3 OnStatusDisk=TZipMaster_OnStatusDisk_Event
+:INCLUDE Delphi4.ohc
+:INCLUDE Delphi4.ohi
+:INCLUDE Delphi4.ohl

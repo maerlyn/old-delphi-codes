@@ -1,0 +1,75 @@
+<html>
+<head>
+  <title>SDL_WaitEvent</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Event Functions." href="eventfunctions.html">
+  <link rel="PREVIOUS" title="SDL_PollEvent" href="sdlpollevent.html">
+  <link rel="NEXT" title="SDL_PushEvent" href="sdlpushevent.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlpollevent.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlpushevent.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLWAITEVENT">SDL_WaitEvent</a></h1>
+<div class="REFNAMEDIV"><a name="AEN4970"></a>
+<h2>Name</h2>
+SDL_WaitEvent&nbsp;--&nbsp;Waits indefinitely for the next available event.</div>
+<div class="REFSYNOPSISDIV"><a name="AEN4973"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN4974"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+<p>function <b>SDL_WaitEvent</b>( event : PSDL_Event ) : Integer;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN4980"></a>
+<h2>Description</h2>
+<p>Waits indefinitely for the next available event, returning  <span class="RETURNVALUE">
+1</span>, or <span class="RETURNVALUE">0</span> if there was  an error while
+waiting for events.  </p>
+<p>If <tt class="PARAMETER"><i>event</i></tt> is not <b>nil</b>, the next&nbsp;
+event is removed from the queue and stored in that area.</p>
+</div>
+<div class="REFSECT1"><a name="AEN4988"></a>
+<h2>See Also</h2>
+<p><a href="sdlevent.html"><span class="STRUCTNAME">TSDL_Event</span></a>
+, <a href="sdlpollevent.html"><tt class="FUNCTION">SDL_PollEvent</tt></a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdlpollevent.html">
+Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="sdlpushevent.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">SDL_PollEvent</td>
+      <td width="34%" align="Center" valign="Top"><a href="eventfunctions.html">
+Up</a></td>
+      <td width="32%" align="Right" valign="Top">SDL_PushEvent</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

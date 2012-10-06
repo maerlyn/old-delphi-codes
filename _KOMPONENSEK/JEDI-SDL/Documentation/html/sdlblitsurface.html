@@ -1,0 +1,101 @@
+<html>
+<head>
+  <title>SDL_BlitSurface</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Video" href="video.html">
+  <link rel="PREVIOUS" title="SDL_ConvertSurface" href="sdlconvertsurface.html">
+  <link rel="NEXT" title="SDL_FillRect" href="sdlfillrect.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlconvertsurface.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlfillrect.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLBLITSURFACE">SDL_BlitSurface</a></h1>
+<div class="REFNAMEDIV"><a name="AEN1889"></a>
+<h2>Name</h2>
+SDL_BlitSurface&nbsp;--&nbsp;This performs a fast blit from the source surface
+to the destination surface.</div>
+<div class="REFSYNOPSISDIV"><a name="AEN1892"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN1893"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b> <br>  SDL;</pre>
+<p>function <b>SDL_BlitSurface</b>( src : PSDL_Surface; srcrect : PSDL_Rect;
+dst : PSDL_Surface; dstrect : PSDL_Rect ) : Integer;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN1899"></a>
+<h2>Description</h2>
+<p>This performs a fast blit from the source surface to the destination surface.</p>
+<p>Only the position is used in the <tt class="PARAMETER"><i>dstrect</i></tt>
+ (the width and height are ignored).</p>
+<p>If either <tt class="PARAMETER"><i>srcrect</i></tt> or <tt class="PARAMETER"><i>
+dstrect</i></tt> are <b><tt class="LITERAL">nil</tt></b>, the entire surface
+(<tt class="PARAMETER"><i>src</i></tt> or <tt class="PARAMETER"><i>dst</i></tt>
+) is copied.</p>
+<p>The final blit rectangle is saved in <tt class="PARAMETER"><i>dstrect</i></tt>
+ after all clipping is performed (<tt class="PARAMETER"><i>srcrect</i></tt>
+ is not modified).</p>
+<p>The blit function should not be called on a locked surface.</p>
+<p>The results of blitting operations vary greatly depending on whether <tt class="LITERAL">
+SDL_SRCAPLHA</tt> is set or not. See <a href="sdlsetalpha.html">SDL_SetAlpha</a>
+ for an explaination of how this effects your results. Colorkeying and alpha
+attributes also interact with surface blitting, as the following pseudo-code
+should hopefully explain. <pre class="PROGRAMLISTING"><b>if</b> (source surface has SDL_SRCALPHA set) <b>then</b><br><b>begin</b><br>    <b>if</b> (source surface has alpha channel (that is, format.AMask &lt;&gt; 0)) <b>then</b><br>        blit using per-pixel alpha, ignoring any colour key<br>    <b>else</b> <br>    <b>begin</b><br>        <b>if</b> (source surface has SDL_SRCCOLORKEY set)<br>            blit using the colour key AND the per-surface alpha value<br>        <b>else</b><br>            blit using the per-surface alpha value<br>    <b>end;</b><br><b>end</b><br><b>else </b><br><b>begin</b><br>    <b>if </b>(source surface has SDL_SRCCOLORKEY set) <b>then</b><br>        blit using the colour key<br>    <b>else</b><br>        ordinary opaque rectangular blit<br><b>end;</b><br></pre>
+</p>
+</div>
+<div class="REFSECT1"><a name="AEN1918"></a>
+<h2>Return Value</h2>
+<p>If the blit is successful, it returns <span class="RETURNVALUE">0</span>
+, otherwise it returns <span class="RETURNVALUE">-1</span>.</p>
+<p>If either of the surfaces were in video memory, and the blit returns <span class="RETURNVALUE">
+-2</span>, the video memory was lost, so it should be reloaded with artwork
+and re-blitted: <pre class="PROGRAMLISTING">        <b>while</b> ( SDL_BlitSurface( image, imgrect, screen, dstrect ) = -2 ) <b>do</b><br>        <b>begin</b><br>                <b>while</b> ( SDL_LockSurface( image ) ) &lt; 0 ) <b>do</b><br>                        Sleep(10);<br>                -- Write image pixels to image-&gt;pixels --<br>                SDL_UnlockSurface( image );<br>        <b>end;</b></pre>
+ This happens under DirectX 5.0 when the system switches away from your fullscreen
+application.  Locking the surface will also fail until you have access to
+the video memory again.</p>
+</div>
+<div class="REFSECT1"><a name="AEN1926"></a>
+<h2>See Also</h2>
+<p><a href="sdllocksurface.html"><tt class="FUNCTION">SDL_LockSurface</tt></a>
+, <a href="sdlfillrect.html"><tt class="FUNCTION">SDL_FillRect</tt></a>, <a href="sdlsurface.html"><span class="STRUCTNAME">
+TSDL_Surface</span></a>, <a href="sdlrect.html"><span class="STRUCTNAME">
+TSDL_Rect</span></a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdlconvertsurface.html">
+Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="sdlfillrect.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">SDL_ConvertSurface</td>
+      <td width="34%" align="Center" valign="Top"><a href="video.html">Up</a></td>
+      <td width="32%" align="Right" valign="Top">SDL_FillRect</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

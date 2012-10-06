@@ -1,0 +1,4 @@
+[Config]
+ImagePath=POPper
+ExeName='POPperSetup.exe'
+CompressionLevel=7

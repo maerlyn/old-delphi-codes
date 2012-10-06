@@ -1,0 +1,112 @@
+<html>
+<head>
+  <title>SDL_UpdateRects</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="Video" href="video.html">
+   
+  <link rel="PREVIOUS" title="SDL_UpdateRect" href="sdlupdaterect.html">
+   
+  <link rel="NEXT" title="SDL_Flip" href="sdlflip.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="sdlupdaterect.html">
+ Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom"><br>
+       </td>
+       <td width="8%" align="Right" valign="Bottom"><a href="sdlflip.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<h1><a name="SDLUPDATERECTS">SDL_UpdateRects</a></h1>
+ 
+<div class="REFNAMEDIV"><a name="AEN1010"></a> 
+<h2>Name</h2>
+ SDL_UpdateRects&nbsp;--&nbsp;Makes sure the given list of rectangles is
+updated on the given screen.</div>
+ 
+<div class="REFSYNOPSISDIV"><a name="AEN1013"></a> 
+<h2>Synopsis</h2>
+ 
+<div class="FUNCSYNOPSIS"><a name="AEN1014"></a> 
+<p></p>
+ <pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+ 
+<p>procedure <b>SDL_UpdateRects</b>( screen: PSDL_Surface; numrects: Integer; 
+rects:&nbsp; PSDL_Rect );</p>
+ 
+<p></p>
+ </div>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN1020"></a> 
+<h2>Description</h2>
+ 
+<p>Makes sure the given list of rectangles is updated on the given screen.</p>
+ 
+<p>This function should not be called while <tt class="PARAMETER"><i>screen</i></tt>
+  is <a href="sdllocksurface.html">locked</a>.</p>
+ 
+<div class="NOTE"> 
+<blockquote class="NOTE">   
+  <p><b>Note: </b>It is adviced to call this function only once per frame, 
+since each call has some processing overhead. This is no restriction since 
+you can pass any number of rectangles each time.</p>
+   
+  <p>The rectangles are not automatically merged or checked for overlap. In
+general, the programmer can use his knowledge about his particular rectangles 
+to merge them in an efficient way, to avoid overdraw.</p>
+   </blockquote>
+   </div>
+   </div>
+   
+  <div class="REFSECT1"><a name="AEN1029"></a>   
+  <h2>See Also</h2>
+   
+  <p><a href="sdlupdaterect.html"><tt class="FUNCTION">SDL_UpdateRect</tt></a>
+ , <a href="sdlrect.html"><span class="STRUCTNAME">TSDL_Rect</span></a>,
+  <a href="sdlsurface.html"><span class="STRUCTNAME">TSDL_Surface</span></a>
+, <a href="sdllocksurface.html"><tt class="FUNCTION"> SDL_LockSurface</tt></a></p>
+   </div>
+   
+  <div class="NAVFOOTER">   
+  <hr align="Left" width="100%">   
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+     <tbody>
+       <tr>
+         <td width="31%" align="Left" valign="Top"><a href="sdlupdaterect.html">
+ Prev</a></td>
+         <td width="34%" align="Center" valign="Top"><a href="index.html">
+ Home</a></td>
+         <td width="31%" align="Right" valign="Top"><a href="sdlflip.html">
+ Next</a></td>
+       </tr>
+       <tr>
+         <td width="31%" align="Left" valign="Top">SDL_UpdateRect</td>
+         <td width="34%" align="Center" valign="Top"><a href="video.html">
+ Up</a></td>
+         <td width="31%" align="Right" valign="Top">SDL_Flip</td>
+       </tr>
+     
+    </tbody>   
+  </table>
+   </div>
+   
+  </body>
+  </html>

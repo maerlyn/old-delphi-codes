@@ -1,0 +1,4 @@
+[Config]
+ImagePath=Amoba
+ExeName='amobas.exe'
+CompressionLevel=7

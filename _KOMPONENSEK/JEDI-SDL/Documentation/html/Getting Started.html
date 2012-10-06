@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Setting up Delphi or Kylix to work with JEDI-SDL</title>
+                                         
+  <meta name="description" content="Getting started with JEDI-SDL">
+</head>
+  <body>
+           
+<div align="center">      
+<h3>Setting up Delphi or Kylix to work with JEDI-SDL</h3>
+      <br>
+           
+<div align="left">      
+<ol>
+        <li>Extract the JEDI-SDL Zip file or Tar.gz file, to a directory
+of  your  choice,&nbsp; making sure you maintain the archives built in directory 
+ structure.  For example I have a "headers" directory under my Delphi or Kylix
+ installation  directory. So for me on a windows machine I have installed 
+JEDI-SDL to. "D:\Program  Files\Borland\Delphi6\Headers\JEDI-SDL\.....". Make
+sure you remember this  path &nbsp;and also that under Linux, paths are case
+sensitive so you may  want to keep everything in lower case. The main advantage
+of extracting them  under your installed Delphi or Kylix directory is so
+you can make use of the $(DELPHI) path directive as shown in the next few
+steps</li>
+      <li>Next we need to make sure we are using the latest Runtimes for
+out   system. in the ....\JEDI-SDL\Runtimes\ directory you will find the
+latest   Linux ( in RPM format ) and and Windows ( DLLs ) runtimes.</li>
+               
+  <ul>
+        <li>Under Linux install each RPM and everything should be ready to
+ go  on to Step 3.</li>
+           
+    <ul>
+        <li>NOTE : For the DeathTruckTion game to run you must have either
+ fmod.dll ( under Windows ) or<br>
+  libfmod-3.5.so ( under Linux ) installed.<br>
+  Under Linux, make sure you are logged in as <b>root</b> and copy the libfmod-3.5.so<br>
+file from the Runtimes/Linux/ directory to your /usr/lib/ directory. You
+also need to ensure that the shared library has the correct permissions,
+ other wise it will not execute correctly. So via a command line, navigate
+to the /usr/lib/ directory and enter the following command ( it assumed you
+are in /usr/lib/ and logged in as <b>root</b> )...<br>
+          <b>chmod 755 libfmod-3.5.so</b>.<br>
+Now you need to create a symbolic link between libfmod-3.5.so and libfmod.so.
+This is done with the<br>
+  following command ( it assumed you are in /usr/lib/ and logged in as <b>root</b>
+)...<br>
+          <b>ln -s libfmod-3.5.so libfmod.so</b>.</li>
+        <li>Similarly, I found that the smpeg RPM did not install smpeg correctly.
+ In you /usr/lib/ directory you will probably find libsmpeg-0.4.so. This
+is fine but the smpeg file now refers to the Linux norm of a generic symbolic
+ link. So we will have to create one. Via a command line, navigate to the
+/usr/lib/ directory and create a symbolic link between&nbsp;libsmpeg-0.4.so
+and libsmpeg.so. This is done with the<br>
+   following command ( it assumed you are in /usr/lib/ and logged in as <b>root</b>
+)...<br>
+          <b> ln -s&nbsp;libsmpeg-0.4.so libsmpeg.so</b>.<br>
+        </li>
+           
+    </ul>
+        <li>Under Windows, unzip and copy each DLL to your ...\System or
+...\System32   directory and everything should be ready to go on to Step
+3.<br>
+        </li>
+               
+  </ul>
+        <li>Now that you have the all the header files, associated demos
+and   runtimes in  their logical places, open up Delphi or Kylix and go to..</li>
+     
+</ol>
+     
+<blockquote>         
+  <ul>
+       <li>&nbsp;the "Environment Options"  menu option,&nbsp;<img
+ src="images/environmentmenu.png" alt="Environment Menu" width="314"
+ height="112">
+       </li>
+       <li>then select the "Library" tab and then click on the ellipses 
+(  the button with 3 dots on it ) that are associated with "Library Path".<img
+ src="images/librarypath.png" alt="Library Path" width="443"
+ height="441">
+       </li>
+           
+  </ul>
+   </blockquote>
+     
+<ol>
+        <li>Assuming you have extracted the files to the directory I suggested 
+  above, you can simply add the following entries to the "Directories" dialog...</li>
+           
+</ol>
+           
+<blockquote>                  
+  <ul>
+          <li>$(DELPHI)/Headers/JEDI-SDL/SDL/Pas</li>
+          <li>$(DELPHI)/Headers/JEDI-SDL/SDL_Mixer/Pas</li>
+          <li>$(DELPHI)/Headers/JEDI-SDL/SDL_Image/Pas</li>
+          <li>$(DELPHI)/Headers/JEDI-SDL/SDL_Net/Pas</li>
+          <li>$(DELPHI)/Headers/JEDI-SDL/SDL_ttf/Pas</li>
+          <li>$(DELPHI)/Headers/JEDI-SDL/smpeg/Pas</li>
+          <li>$(DELPHI)/Headers/JEDI-SDL/SFont/Pas</li>
+          <li>$(DELPHI)/Headers/JEDI-SDL/SDL_Sound/Pas</li>
+     <li>$(DELPHI)/Headers/JEDI-SDL/SDLMonoFonts/Pas</li>
+     <li>$(DELPHI)/Headers/JEDI-SDL/SDLSpriteEngine/Pas<br>
+     </li>
+                       
+  </ul>
+      </blockquote>
+   After the above changes you should have something that looks similar to
+ this ( Remember if you are using Linux you should use "/" and not "\" for
+ you paths. Windows allows you to use both it you like. )...<br>
+   <img src="images/directories.png" alt="Directories" width="405"
+ height="317">
+   &nbsp; &nbsp;<br>
+   Once these paths are entered and you have clicked ok for Delphi  or Kylix 
+ to store the path information in its registry, you should be ready  to start 
+ coding or to start playing with around with the demos.<br>
+      <br>
+      The <a href="http://www.sf.net/projects/jedi-sdl">JEDI-SDL</a> team,
+ hopes   your experience is a positive one.<br>
+      <br>
+      <br>
+           
+<blockquote><br>
+      </blockquote>
+      </div>
+      <br>
+      </div>
+      <br>
+     <br>
+    <br>
+   <br>
+  <br>
+ <br>
+</body>
+</html>

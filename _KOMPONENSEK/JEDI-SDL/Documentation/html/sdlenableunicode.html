@@ -1,0 +1,81 @@
+<html>
+<head>
+  <title>SDL_EnableUNICODE</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Event Functions." href="eventfunctions.html">
+  <link rel="PREVIOUS" title="SDL_GetKeyName" href="sdlgetkeyname.html">
+  <link rel="NEXT" title="SDL_EnableKeyRepeat" href="sdlenablekeyrepeat.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlgetkeyname.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlenablekeyrepeat.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLENABLEUNICODE">SDL_EnableUNICODE</a></h1>
+<div class="REFNAMEDIV"><a name="AEN5268"></a>
+<h2>Name</h2>
+SDL_EnableUNICODE&nbsp;--&nbsp;Enable UNICODE translation</div>
+<div class="REFSYNOPSISDIV"><a name="AEN5271"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN5272"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+<p>function <b>SDL_EnableUNICODE</b>( enable : Integer) : Integer;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN5278"></a>
+<h2>Description</h2>
+<p>Enables/Disables UNICODE keyboard translation.</p>
+<p>If you wish to translate a keysym to it's printable representation, you
+need to enable UNICODE translation using this function (<tt class="PARAMETER"><i>
+enable</i></tt>=0) and then look in the <tt class="STRUCTFIELD"><i>unicode</i></tt>
+ member of the <a href="sdlkeysym.html"><span class="STRUCTNAME">SDL_keysym</span></a>
+ structure. This value will be zero for keysyms that do not have a printable
+representation. UNICODE translation is disabled by default as the conversion
+can cause a slight overhead.</p>
+</div>
+<div class="REFSECT1"><a name="AEN5286"></a>
+<h2>Return Value</h2>
+<p>Returns the previous translation mode.</p>
+</div>
+<div class="REFSECT1"><a name="AEN5289"></a>
+<h2>See Also</h2>
+<p><a href="sdlkeysym.html"><span class="STRUCTNAME">TSDL_KeySym</span></a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdlgetkeyname.html">
+Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="sdlenablekeyrepeat.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">SDL_GetKeyName</td>
+      <td width="34%" align="Center" valign="Top"><a href="eventfunctions.html">
+Up</a></td>
+      <td width="32%" align="Right" valign="Top">SDL_EnableKeyRepeat</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

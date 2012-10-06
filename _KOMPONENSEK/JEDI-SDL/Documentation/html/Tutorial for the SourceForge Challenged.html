@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+           
+  <meta name="author" content="Dominique Louis">
+  <title>Tutorial for the SourceForge Challenged</title>
+</head>
+  <body>
+   
+<div align="Center">  
+<h3>Tutorial for the SourceForge Challenged</h3>
+  </div>
+   
+<div align="Left">Hi All,<br>
+   &nbsp; This is my quick step setup guide, to getting <a href="http://www.sourceforge.net/">
+  SourceForge</a>
+   working on your Win32 system. A lot of the information I have here is
+based  on    <a href="http://www.savagesoftware.com.au/DelphiGamer/showarticles.php?articleid=6&amp;page=1">
+  Martijn Melenhorst's SourceForge Setup Guide</a>
+  .<br>
+  Though this guide is quite comprehensive, I have found that the simplest&nbsp;
+ way of accessing Sourceforge is using <a href="http://www.wincvs.org/TortoiseCVS/index.html">
+  TortoiseCVS</a>
+  , which is what I will be using in this tutorial.<br>
+  <br>
+  <u><b><br>
+  Before we start</b></u><br>
+   The tools we will need to get started are as follows...<br>
+   1 copy of <a href="http://www.wincvs.org/TortoiseCVS/index.html">TortoiseCVS</a>
+    &lt;http://www.wincvs.org/TortoiseCVS/index.html&gt;<br>
+   1 copy of &nbsp;<a href="http://www.chiark.greenend.org.uk/%7Esgtatham/putty/latest/x86/puttygen.exe">
+  Putty-KeyGen</a>
+   &lt;http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html&gt;<br>
+  1 <a href="http://sourceforge.net/account/register.php">SourceForge account</a>
+   !<br>
+   1 hot cup of Patience.<br>
+  <u><br>
+  <b><br>
+  Installation</b></u><br>
+  Once you have downloaded <a href="http://www.wincvs.org/TortoiseCVS/index.html">
+  TortoiseCVS</a>
+  , run the installation program. <br>
+  Once <a href="http://www.wincvs.org/TortoiseCVS/index.html">TortoiseCVS</a>
+   is installed, copy <a href="http://www.chiark.greenend.org.uk/%7Esgtatham/putty/latest/x86/puttygen.exe">
+  Putty-KeyGen</a>
+  to the same directory that you installed <a href="http://www.wincvs.org/TortoiseCVS/index.html">
+  TortoiseCVS</a>
+   to.<br>
+  <u><br>
+  <b><br>
+  Environment Variables</b></u><br>
+  <a href="http://www.wincvs.org/TortoiseCVS/index.html">TortoiseCVS</a>
+   requires a HOME environment variable to be setup up before it can be used
+ effectively.<br>
+   
+<ul>
+    <li>Win2000 and XP users do this...</li>
+       
+  <ul>
+      <li>Right Click on My Computer and select "Properties".</li>
+      <li>Select the "Advanced" tab and click on the "Environment Variables"
+ button. You should have a screen that split into 2 categories. The top half
+ should have Environment variables that pertain to you as a user and the
+bottom  half should have environment varibles that pertain to your system.</li>
+      <li>In the user half of the screen Click the New button and add an
+environment  variable called HOME and and the value should be the path to
+where your CVS  home directory will be. To keep everything simple and in
+one place, mine is the same directory that I installed <a href="http://www.wincvs.org/TortoiseCVS/index.html">
+  TortoiseCVS</a>
+   to.</li>
+       
+  </ul>
+    <li>Win9x, WinMe users do this...</li>
+       
+  <ul>
+      <li>   Edit c:\autoexec.bat, and add the line : "SET HOME=&lt;CVS HOME
+ Directory&gt;", In my case, as mentioned above the &lt;CVS HOME Directory&gt;
+ &nbsp;is my <a href="http://www.wincvs.org/TortoiseCVS/index.html">TortoiseCVS</a>
+  installation directory.</li>
+      <li>Win9x, WinMe user will need to reboot for the changes to take effect.<br>
+      </li>
+       
+  </ul>
+   
+</ul>
+  <u><b><br>
+  Key Pair Generation</b></u><br>
+  NOTE : Only generate Key Pairs if you plan to actively develop on a particular&nbsp;<a href="http://www.sourceforge.net/">
+  SourceForge</a>
+   project. If you do not plan to be an active developer and just want to 
+download source code from&nbsp;<a href="http://www.sourceforge.net/">SourceForge</a>
+   CVS, jump to the next section. Those of you who will be working on a <a href="http://www.sourceforge.net/">
+  SourceForge</a>
+   project, please read on.<br>
+  <br>
+  In order to use&nbsp;<a href="http://www.sourceforge.net/">SourceForge</a>
+   as an active developer, you will need to a SSH key pair.&nbsp;<a href="http://www.sourceforge.net/">
+  SourceForge</a>
+   requires you to have a private and public key in order to Check-In any 
+changes you may be making to a project.<br>
+     Start PuTTY-KeyGen and generate a keypair with all default settings<br>
+     Insert your e-mail address as the 'Key comment' (not necessary, but
+this   is common practice)<br>
+     Save the private keyfile to "&lt;CVS HOME Directory&gt;\.ssh\identity"<br>
+     Save the public keyfile to "&lt;CVS HOME Directory&gt;\.ssh\identity.pub
+ "<br>
+     Copy the contents of the public key from the PuTTY KeyGen window and 
+paste it into the textbox  at this URL:<br>
+     https://sourceforge.net/account/editsshkeys.php. This will upload your
+ public key to&nbsp;<a href="http://www.sourceforge.net/">SourceForge</a>
+  <br>
+     It can take up to <b>6 hours</b> for SourceForge to recognize your new
+ SSH key!<br>
+  At this point you just need to wait until this 6 hour delay has passed
+and  just about the only thing you can do is Check-Out the CVS SourceCode
+anonymously  ( See below ).<br>
+  Make sure that you have informed the project administrator, that you wish
+ to be a developer on that particular project, so that they can add you to
+ the developers list. <br>
+  If you are not added to the SourceForge project's developers list, you
+will not be able to Check-In changes you have made to the project source
+code.<br>
+  <br>
+  <br>
+  <u><b>Delphi Project Specifics</b></u><br>
+  This is not really needed, but it saves everyone who wants to co-develop 
+  or stay up-to-date a lot<br>
+     of work : <br>
+ You specify a .cvsignore file, which WinCVS and TortoiseCVS will   respect. 
+The matches<br>
+     specified in this file will be treated as non-CVS-project files. TortoiseCVS 
+  has one bad habit<br>
+     with this file though: Adding new project files that should be ignored 
+ is  still possible!<br>
+  <br>
+     Go to the directory that contains the project, and add 1 file : .cvsignore<br>
+     Windows Explorer won't allow you to name a file like this, so will need
+ to use a DOS  prompt and the 'Edit'<br>
+     command for this. Or altenatively you could name the file something
+like  t.cvsignore ( Which Windows Explorer allows ) and then from the DOS
+prompt  you can type :<br>
+  ren t.cvsignore .cvsignore<br>
+  <br>
+     Insert this content into the file:<br>
+  <br>
+     *.~*<br>
+     *.dcu<br>
+     *.bpl<br>
+     *.dcp<br>
+     *.cfg<br>
+     *.dof<br>
+     *.dsm<br>
+     *.exe<br>
+     tmp*<br>
+  <br>
+     You can add other more project-specific matches to this list.<br>
+  <br>
+  <u><b><br>
+     TortoiseCVS configuration</b></u><br>
+  Open up Windows Explorer.<br>
+     Right-click on the project directory in Windows Explorer<br>
+     Select 'CVS-&gt;Preferences...' from the shortcut-menu<br>
+     Go to the 'Quirky' tab<br>
+     Uncheck 'Always recalculate home directory'<br>
+     Press 'Ok'<br>
+  <br>
+  <br>
+  <u><b>Using TortoiseCVS</b></u> <br>
+  Before you start using TortoiseCVS, have some kind of Directory structure
+ thought-out first. I have an "OpenSource" directory under which all the
+SourceForge  projects exist. Planning a directory structure is even more
+important when you are starting your own project and which to upload a module.<br>
+  &nbsp;<br>
+  NOTE : In the following examples, case is always important!<br>
+   
+<ul>
+    <li><b>Anonymous Check-Out</b></li>
+</ul>
+<img src="images/CVSAnonCheckOut.png" alt="CVSAnonCheckOut.png" width="519" height="325">
+<br>
+<ul>
+       
+  <ul>
+      <li>Right click on a Directory within Explorer, select "CVS CheckOut"
+ from the context sensitive menu.</li>
+      <li>Protocol : Ususally "Internet ( Unix pserver )"</li>
+      <li>Server : will look something like this "cvs.&lt;Project Name&gt;.sourceforge.net"&nbsp;</li>
+      <li>Repository Directory : /cvsroot/&lt;Project Name&gt;</li>
+      <li>UserName : anonymous&nbsp;</li>
+      <li>Module : &lt;Module Name&gt; usually the top level directory name
+ , though the project admin could tell you.</li>
+       
+  </ul>
+    <li><b>UserName Check-Out</b></li>
+</ul>
+<img src="images/CVSUserCheckOut.png" alt="CVSUserCheckOut" width="519" height="325">
+<br>
+<ul>
+       
+  <ul>
+      <li>Right click on a Directory within Explorer, select "CVS CheckOut"
+ from the context sensitive menu.</li>
+      <li>Protocol : Ususally "Internet ( secure shell )"</li>
+      <li>Server : will look something like this "cvs.&lt;Project Name&gt;.sourceforge.net"&nbsp;</li>
+      <li>Repository Directory : /cvsroot/&lt;Project Name&gt;</li>
+      <li>UserName : &lt;Your SourceForge User Name&gt;&nbsp;</li>
+      <li>Module : &lt;Module Name&gt; usually the top level directory name,
+ though the project admin could tell you.</li>
+       
+  </ul>
+   <li><b>Make New Module</b></li>
+   
+  <ul>
+     <li>These steps will only concern you if you are uploading a new Module 
+to SourceForge.</li>
+     <li>Right click on a Directory within Explorer, select "Make New Module"
+ from the context sensitive menu.</li>
+   
+  </ul>
+   <li><b>CVS Update</b></li>
+   
+  <ul>
+     <li>Select this option if you want to grab the latest version of a direcory 
+or file from SourceForge</li>
+     <li>Right click on a Directory or file within Explorer, select "CVS
+Update"  from the context sensitive menu.</li>
+    <li>This will cause TortoiseCVS&nbsp; to update the selected file or
+directory with any changes found on the SourceForge Server.<br>
+    </li>
+   
+  </ul>
+   <li><b>CVS Commit</b></li>
+   
+  <ul>
+     <li>Select this option if you have made changes to some source code
+and you wish to upload these changes to the SourceForge CVS.&nbsp;</li>
+     <li>Right click on a Directory or file within Explorer, select "CVS
+Commit"  from the context sensitive menu.</li>
+    <li>You should get a screen that looks similar to the one above.<br>
+    </li>
+   
+  </ul>
+   
+</ul>
+ <br>
+ As you can see, once you have everything set up, Checking code in and Out 
+of a CVS repository is quite easy using <a href="http://www.wincvs.org/TortoiseCVS/index.html">
+  TortoiseCVS</a>
+ .<br>
+  </div>
+   
+</body>
+</html>

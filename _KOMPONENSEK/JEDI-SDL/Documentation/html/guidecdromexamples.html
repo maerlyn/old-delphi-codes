@@ -1,0 +1,93 @@
+<html>
+<head>
+  <title>CDROM Examples</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="Examples" href="guideexamples.html">
+   
+  <link rel="PREVIOUS" title="Audio Examples" href="guideaudioexamples.html">
+   
+  <link rel="NEXT" title="Time Examples" href="guidetimeexamples.html">
+</head>
+ <body class="SECT1" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="guideaudioexamples.html">
+ Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom">Chapter 4. Examples</td>
+       <td width="8%" align="Right" valign="Bottom"><a href="guidetimeexamples.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<div class="SECT1"> 
+<h1 class="SECT1"><a name="GUIDECDROMEXAMPLES">CDROM Examples</a></h1>
+ 
+<p></p>
+ 
+<div class="SECT2"> 
+<h2 class="SECT2"><a name="AEN426">Listing CD-ROM drives</a></h2>
+ 
+<p><pre class="PROGRAMLISTING">    <b>uses</b><br>      SDL;<br><br>    <b>var</b><br>      CDRom : string;<br>      i : integer;<br><br>    // Initialize SDL first <br>    <b>if</b> ( SDL_Init( SDL_INIT_CDROM ) &lt; 0 ) <b>then</b><br>    <b>begin</b><br>        MessageBox( 0, PChar( Format( 'Couldn''t initialize SDL : %s', [SDL_GetError] ) ), 'Error', MB_OK or MB_ICONHAND );<br>        SDL_Quit;<br>        halt(1);<br>    <b>end;</b><br><br>    // Find out how many CD-ROM drives are connected to the system<br>    CDRom := Format('Drives available: %d', [ SDL_CDNumDrives ] ) + #13#10;<br>    <b>for</b> i := 0 <b>to</b> SDL_CDNumDrives - 1 <b>do</b><br>    <b>begin</b><br>      CDRom := CDRom +  Format('Drive %d : "%s"',[ i, SDL_CDName( i ) ] ) + #13#10;<br>    <b>end;</b><br>    MessageBox( 0, CDRom, 'Information', MB_OK or MB_ICONHAND );<br><br></pre>
+ </p>
+ </div>
+ 
+<div class="SECT2"> 
+<h2 class="SECT2"><a name="AEN430">Opening the default drive</a></h2>
+ 
+<p><pre class="PROGRAMLISTING">  <b>var</b>    <br>    cdrom : PSDL_CD;<br>    status : TCDstatus;<br>    status_str : string;<br><br>    cdrom := SDL_CDOpen( 0 );<br>    <b>if</b> ( cdrom = <b>nil</b> ) <b>then</b><br>    <b>begin</b><br>        MessageBox( 0, PChar( Format( 'Couldn''t open default CD-ROM drive : %s', [SDL_GetError] ) ), 'Error', MB_OK or MB_ICONHAND );<br>        halt(2);<br>    <b>end;</b><br><br>    status = SDL_CDStatus( cdrom );<br>    <b>case</b> status <b>of</b><br>        CD_TRAYEMPTY:<br>        <b>begin</b><br>            status_str := 'tray empty';<br>        <b>end;</b><br><br>        CD_STOPPED:<br>        <b>begin</b><br>            status_str := 'stopped';<br>        <b>end;</b><br><br>        CD_PLAYING:<br>        <b>begin</b><br>            status_str := 'playing';<br>        <b>end;</b><br><br>        CD_PAUSED:<br>        <b>begin</b><br>            status_str := 'paused';<br>        <b>end;</b><br><br>        CD_ERROR:<br>        <b>begin</b><br>            status_str := 'error state';<br>        <b>end;</b><br>    <b>end;</b><br><br>    status_str := Format('Drive status : %s', status_str) + #13#10;<br>    <b>if</b> ( status &gt;= CD_PLAYING ) <b>then</b><br>    <b>begin</b><br>        int m, s, f;<br>        FRAMES_TO_MSF(cdrom-&gt;cur_frame, &amp;m, &amp;s, &amp;f);<br>        Format( 'Currently playing track %d, %d:%2.2d', [ cdrom.track[cdrom.cur_track].id, m, s ]);<br>    <b>end;</b></pre>
+ </p>
+ </div>
+ 
+<div class="SECT2"> 
+<h2 class="SECT2"><a name="AEN434">Listing the tracks on a CD</a></h2>
+ 
+<p><pre class="PROGRAMLISTING">  <b>var</b>   <br>    cdrom : PSDL_CD;          // Assuming this has already been set.. <br>    i : integer;<br>    m, s, f : integer;<br>    status_str : string;<br>  .<br>  .<br>  .<br>    SDL_CDStatus( cdrom );<br>    status_str := Format( 'Drive tracks: %d', [ cdrom.numtracks ] ) + #13#10;<br>    <b>for </b>i := 0 <b>to</b> cdrom.numtracks - 1 <b>do</b><br>    <b>begin</b><br>        FRAMES_TO_MSF( cdrom.track[i].length, @m, @s, @f);<br>        <b>if</b> ( f &gt; 0 ) <b>then</b><br>            inc( s );<br>        status_str := status_str + Format( '\tTrack (index %d) %d: %d:%2.2d', i, [ cdrom.track[i].id, m, s ]) + #13#10;<br>    <b>end;</b></pre>
+ </p>
+ </div>
+ 
+<div class="SECT2"> 
+<h2 class="SECT2"><a name="AEN438">Play an entire CD</a></h2>
+ 
+<p><pre class="PROGRAMLISTING">  <b>var</b>    <br>    cdrom : PSDL_CD;          // Assuming this has already been set..<br>  .<br>  .<br>  .<br>    // Play entire CD:<br>    <b>if</b> ( CD_INDRIVE( SDL_CDStatus( cdrom ) ) ) <b>then</b><br>        SDL_CDPlayTracks( cdrom, 0, 0, 0, 0 );<br><br>    // Play last track:<br>    <b>if</b> ( CD_INDRIVE( SDL_CDStatus( cdrom ) ) ) <b>then</b><br>    <b>begin</b><br>        SDL_CDPlayTracks( cdrom, cdrom.numtracks - 1 , 0, 0, 0 );<br>    <b>end;</b><br><br>    // Play first and second track and 10 seconds of third track:<br>    <b>if</b> ( CD_INDRIVE( SDL_CDStatus( cdrom ) ) ) <b>then</b><br>        SDL_CDPlayTracks( cdrom, 0, 0, 2, 10 );</pre>
+ </p>
+ </div>
+ </div>
+ 
+<div class="NAVFOOTER"> 
+<hr align="Left" width="100%"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <td width="31%" align="Left" valign="Top"><a href="guideaudioexamples.html">
+ Prev</a></td>
+       <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+       <td width="31%" align="Right" valign="Top"><a href="guidetimeexamples.html">
+ Next</a></td>
+     </tr>
+     <tr>
+       <td width="31%" align="Left" valign="Top">Audio Examples</td>
+       <td width="34%" align="Center" valign="Top"><a href="guideexamples.html">
+ Up</a></td>
+       <td width="31%" align="Right" valign="Top">Time Examples</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ </div>
+ 
+</body>
+</html>

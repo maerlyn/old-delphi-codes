@@ -1,0 +1,321 @@
+<html>
+<head>
+  <title>TSDL_Event</title>
+                    
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+           
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+           
+  <link rel="UP" title="SDL Event Structures." href="eventstructures.html">
+           
+  <link rel="PREVIOUS" title="SDL Event Structures." href="eventstructures.html">
+           
+  <link rel="NEXT" title="SDL_ActiveEvent" href="sdlactiveevent.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+     
+<div class="NAVHEADER">   
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+     <tbody>
+       <tr>
+         <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+       </tr>
+       <tr>
+         <td width="7%" align="Left" valign="Bottom"><a href="eventstructures.html">
+   Prev</a></td>
+         <td width="76%" align="Center" valign="Bottom"><br>
+         </td>
+         <td width="7%" align="Right" valign="Bottom"><a href="sdlactiveevent.html">
+   Next</a></td>
+       </tr>
+           
+  </tbody>   
+</table>
+     
+<hr align="Left" width="100%"></div>
+     
+<h1><a name="SDLEVENT">TSDL_Event</a></h1>
+     
+<div class="REFNAMEDIV"><a name="AEN3295"></a>   
+<h2>Name</h2>
+ &nbsp; TSDL_Event -- General event structure</div>
+     
+<div class="REFSECT1"><a name="AEN3298"></a><br>
+     
+<h2>Structure Definition</h2>
+   <pre class="PROGRAMLISTING">  TSDL_Event = <b>record</b><br>    case UInt8 of<br>      SDL_NOEVENT: (type_: byte);<br>      SDL_ACTIVEEVENT: (active: TSDL_ActiveEvent);<br>      SDL_KEYDOWN, SDL_KEYUP: (key: TSDL_KeyboardEvent);<br>      SDL_MOUSEMOTION: (motion: TSDL_MouseMotionEvent);<br>      SDL_MOUSEBUTTONDOWN, SDL_MOUSEBUTTONUP: (button: TSDL_MouseButtonEvent<br>        );<br>      SDL_QUITEV: (quit: TSDL_QuitEvent);<br>      SDL_SYSWMEVENT: (syswm: TSDL_SysWMEvent);<br>  <b>end;</b></pre>
+   </div>
+     
+<div class="REFSECT1"><a name="AEN3301"></a>   
+<h2>Structure Data</h2>
+     
+<div class="INFORMALTABLE"><a name="AEN3303"></a>   
+<p></p>
+     
+<table border="0" class="CALSTABLE">
+     <tbody>
+       <tr>
+         <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>type</i></tt></td>
+         <td align="Left" valign="Top">The type of event</td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>active</i></tt></td>
+         <td align="Left" valign="Top"><a href="sdlactiveevent.html">Activation 
+ event</a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>key</i></tt></td>
+         <td align="Left" valign="Top"><a href="sdlkeyboardevent.html">Keyboard 
+ event</a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>motion</i></tt></td>
+         <td align="Left" valign="Top"><a href="sdlmousemotionevent.html">
+ Mouse  motion event</a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>button</i></tt></td>
+         <td align="Left" valign="Top"><a href="sdlmousebuttonevent.html">
+ Mouse  button event</a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>jaxis</i></tt></td>
+         <td align="Left" valign="Top"><a href="sdljoyaxisevent.html">Joystick 
+ axis motion event</a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>jball</i></tt></td>
+         <td align="Left" valign="Top"><a href="sdljoyballevent.html">Joystick 
+ trackball motion event</a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>jhat</i></tt></td>
+         <td align="Left" valign="Top"><a href="sdljoyhatevent.html">Joystick 
+ hat motion event</a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>jbutton</i></tt></td>
+         <td align="Left" valign="Top"><a href="sdljoybuttonevent.html">Joystick 
+ button event</a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>resize</i></tt></td>
+         <td align="Left" valign="Top"><a href="sdlresizeevent.html">Application 
+ window resize event</a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>quit</i></tt></td>
+         <td align="Left" valign="Top"><a href="sdlquitevent.html">Application 
+ quit request event</a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>user</i></tt></td>
+         <td align="Left" valign="Top"><a href="sdluserevent.html">User defined 
+ event</a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>syswm</i></tt></td>
+         <td align="Left" valign="Top"><a href="sdlsyswmevent.html">Undefined 
+ window manager event</a></td>
+       </tr>
+           
+  </tbody>   
+</table>
+     
+<p></p>
+   </div>
+   </div>
+     
+<div class="REFSECT1"><a name="AEN3370"></a>   
+<h2>Description</h2>
+     
+<p>The <span class="STRUCTNAME">SDL_Event</span> union is the core to all&nbsp; 
+event handling is SDL, its probably the most important structure after <span class="STRUCTNAME">
+  TSDL_Surface</span>. <span class="STRUCTNAME">TSDL_Event</span> is a union&nbsp; 
+of all event structures used in SDL, using it is a simple matter of knowing&nbsp; 
+which union member relates to which event <tt class="STRUCTFIELD"><i>type</i></tt>
+ &nbsp; .</p>
+     
+<p></p>
+     
+<div class="INFORMALTABLE"><a name="AEN3378"></a>   
+<p></p>
+     
+<table border="1" class="CALSTABLE">
+     <thead><tr>
+       <th align="Left" valign="Top">Event <tt class="STRUCTFIELD"><i>type</i></tt></th>
+       <th align="Left" valign="Top">Event Structure</th>
+     </tr>
+     </thead><tbody>
+       <tr>
+         <td align="Left" valign="Middle"><tt class="LITERAL">SDL_ACTIVEEVENT</tt></td>
+         <td align="Left" valign="Middle"><a href="sdlactiveevent.html"><span class="STRUCTNAME">
+   SDL_ActiveEvent</span></a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_KEYDOWN/UP</tt></td>
+         <td align="Left" valign="Top"><a href="sdlkeyboardevent.html"><span class="STRUCTNAME">
+   SDL_KeyboardEvent</span></a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_MOUSEMOTION</tt></td>
+         <td align="Left" valign="Top"><a href="sdlmousemotionevent.html"><span class="STRUCTNAME">
+   SDL_MouseMotionEvent</span></a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_MOUSEBUTTONDOWN/UP</tt></td>
+         <td align="Left" valign="Top"><a href="sdlmousebuttonevent.html"><span class="STRUCTNAME">
+   SDL_MouseButtonEvent</span></a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_JOYAXISMOTION</tt></td>
+         <td align="Left" valign="Top"><a href="sdljoyaxisevent.html"><span class="STRUCTNAME">
+   SDL_JoyAxisEvent</span></a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_JOYBALLMOTION</tt></td>
+         <td align="Left" valign="Top"><a href="sdljoyballevent.html"><span class="STRUCTNAME">
+   SDL_JoyBallEvent</span></a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_JOYHATMOTION</tt></td>
+         <td align="Left" valign="Top"><a href="sdljoyhatevent.html"><span class="STRUCTNAME">
+   SDL_JoyHatEvent</span></a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_JOYBUTTONDOWN/UP</tt></td>
+         <td align="Left" valign="Top"><a href="sdljoybuttonevent.html"><span class="STRUCTNAME">
+   SDL_JoyButtonEvent</span></a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_QUIT</tt></td>
+         <td align="Left" valign="Top"><a href="sdlquitevent.html"><span class="STRUCTNAME">
+   SDL_QuitEvent</span></a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_SYSWMEVENT</tt></td>
+         <td align="Left" valign="Top"><a href="sdlsyswmevent.html"><span class="STRUCTNAME">
+   SDL_SysWMEvent</span></a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_VIDEORESIZE</tt></td>
+         <td align="Left" valign="Top"><a href="sdlresizeevent.html"><span class="STRUCTNAME">
+   SDL_ResizeEvent</span></a></td>
+       </tr>
+       <tr>
+         <td align="Left" valign="Top"><tt class="LITERAL">SDL_USEREVENT</tt></td>
+         <td align="Left" valign="Top"><a href="sdluserevent.html"><span class="STRUCTNAME">
+   SDL_UserEvent</span></a></td>
+       </tr>
+           
+  </tbody>   
+</table>
+     
+<p></p>
+   </div>
+     
+<p></p>
+   </div>
+     
+<div class="REFSECT1"><a name="AEN3458"></a>   
+<h2>Use</h2>
+     
+<p>The T<span class="STRUCTNAME">SDL_Event</span> structure has two uses</p>
+     
+<p></p>
+     
+<ul compact="COMPACT">
+           
+  <li>               
+    <p>Reading events on the event queue</p>
+     </li>
+           
+  <li>               
+    <p>Placing events on the event queue</p>
+     </li>
+     
+</ul>
+     
+<p>Reading events from the event queue is done with either <a href="sdlpollevent.html"><tt class="FUNCTION">
+   SDL_PollEvent</tt></a> or <a href="sdlpeepevents.html"><tt class="FUNCTION">
+   SDL_PeepEvents</tt></a>. We'll use <tt class="FUNCTION">SDL_PollEvent</tt>
+    and step through an example.</p>
+     
+<p>First off, we create an empty <span class="STRUCTNAME">TSDL_Event</span>
+  &nbsp; structure. <pre class="PROGRAMLISTING">test_event : TSDL_Event;</pre>
+    <tt class="FUNCTION">SDL_PollEvent</tt> removes the next event from the 
+ event queue, if there are no events on the queue it returns <span class="RETURNVALUE">
+   0</span> otherwise it returns <span class="RETURNVALUE">1</span>. We use 
+ a <tt class="FUNCTION">while</tt> loop to process each event in turn. <pre class="PROGRAMLISTING"><b>while</b> ( SDL_PollEvent( @test_event ) &gt; 0 ) <b>do</b></pre>
+  &nbsp; The <tt class="FUNCTION">SDL_PollEvent</tt> function take a pointer 
+to an T<span class="STRUCTNAME">SDL_Event</span> structure that is to be filled&nbsp;
+with event information. We know that if <tt class="FUNCTION"> SDL_PollEvent</tt>
+ &nbsp; removes an event from the queue then the event information will be
+placed&nbsp; in our <span class="STRUCTNAME">test_event</span>  structure,
+but we also know that the <i class="EMPHASIS">type</i> of event will be placed
+in the <tt class="STRUCTFIELD"><i> type</i></tt> member of <span class="STRUCTNAME">
+ test_event</span>. So to handle each event <tt class="STRUCTFIELD"><i> type</i></tt>
+&nbsp; seperately we use a <tt class="FUNCTION">switch</tt> statement. <pre class="PROGRAMLISTING">  <b>case</b> test_event.type_ <b>of</b></pre>
+    We need to know what kind of events we're looking for <i class="EMPHASIS">
+   and</i> the event <tt class="STRUCTFIELD"><i>type</i></tt>'s of those
+events.  So lets assume we want to detect where the user is moving the mouse
+pointer  within our application. We look through our event types and notice
+that <tt class="LITERAL">  SDL_MOUSEMOTION</tt> is, more than likely, the
+event we're looking for. A little <a href="sdlmousemotionevent.html">more</a>
+ research tells use that  <tt class="LITERAL">SDL_MOUSEMOTION</tt> events
+are handled within the <a href="sdlmousemotionevent.html"><span class="STRUCTNAME">
+  SDL_MouseMotionEvent</span></a> structure which is the <tt class="STRUCTFIELD"><i>
+   motion</i></tt> member of <span class="STRUCTNAME">SDL_Event</span>. We
+ can check for the <tt class="LITERAL">SDL_MOUSEMOTION</tt> event <tt class="STRUCTFIELD"><i>
+   type</i></tt> within our <tt class="FUNCTION">switch</tt> statement like 
+ so: <pre class="PROGRAMLISTING">    SDL_MOUSEMOTION:<br>    <b>begin</b><br></pre>
+    All we need do now is read the information out of the <tt class="STRUCTFIELD"><i>
+   motion</i></tt> member of <span class="STRUCTNAME">test_event</span>.
+<pre class="PROGRAMLISTING">      printf("We got a motion event.\n");<br>      printf("Current mouse position is: (%d, %d)\n", test_event.motion.x, test_event.motion.y);<br>    <b>end;</b><br><br>    default:<br>      printf("Unhandled Event!\n");<br>    <b>end;</b><br>  <b>end;</b><br><b>end;</b><br>printf("Event queue empty.\n");</pre>
+   </p>
+     
+<p>It is also possible to push events onto the event queue and so use it as
+a two-way communication path. Both <a href="sdlpushevent.html"><tt class="FUNCTION">
+   SDL_PushEvent</tt></a> and <a href="sdlpeepevents.html"><tt class="FUNCTION">
+   SDL_PeepEvents</tt></a> allow you to place events onto the event queue.
+ This is usually used to place a <tt class="LITERAL">SDL_USEREVENT</tt> on
+ the event queue, however you could use it to post fake input events if you
+ wished. Creating your own events is a simple matter of choosing the event
+ type you want, setting the <tt class="STRUCTFIELD"><i>type</i></tt> member
+ and filling the appropriate member structure with information. <pre class="PROGRAMLISTING">user_event : TSDL_Event;<br><br>user_event.type := SDL_USEREVENT;<br>user_event.user.code := 2;<br>user_event.user.data1 := <b>nil</b>;<br>user_event.user.data2 := <b>nil</b>;<br>SDL_PushEvent( @user_event );</pre>
+   </p>
+   </div>
+     
+<div class="REFSECT1"><a name="AEN3515"></a>   
+<h2>See Also</h2>
+     
+<p><a href="sdlpollevent.html"><tt class="FUNCTION">SDL_PollEvent</tt></a>
+   , <a href="sdlpushevent.html"><tt class="FUNCTION">SDL_PushEvent</tt></a>
+   , <a href="sdlpeepevents.html"><tt class="FUNCTION">SDL_PeepEvents</tt></a></p>
+   </div>
+     
+<div class="NAVFOOTER">   
+<hr align="Left" width="100%">   
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+     <tbody>
+       <tr>
+         <td width="31%" align="Left" valign="Top"><a href="eventstructures.html">
+   Prev</a></td>
+         <td width="34%" align="Center" valign="Top"><a href="index.html">
+ Home</a></td>
+         <td width="31%" align="Right" valign="Top"><a href="sdlactiveevent.html">
+   Next</a></td>
+       </tr>
+       <tr>
+         <td width="31%" align="Left" valign="Top">SDL Event Structures.</td>
+         <td width="34%" align="Center" valign="Top"><a href="eventstructures.html">
+   Up</a></td>
+         <td width="31%" align="Right" valign="Top">TSDL_ActiveEvent</td>
+       </tr>
+           
+  </tbody>   
+</table>
+   </div>
+     
+</body>
+</html>

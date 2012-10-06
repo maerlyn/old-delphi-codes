@@ -1,0 +1,1 @@
+DTT.exe -fullscreen -hwaccel

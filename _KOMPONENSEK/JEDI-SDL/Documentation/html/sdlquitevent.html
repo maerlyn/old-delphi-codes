@@ -1,0 +1,96 @@
+<html>
+<head>
+  <title>SDL_QuitEvent</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="SDL Event Structures." href="eventstructures.html">
+  <link rel="PREVIOUS" title="SDL_UserEvent" href="sdluserevent.html">
+  <link rel="NEXT" title="SDL_keysym" href="sdlkeysym.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdluserevent.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlkeysym.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLQUITEVENT">TSDL_QuitEvent</a></h1>
+<div class="REFNAMEDIV"><a name="AEN4159"></a>
+<h2>Name</h2>
+TSDL_QuitEvent -- Quit requested event</div>
+<div class="REFSECT1"><a name="AEN4162"></a><br>
+<h2>Structure Definition</h2>
+<pre class="PROGRAMLISTING">  TSDL_QuitEvent = <b>record</b><br>    type_: UInt8;<br>  <b>end;</b></pre>
+</div>
+<div class="REFSECT1"><a name="AEN4165"></a>
+<h2>Structure Data</h2>
+<div class="INFORMALTABLE"><a name="AEN4167"></a>
+<p></p>
+<table border="0" class="CALSTABLE">
+  <tbody>
+    <tr>
+      <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>type</i></tt></td>
+      <td align="Left" valign="Top"><tt class="LITERAL">SDL_QUIT</tt></td>
+    </tr>
+  </tbody>
+</table>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN4175"></a>
+<h2>Description</h2>
+<p><span class="STRUCTNAME">TSDL_QuitEvent</span> is a member of the <a href="sdlevent.html"><span class="STRUCTNAME">
+TSDL_Event</span></a> union and is used whan an event of type <tt class="LITERAL">
+SDL_QUIT</tt> is reported.</p>
+<p>As can be seen, the SDL_QuitEvent structure serves no useful purpose.
+The event itself, on the other hand, is very important. If you filter out
+or ignore a quit event then it is impossible for the user to close the window.
+On the other hand, if you do accept a quit event then the application window
+will be closed, and screen updates will still report success event though
+the application will no longer be visible.</p>
+<div class="NOTE">
+<blockquote class="NOTE">
+  <p><b>Note: </b>The macro <tt class="FUNCTION">SDL_QuitRequested</tt> will
+return non-zero if a quit event is pending</p>
+  </blockquote>
+  </div>
+  </div>
+  <div class="REFSECT1"><a name="AEN4186"></a>
+  <h2>See Also</h2>
+  <p><a href="sdlevent.html"><span class="STRUCTNAME">TSDL_Event</span></a>
+, <a href="sdlseteventfilter.html"><tt class="FUNCTION">SDL_SetEventFilter</tt></a></p>
+  </div>
+  <div class="NAVFOOTER">
+  <hr align="Left" width="100%">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td width="32%" align="Left" valign="Top"><a href="sdluserevent.html">
+Prev</a></td>
+        <td width="34%" align="Center" valign="Top"><a href="index.html">
+Home</a></td>
+        <td width="32%" align="Right" valign="Top"><a href="sdlkeysym.html">
+Next</a></td>
+      </tr>
+      <tr>
+        <td width="32%" align="Left" valign="Top">TSDL_UserEvent</td>
+        <td width="34%" align="Center" valign="Top"><a href="eventstructures.html">
+Up</a></td>
+        <td width="32%" align="Right" valign="Top">TSDL_KeySym</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  </body>
+  </html>

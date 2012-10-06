@@ -1,0 +1,239 @@
+<html>
+<head>
+  <title>SDL_AudioSpec</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="Audio" href="audio.html">
+   
+  <link rel="PREVIOUS" title="Audio" href="audio.html">
+   
+  <link rel="NEXT" title="SDL_OpenAudio" href="sdlopenaudio.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="audio.html">Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom"><br>
+       </td>
+       <td width="8%" align="Right" valign="Bottom"><a href="sdlopenaudio.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<h1><a name="SDLAUDIOSPEC">TSDL_AudioSpec</a></h1>
+ 
+<div class="REFNAMEDIV"><a name="AEN5966"></a> 
+<h2>Name</h2>
+ TSDL_AudioSpec -- Audio Specification Structure</div>
+ 
+<div class="REFSECT1"><a name="AEN5969"></a><br>
+ 
+<h2>Structure Definition</h2>
+ <pre class="PROGRAMLISTING">  TSDL_AudioSpec = <b>record</b><br>    freq: Integer;    // DSP frequency -- samples per second<br>    format: UInt16;   // Audio data format<br>    channels: UInt8;  // Number of channels: 1 mono, 2 stereo<br>    silence: UInt8;   // Audio buffer silence value (calculated)<br>    samples: UInt16;  // Audio buffer size in samples<br>    padding: UInt16;  // Necessary for some compile environments<br>    size: UInt32;     // Audio buffer size in bytes (calculated)<br>    callback: procedure(userdata: Pointer; stream: PUInt8; len: Integer); cdecl;<br>    userdata: Pointer;<br>  <b>end;</b></pre>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN5972"></a> 
+<h2>Structure Data</h2>
+ 
+<div class="INFORMALTABLE"><a name="AEN5974"></a> 
+<p></p>
+ 
+<table border="0" class="CALSTABLE">
+   <tbody>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>freq</i></tt></td>
+       <td align="Left" valign="Top">Audio frequency in samples per second</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>format</i></tt></td>
+       <td align="Left" valign="Top">Audio data format</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>channels</i></tt></td>
+       <td align="Left" valign="Top">Number of channels: 1 mono, 2 stereo</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>silence</i></tt></td>
+       <td align="Left" valign="Top">Audio buffer silence value (calculated)</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>samples</i></tt></td>
+       <td align="Left" valign="Top">Audio buffer size in samples</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>size</i></tt></td>
+       <td align="Left" valign="Top">Audio buffer size in bytes (calculated)</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>callback(..)</i></tt></td>
+       <td align="Left" valign="Top">Callback function for filling the audio 
+buffer</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>userdata</i></tt></td>
+       <td align="Left" valign="Top">Pointer the user data which is passed 
+to the callback function</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<p></p>
+ </div>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN6009"></a> 
+<h2>Description</h2>
+ 
+<p>The <span class="STRUCTNAME">TSDL_AudioSpec</span> structure is used to 
+describe the format of some audio data. This structure is used by <a href="sdlopenaudio.html"><tt class="FUNCTION">
+ SDL_OpenAudio</tt></a> and <a href="sdlloadwav.html"><tt class="FUNCTION">
+ SDL_LoadWAV</tt></a>. While all fields are used by <tt class="FUNCTION">
+SDL_OpenAudio</tt>&nbsp; only <tt class="STRUCTFIELD"><i>freq</i></tt>, <tt class="STRUCTFIELD"><i>
+ format</i></tt>, <tt class="STRUCTFIELD"><i>samples</i></tt> and <tt class="STRUCTFIELD"><i>
+ channels</i></tt> are used by <tt class="FUNCTION">SDL_LoadWAV</tt>. We
+will detail these common members here.</p>
+ 
+<div class="INFORMALTABLE"><a name="AEN6023"></a> 
+<p></p>
+ 
+<table border="0" class="CALSTABLE">
+   <tbody>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>freq</i></tt></td>
+       <td align="Left" valign="Top">       
+      <p>The number of samples sent to the sound device every second. Common 
+values are 11025, 22050 and 44100. The higher the better.</p>
+       </td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>format</i></tt></td>
+       <td align="Left" valign="Top">       
+      <p>Specifies the size and type of each sample element </p>
+       
+      <p></p>
+       
+      <div class="VARIABLELIST">       
+      <dl>
+      <dt><tt class="LITERAL">AUDIO_U8</tt></dt>
+        <dd>           
+          <p>Unsigned 8-bit samples</p>
+           </dd>
+          <dt><tt class="LITERAL">AUDIO_S8</tt></dt>
+            <dd>               
+              <p>Signed 8-bit samples</p>
+               </dd>
+              <dt><tt class="LITERAL">AUDIO_U16</tt> or <tt class="LITERAL">
+ AUDIO_U16LSB</tt></dt>
+                <dd>                   
+                  <p>Unsigned 16-bit little-endian samples</p>
+                   </dd>
+                  <dt><tt class="LITERAL">AUDIO_S16</tt> or <tt class="LITERAL">
+ AUDIO_S16LSB</tt></dt>
+                    <dd>                       
+                      <p>Signed 16-bit little-endian samples</p>
+                       </dd>
+                      <dt><tt class="LITERAL">AUDIO_U16MSB</tt></dt>
+                        <dd>                           
+                          <p>Unsigned 16-bit big-endian samples</p>
+                           </dd>
+                          <dt><tt class="LITERAL">AUDIO_S16MSB</tt></dt>
+                            <dd>                               
+                              <p>Signed 16-bit big-endian samples</p>
+                               </dd>
+                              <dt><tt class="LITERAL">AUDIO_U16SYS</tt></dt>
+                                <dd>                                   
+                                  <p>Either <tt class="LITERAL">AUDIO_U16LSB</tt>
+  or <tt class="LITERAL">AUDIO_U16MSB</tt> depending on you systems endianness</p>
+                                   </dd>
+                                  <dt><tt class="LITERAL">AUDIO_S16SYS</tt></dt>
+                                    <dd>                                
+      
+                                      <p>Either <tt class="LITERAL">AUDIO_S16LSB</tt>
+  or <tt class="LITERAL">AUDIO_S16MSB</tt> depending on you systems endianness</p>
+                                       </dd>
+                                      </dl>
+                                       </div>
+                                       
+                                      <p></p>
+                                       </td>
+                                     </tr>
+                                     <tr>
+                                       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>
+ channels</i></tt></td>
+                                       <td align="Left" valign="Top">The
+number of seperate sound channels. 1 is mono (single channel), 2 is stereo
+(dual channel).</td>
+                                     </tr>
+                                     <tr>
+                                       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>
+ samples</i></tt></td>
+                                       <td align="Left" valign="Top">When 
+used with <a href="sdlopenaudio.html"><tt class="FUNCTION">SDL_OpenAudio</tt></a>
+  this refers to the size of the audio buffer in samples. A sample a chunk 
+of audio data of the size specified in <tt class="PARAMETER"><i>format</i></tt>
+  mulitplied by the number of channels. When the <span class="STRUCTNAME">
+ SDL_AudioSpec</span> is used with <a href="sdlloadwav.html"><tt class="FUNCTION">
+ SDL_LoadWAV</tt></a> <tt class="STRUCTFIELD"><i>samples</i></tt> is set
+to 4096.</td>
+                                     </tr>
+                                   
+                                  </tbody>                              
+  
+                                </table>
+                                 
+                                <p></p>
+                                 </div>
+                                 </div>
+                                 
+                                <div class="REFSECT1"><a name="AEN6098"></a>
+                                 
+                                <h2>See Also</h2>
+                                 
+                                <p><a href="sdlopenaudio.html"><tt class="FUNCTION">
+ SDL_OpenAudio</tt></a>, <a href="sdlloadwav.html"><tt class="FUNCTION">SDL_LoadWAV</tt></a></p>
+                                 </div>
+                                 
+                                <div class="NAVFOOTER">                 
+               
+                                <hr align="Left" width="100%">          
+                      
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                   <tbody>
+                                     <tr>
+                                       <td width="31%" align="Left" valign="Top"><a href="audio.html">
+ Prev</a></td>
+                                       <td width="34%" align="Center" valign="Top"><a href="index.html">
+ Home</a></td>
+                                       <td width="31%" align="Right" valign="Top"><a href="sdlopenaudio.html">
+ Next</a></td>
+                                     </tr>
+                                     <tr>
+                                       <td width="31%" align="Left" valign="Top">
+ Audio</td>
+                                       <td width="34%" align="Center" valign="Top"><a href="audio.html">
+ Up</a></td>
+                                       <td width="31%" align="Right" valign="Top">
+ SDL_OpenAudio</td>
+                                     </tr>
+                                   
+                                  </tbody>                              
+  
+                                </table>
+                                 </div>
+                                 
+                                </body>
+                                </html>

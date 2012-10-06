@@ -1,0 +1,122 @@
+<html>
+<head>
+  <title>SDL_Color</title>
+                           
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+               
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+               
+  <link rel="UP" title="Video" href="video.html">
+               
+  <link rel="PREVIOUS" title="SDL_Rect" href="sdlrect.html">
+               
+  <link rel="NEXT" title="SDL_Palette" href="sdlpalette.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+       
+<div class="NAVHEADER">    
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+        </tr>
+        <tr>
+          <td width="7%" align="Left" valign="Bottom"><a href="sdlrect.html">
+    Prev</a></td>
+          <td width="75%" align="Center" valign="Bottom"><br>
+          </td>
+          <td width="7%" align="Right" valign="Bottom"><a href="sdlpalette.html">
+    Next</a></td>
+        </tr>
+               
+  </tbody>    
+</table>
+       
+<hr align="Left" width="100%"></div>
+       
+<h1><a name="SDLCOLOR">TSDL_Color</a></h1>
+       
+<div class="REFNAMEDIV"><a name="AEN2666"></a>    
+<h2>Name</h2>
+   TSDL_Color -- Format independent color description</div>
+       
+<div class="REFSECT1"><a name="AEN2669"></a><br>
+      
+<h2>Structure Definition</h2>
+    <pre class="PROGRAMLISTING">  TSDL_Color = <b>record</b><br>    r: Uint8;<br>    g: Uint8;<br>    b: Uint8;<br>    unused: Uint8;<br>  <b>end;</b></pre>
+    </div>
+       
+<div class="REFSECT1"><a name="AEN2672"></a>    
+<h2>Structure Data</h2>
+       
+<div class="INFORMALTABLE"><a name="AEN2674"></a>    
+<p></p>
+       
+<table border="0" class="CALSTABLE">
+      <tbody>
+        <tr>
+          <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>r</i></tt></td>
+          <td align="Left" valign="Top">Red intensity</td>
+        </tr>
+        <tr>
+          <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>g</i></tt></td>
+          <td align="Left" valign="Top">Green intensity</td>
+        </tr>
+        <tr>
+          <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>b</i></tt></td>
+          <td align="Left" valign="Top">Blue intensity</td>
+        </tr>
+        <tr>
+          <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>unused</i></tt></td>
+          <td align="Left" valign="Top">Unused</td>
+        </tr>
+               
+  </tbody>    
+</table>
+       
+<p></p>
+    </div>
+    </div>
+       
+<div class="REFSECT1"><a name="AEN2693"></a>    
+<h2>Description</h2>
+       
+<p><span class="STRUCTNAME">TSDL_Color</span> describes a color in a format&nbsp;
+independent way. You can convert a <span class="STRUCTNAME">SDL_Color</span>
+ &nbsp; &nbsp; to a pixel value for a certain pixel format using <a href="sdlmaprgb.html"><tt class="FUNCTION">
+TSDL_MapRGB</tt></a>.</p>
+    </div>
+       
+<div class="REFSECT1"><a name="AEN2700"></a>    
+<h2>See Also</h2>
+       
+<p><a href="sdlpixelformat.html"><span class="STRUCTNAME">TSDL_PixelFormat</span></a>
+    , <a href="sdlsetcolors.html"><tt class="FUNCTION">SDL_SetColors</tt></a>
+    , <a href="sdlpalette.html"><tt class="FUNCTION">TSDL_Palette</tt></a></p>
+    </div>
+       
+<div class="NAVFOOTER">    
+<hr align="Left" width="100%">    
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <td width="31%" align="Left" valign="Top"><a href="sdlrect.html">
+  Prev</a></td>
+          <td width="34%" align="Center" valign="Top"><a href="index.html">
+  Home</a></td>
+          <td width="31%" align="Right" valign="Top"><a href="sdlpalette.html">
+    Next</a></td>
+        </tr>
+        <tr>
+          <td width="31%" align="Left" valign="Top">TSDL_Rect</td>
+          <td width="34%" align="Center" valign="Top"><a href="video.html">
+  Up</a></td>
+          <td width="31%" align="Right" valign="Top">TSDL_Palette</td>
+        </tr>
+               
+  </tbody>    
+</table>
+    </div>
+       
+</body>
+</html>

@@ -1,0 +1,139 @@
+<html>
+<head>
+  <title>TSDL_MouseMotionEvent</title>
+                           
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+               
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+               
+  <link rel="UP" title="SDL Event Structures." href="eventstructures.html">
+               
+  <link rel="PREVIOUS" title="SDL_KeyboardEvent" href="sdlkeyboardevent.html">
+               
+  <link rel="NEXT" title="SDL_MouseButtonEvent" href="sdlmousebuttonevent.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+       
+<div class="NAVHEADER">    
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+        </tr>
+        <tr>
+          <td width="7%" align="Left" valign="Bottom"><a href="sdlkeyboardevent.html">
+    Prev</a></td>
+          <td width="75%" align="Center" valign="Bottom"><br>
+          </td>
+          <td width="7%" align="Right" valign="Bottom"><a href="sdlmousebuttonevent.html">
+    Next</a></td>
+        </tr>
+               
+  </tbody>    
+</table>
+       
+<hr align="Left" width="100%"></div>
+       
+<h1><a name="SDLMOUSEMOTIONEVENT">TSDL_MouseMotionEvent</a></h1>
+       
+<div class="REFNAMEDIV"><a name="AEN3652"></a>    
+<h2>Name</h2>
+  &nbsp; TSDL_MouseMotionEvent -- Mouse motion event structure</div>
+       
+<div class="REFSECT1"><a name="AEN3655"></a><br>
+       
+<h2>Structure Definition</h2>
+    <pre class="PROGRAMLISTING">  TSDL_MouseMotionEvent = <b>record</b><br>    type_: UInt8; // SDL_MOUSEMOTION<br>    which: UInt8; // The mouse device index<br>    state: UInt8; // The current button state<br>    x, y: UInt16; // The X/Y coordinates of the mouse<br>    xrel: Sint16; // The relative motion in the X direction<br>    yrel: Sint16; // The relative motion in the Y direction<br>  <b>end;</b></pre>
+    </div>
+       
+<div class="REFSECT1"><a name="AEN3658"></a>    
+<h2>Structure Data</h2>
+       
+<div class="INFORMALTABLE"><a name="AEN3660"></a>    
+<p></p>
+       
+<table border="0" class="CALSTABLE">
+      <tbody>
+        <tr>
+          <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>type</i></tt></td>
+          <td align="Left" valign="Top"><tt class="LITERAL">SDL_MOUSEMOTION</tt></td>
+        </tr>
+        <tr>
+          <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>state</i></tt></td>
+          <td align="Left" valign="Top">The current button state</td>
+        </tr>
+        <tr>
+          <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>x</i></tt>
+    , <tt class="STRUCTFIELD"><i>y</i></tt></td>
+          <td align="Left" valign="Top">The X/Y coordinates of the mouse</td>
+        </tr>
+        <tr>
+          <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>xrel</i></tt>
+    , <tt class="STRUCTFIELD"><i>yrel</i></tt></td>
+          <td align="Left" valign="Top">Relative motion in the X/Y direction</td>
+        </tr>
+               
+  </tbody>    
+</table>
+       
+<p></p>
+    </div>
+    </div>
+       
+<div class="REFSECT1"><a name="AEN3682"></a>    
+<h2>Description</h2>
+       
+<p><span class="STRUCTNAME">TSDL_MouseMotionEvent</span> is a member of the
+  <a href="sdlevent.html"><span class="STRUCTNAME">TSDL_Event</span></a>
+union   and is used when an event of type <tt class="LITERAL">SDL_MOUSEMOTION</tt>
+     is reported.</p>
+       
+<p>Simply put, a <tt class="LITERAL">SDL_MOUSEMOTION</tt> type event occurs
+  when a user moves the mouse within the application window or when <a href="sdlwarpmouse.html"><tt class="FUNCTION">
+    SDL_WarpMouse</tt></a> is called. Both the absolute (<tt class="STRUCTFIELD"><i>
+    x</i></tt> and <tt class="STRUCTFIELD"><i>y</i></tt>) and relative (<tt class="STRUCTFIELD"><i>
+    xrel</i></tt> and <tt class="STRUCTFIELD"><i>yrel</i></tt>) coordinates 
+ are reported along with the current button states (<tt class="STRUCTFIELD"><i>
+    state</i></tt>). The button state can be interpreted using the <tt class="LITERAL">
+    SDL_BUTTON</tt> macro (see <a href="sdlgetmousestate.html"><tt class="FUNCTION">
+    SDL_GetMouseState</tt></a>).</p>
+       
+<p>If the cursor is hidden (<a href="sdlshowcursor.html"><tt class="FUNCTION">
+SDL_ShowCursor</tt>(0)</a>) and the input is grabbed (<a href="sdlwmgrabinput.html"><tt class="FUNCTION">
+SDL_WM_GrabInput</tt>(SDL_GRAB_ON)</a>), then the mouse will give relative
+&nbsp; motion events even when the cursor reaches the edge fo the screen.
+This is &nbsp; currently only implemented on Windows and Linux/Unix-a-likes.</p>
+    </div>
+       
+<div class="REFSECT1"><a name="AEN3706"></a>    
+<h2>See Also</h2>
+       
+<p><a href="sdlevent.html"><span class="STRUCTNAME">TSDL_Event</span></a>
+   ,&nbsp; <a href="sdlmousebuttonevent.html"><span class="STRUCTNAME">TSDL_MouseButtonEvent</span></a></p>
+    </div>
+       
+<div class="NAVFOOTER">    
+<hr align="Left" width="100%">    
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <td width="31%" align="Left" valign="Top"><a href="sdlkeyboardevent.html">
+    Prev</a></td>
+          <td width="34%" align="Center" valign="Top"><a href="index.html">
+  Home</a></td>
+          <td width="31%" align="Right" valign="Top"><a href="sdlmousebuttonevent.html">
+    Next</a></td>
+        </tr>
+        <tr>
+          <td width="31%" align="Left" valign="Top">TSDL_KeyboardEvent</td>
+          <td width="34%" align="Center" valign="Top"><a href="eventstructures.html">
+    Up</a></td>
+          <td width="31%" align="Right" valign="Top">TSDL_MouseButtonEvent</td>
+        </tr>
+               
+  </tbody>    
+</table>
+    </div>
+       
+</body>
+</html>

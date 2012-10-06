@@ -1,0 +1,61 @@
+TProgress - A TGauge that gradients  
+----------------------------------------------------------------------------
+
+TProgress shows you the progress percentage like Go!Zilla (Progress that
+gradients)
+
+TProgress gradients (transforms one color to another) as its Progress property
+comes close to 100.
+
+Properties :
+------------
+BackColor = TColor    :   Specifies the Background color of the VCL
+BorderColor = TColor  :   Specifies the Border color of the VCL
+FromColor = TColor    :   The color to be transformed from
+ToColor = TColor      :   The color to be transformed into
+Progress = integer    :   Indicates the progress in percentage (cannot be
+			  higher than 100)
+Text = string         :   The TProgress VCL doesn't show the progress in
+                          numbers by itself. Instead, you can change the
+                          Text property manually to make the VCL show everything
+                          you'd like
+TextFont = TFont      :   The Font that TProgress will use to display the Text
+
+Events :
+--------
+
+No special Events.
+
+Methods :
+---------
+
+No special Methods.
+
+Installation :
+--------------
+1> Copy progress.pas and progress.dcr to the same directory
+2> Run Delphi
+3> Click on Component|Install|Add|Browse
+4> Browse to the directory
+5> Choose progress.pas
+
+Bugs :
+------
+Please report to your_shadow@surfree.net.il
+
+Thanks :
+---------
+I'm sorry, but I wrote this program a year ago (I just didn't have the motivation
+to create this stupid UPL file, sorry DSP !) and 2 people from a newsgroup helped
+me. I just don't remember their names, and I've changed my Email program since
+then....... I'm sorry, I cannot credit these people. But.... if you happendly
+find this VCL as something you've helped somebody to do it, you are invited to
+send me email so I can credit you in the next version. Thanks in advance people.
+
+
+
+
+
+Oh, and another thing. Because I did this VCL a year ago, I had very bad 
+programming manners, so this sourcecode looks like Sh!t (sorry folks).
+I'm much better now.

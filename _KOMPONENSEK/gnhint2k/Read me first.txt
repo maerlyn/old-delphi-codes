@@ -1,0 +1,87 @@
+©2001 TgnHint2k version 2.1 
+Author : Gancerenco Nicolai Eduard
+E-mail : ginsonic@xnet.ro
+
+SHAREWARE
+Price 10$ - no source code.
+Update 4$ - no source code, too.
+
+gnHINT2K CONTEST : The BEST&COOL demo using this component . 
+LAST DATE : 01.06.2001 .
+PRIZE : a free registered version .   
+All interesting demos will be on my homepage for free download. Will be accepted just source code projects ( no exe files ) . 
+
+AND NOW ABOUT ......     
+
+Are you bored to use the standard hints ? Wish to put more informations there ? Maybe some pictures ?
+Then all what you have to do is to use my component . 
+Is very...very easy to use . But I put anyway all informations about it .
+
+First type in FormCreate procedure next line :
+
+HintWindowClass:=TgnHint;
+
+Then play with properties .
+
+BACKGROUND : - Color_Start and Color_End set the start and the end colors for gradient background. In case that you don't use a gradient or a picture , the Color_Start is used to paint the background .
+             - Fill_Direction set the gradient direction paint ( left, right,up and down ).
+             - Gradient - have or not gradient .
+             - Picture - set the desire picture for background .
+             - Picture_Arrange : tile , stretch , center the picture . If is set to None the picture isn't used .
+             - Transparence - set the transparence of the hint , of course .
+
+
+BORDER : - Bevel - set raised or lower bevels for border.
+         - Bordered - set if the border is displayed or not .
+         - Color_Frame , Color_Hight and Color_Low set the border colors .
+         - Frame_Size set the frame breadth .
+         - Picture - set the picture for the border frame ;
+         - Picture_Show - the border use or not the picture .
+
+FONT,NAME,TAG - standard properties :)
+
+HIDEPAUSE - who long the hint is displayed .
+
+PAUSE - how mush I must wait until the hint is displayed.
+
+PICTURE - the picture displayed on top-left of the hint . If is assigned is allways displayed .
+
+To use different hints for different things use in FormCreate procedure:
+
+Application.OnShowHint := ShowHint;
+
+Then create ShowHint procedure:
+
+procedure ShowHint(var HintStr: string; var CanShow: Boolean; var HintInfo: THintInfo);
+.......... 
+procedure TForm1.ShowHint(var HintStr: string; var CanShow: Boolean;
+  var HintInfo: THintInfo);
+begin
+  With HintInfo do
+  begin
+    if HintControl = Label1 then
+    begin
+     ................
+    end;
+    if HintControl = Edit5 then
+    begin
+     ............
+    end;
+    ...............
+end;
+
+
+For moment this is all . See you on next 'version' .
+
+P.S. This trial version work only under Delphi's IDE .
+      
+=============================================
+ Limited warranty and disclaimer of warranty ===============================================
+=============================================
+This software and accompanying written materials are provided "as is" without warranty of any kind. Further, the author does not warrant, guarantee, or take any representations regarding
+the use, or the results of use, of the software or written materials in terms of correctness, accuracy, reliability, currentness or otherwise. The entire risk as to the results and performance of the software is assumed by you.
+Neither the author nor anyone else who has been involved in the creation, production or delivery of this product shall be liable for any direct, indirect, consequential or incidental damages (including damages for loss of business profits, business interruption, loss of business information and the like) arising out of the use or inability to use the product even if the author has been advised of the possibility of such damages.
+By using the TgnHint2k component you acknowledge that you have read this limited warranty, understand it, and agree to be bound by its' terms and conditions.
+
+    
+    

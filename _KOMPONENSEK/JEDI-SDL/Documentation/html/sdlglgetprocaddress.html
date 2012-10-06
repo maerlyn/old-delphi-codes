@@ -1,0 +1,77 @@
+<html>
+<head>
+  <title>SDL_GL_GetProcAddress</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Video" href="video.html">
+  <link rel="PREVIOUS" title="SDL_GL_LoadLibrary" href="sdlglloadlibrary.html">
+  <link rel="NEXT" title="SDL_GL_GetAttribute" href="sdlglgetattribute.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlglloadlibrary.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlglgetattribute.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLGLGETPROCADDRESS">SDL_GL_GetProcAddress</a></h1>
+<div class="REFNAMEDIV"><a name="AEN2265"></a>
+<h2>Name</h2>
+SDL_GL_GetProcAddress&nbsp;--&nbsp;Get the address of a GL function</div>
+<div class="REFSYNOPSISDIV"><a name="AEN2268"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN2269"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+<p>function <b>SDL_GL_GetProcAddress</b>( procname : PChar) : Pointer;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN2275"></a>
+<h2>Description</h2>
+<p>Returns the address of the GL function <tt class="PARAMETER"><i>proc</i></tt>
+, or <b>nil</b> if the function is not found. If the GL library is loaded
+at runtime, with <a href="sdlglloadlibrary.html"><tt class="FUNCTION">SDL_GL_LoadLibrary</tt></a>
+, then <i class="EMPHASIS">all</i> GL functions must be retrieved this way.
+Usually this is used to retrieve function pointers to OpenGL extensions.</p>
+</div>
+<div class="REFSECT1"><a name="AEN2283"></a>
+<h2>Example</h2>
+<pre class="PROGRAMLISTING">typedef void (*GL_ActiveTextureARB_Func)(unsigned int);<br>GL_ActiveTextureARB_Func glActiveTextureARB_ptr = 0;<br>int has_multitexture = 1;<br>.<br>.<br>.<br>// Get function pointer <br>glActiveTextureARB_ptr := (GL_ActiveTextureARB_Func) SDL_GL_GetProcAddress("glActiveTextureARB");<br><br>// Check for a valid function ptr <br><b>if</b> ( glActiveTextureARB_ptr = <b>nil</b> ) <b>then</b><br><b>begin</b><br>  fprintf(stderr, "Multitexture Extensions not present.\n");<br>  has_multitexture := 0;<br><b>end;</b><br>.<br>.<br>.<br>.<br><b>if</b> ( has_multitexture ) <b>then</b><br><b>begin</b><br>  glActiveTextureARB_ptr(GL_TEXTURE0_ARB);<br>  .<br>  .<br><b>end</b><br><b>else<br>begin</b><br>  .<br>  .<br><b>end;</b><br></pre>
+</div>
+<div class="REFSECT1"><a name="AEN2286"></a>
+<h2>See Also</h2>
+<p><a href="sdlglloadlibrary.html"><tt class="FUNCTION">SDL_GL_LoadLibrary</tt></a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdlglloadlibrary.html">
+Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="sdlglgetattribute.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">SDL_GL_LoadLibrary</td>
+      <td width="34%" align="Center" valign="Top"><a href="video.html">Up</a></td>
+      <td width="32%" align="Right" valign="Top">SDL_GL_GetAttribute</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

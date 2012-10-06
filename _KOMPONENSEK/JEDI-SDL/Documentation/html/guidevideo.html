@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Graphics and Video</title>
+                                         
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+                       
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+                       
+  <link rel="UP" title="SDL Guide" href="guide.html">
+                       
+  <link rel="PREVIOUS" title="Initializing SDL" href="guidebasicsinit.html">
+                       
+  <link rel="NEXT" title="Using OpenGL With SDL" href="guidevideoopengl.html">
+</head>
+ <body class="CHAPTER" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+           
+<div class="NAVHEADER">      
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+          </tr>
+          <tr>
+            <td width="7%" align="Left" valign="Bottom"><a href="guidebasicsinit.html">
+      Prev</a>
+      </td>
+            <td width="75%" align="Center" valign="Bottom"><br>
+            </td>
+            <td width="7%" align="Right" valign="Bottom"><a href="guidevideoopengl.html">
+      Next</a>
+      </td>
+          </tr>
+                       
+  </tbody>      
+</table>
+           
+<hr align="Left" width="100%"></div>
+           
+<div class="CHAPTER">      
+<h1><a name="GUIDEVIDEO">Chapter 2. Graphics and Video</a>
+</h1>
+           
+<div class="TOC">      
+<dl>
+<dt><b>Table of Contents</b></dt>
+  <dt><a href="guidevideo.html#GUIDEVIDEOINTRO">Introduction to SDL Video</a>
+    </dt>
+    <dt><a href="guidevideoopengl.html">Using OpenGL With SDL</a>
+      </dt>
+      </dl>
+            </div>
+                                               
+      <div class="SECT1">                                          
+      <h1 class="SECT1"><a name="GUIDEVIDEOINTRO">Introduction to SDL Video</a>
+      </h1>
+                                               
+      <p>Video is probably the most common thing that SDL is used for, and 
+   so it has the most complete subsystem. Here are a few examples to demonstrate
+   the basics.</p>
+                                               
+      <div class="SECT2">                                          
+      <h2 class="SECT2"><a name="AEN68">Initializing the Video Display</a>
+      </h2>
+                                               
+      <p>This is what almost all SDL programs have to do in one way or another.</p>
+                                               
+      <div class="EXAMPLE"><a name="AEN71"></a>
+                                          
+      <p><b>Example 2-1. Initializing the Video Display</b></p>
+            
+      <pre class="PROGRAMLISTING"><b>var</b>    <br>    screen_ : PSDL_Surface;<br><b>begin</b><br>    // Initialize the SDL library <br>    <b>if</b> ( SDL_Init(SDL_INIT_VIDEO) &lt; 0 ) <b>then</b><br>    <b>begin</b><br><pre class="PROGRAMLISTING">        MessageBox(0, PChar(Format('Couldn''t initialize SDL : %s',<br>          [SDL_GetError])), 'Error', MB_OK <b>or</b> MB_ICONHAND);<br><pre class="PROGRAMLISTING">        // Clean up on exit<br>        SDL_Quit;</pre></pre>        exit;<br>    <b>end;</b><br>    <br>    (*<br>     * Initialize the display in a 640x480 8-bit palettized mode,<br>     * requesting a software surface<br>     *)<br>    screen_ := SDL_SetVideoMode(640, 480, 8, SDL_SWSURFACE);<br>    <b>if</b> ( screen_ = <b>nil</b> ) <b>then</b><br>    <b>begin</b><br><pre class="PROGRAMLISTING"><pre class="PROGRAMLISTING">        MessageBox(0, PChar(Format('Couldn''t set 840x480x8 video mode : %s',<br>          [SDL_GetError])), 'Error', MB_OK <b>or</b> MB_ICONHAND);<br>        SDL_Quit;<br></pre></pre>        exit;<br>    <b>end;<br>end;<br></b></pre>
+            </div>
+            </div>
+                                               
+      <div class="SECT2">                                          
+      <h2 class="SECT2"><a name="AEN74">Initializing the Best Video Mode</a>
+      </h2>
+                                               
+      <p>If you have a preference for a certain pixel depth but will accept
+   any other, use SDL_SetVideoMode with SDL_ANYFORMAT as below. You can also 
+   use SDL_VideoModeOK() to find the native video mode that is closest to 
+the  mode you request.</p>
+                                               
+      <div class="EXAMPLE"><a name="AEN77"></a>
+                                          
+      <p><b>Example 2-2. Initializing the Best Video Mode</b></p>
+            
+      <pre class="PROGRAMLISTING">    // Have a preference for 8-bit, but accept any depth<br>    screen_ := SDL_SetVideoMode(640, 480, 8, SDL_SWSURFACE <b>or</b> SDL_ANYFORMAT);<br>    <b>if</b> ( screen_ = <b>nil</b> ) <b>then</b><br>    <b>begin</b><br><pre class="PROGRAMLISTING"><pre class="PROGRAMLISTING"><pre class="PROGRAMLISTING">        MessageBox(0, PChar(Format('Couldn''t set 640x480x8 video mode : %s',<br>          [SDL_GetError])), 'Error', MB_OK <b>or</b> MB_ICONHAND);<br><pre class="PROGRAMLISTING"><pre class="PROGRAMLISTING"><pre class="PROGRAMLISTING">        SDL_Quit;<br></pre></pre></pre></pre></pre></pre>        halt(1);<br>    <b>end;</b><br><pre class="PROGRAMLISTING"><pre class="PROGRAMLISTING"><pre class="PROGRAMLISTING">    MessageBox(0, PChar(Format('Set 640x480 at %d bits-per-pixel mode',<br>          [screen_.format.BitsPerPixel])), 'Error', MB_OK <b>or</b> MB_ICONHAND);</pre></pre></pre></pre>
+            </div>
+            </div>
+                                               
+      <div class="SECT2">                                          
+      <h2 class="SECT2"><a name="AEN80">Loading and Displaying a BMP File</a>
+      </h2>
+                                               
+      <p>The following function loads and displays a BMP file given as argument,
+   once SDL is initialised and a video mode has been set.</p>
+                                               
+      <div class="EXAMPLE"><a name="AEN83"></a>
+                                          
+      <p><b>Example 2-3. Loading and Displaying a BMP File</b></p>
+            
+      <pre class="PROGRAMLISTING"><b>procedure</b> display_bmp( file_name : PChar );<br><b>var</b><br>  image : PSDL_Surface;<br><b>begin</b><br>    // Load the BMP file into a surface<br>    image := SDL_LoadBMP(file_name);<br>    <b>if</b> ( image = <b>nil</b> ) <b>then</b><br>    <b>begin</b><br><pre class="PROGRAMLISTING"><pre class="PROGRAMLISTING"><pre class="PROGRAMLISTING"><pre class="PROGRAMLISTING">        MessageBox(0, PChar(Format('Couldn''t load %s : %s',<br>          [file_name, SDL_GetError])), 'Error', MB_OK <b>or</b> MB_ICONHAND);</pre></pre></pre></pre>        exit;<br>    <b>end;</b><br><br>    (*<br>     * Palettized screen modes will have a default palette (a standard<br>     * 8*8*4 colour cube), but if the image is palettized as well we can<br>     * use that palette for a nicer colour matching<br>     *)<br>    <b>if</b> (image.format.palette <b>and</b> screen_.format.palette) <b>then</b><br>    <b>begin</b><br>      SDL_SetColors(screen_, @image.format.palette.colors[0], 0, image.format.palette.ncolors);<br>    <b>end;</b><br><br>    // Blit onto the screen surface<br>    <b>if</b> (SDL_BlitSurface(image, <b>nil</b>, screen_, <b>nil</b>) &lt; 0) <b>then</b><br>        MessageBox(0, PChar(Format('BlitSurface error : %s', [SDL_GetError])), 'Error', MB_OK <b>or</b> MB_ICONHAND);<br><br>    SDL_UpdateRect(screen_, 0, 0, image.w, image.h);<br><br>    // Free the allocated BMP surface <br>    SDL_FreeSurface(image);<br><b>end;</b><br></pre>
+            </div>
+            </div>
+                                               
+      <div class="SECT2">                                          
+      <h2 class="SECT2"><a name="AEN86">Drawing Directly to the Display</a>
+      </h2>
+                                               
+      <p>The following two functions can be used to get and set single pixels
+   of a surface. They are carefully written to work with any depth currently
+   supported by SDL. Remember to lock the surface before calling them, and
+ to  unlock it before calling any other SDL functions.</p>
+                                               
+      <p>To convert between pixel values and their red, green, blue components,
+   use SDL_GetRGB() and SDL_MapRGB().</p>
+                                               
+      <div class="EXAMPLE"><a name="AEN90"></a>
+                                          
+      <p><b>Example 2-4. getpixel()</b></p>
+            
+      <pre class="PROGRAMLISTING">(*<br> * Return the pixel value at (x, y)<br> * NOTE: The surface must be locked before calling this!<br> *)<br><b>function</b> getpixel( surface : PSDL_Surface; x : integer; y : integer ) : Uint32;<br><b>type</b><br>  TByteArray = array[0..2] <b>of</b> Byte;<br>  PByteArray = ^TByteArray;<br><b>var</b><br>   bpp : integer;<br>   p : PInteger;<br><b>begin</b><br>   bpp := surface.format.BytesPerPixel;<br>   // Here p is the address to the pixel we want to retrieve<br>   p := Pointer(Uint32(surface_.pixels) + y * surface_.pitch + x * bpp);<br><br><br>   <b>case</b> bpp <b>of</b> <br>      1:<br>        result := LongWord(p^);<br><br>      2:<br>        result := PUint16(p)^;<br><br>      3:<br>        <b>if</b> (SDL_BYTEORDER = SDL_BIG_ENDIAN) <b>then</b><br>            result := PByteArray(p)[0] <b>shl</b> 16 <b>or</b> PByteArray(p)[1] <b>shl</b> 8 <b>or</b> PByteArray(p)[2]<br>        <b>else</b><br>            result := PByteArray(p)[0] <b>or</b> PByteArray(p)[1] <b>shl</b> 8 <b>or</b> PByteArray(p)[2] <b>shl</b> 16;<br><br>      4:<br>        result := PUint32(p)^;<br><br>   <b>else</b><br>        result := 0;       // shouldn't happen, but avoids warnings<br>   <b>end;</b><br><b>end;</b><br></pre>
+            </div>
+                                               
+      <div class="EXAMPLE"><a name="AEN93"></a>
+                                          
+      <p><b>Example 2-5. putpixel()</b></p>
+            
+      <pre class="PROGRAMLISTING"> (*<br> * Set the pixel at (x, y) to the given value<br> * NOTE: The surface must be locked before calling this!<br> *)<br><b>procedure</b> putpixel( surface_ : PSDL_Surface; x : integer; y : integer; pixel : Uint32 );<br><b>type</b><br>  TByteArray = array[0..2] <b>of</b> Byte;<br>  PByteArray = ^TByteArray;<br><b>var</b><br>    bpp : integer;<br>    p : PInteger;<br><b>begin</b><br>    bpp := surface.format.BytesPerPixel;<br>    // Here p is the address to the pixel we want to set<br>    p := Pointer(Uint32(surface_.pixels) + y * surface_.pitch + x * bpp);<br><br>    <b>case</b> bpp <b>of</b><br>      1: LongWord(p^) := pixel;<br><br>      2:<br>        PUint16(p)^ := pixel;<br><br>      3:<br>        <b>if</b> (SDL_BYTEORDER = SDL_BIG_ENDIAN) <b>then</b><br>        <b>begin</b><br>          PByteArray(p)[0] := (pixel <b>shr</b> 16) <b>and</b> $FF;<br>          PByteArray(p)[1] := (pixel <b>shr</b> 8) <b>and</b> $FF;<br>          PByteArray(p)[2] := pixel <b>and</b> $FF;<br>        <b>end</b><br>        <b>else</b> <br>        <b>begin</b><br>          PByteArray(p)[0] := pixel <b>and</b> $FF;<br>          PByteArray(p)[1] := (pixel <b>shr</b> 8) <b>and</b> $FF;<br>          PByteArray(p)[2] := (pixel <b>shr</b> 16) <b>and</b> $FF;<br>        <b>end;</b><br><br>      4:<br>        PUint32(p)^ := pixel;<br>    <b>end;</b><br><b>end;</b><br></pre>
+            </div>
+                                               
+      <p>The following code uses the putpixel() function above to set a yellow
+   pixel in the middle of the screen_.</p>
+                                               
+      <div class="EXAMPLE"><a name="AEN97"></a>
+                                          
+      <p><b>Example 2-6. Using putpixel()</b></p>
+            
+      <pre class="PROGRAMLISTING"><br>    // Code to set a yellow pixel at the center of the screen<br><b>var</b><br>    x, y : integer;<br>    yellow : Uint32;<br><b>begin</b><br>    (* Map the color yellow to this display (R := $ff, G := $FF, B := $00)<br>       Note:  If the display is palettized, you must set the palette first.<br>    *)<br>    yellow := SDL_MapRGB(screen_.format, $ff, $ff, $00);<br><br>    x := screen_.w <b>div</b> 2;<br>    y := screen_.h <b>div</b> 2;<br><br>    // Lock the screen for direct access to the pixels<br>    <b>if</b> ( SDL_MustLock(screen_) ) <b>then</b><br>    <b>begin</b><br>        <b>if</b> ( SDL_LockSurface(screen_) &lt; 0 ) <b>then</b><br>        <b>begin</b><br><pre class="PROGRAMLISTING">            MessageBox(0, PChar(Format('Can''t lock screen : %s', [SDL_GetError])), 'Error', MB_OK <b>or</b> MB_ICONHAND);</pre>            exit;<br>        <b>end;</b><br>    <b>end;</b><br><br>    putpixel(screen_, x, y, yellow);<br><br>    <b>if</b> ( SDL_MustLock(screen_) &gt; 0 ) <b>then</b><br>    <b>begin</b><br>        SDL_UnlockSurface(screen_);<br>    <b>end;</b><br>    // Update just the part of the display that we've changed <br>    SDL_UpdateRect(screen_, x, y, 1, 1);<br><b>end;</b><br></pre>
+            </div>
+            </div>
+            </div>
+            </div>
+                                               
+      <div class="NAVFOOTER">                                          
+      <hr align="Left" width="100%">                                    
+     
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td width="31%" align="Left" valign="Top"><a href="guidebasicsinit.html">
+      Prev</a>
+            </td>
+                  <td width="34%" align="Center" valign="Top"><a href="index.html">
+      Home</a>
+            </td>
+                  <td width="31%" align="Right" valign="Top"><a href="guidevideoopengl.html">
+      Next</a>
+            </td>
+                </tr>
+                <tr>
+                  <td width="31%" align="Left" valign="Top">Initializing
+SDL</td>
+                  <td width="34%" align="Center" valign="Top"><a href="guide.html">
+      Up</a>
+            </td>
+                  <td width="31%" align="Right" valign="Top">Using OpenGL 
+With   SDL</td>
+                </tr>
+                                                           
+        </tbody>                                          
+      </table>
+            </div>
+                                               
+      </body>
+      </html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Video Examples</title>
+                    
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+           
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+           
+  <link rel="UP" title="Examples" href="guideexamples.html">
+           
+  <link rel="PREVIOUS" title="Examples" href="guideexamples.html">
+           
+  <link rel="NEXT" title="Event Examples" href="guideeventexamples.html">
+</head>
+ <body class="SECT1" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+     
+<div class="NAVHEADER">   
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+     <tbody>
+       <tr>
+         <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+       </tr>
+       <tr>
+         <td width="8%" align="Left" valign="Bottom"><a href="guideexamples.html">
+   Prev</a>
+       </td>
+         <td width="78%" align="Center" valign="Bottom">Chapter 4. Examples</td>
+         <td width="8%" align="Right" valign="Bottom"><a href="guideeventexamples.html">
+   Next</a>
+       </td>
+       </tr>
+           
+  </tbody>   
+</table>
+     
+<hr align="Left" width="100%"></div>
+     
+<div class="SECT1">   
+<h1 class="SECT1"><a name="GUIDEVIDEOEXAMPLES">Video Examples</a>
+ </h1>
+     
+<p></p>
+     
+<div class="SECT2">   
+<h2 class="SECT2"><a name="AEN375">Initializing the video display</a>
+ </h2>
+     
+<p></p>
+ 
+<pre class="PROGRAMLISTING">    screen_ : PSDL_Surface;<br><br>    // Initialize the SDL library<br>    <b>if</b> ( SDL_Init( SDL_INIT_VIDEO ) &lt; 0 ) <b>then</b><br>    <b>begin</b><br>      MessageBox( 0, PChar(Format('Couldn''t initialize SDL : %s', [SDL_GetError] ) ), 'Error', MB_OK or MB_ICONHAND );<br>      SDL_Quit;<br>      halt(1);<br>    <b>end;</b><br><br>    // Initialize the display in a 640x480 8-bit palettized mode<br>    screen_ := SDL_SetVideoMode( 640, 480, 8, SDL_SWSURFACE );<br>    if ( screen_ = <b>nil</b> ) then<br>    <b>begin</b><br>      MessageBox( 0, PChar( Format( 'Couldn''t set 640x480x8 video mode : %s', [SDL_GetError] ) ), 'Error', MB_OK or MB_ICONHAND );<br>      SDL_Quit;<br>      halt(1);<br>    <b>end;</b></pre>
+    
+<p></p>
+   </div>
+     
+<div class="SECT2">   
+<h2 class="SECT2"><a name="AEN379">Initializing the best video mode</a>
+ </h2>
+     
+<p></p>
+ 
+<pre class="PROGRAMLISTING">    // Have a preference for 8-bit, but accept any depth<br>    screen_ := SDL_SetVideoMode( 640, 480, 8, SDL_SWSURFACE <b>or</b> SDL_ANYFORMAT );<br>    if ( screen_ = <b>nil</b> ) <b>then</b><br>    <b>begin</b><br>      MessageBox( 0, PChar( Format( 'Couldn''t set 640x480x8 video mode : %s', [SDL_GetError] ) ), 'Error', MB_OK or MB_ICONHAND );<br>      SDL_Quit;<br>      halt(1);<br>    <b>end;</b><br>    MessageBox( 0, PChar( Format( 'Set 640x480 at %d bits-per-pixel mode.', [screen_.format.BitsPerPixel] ) ), 'Error', MB_OK or MB_ICONHAND );<br></pre>
+    
+<p></p>
+   </div>
+     
+<div class="SECT2">   
+<h2 class="SECT2"><a name="AEN383">Loading and displaying a BMP file</a>
+ </h2>
+     
+<p></p>
+ 
+<pre class="PROGRAMLISTING">  <b>procedure</b> LoadBmp( FileName : string );<br>  <b>var</b>   <br>    image : PSDL_Surface;<br>    dest : TSDL_Rect;<br>    ncolors, i : integer;<br>    colors : PSDL_Color;<br>    r, g, b : integer;<br>  <b>begin</b><br>    // Load the BMP file into a surface <br>    image := SDL_LoadBMP( PChar( FileName ) );<br>    <b>if</b> ( image = <b>nil</b> ) <b>then</b><br>    <b>begin</b><br>      MessageBox( 0, PChar( Format( 'Couldn''t load Bitmap : %s', [FileName] ) ), 'Error', MB_OK or MB_ICONHAND );<br>      exit;<br>    <b>end;</b><br><br>    { Set the display colors -- SDL_SetColors() only does something on<br>       palettized displays, but it doesn't hurt anything on HiColor or<br>       TrueColor displays.<br>       If the display colors have already been set, this step can be<br>       skipped, and the library will automatically map the image to<br>       the current display colors.<br>    }<br>    <b>if</b> ( image.format.palette &gt; 0 ) <b>then</b><br>    <b>begin</b><br>        ncolors := image.format.palette.ncolors;<br>        colors  := (SDL_Color *)malloc(ncolors*sizeof(SDL_Color));<br>        Move(image.format.palette.colors, colors, ncolors);<br><b>    end</b> <br>    <b>else</b> <br>    <b>begin</b><br>        // Allocate 256 color palette<br>        ncolors := 256;<br>        SetLength( colors, ncolors*sizeof(SDL_Color) );<br><br>        // Set a 3,3,2 color cube <br>        <b>for</b> r := 0 <b>to</b> 7 <b>do</b><br>        <b>begin</b><br>            <b>for</b> g := 0 <b>to</b> 7 <b>do</b><br>            <b>begin</b><br>                <b>for</b> b := 0 <b>to</b> 3 <b>do</b><br>                <b>begin</b><br>                    i := ( ( r <b>shl</b> 5) <b>or</b> ( g <b>shl</b> 2) <b>or</b> b );<br>                    colors[i].r := r <b>shl</b> 5;<br>                    colors[i].g := g <b>shl</b> 5;<br>                    colors[i].b := b <b>shl</b> 6;<br>                <b>end;</b><br>            <b>end;</b><br>        <b>end;</b><br>        (* Note: A better way of allocating the palette might be<br>           to calculate the frequency of colors in the image<br>           and create a palette based on that information.<br>        *)<br>    <b>end;</b><br>    // Set colormap, try for all the colors, but don't worry about it <br>    SDL_SetColors(screen, colors, 0, ncolors);<br>    free(colors);<br><br>    // Blit onto the screen surface<br>    dest.x := 0;<br>    dest.y := 0;<br>    dest.w := image.w;<br>    dest.h := image.h;<br>    SDL_BlitSurface( image, <b>nil</b>, screen_, @dest );<br><br>    SDL_UpdateRects( screen_, 1, @dest );<br><br>    // Free the allocated BMP surface<br>    SDL_FreeSurface( image );<br>  <b>end;</b><br></pre>
+    
+<p></p>
+   </div>
+     
+<div class="SECT2">   
+<h2 class="SECT2"><a name="AEN387">Drawing directly to the display</a>
+ </h2>
+     
+<p></p>
+ 
+<pre class="PROGRAMLISTING">  <b>var</b><br>    // Code to set a yellow pixel at the center of the screen <br>    X, Y : Sint32;<br>    pixel : Uint32;<br>    bits : PUint8;<br>    bpp, r, g, b : Uint8;<br>  .<br>  .<br>  .<br>    (* Map the color yellow to this display (R=0xFF, G=0xFF, B=0x00)<br>       Note:  If the display is palettized, you must set the palette first.<br>    *)<br>    pixel := SDL_MapRGB( screen_.format, $FF, $FF, $00 );<br><br>    // Calculate the framebuffer offset of the center of the screen <br>    <b>if</b> ( SDL_MUSTLOCK( screen_ ) &gt; 0 ) <b>then</b><br>    <b>begin</b><br>        <b>if</b> ( SDL_LockSurface( screen_ ) &lt; 0 ) <b>then</b><br>          exit;<br>    <b>end;</b><br>    bpp := screen_.format.BytesPerPixel;<br>    X := screen_.w <b>div</b> 2;<br>    Y := screen_.h <b>div</b> 2;<br>    bits := ( PUint8( screen_.pixels ) ) + Y * screen_.pitch + X * bpp;<br><br>    // Set the pixel<br>    <b>case</b> bpp <b>of</b><br>        1:<br>        <b>begin</b><br>            PUint8( bits )^ := Uint8( pixel );<br>        <b>end;</b><br><br>        2:<br>        <b>begin</b><br>            PUint16(bits)^ := Uint16( pixel );<br>        <b>end;</b><br><br>        3: <br>        <b>begin</b> // Format/endian independent<br><br>            r := ( pixel <b>shr</b> screen_.format.Rshift ) <b>and</b> $FF;<br>            g := ( pixel <b>shr</b> screen_.format.Gshift ) <b>and</b> $FF;<br>            b := ( pixel <b>shr</b> screen_.format.Bshift ) <b>and</b> $FF;<br>            bits^ + (screen_.format.Rshift <b>div</b> 8) := r; <br>            bits^ + (screen_.format.Gshift <b>div</b> 8) := g;<br>            bits^ + (screen_.format.Bshift <b>div</b> 8) := b;<br>        <b>end;</b><br><br>        4:<br>        <b>begin</b><br>            PUInt32(bits)^ := Uint32( pixel );<br>        <b>end;</b><br>    <b>end;</b><br><br>    // Update the display <br>    <b>if</b> ( SDL_MUSTLOCK( screen_ ) &gt; 0 ) <b>then</b> <br>    <b>begin</b><br>        SDL_UnlockSurface( screen_ );<br>    <b>end;</b><br>    SDL_UpdateRect( screen_, X, Y, 1, 1 );<br><br></pre>
+    
+<p></p>
+   </div>
+     
+<div class="SECT2">   
+<h2 class="SECT2"><a name="AEN391">Fastest possible surface blit</a>
+ </h2>
+     
+<p>There are three different ways you can draw an image to the screen:  </p>
+     
+<p></p>
+     
+<table border="0">
+     <tbody>
+       <tr>
+         <td>1.Create a surface and use <a href="sdlblitsurface.html"><tt class="FUNCTION">
+   SDL_BlitSurface</tt></a>
+  to blit it to the screen</td>
+       </tr>
+       <tr>
+         <td>2.Create the video surface in system memory and call <a href="sdlupdaterect.html"><tt class="FUNCTION">
+   SDL_UpdateRect</tt></a>
+       </td>
+       </tr>
+       <tr>
+         <td>3.Create the video surface in video memory and call <a href="sdllocksurface.html"><tt class="FUNCTION">
+   SDL_LockSurface</tt></a>
+       </td>
+       </tr>
+           
+  </tbody>   
+</table>
+     
+<p></p>
+    The best way to do this is to combine methods:  
+<pre class="PROGRAMLISTING"><b>uses</b> <br>  SDL;<br><br><b>procedure</b> ComplainAndExit;<br><b>begin</b><br>  MessageBox(0, PChar(Format('Problem : %s', [SDL_GetError])), 'Error', MB_OK or MB_ICONHAND);<br>  SQL_Quit;<br>  halt( 1 );<br><b>end;</b><br><br><b>var</b><br>  fmtg : TSDL_PixelFormat;<br>  screen_, locked : PSDL_Surface;<br>  imagebmp, image : PSDL_Surface;<br>  dstrect : TSDL_Rect;<br>  i : integer;<br>  buffer : PUint8;<br><b>begin</b><br>    // Initialize SDL<br>    <b>if</b> ( SDL_Init( SDL_INIT_VIDEO ) &lt; 0 ) <b>then</b><br>    <b>begin</b><br>        ComplainAndExit;<br>    <b>end;</b><br><br>    // Load a BMP image into a surface <br>    imagebmp := SDL_LoadBMP( 'image.bmp' );<br>    <b>if</b> ( imagebmp = <b>nil</b> ) <b>then</b><br>    <b>begin</b><br>        ComplainAndExit;<br>    <b>end;</b><br><br>    // Set the video mode (640x480 at native depth)<br>    screen_ := SDL_SetVideoMode( 640, 480, 0, SDL_HWSURFACE <b>or</b> SDL_FULLSCREEN );<br>    if ( screen_ = <b>nil</b> ) <b>then</b><br>    <b>begin</b><br>        ComplainAndExit;<br>    <b>end;</b><br><br>    // Set the video colormap<br>    <b>if</b> ( imagebmp.format.palette &lt;&gt; <b>nil</b> ) <b>then</b> <br>    <b>begin</b><br>        SDL_SetColors( screen_, @imagebmp.format.palette.colors, 0, imagebmp.format.palette.ncolors );<br>    <b>end;</b><br><br>    // Convert the image to the video format (maps colors) <br>    image := SDL_DisplayFormat( imagebmp );<br>    SDL_FreeSurface( imagebmp );<br>    <b>if</b> ( image = <b>nil</b> ) <b>then</b><br>    <b>begin</b><br>        ComplainAndExit;<br>    <b>end;</b><br><br>    // Draw bands of color on the raw surface <br>    <b>if</b> ( SDL_MUSTLOCK( screen_ ) &gt; 0 ) <b>then</b><br>    <b>begin</b><br>        <b>if</b> ( SDL_LockSurface( screen_ ) &lt; 0 ) <b>then</b><br>            ComplainAndExit;<br>    <b>end;</b><br><br>    buffer := PUnit8( screen_.pixels );<br>    <b>for </b>i := 0 <b>to</b> screen_.h - 1 <b>do</b> <br>    <b>begin</b><br>        memset(buffer, ( i * 255 ) / screen_.h, screen_.w * screen_.format.BytesPerPixel );<br>        buffer := buffer + screen_.pitch;<br>    <b>end;</b><br><br>    <b>if</b> ( SDL_MUSTLOCK( screen_ ) &gt; 0 ) <b>then</b><br>    <b>begin</b><br>        SDL_UnlockSurface( screen_ );<br>    <b>end;</b><br><br>    // Blit the image to the center of the screen <br>    dstrect.x := ( screen_.w-image.w ) <b>div</b> 2;<br>    dstrect.y := ( screen_.h-image.h ) <b>div</b> 2;<br>    dstrect.w := image.w;<br>    dstrect.h := image.h;<br><br>    <b>if</b> ( SDL_BlitSurface( image, <b>nil</b>, screen_, @dstrect ) &lt; 0 ) <b>then</b><br>    <b>begin</b><br>        SDL_FreeSurface( image );<br>        ComplainAndExit;<br>    <b>end;</b><br><br>    SDL_FreeSurface( image );<br><br>    // Update the screen<br>    SDL_UpdateRects( screen_, 1, @dstrect );<br><br>    SDL_Delay( 5000 );        // Wait 5 seconds<br><b>end;</b><br></pre>
+     
+<p></p>
+   </div>
+   </div>
+     
+<div class="NAVFOOTER">   
+<hr align="Left" width="100%">   
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+     <tbody>
+       <tr>
+         <td width="31%" align="Left" valign="Top"><a href="guideexamples.html">
+   Prev</a>
+       </td>
+         <td width="34%" align="Center" valign="Top"><a href="index.html">
+ Home</a>
+       </td>
+         <td width="31%" align="Right" valign="Top"><a href="guideeventexamples.html">
+   Next</a>
+       </td>
+       </tr>
+       <tr>
+         <td width="31%" align="Left" valign="Top">Examples</td>
+         <td width="34%" align="Center" valign="Top"><a href="guideexamples.html">
+   Up</a>
+       </td>
+         <td width="31%" align="Right" valign="Top">Event Examples</td>
+       </tr>
+           
+  </tbody>   
+</table>
+   </div>
+     
+</body>
+</html>

@@ -1,0 +1,107 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = JEDISDLAliens.exe BlitzBomber.exe JEDISDLIsoDemo.exe \
+  JEDISDLMouse.exe JEDISDLPanAndZoom.exe JEDISDLPlasma.exe testalpha.exe \
+  testgamma.exe testjoystick.exe JEDISDLTestWin.exe JEDISDLUtilsTest.exe \
+  JEDISDLPixelTest.exe JEDISDLWormhole.exe TimerTest.exe JEDISDLNewVox.exe \
+  showfont.exe FilterTest.exe MonoFonts_Test.exe CollisionTest.exe Oxygene.exe \
+  Shooting.exe ZTest.exe JediSFontTest1.exe JediSFontTest2.exe JediSFontTest3.exe \
+  JediSFontTest4.exe video40.bpl MPEGPlay.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+JEDISDLAliens.exe: Aliens\JEDISDLAliens.dpr
+  $(DCC)
+
+BlitzBomber.exe: BlitzBomber\BlitzBomber.dpr
+  $(DCC)
+
+JEDISDLIsoDemo.exe: Isometric\JEDISDLIsoDemo.dpr
+  $(DCC)
+
+JEDISDLMouse.exe: Mouse\JEDISDLMouse.dpr
+  $(DCC)
+
+JEDISDLPanAndZoom.exe: PanAndZoom\JEDISDLPanAndZoom.dpr
+  $(DCC)
+
+JEDISDLPlasma.exe: Plasma\JEDISDLPlasma.dpr
+  $(DCC)
+
+testalpha.exe: SDLTests\testalpha\testalpha.dpr
+  $(DCC)
+
+testgamma.exe: SDLTests\testgamma\testgamma.dpr
+  $(DCC)
+
+testjoystick.exe: SDLTests\testjoystick\testjoystick.dpr
+  $(DCC)
+
+JEDISDLTestWin.exe: SDLTests\testwin\JEDISDLTestWin.dpr
+  $(DCC)
+
+JEDISDLUtilsTest.exe: SDLUtilsTests\MainTest\JEDISDLUtilsTest.dpr
+  $(DCC)
+
+JEDISDLPixelTest.exe: SDLUtilsTests\PixelTest\JEDISDLPixelTest.dpr
+  $(DCC)
+
+JEDISDLWormhole.exe: SDLUtilsTests\WormHole\JEDISDLWormhole.dpr
+  $(DCC)
+
+TimerTest.exe: TimerTest\TimerTest.dpr
+  $(DCC)
+
+JEDISDLNewVox.exe: Voxel\JEDISDLNewVox.dpr
+  $(DCC)
+
+showfont.exe: ..\..\SDL_ttf\Demos\ShowFont\showfont.dpr
+  $(DCC)
+
+FilterTest.exe: ..\..\SDLFilter\Demos\Test\FilterTest.dpr
+  $(DCC)
+
+MonoFonts_Test.exe: ..\..\SDLMonoFonts\Demos\Test\MonoFonts_Test.dpr
+  $(DCC)
+
+CollisionTest.exe: ..\..\SDLSpriteEngine\Demos\CollisionTest\CollisionTest.dpr
+  $(DCC)
+
+Oxygene.exe: ..\..\SDLSpriteEngine\Demos\Oxygene\Oxygene.dpr
+  $(DCC)
+
+Shooting.exe: ..\..\SDLSpriteEngine\Demos\Shooting\Shooting.dpr
+  $(DCC)
+
+ZTest.exe: ..\..\SDLSpriteEngine\Demos\ZTest\ZTest.dpr
+  $(DCC)
+
+JediSFontTest1.exe: ..\..\SFont\Demos\Tests\JediSFontTest1.dpr
+  $(DCC)
+
+JediSFontTest2.exe: ..\..\SFont\Demos\Tests\JediSFontTest2.dpr
+  $(DCC)
+
+JediSFontTest3.exe: ..\..\SFont\Demos\Tests\JediSFontTest3.dpr
+  $(DCC)
+
+JediSFontTest4.exe: ..\..\SFont\Demos\Tests\JediSFontTest4.dpr
+  $(DCC)
+
+video40.bpl: ..\..\smpeg\Demos\MpegPlayer\video40.dpk
+  $(DCC)
+
+MPEGPlay.exe: ..\..\smpeg\Demos\MpegPlayer\MPEGPlay.dpr
+  $(DCC)
+
+

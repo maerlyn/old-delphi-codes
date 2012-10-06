@@ -1,0 +1,427 @@
+Microsoft HTML Help Compiler 4.74.8702
+
+Compiling c:\Program Files\Borland\Delphi5\Headers\JEDI-SDL\Documentation\HLP\Object Pascal SDL Doc.chm
+
+..\html\index.html
+TOC 4 Object Pascal SDL Doc.hhc
+Index 4 Object Pascal SDL Doc.hhk
+..\html\guide.html
+..\html\guidepreface.html
+..\html\guideaboutsdldoc.html
+..\html\guidecredits.html
+..\html\guidethebasics.html
+..\html\guidebasicsinit.html
+..\html\guidevideo.html
+..\html\guidevideoopengl.html
+..\html\guideinput.html
+..\html\guideinputkeyboard.html
+..\html\guideexamples.html
+..\html\guidevideoexamples.html
+..\html\guideeventexamples.html
+..\html\guideaudioexamples.html
+..\html\guidecdromexamples.html
+..\html\guidetimeexamples.html
+..\html\reference.html
+..\html\general.html
+..\html\sdlinit.html
+..\html\sdlinitsubsystem.html
+..\html\sdlquitsubsystem.html
+..\html\sdlquit.html
+..\html\sdlwasinit.html
+..\html\video.html
+..\html\sdlgetvideosurface.html
+..\html\sdlgetvideoinfo.html
+..\html\sdlvideodrivername.html
+..\html\sdllistmodes.html
+..\html\sdlvideomodeok.html
+..\html\sdlsetvideomode.html
+..\html\sdlupdaterect.html
+..\html\sdlupdaterects.html
+..\html\sdlflip.html
+..\html\sdlsetcolors.html
+..\html\sdlsetpalette.html
+..\html\sdlsetgamma.html
+..\html\sdlgetgammaramp.html
+..\html\sdlsetgammaramp.html
+..\html\sdlmaprgb.html
+..\html\sdlmaprgba.html
+..\html\sdlgetrgb.html
+..\html\sdlgetrgba.html
+..\html\sdlcreatergbsurface.html
+..\html\sdlcreatergbsurfacefrom.html
+..\html\sdlfreesurface.html
+..\html\sdllocksurface.html
+..\html\sdlunlocksurface.html
+..\html\sdlloadbmp.html
+..\html\sdlsavebmp.html
+..\html\sdlsetcolorkey.html
+..\html\sdlsetalpha.html
+..\html\sdlsetcliprect.html
+..\html\sdlgetcliprect.html
+..\html\sdlconvertsurface.html
+..\html\sdlblitsurface.html
+..\html\sdlfillrect.html
+..\html\sdldisplayformat.html
+..\html\sdldisplayformatalpha.html
+..\html\sdlwarpmouse.html
+..\html\sdlcreatecursor.html
+..\html\sdlfreecursor.html
+..\html\sdlsetcursor.html
+..\html\sdlgetcursor.html
+..\html\sdlshowcursor.html
+..\html\sdlglloadlibrary.html
+..\html\sdlglgetprocaddress.html
+..\html\sdlglgetattribute.html
+..\html\sdlglsetattribute.html
+..\html\sdlglswapbuffers.html
+..\html\sdlcreateyuvoverlay.html
+..\html\sdllockyuvoverlay.html
+..\html\sdlunlockyuvoverlay.html
+..\html\sdldisplayyuvoverlay.html
+..\html\sdlfreeyuvoverlay.html
+..\html\sdlglattr.html
+..\html\sdlrect.html
+..\html\sdlcolor.html
+..\html\sdlpalette.html
+..\html\sdlpixelformat.html
+..\html\sdlsurface.html
+..\html\sdlvideoinfo.html
+..\html\sdloverlay.html
+..\html\wm.html
+..\html\sdlwmsetcaption.html
+..\html\sdlwmgetcaption.html
+..\html\sdlwmseticon.html
+..\html\sdlwmiconifywindow.html
+..\html\sdlwmtogglefullscreen.html
+..\html\sdlwmgrabinput.html
+..\html\event.html
+..\html\eventstructures.html
+..\html\eventfunctions.html
+..\html\joystick.html
+..\html\sdlnumjoysticks.html
+..\html\sdljoystickname.html
+..\html\sdljoystickopen.html
+..\html\sdljoystickopened.html
+..\html\sdljoystickindex.html
+..\html\sdljoysticknumaxes.html
+..\html\sdljoysticknumballs.html
+..\html\sdljoysticknumhats.html
+..\html\sdljoysticknumbuttons.html
+..\html\sdljoystickupdate.html
+..\html\sdljoystickgetaxis.html
+..\html\sdljoystickgethat.html
+..\html\sdljoystickgetbutton.html
+..\html\sdljoystickgetball.html
+..\html\sdljoystickclose.html
+..\html\audio.html
+..\html\sdlaudiospec.html
+..\html\sdlopenaudio.html
+..\html\sdlpauseaudio.html
+..\html\sdlgetaudiostatus.html
+..\html\sdlloadwav.html
+..\html\sdlfreewav.html
+..\html\sdlaudiocvt.html
+..\html\sdlbuildaudiocvt.html
+..\html\sdlconvertaudio.html
+..\html\sdlmixaudio.html
+..\html\sdllockaudio.html
+..\html\sdlunlockaudio.html
+..\html\sdlcloseaudio.html
+..\html\cdrom.html
+..\html\sdlcdnumdrives.html
+..\html\sdlcdname.html
+..\html\sdlcdopen.html
+..\html\sdlcdstatus.html
+..\html\sdlcdplay.html
+..\html\sdlcdplaytracks.html
+..\html\sdlcdpause.html
+..\html\sdlcdresume.html
+..\html\sdlcdstop.html
+..\html\sdlcdeject.html
+..\html\sdlcdclose.html
+..\html\sdlcd.html
+..\html\sdlcdtrack.html
+..\html\thread.html
+..\html\sdlcreatethread.html
+..\html\sdlthreadid.html
+..\html\sdlgetthreadid.html
+..\html\sdlwaitthread.html
+..\html\sdlkillthread.html
+..\html\sdlcreatemutex.html
+..\html\sdldestroymutex.html
+..\html\sdlmutexp.html
+..\html\sdlmutexv.html
+..\html\sdlcreatesemaphore.html
+..\html\sdldestroysemaphore.html
+..\html\sdlsemwait.html
+..\html\sdlsemtrywait.html
+..\html\sdlsemwaittimeout.html
+..\html\sdlsempost.html
+..\html\sdlsemvalue.html
+..\html\sdlcreatecond.html
+..\html\sdldestroycond.html
+..\html\sdlcondsignal.html
+..\html\sdlcondbroadcast.html
+..\html\sdlcondwait.html
+..\html\sdlcondwaittimeout.html
+..\html\time.html
+..\html\sdlgetticks.html
+..\html\sdldelay.html
+..\html\sdladdtimer.html
+..\html\sdlremovetimer.html
+..\html\sdlsettimer.html
+..\html\sdlkey.html
+..\html\sdljoyaxisevent.html
+..\html\sdljoyballevent.html
+..\html\sdljoyhatevent.html
+..\html\sdljoybuttonevent.html
+..\html\sdljoystickeventstate.html
+..\html\sdlenableunicode.html
+..\html\sdlevent.html
+..\html\sdlpollevent.html
+..\html\sdlgetkeyname.html
+..\html\sdlresizeevent.html
+..\html\sdlmousemotionevent.html
+..\html\sdlactiveevent.html
+..\html\sdlpeepevents.html
+..\html\sdlkeyboardevent.html
+..\html\sdlmousebuttonevent.html
+..\html\sdlsyswmevent.html
+..\html\sdluserevent.html
+..\html\sdlquitevent.html
+..\html\sdlkeysym.html
+..\html\sdlpumpevents.html
+..\html\sdlwaitevent.html
+..\html\sdlpushevent.html
+..\html\sdlseteventfilter.html
+..\html\sdlgeteventfilter.html
+..\html\sdleventstate.html
+..\html\sdlgetkeystate.html
+..\html\sdlgetmodstate.html
+..\html\sdlsetmodstate.html
+..\html\sdlenablekeyrepeat.html
+..\html\sdlgetmousestate.html
+..\html\sdlgetrelativemousestate.html
+..\html\sdlgetappstate.html
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guidepreface.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guideaboutsdldoc.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guidecredits.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guidethebasics.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guidebasicsinit.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guidevideo.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guidevideo.html#GUIDEVIDEOINTRO".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guidevideoopengl.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guideinput.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guideinput.html#GUIDEINPUTJOYSTICK".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guideinputkeyboard.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guideexamples.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guidevideoexamples.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guideeventexamples.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guideaudioexamples.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guidecdromexamples.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guidetimeexamples.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "reference.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "general.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlinit.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guidevideo.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guideinput.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlinitsubsystem.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlquitsubsystem.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlquit.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlwasinit.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlgetvideosurface.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlgetvideoinfo.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlvideodrivername.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdllistmodes.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlvideomodeok.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlsetvideomode.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlupdaterect.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlupdaterects.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlflip.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlsetcolors.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlsetpalette.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlsetgamma.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlgetgammaramp.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlsetgammaramp.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlmaprgb.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlmaprgba.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlgetrgb.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlgetrgba.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcreatergbsurface.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcreatergbsurfacefrom.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlfreesurface.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdllocksurface.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlunlocksurface.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlloadbmp.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlsavebmp.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlsetcolorkey.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlsetalpha.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlsetcliprect.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlgetcliprect.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlconvertsurface.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlblitsurface.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlfillrect.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdldisplayformat.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdldisplayformatalpha.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlwarpmouse.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcreatecursor.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlfreecursor.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlsetcursor.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlgetcursor.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlshowcursor.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlglloadlibrary.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlglgetprocaddress.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlglgetattribute.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlglsetattribute.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlglswapbuffers.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcreateyuvoverlay.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdllockyuvoverlay.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlunlockyuvoverlay.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdldisplayyuvoverlay.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlfreeyuvoverlay.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlglattr.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlrect.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcolor.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlpalette.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlpixelformat.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlsurface.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlvideoinfo.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdloverlay.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlwmsetcaption.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlwmgetcaption.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlwmseticon.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlwmiconifywindow.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlwmtogglefullscreen.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlwmgrabinput.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "eventstructures.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlevent.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlactiveevent.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlkeyboardevent.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlmousemotionevent.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlmousebuttonevent.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdljoyaxisevent.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdljoybuttonevent.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdljoyhatevent.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdljoyballevent.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlresizeevent.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlsyswmevent.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdluserevent.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlquitevent.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlkeysym.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlkey.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "eventfunctions.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlpumpevents.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlpeepevents.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlpollevent.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlwaitevent.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlpushevent.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlseteventfilter.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlgeteventfilter.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdleventstate.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlgetkeystate.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlgetmodstate.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlsetmodstate.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlgetkeyname.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlenableunicode.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlenablekeyrepeat.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlgetmousestate.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlgetrelativemousestate.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlgetappstate.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdljoystickeventstate.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "joystick.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlnumjoysticks.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdljoystickname.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdljoystickopen.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdljoystickopened.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdljoystickindex.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdljoysticknumaxes.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdljoysticknumballs.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdljoysticknumhats.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdljoysticknumbuttons.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdljoystickupdate.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdljoystickgetaxis.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdljoystickgethat.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdljoystickgetbutton.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdljoystickgetball.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdljoystickclose.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlaudiospec.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlopenaudio.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlpauseaudio.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlgetaudiostatus.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlloadwav.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlfreewav.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlaudiocvt.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlbuildaudiocvt.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlconvertaudio.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlmixaudio.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdllockaudio.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlunlockaudio.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcloseaudio.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "cdrom.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcdnumdrives.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcdname.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcdopen.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcdstatus.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcdplay.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcdplaytracks.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcdpause.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcdresume.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcdstop.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcdeject.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcdclose.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcd.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcdtrack.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcreatethread.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlthreadid.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlgetthreadid.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlwaitthread.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlkillthread.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcreatemutex.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdldestroymutex.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlmutexp.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlmutexv.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcreatesemaphore.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdldestroysemaphore.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlsemwait.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlsemtrywait.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlsemwaittimeout.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlsempost.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlsemvalue.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcreatecond.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdldestroycond.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcondsignal.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcondbroadcast.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcondwait.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlcondwaittimeout.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "time.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlgetticks.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdldelay.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdladdtimer.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlremovetimer.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlsettimer.html".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlkey.html#AEN4258".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "sdlkey.html#SDLMOD".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guidebasicsinit.html#AEN60".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guidevideo.html#AEN71".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guidevideo.html#AEN77".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guidevideo.html#AEN83".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guidevideo.html#AEN90".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guidevideo.html#AEN93".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guidevideo.html#AEN97".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guidevideoopengl.html#AEN114".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guidevideoopengl.html#AEN128".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guideinput.html#AEN141".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guideinput.html#AEN154".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guideinput.html#AEN183".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guideinput.php#AEN191".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guideinput.html#AEN195".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guideinput.html#AEN203".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guideinput.html#AEN217".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guideinput.html#AEN244".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guideinput.html#AEN265".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guideinputkeyboard.html#AEN334".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guideinputkeyboard.html#AEN351".
+HHC5013: Error: URL reference in the TOC cannot be resolved: "guideinputkeyboard.html#AEN363".
+
+
+The following files were not compiled:

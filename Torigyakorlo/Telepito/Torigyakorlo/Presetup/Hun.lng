@@ -1,0 +1,133 @@
+
+// Hungarian
+// Ghost Installer version 1.6
+//
+// Copyright (c) 2000 by Kornél Pál
+// E-mail: kornelpal@hotmail.com
+
+[Strings]
+LanguageName=Hungarian
+1=A(z) %ProgramName% számítógépére való telepítése még nem fejezõdött be.||Megszakítja a telepítést?
+2=A telepítési-információsfájlok olvasása...
+3=A szükséges lemezterület kiszámítása...
+4=A rendelkezésre álló lemezterület nem elég!
+5=A rendszerleíró-adatbázis frissítése...
+6=Az ini fájlok frissítése...
+7=Parancsikonok létrehozása...
+8=COM szerverek regisztrálása...
+9=Betûtípusok regisztrálása...
+10=A program telepítéséhez rendszergazdai jogosultságokkal kell rendelkeznie ezen a számítógépen.
+11=A(z) "%s" fájl nem bontható ki.
+12=Helytelen jelszó!
+13=Ez az operációs rendszer nem támogatott!
+14=Az operációs rendszer verziószáma túl alacsony.||%s-s vagy újabb verzió szükséges a(z) %ProgramName% programhoz.
+15=A(z) %ProgramName% telepítése nem lehetséges az alkalmazás futtatása közben. Zárja be az alkalmazást, és indítsa el újra a telepítõprogramot.
+16=A korábbi verzió hozzárendeléseinek eltávolítása...
+17=Szükségtelen fájlok eltávolítása...
+
+[Dialogs]
+Caption=%ProgramName% telepítõ
+101=< Vissza
+102=Tovább >
+103=Mégse
+
+[DLG_DIR]
+Title=Válasszon telepítési könyvtárat
+105=" Telepítési könyvtár "
+107=Tallózás...
+108=Válassza ki a könyvtárat, ahová telepíteni akarja a(z) %ProgramName% programot. Ha másik könyvtárba szeretné telepíteni, kattintson a Tallózásra, és válasszon másik könyvtárat.
+200=Válasszon könyvtárat
+201=Válasszon telepítési könyvtárat:
+202=Létrehozás...
+203=OK
+204=Mégse
+205=Könyvtár létrehozása
+206=Név
+300=A megadott könyvtár már létezik. Lehetséges, hogy más alkalmazások már ebbe vannak telepítve.||||Biztos, hogy a(z) %ProgramName% programot ebbe a könyvtárba telepíti?
+
+[DLG_FINISH]
+Title=A telepítés befejezõdött
+106=A(z) %ProgramName% telepítése sikeresen befejezõdött.||||Nyomja meg az OK gombot a Telepítõbõl való kilépéshez.
+
+[DLG_NOTFINISH]
+Title=A telepítés nem fejezõdött be
+106=A(z) %ProgramName%  telepítése még nem fejezõdött be teljesen, és nem fog megfelelõen mûkõdni, ha megpróbálja használni.
+
+[DLG_PROGRESS]
+Title=Telepítés...
+105=Kérem várjon. A(z) %ProgramName% telepítése folyamatban van.||||Ha meg akarja szakítani a telepítést, nyomja meg a Mégse gombot. Ebben az esetben azomban bizonytalan, hogy mûkõdni fog-e a program.
+108=Minden fájl
+200=A(z) %s kibontása...
+201=A(z) %s átlépése...
+202=A(z) %s másolása...
+
+[DLG_START]
+Title=A telepítés megkezdése
+105=A telepítõ készen áll a(z) %ProgramName% telepítésére.||||Nyomja meg a Tovább gombot a telepítés megkezdéséhez, vagy a Vissza gombot a telepítési beállítások megváltoztatásához.
+
+[DLG_REBOOT]
+Title=Újraindítja a számítógépet?
+105=Néhány összetevõ telepítése még nem fejezõdött be. A telepítés befejezéséhez újra kell indítani a számítógépét.
+106=Igen, újraindítom a számítógépem
+107=Nem, késöbb indítom újra a számítógépem
+
+[DLG_LANGUAGE]
+Title=Válasszon nyelvet
+105=Válasszon telepítési nyelvet:
+
+[DLG_WELCOME]
+Title=Üdvözli a Telepítõ!
+105=Üdvözli a(z) %ProgramName% Telepítõ programja, amely telepíteni fogja a(z) %ProgramName% programot a számítógépére.||||Erõsen ajánlott, minden futó Windows programból kilépni a Telepítõ futtatása elõtt. Kattintson a Mégse gombra a Telepítõbõl való kilépéshez, és zárja be a futó programokat. Kattintson a Továbbra a Telepítõ indításához.||||||FIGYELEM: Ezt a programot nemzetközileg védi a szerzõi jog.||||A programnak vagy bármely részének engedély nélküli lemásolása vagy továbbadása vádemelést von maga után, és a jog keretei között lehetséges maximális polgári és büntetõjogi következménnyel jár.
+
+[DLG_LICENSE]
+Title=Licencszerzõdés
+105=Igen
+106=Nem
+107=Olvassa el figyelmesen a következõ licencszerzõdést. Minden kitételt elfogadott az alábbi licencszerzõdésben?
+
+[DLG_README]
+Title=Fontos információk
+105=Olvassa el a következõ fontos információkat a(z) %ProgramName% programról.
+
+[DLG_PASSWORD]
+Title=Telepítési jelszó
+105=Adja meg a telepítési jelszót:
+
+[DLG_GROUP]
+Title=Programcsoport
+105=Válasszon programcsoportot:
+
+[DLG_VERSIONCONFLICT]
+Caption=Fájl verzió eltérés
+101=A másolandó fájl korábbi verziójú, mint a számítógépen meglevõ. Ajánlott a meglevõ fájl megtartása.||||Megtartja a létezõ fájlt?
+103=Fájlnév:
+105=Helye:
+107=Igen
+108=Igen, mindet
+109=Nem
+110=Nem, egyiket sem
+
+[Uninstall.Strings]
+1=%ProgramName% eltávolítása
+2=Nincs megadva telepítési naplófájl!
+3=A(z) %s telepítési naplófájl nem található!
+4=Biztos benne, hogy eltávolítja a(z) %ProgramName% programot és az összetevõit?
+5=A(z) %ProgramName% eltávolítása befejezõdött.
+6=Fájlok eltávolítása...
+7=Regisztrációs értékek eltávolítása...
+8=Regisztrációs kulcsok eltávolítása...
+9=Ini bejegyzések eltávolítása...
+10=Parancsikonok eltávolítása...
+11=Könyvtárak eltávolítása...
+12=COM szerverek regisztrációjának eltávolítása...
+13=Betûtípusok regisztrációjának eltávolítása...
+14=Megosztott fájlok ellenörzése...
+15=Eltávolítja a megosztott fájlt?
+16=A következõ megosztott fájlt régóta nem használta egyetlen program sem.  Ha más program is használja a fájlt, akkor az eltávolítása után nem fog megfelelõen mûkõdni.  Biztosan eltávolítja a megosztott fájlt?||||A fájl megtartása nem okoz problémát a rendszeren.  Ha nem biztos a döntésében, akkor ajánlott a megosztott összetevõ megtartásának választása.
+17=Fájlnév:
+18=Helye:
+19=Igen
+20=Igen, mindet
+21=Nem
+22=Nem, egyiket sem
+23=Bezárás

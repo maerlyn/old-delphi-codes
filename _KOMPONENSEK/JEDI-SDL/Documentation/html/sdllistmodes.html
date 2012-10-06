@@ -1,0 +1,91 @@
+<html>
+<head>
+  <title>SDL_ListModes</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Video" href="video.html">
+  <link rel="PREVIOUS" title="SDL_VideoDriverName" href="sdlvideodrivername.html">
+  <link rel="NEXT" title="SDL_VideoModeOK" href="sdlvideomodeok.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlvideodrivername.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlvideomodeok.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLLISTMODES">SDL_ListModes</a></h1>
+<div class="REFNAMEDIV"><a name="AEN787"></a>
+<h2>Name</h2>
+SDL_ListModes&nbsp;--&nbsp;Returns a pointer to an array of available screen
+dimensions for  the given format and video flags</div>
+<div class="REFSYNOPSISDIV"><a name="AEN790"></a>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN791"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b><br> SDL;</pre>
+<p>function <b>SDL_ListModes</b>( format : PSDL_PixelFormat; flags : UInt32
+) : PPSDL_Rect;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN797"></a>
+<h2>Description</h2>
+<p>Return a pointer to an array of available screen dimensions for the given 
+format and video flags, sorted largest to smallest.  Returns <tt class="LITERAL">
+NULL</tt> if there are no dimensions available for a particular format, or
+<span class="RETURNVALUE">-1</span> if any dimension is okay for the given
+format.</p>
+<p>If <tt class="PARAMETER"><i>format</i></tt> is <tt class="LITERAL">NULL</tt>
+, the mode list will be for the format returned by <a href="sdlgetvideoinfo.html">
+SDL_GetVideoInfo()</a>-&gt;<tt class="STRUCTFIELD"><i>vfmt</i></tt>. The
+<tt class="PARAMETER"><i>flag</i></tt> parameter is an OR'd combination of
+<a href="sdlsurface.html">surface</a> flags. The flags are the same as those
+used <a href="sdlsetvideomode.html"><tt class="FUNCTION">SDL_SetVideoMode</tt></a>
+ and they play a strong role in deciding what modes are valid. For instance,
+if you pass <tt class="LITERAL">SDL_HWSURFACE</tt> as a flag only modes that
+support hardware video surfaces will be returned.</p>
+</div>
+<div class="REFSECT1"><a name="AEN812"></a>
+<h2>Example</h2>
+<pre class="PROGRAMLISTING">modes : PPSDL_Rect;<br>i : integer;<br>.<br>.<br>.<br><br>// Get available fullscreen/hardware modes <br>modes := SDL_ListModes( <b>nil</b>, SDL_FULLSCREEN <b>or</b> SDL_HWSURFACE );<br><br>// Check is there are any modes available<br><b>if</b> (modes = PPSDL_Rect( 0 ) ) <b>then</b><br><b>begin</b><br>  WriteLn( 'No modes available!' );<br>  halt(-1);<br><b>end;</b><br><br>// Check if or resolution is restricted<br><b>if</b> ( modes = PPSDL_Rect(-1) ) <b>then</b><br><b>begin</b><br>  WriteLn( 'All resolutions available.' );<br><b>end</b><br><b>else</b><br><b>begin</b><br>  // Print valid modes <br>  WriteLn( 'Available Modes' );<br>  <b>for</b> i := 0 <b>to</b> modes[i] - 1 <b>do</b><br>    WriteLn( Format( ' %d x %d', [ modes[i].w, modes[i].h ] ) );<br><b>end;</b><br>.<br>.</pre>
+</div>
+<div class="REFSECT1"><a name="AEN815"></a>
+<h2>See Also</h2>
+<p><a href="sdlsetvideomode.html"><tt class="FUNCTION">SDL_SetVideoMode</tt></a>
+, <a href="sdlgetvideoinfo.html"><tt class="FUNCTION">SDL_GetVideoInfo</tt></a>
+, <a href="sdlrect.html"><span class="STRUCTNAME">SDL_Rect</span></a>, <a href="sdlpixelformat.html"><span class="STRUCTNAME">
+SDL_PixelFormat</span></a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdlvideodrivername.html">
+Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="sdlvideomodeok.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">SDL_VideoDriverName</td>
+      <td width="34%" align="Center" valign="Top"><a href="video.html">Up</a></td>
+      <td width="32%" align="Right" valign="Top">SDL_VideoModeOK</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

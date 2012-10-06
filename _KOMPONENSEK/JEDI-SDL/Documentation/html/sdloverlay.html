@@ -1,0 +1,137 @@
+<html>
+<head>
+  <title>SDL_Overlay</title>
+             
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+       
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+       
+  <link rel="UP" title="Video" href="video.html">
+       
+  <link rel="PREVIOUS" title="SDL_VideoInfo" href="sdlvideoinfo.html">
+       
+  <link rel="NEXT" title="Window Management" href="wm.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+   
+<div class="NAVHEADER">  
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+      </tr>
+      <tr>
+        <td width="7%" align="Left" valign="Bottom"><a href="sdlvideoinfo.html">
+  Prev</a></td>
+        <td width="77%" align="Center" valign="Bottom"><br>
+        </td>
+        <td width="7%" align="Right" valign="Bottom"><a href="wm.html">Next</a></td>
+      </tr>
+       
+  </tbody>  
+</table>
+   
+<hr align="Left" width="100%"></div>
+   
+<h1><a name="SDLOVERLAY">TSDL_Overlay</a></h1>
+   
+<div class="REFNAMEDIV"><a name="AEN3048"></a>  
+<h2>Name</h2>
+  TSDL_Overlay -- YUV video overlay</div>
+   
+<div class="REFSECT1"><a name="AEN3051"></a><br>
+   
+<h2>Structure Definition</h2>
+  <pre class="PROGRAMLISTING">  TSDL_Overlay = <b>record</b><br>    format: Uint32;     // Overlay format<br>    w, h: Integer;      // Width and height of overlay<br>    planes: Integer;    // Number of planes in the overlay. Usually either 1 or 3<br>    pitches: PUint16;   // An array of pitches, one for each plane. Pitch is the length of a row in bytes.<br>    pixels: PUint8;     // An array of pointers to teh data of each plane. The overlay should be locked before these pointers are used.<br>    hw_overlay: Uint32; // This will be set to 1 if the overlay is hardware accelerated.<br><b>  end;</b></pre>
+  </div>
+   
+<div class="REFSECT1"><a name="AEN3054"></a>  
+<h2>Structure Data</h2>
+   
+<div class="INFORMALTABLE"><a name="AEN3056"></a>  
+<p></p>
+   
+<table border="0" class="CALSTABLE">
+    <tbody>
+      <tr>
+        <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>format</i></tt></td>
+        <td align="Left" valign="Top">Overlay format (see below)</td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>w, h</i></tt></td>
+        <td align="Left" valign="Top">Width and height of overlay</td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>planes</i></tt></td>
+        <td align="Left" valign="Top">Number of planes in the overlay. Usually
+ either 1 or 3</td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>pitches</i></tt></td>
+        <td align="Left" valign="Top">An array of pitches, one for each plane.
+ Pitch is the length of a row in bytes.</td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>pixels</i></tt></td>
+        <td align="Left" valign="Top">An array of pointers to teh data of 
+each plane. The overlay should be locked before these pointers are used.</td>
+      </tr>
+      <tr>
+        <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>hw_overlay</i></tt></td>
+        <td align="Left" valign="Top">This will be set to 1 if the overlay
+ is hardware accelerated.</td>
+      </tr>
+       
+  </tbody>  
+</table>
+   
+<p></p>
+  </div>
+  </div>
+   
+<div class="REFSECT1"><a name="AEN3083"></a>  
+<h2>Description</h2>
+   
+<p>A T<span class="STRUCTNAME">SDL_Overlay</span> is similar to a <a href="sdlsurface.html"><span class="STRUCTNAME">
+ TSDL_Surface</span></a> except it stores a YUV overlay. All the fields are&nbsp;
+read only, except for <tt class="STRUCTFIELD"><i>pixels</i></tt> which should&nbsp;
+be <a href="sdllockyuvoverlay.html">locked</a> before use. The <tt class="STRUCTFIELD"><i>
+&nbsp; format</i></tt> field stores the format of the overlay which is one
+of the&nbsp; following: <pre class="PROGRAMLISTING"><b>const</b><br>  SDL_YV12_OVERLAY  = $32315659;  // Planar mode: Y + V + U <br>  SDL_IYUV_OVERLAY  = $56555949;  // Planar mode: Y + U + V<br>  SDL_YUY2_OVERLAY  = $32595559;  // Packed mode: Y0 + U0 + Y1 + V0 <br>  SDL_UYVY_OVERLAY  = $59565955;  // Packed mode: U0 + Y0 + V0 + Y1 <br>  SDL_YVYU_OVERLAY  = $55595659;  // Packed mode: Y0 + V0 + Y1 + U0 </pre>
+   More information on YUV formats can be found at <a href="http://www.webartz.com/fourcc/indexyuv.htm" target="_top">
+  http://www.webartz.com/fourcc/indexyuv.htm</a>.</p>
+  </div>
+   
+<div class="REFSECT1"><a name="AEN3094"></a>  
+<h2>See Also</h2>
+   
+<p><a href="sdlcreateyuvoverlay.html"><tt class="FUNCTION">SDL_CreateYUVOverlay</tt></a>
+  , <a href="sdllockyuvoverlay.html"><tt class="FUNCTION">SDL_LockYUVOverlay</tt></a>
+  , <a href="sdlunlockyuvoverlay.html"><tt class="FUNCTION">SDL_UnlockYUVOverlay</tt></a>
+  , <a href="sdlfreeyuvoverlay.html"><tt class="FUNCTION">SDL_FreeYUVOverlay</tt></a></p>
+  </div>
+   
+<div class="NAVFOOTER">  
+<hr align="Left" width="100%">  
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td width="31%" align="Left" valign="Top"><a href="sdlvideoinfo.html">
+  Prev</a></td>
+        <td width="34%" align="Center" valign="Top"><a href="index.html">
+Home</a></td>
+        <td width="31%" align="Right" valign="Top"><a href="wm.html">Next</a></td>
+      </tr>
+      <tr>
+        <td width="31%" align="Left" valign="Top">TSDL_VideoInfo</td>
+        <td width="34%" align="Center" valign="Top"><a href="video.html">
+Up</a></td>
+        <td width="31%" align="Right" valign="Top">Window Management</td>
+      </tr>
+       
+  </tbody>  
+</table>
+  </div>
+   
+</body>
+</html>

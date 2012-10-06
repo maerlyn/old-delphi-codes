@@ -1,0 +1,3 @@
+bmp16x16 BITMAP "bmp16.bmp"
+bmp18x18 BITMAP "bmp18.bmp"
+bmp32x32 BITMAP "bmp32.bmp"

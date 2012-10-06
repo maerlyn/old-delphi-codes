@@ -1,0 +1,105 @@
+package GLScene4;
+
+{$R *.RES}
+{$R 'GLScene5.dcr'}
+{$R 'AsyncTimer.dcr'}
+{$R 'Joystick.dcr'}
+{$R 'ScreenSaver.dcr'}
+{$R 'GLCadencer.dcr'}
+{$R 'GLObjects.dcr'}
+{$R 'GLCollision.dcr'}
+{$R 'GLSound.dcr'}
+{$R 'GLExtrusion.dcr'}
+{$R 'GLFireFX.dcr'}
+{$R 'GLNavigator.dcr'}
+{$R 'GLHeightData.dcr'}
+{$R 'GLBitmapFont.dcr'}
+{$R 'AVIRecorder.dcr'}
+{$R 'GLThorFX.dcr'}
+{$ALIGN ON}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'GLScene - OpenGL 3D library'}
+{$IMPLICITBUILD ON}
+
+requires
+  Vcl40;
+
+contains
+  GLSceneRegister in 'GLSceneRegister.pas',
+  GLMisc in 'GLMisc.pas',
+  GLScene in 'GLScene.pas',
+  GLStrings in 'GLStrings.pas',
+  GLTexture in 'GLTexture.pas',
+  GLScreen in 'GLScreen.pas',
+  Geometry in 'Geometry.pas',
+  GLSceneEdit in 'GLSceneEdit.pas' {GLSceneEditForm},
+  PlugInIntf in 'PlugInIntf.pas',
+  PlugInManager in 'PlugInManager.pas',
+  Info in 'Info.pas' {InfoForm},
+  PlugInManagerPropEditor in 'PlugInManagerPropEditor.pas' {PlugInManagerPropForm},
+  Utils3DS in 'FileFormats\Utils3DS.pas',
+  File3DS in 'FileFormats\File3DS.pas',
+  FileMD2 in 'FileFormats\FileMD2.pas',
+  TypesMD2 in 'FileFormats\TypesMD2.pas',
+  Types3DS in 'FileFormats\Types3DS.pas',
+  Const3DS in 'FileFormats\Const3DS.pas',
+  AsyncTimer in 'AsyncTimer.pas',
+  FVectorEditor in 'FVectorEditor.pas' {VectorEditorForm},
+  OpenGL12 in 'OpenGL12.pas',
+  GLVectorFileObjects in 'GLVectorFileObjects.pas',
+  Joystick in 'Joystick.pas',
+  GLBehaviours in 'GLBehaviours.pas',
+  ScreenSaver in 'ScreenSaver.pas',
+  GLCadencer in 'GLCadencer.pas',
+  RegisterXCollection in 'RegisterXCollection.pas',
+  FXCollectionEditor in 'FXCollectionEditor.pas' {XCollectionEditor},
+  XCollection in 'XCollection.pas',
+  GLParticles in 'GLParticles.pas',
+  GLObjects in 'GLObjects.pas',
+  GLCollision in 'GLCollision.pas',
+  Spline in 'Spline.pas',
+  GLSoundFileObjects in 'GLSoundFileObjects.pas',
+  GLSound in 'GLSound.pas',
+  GLMesh in 'GLMesh.pas',
+  GLGraph in 'GLGraph.pas',
+  VectorLists in 'VectorLists.pas',
+  TypesSTL in 'FileFormats\TypesSTL.pas',
+  Keyboard in 'Keyboard.pas',
+  GLExtrusion in 'GLExtrusion.pas',
+  GLFireFX in 'GLFireFX.pas',
+  GLPortal in 'GLPortal.pas',
+  GLGraphics in 'GLGraphics.pas',
+  GLMultiPolygon in 'GLMultiPolygon.pas',
+  GLFileOBJ in 'FileFormats\GLFileOBJ.pas',
+  GLNavigator in 'GLNavigator.pas',
+  GLMovement in 'GLMovement.pas',
+  GLSkydome in 'GLSkydome.pas',
+  GLHUDObjects in 'GLHUDObjects.pas',
+  XOpenGL in 'XOpenGL.pas',
+  GLHeightData in 'GLHeightData.pas',
+  GLBitmapFont in 'GLBitmapFont.pas',
+  GLTerrainRenderer in 'GLTerrainRenderer.pas',
+  AVIRecorder in 'AVIRecorder.pas',
+  VFW in 'VideoAPIs\vfw.pas',
+  GLThorFX in 'GLThorFX.pas';
+
+end.

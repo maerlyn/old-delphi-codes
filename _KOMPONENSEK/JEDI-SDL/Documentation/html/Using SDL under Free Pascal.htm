@@ -1,0 +1,676 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List
+href="./Using%20SDL%20under%20Free%20Pascal_files/filelist.xml">
+<title>Using SDL under Free Pascal</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:LastAuthor>Glenn Pociluyko</o:LastAuthor>
+  <o:Revision>13</o:Revision>
+  <o:TotalTime>86</o:TotalTime>
+  <o:Created>2001-10-15T04:42:00Z</o:Created>
+  <o:LastSaved>2001-11-07T04:59:00Z</o:LastSaved>
+  <o:Pages>3</o:Pages>
+  <o:Words>931</o:Words>
+  <o:Characters>5311</o:Characters>
+  <o:Company>Pociluyko Development Group Inc.</o:Company>
+  <o:Lines>44</o:Lines>
+  <o:Paragraphs>10</o:Paragraphs>
+  <o:CharactersWithSpaces>6522</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotShowRevisions/>
+  <w:DoNotPrintRevisions/>
+  <w:HyphenationZone>0</w:HyphenationZone>
+  <w:DoNotHyphenateCaps/>
+  <w:DrawingGridHorizontalSpacing>6 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>6 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:DoNotShadeFormData/>
+  <w:Compatibility>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:UsePrinterMetrics/>
+   <w:WW6BorderRules/>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:AutoSpaceLikeWord95/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+@page
+	{mso-footnote-position:end-of-section;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	mso-layout-grid-align:none;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;}
+h1
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	mso-layout-grid-align:none;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:0pt;}
+h2
+	{mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	mso-layout-grid-align:none;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+h3
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	mso-layout-grid-align:none;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;}
+h4
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	mso-layout-grid-align:none;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	mso-layout-grid-align:none;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	mso-layout-grid-align:none;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+ /* Page Definitions */
+@page
+	{mso-endnote-position:end-of-section;
+	mso-endnote-numbering-style:arabic;
+	mso-endnote-numbering-start:0;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-AU link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-AU'>Using SDL under Free Pascal</span></b><span
+style='font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>This article will provide you with a basic
+introduction into using the Simple Direct Media Library (SDL) with Free Pascal.
+For those of you who don't know what Free Pascal is, it is a cross platform compiler
+based on the Object Pascal language. The IDE is very much like Borland's Turbo
+Pascal 7.0 (TP7), and it has many of the same features, such as integrated
+debugging. It also includes some features more common in modern IDE’s like
+simple code completion. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoBodyText style='margin-left:.5in'>Liking Free Pascal with SDL is
+advantageous as SDL is also a cross platform games development library, which
+gives developers a standard interface to the many different API's available
+under different platforms. For example, under Windows SDL would utilize DirectX
+but under Linux it would interface with X Windows or some other graphics
+library. What you end up with is code that could with only minor changes run on
+many operating systems.</p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>Setting up Free
+Pascal to use JEDI-SDL<o:p></o:p></span></h1>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>Before trying to use SDL you will need to make some
+changes to the way Free Pascal compiles and links. Firstly go to the Options |
+Compiler menu item, and open the compiler switches page. On the Syntax tab you
+will need to ensure that the following options are set ON.<o:p></o:p></span></p>
+
+<h2 style='margin-left:1.5in'><i>Delphi 2 extensions<o:p></o:p></i></h2>
+
+<p class=MsoNormal style='margin-left:1.5in'><i><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>Delphi compatibility</span></i><span style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'><o:p></o:p></span></p>
+
+<p class=MsoBodyText style='margin-left:.5in'>Now move to the Assembler Tab and
+switch <i>Assembler Reader</i> to <i>Intel style Assembler</i> and the <i>Assembler
+Output</i> to <i>precoff</i>. Finally add FPC to the conditional defines box at
+the bottom of the page. Then close the compiler switches page.</p>
+
+<p class=MsoBodyText style='margin-left:.5in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText style='margin-left:.5in'>Now go to Options | Linker. The
+only thing you need to do on this page is set the <i>Preferred Library Type</i>
+to <i>Smart Libraries</i>. Close the linker page and open Options |
+Directories. In the <i>unit directories</i> box you will need to ensure that
+the path where the JEDI-SDL units exists is added.</p>
+
+<p class=MsoBodyText style='margin-left:.5in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText style='margin-left:.5in'>That’s it for the settings in
+Free Pascal. You are now ready to write your first program.</p>
+
+<p class=MsoNormal style='margin-left:1.0in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h3>Basic Program Structure</h3>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>The basic structure of a Free Pascal program is
+exactly the same as it is in TP7 and Delphi. The unit begins with program
+&lt;name&gt; and contains a set of begin and end statements.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>program</span></b><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'> test;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>begin<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:.5in'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>end</span></b><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>You will soon realise that programs written in Free
+Pascal will usually port directly to Delphi, although the reverse may not always
+be true. Between the begin and end statements is where we will initialise the
+SDL library and create a screen. All the other aspects of the Pascal language
+are the same; this includes the way you declare procedures and functions.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>Before heading into SDL I would like to point out that
+for the most part Free Pascal uses the extension .pp for it's units, however
+you can make use of .pas and .dpr if you wish, it may also make conversion
+simpler.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-AU'>Initialising SDL</span></b><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-AU'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>Before trying to initialise SDL, we must first add a
+few units to the uses clause. The uses clause is very much like the include
+statement in C and C++, in order to use SDL we must add SDL to the uses clause
+of our main program and any other units that use the library.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>program</span></b><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'> test;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>uses</span></b><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'> SDL, SDLUtils;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>begin<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:.5in'><b><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>end</span></b><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>Notice that we have also included SDLUtils. This is a
+utility unit provided by the JEDI-SDL team, which includes some useful
+procedures and functions.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-AU'>Creating a Window</span></b><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:
+"Times New Roman";mso-ansi-language:EN-AU'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>Creating a window can be very simple or complex
+depending on whether you want to check the video modes you want to use first.
+For this example we are going to assume that and video mode of 640x480 is
+available in 16bit mode. Before creating a window we need to initialise the SDL
+video system using <i>SDL_Init</i> and passing SDL_INIT_VIDEO. Once this is
+complete we can then call the <i>SDL_SetVideoMode</i> function to create our
+screen. We will need a variable to store the reference to the surface that <i>SDL_SetVideoMode</i>
+creates, we can then test this variable to see if the screen was created.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>Now depending on whether you created the window with
+the SDL_DOUBLEBUF flag or not, you can either call SDL_Flip or SDL_UpdateRect
+ot refresh the screen. For more information on double buffering see the
+JEDI-SDL documentation.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h4><b>Handling events<o:p></o:p></b></h4>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoBodyTextIndent>Now that we know how to create and screen, we need
+to be able to handle input events. SDL provides a mechanism for checking mouse,
+joystick and keyboard events, as well as checking for window events. In the
+SDLTest program at the end of this document we use this facility to check when
+the user closes the window. The important function in this case is <i>SDL_PollEvent</i>,
+this function queries SDL’s event queue and returns an event if one occurred.
+In our little demo we check the type of this event against SDL_QUITEV.</p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h3>Shutting Down SDL</h3>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>Closing SDL is simple, a call to <i>SDL_Quit</i> will
+shut down all open systems (Video, Audio etc). However as good programmers we
+always clean up after ourselves (don’t we), we free the _screen variable using <i>SDL_FreeSurface</i>
+function prior to calling <i>SDL_Quit</i>.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>Final comments<o:p></o:p></span></h1>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'>This document has only given a brief introduction into
+using SDL. More information can be found on the JEDI-SDL web site at <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+mso-bidi-font-size:10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";
+mso-ansi-language:EN-AU'><a href="http://www.delphi-jedi.org/Jedi:TEAM_SDL_HOME">http://www.delphi-jedi.org/Jedi:TEAM_SDL_HOME</a>
+. The listing for the Free Pascal SDLTest program is listed below, for details
+on how to use the functions not covered in this document check out the
+documentation that comes with the JEDI-SDL headers. The JEDI-SDL library comes
+with many demos of how to use SDL, unfortunately these demos are not 100%
+compatible with Free Pascal and might not work. But the team is working on the
+problems and hopefully we will be able to put together a complete set of demos
+that will compile under Delphi, Kylix and Free Pascal. If you are interested in
+helping on this project head over to <a
+href="http://www.delphi-jedi.org/Jedi:TEAM_SDL_HOME">http://www.delphi-jedi.org/Jedi:TEAM_SDL_HOME</a>.
+<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'>-------------------------------------<o:p></o:p></span></p>
+
+<h1><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt'>SDLTest program
+listing<o:p></o:p></span></h1>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'>program</span></b><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'> SDLtest;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'>uses</span></b><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'> SDL, SDLUtils;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'>var <o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">  </span>_screen: PSDLSurface;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">  </span>event : TSDL_Event;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'>const<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">    </span>Done: Boolean = False;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'>begin<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">   </span><b>If</b> SDL_Init(
+SDL_INIT_VIDEO) &lt; 0 <b>then</b><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">   </span><b>begin<o:p></o:p></b></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">       </span><b>exit</b>;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">   </span><b>end</b>;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">   </span>_screen := SDL_SetVideoMode(
+640, 480, 16, SDL_DOUBLEBUF );<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">   </span><b>if</b> _screen &lt;&gt; nil
+<b>then</b><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">   </span><b>begin<o:p></o:p></b></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">       </span><b>repeat<o:p></o:p></b></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">          </span><b>while</b>
+SDL_PollEvent( @event ) = 1 <b>do</b><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">          </span><b>begin<o:p></o:p></b></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">             </span><b>if</b>
+event._type = SDL_QUITEV <b>then</b><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">                 </span>Done :=
+True;<span style="mso-spacerun: yes">             </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">          </span><b>end</b>;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">     </span><span style="mso-spacerun:
+yes">     </span>SDL_Flip(_screen);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">       </span><b>Until</b> Done;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">       </span>SDL_FreeSurface(_screen);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">   </span><b>end</b>;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><span style="mso-spacerun: yes">   </span>SDL_Quit;<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'>end</span></b><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'>;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Arial;mso-bidi-font-family:"Times New Roman";mso-ansi-language:
+EN-AU'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

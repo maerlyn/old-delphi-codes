@@ -1,0 +1,100 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: lesson18 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\WINDOWS\TEMP\RSP72D2.TMP" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Debug/lesson18.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\!Gabor\Delphi\Terra3d\lesson18.cpp"
+]
+Creating command line "cl.exe @C:\WINDOWS\TEMP\RSP72D2.TMP" 
+Creating temporary file "C:\WINDOWS\TEMP\RSP72D3.TMP" with contents
+[
+opengl32.lib glu32.lib glaux.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/lesson18.pdb" /debug /machine:I386 /out:"Debug/lesson18.exe" /pdbtype:sept 
+".\Debug\lesson18.obj"
+]
+Creating command line "link.exe @C:\WINDOWS\TEMP\RSP72D3.TMP"
+<h3>Output Window</h3>
+Compiling...
+lesson18.cpp
+c:\!gabor\delphi\terra3d\lesson18.cpp(414) : warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(419) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(631) : warning C4305: 'initializing' : truncation from 'const double' to 'float'
+c:\!gabor\delphi\terra3d\lesson18.cpp(684) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(687) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(728) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(730) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(732) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(739) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(739) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(740) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(740) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(741) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(741) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(742) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(742) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(743) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(743) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(744) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(744) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(767) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(769) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(771) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(782) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(782) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(784) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(784) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(786) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(786) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(788) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(788) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(797) : warning C4305: 'argument' : truncation from 'const double' to 'float'
+c:\!gabor\delphi\terra3d\lesson18.cpp(797) : warning C4305: 'argument' : truncation from 'const double' to 'float'
+c:\!gabor\delphi\terra3d\lesson18.cpp(810) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(812) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(814) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(825) : warning C4305: 'argument' : truncation from 'const double' to 'float'
+c:\!gabor\delphi\terra3d\lesson18.cpp(825) : warning C4305: 'argument' : truncation from 'const double' to 'float'
+c:\!gabor\delphi\terra3d\lesson18.cpp(827) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(827) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(828) : warning C4305: 'argument' : truncation from 'const double' to 'float'
+c:\!gabor\delphi\terra3d\lesson18.cpp(828) : warning C4305: 'argument' : truncation from 'const double' to 'float'
+c:\!gabor\delphi\terra3d\lesson18.cpp(830) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(830) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(831) : warning C4305: 'argument' : truncation from 'const double' to 'float'
+c:\!gabor\delphi\terra3d\lesson18.cpp(831) : warning C4305: 'argument' : truncation from 'const double' to 'float'
+c:\!gabor\delphi\terra3d\lesson18.cpp(833) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(833) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(834) : warning C4305: 'argument' : truncation from 'const double' to 'float'
+c:\!gabor\delphi\terra3d\lesson18.cpp(834) : warning C4305: 'argument' : truncation from 'const double' to 'float'
+c:\!gabor\delphi\terra3d\lesson18.cpp(836) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(836) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(915) : warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(928) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(928) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(929) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(929) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(930) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(930) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(931) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(931) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\!gabor\delphi\terra3d\lesson18.cpp(693) : warning C4101: 'ytex' : unreferenced local variable
+c:\!gabor\delphi\terra3d\lesson18.cpp(695) : warning C4101: 'ytex2' : unreferenced local variable
+c:\!gabor\delphi\terra3d\lesson18.cpp(694) : warning C4101: 'xtex2' : unreferenced local variable
+c:\!gabor\delphi\terra3d\lesson18.cpp(692) : warning C4101: 'xtex' : unreferenced local variable
+Linking...
+lesson18.obj : error LNK2001: unresolved external symbol __imp__timeGetTime@0
+Debug/lesson18.exe : fatal error LNK1120: 1 unresolved externals
+Error executing link.exe.
+
+
+
+<h3>Results</h3>
+lesson18.exe - 2 error(s), 65 warning(s)
+</pre>
+</body>
+</html>

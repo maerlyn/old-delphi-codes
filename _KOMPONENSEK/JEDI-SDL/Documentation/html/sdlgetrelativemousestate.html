@@ -1,0 +1,78 @@
+<html>
+<head>
+  <title>SDL_GetRelativeMouseState</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Event Functions." href="eventfunctions.html">
+  <link rel="PREVIOUS" title="SDL_GetMouseState" href="sdlgetmousestate.html">
+  <link rel="NEXT" title="SDL_GetAppState" href="sdlgetappstate.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlgetmousestate.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlgetappstate.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLGETRELATIVEMOUSESTATE">SDL_GetRelativeMouseState</a></h1>
+<div class="REFNAMEDIV"><a name="AEN5361"></a>
+<h2>Name</h2>
+SDL_GetRelativeMouseState&nbsp;--&nbsp;Retrieve the current state of the
+mouse</div>
+<div class="REFSYNOPSISDIV"><a name="AEN5364"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN5365"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+<p>function <b>SDL_GetRelativeMouseState</b>( var x : Integer; var y : Integer
+) : UInt8;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN5371"></a>
+<h2>Description</h2>
+<p>The current button state is returned as a button bitmask, which can be
+tested using the <tt class="LITERAL">SDL_BUTTON(X)</tt> macros, and <tt class="PARAMETER"><i>
+x</i></tt> and <tt class="PARAMETER"><i>y</i></tt> are set to the change
+in the mouse position since the last call to <tt class="FUNCTION">SDL_GetRelativeMouseState</tt>
+ or since event initialization.  You can pass <tt class="LITERAL">NULL</tt>
+ for either <tt class="PARAMETER"><i>x</i></tt> or <tt class="PARAMETER"><i>
+y</i></tt>.</p>
+</div>
+<div class="REFSECT1"><a name="AEN5381"></a>
+<h2>See Also</h2>
+<p><a href="sdlgetmousestate.html"><tt class="FUNCTION">SDL_GetMouseState</tt></a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdlgetmousestate.html">
+Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="sdlgetappstate.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">SDL_GetMouseState</td>
+      <td width="34%" align="Center" valign="Top"><a href="eventfunctions.html">
+Up</a></td>
+      <td width="32%" align="Right" valign="Top">SDL_GetAppState</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

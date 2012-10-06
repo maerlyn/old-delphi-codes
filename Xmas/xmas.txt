@@ -1,0 +1,20 @@
+  xmas.zip
+************
+
+Merry Christmas! This demo can make every day feel like Christmas
+on your PC. The demo renders a snowy landscape, complete with
+falling snowflakes, a starry sky, some moving clouds, pine trees,
+a moon, and some twinkling stars every now and then.
+On the OpenGL side of things, the program uses display lists,
+texture objects, alpha testing and billboard textures. Moreover,
+the snowflakes and twinkling stars are done using a flexible
+particle system engine, which is in fact a cut-down version of
+the one I'm using in my 3D engine, Untitled-3D. For more
+information on Untitled-3D, visit the projects page on my site:
+  www.gamedeveloper.org/delphi3d/projects.shtml
+On this page, you can find links to some screenshots that show the
+full version of the particle engine being used for fog and
+explosions.
+Enjoy the holidays, and don't give in to the Y2K hype :-)
+
+  Tom Nuydens (delphi3d@gamedeveloper.org)

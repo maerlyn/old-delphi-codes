@@ -1,0 +1,45 @@
+package tdbf5_d5;
+
+{$R 'dbf.dcr'}
+{$ALIGN ON}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'TDbf V4 for Delphi 5'}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl50,
+  VCLDB50;
+
+contains
+  dbf_reg in 'dbf_reg.pas' {DbfDesignTimeForm},
+  dbf in 'dbf.pas',
+  UDbfCommon in 'UDbfCommon.pas',
+  UDbfCursor in 'UDbfCursor.pas',
+  UDbfEngine in 'UDbfEngine.pas',
+  UDbfFieldDef in 'UDbfFieldDef.pas',
+  UDbfFile in 'UDbfFile.pas',
+  UDbfIndex in 'UDbfIndex.pas',
+  UDbfMemo in 'UDbfMemo.pas',
+  UDbfPagedFile in 'UDbfPagedFile.pas',
+  UDbfStrings in 'UDbfStrings.pas';
+
+end.

@@ -1,0 +1,102 @@
+<html>
+<head>
+  <title>SDL_SetTimer</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Time" href="time.html">
+  <link rel="PREVIOUS" title="SDL_RemoveTimer" href="sdlremovetimer.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlremovetimer.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLSETTIMER">SDL_SetTimer</a></h1>
+<div class="REFNAMEDIV"><a name="AEN8014"></a>
+<h2>Name</h2>
+SDL_SetTimer&nbsp;--&nbsp;Set a callback to run after the specified number
+of milliseconds has elapsed.</div>
+<div class="REFSYNOPSISDIV"><a name="AEN8017"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN8018"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+<p>function <b>SDL_SetTimer</b>( interval : UInt32; callback : TSDL_TimerCallback
+) : Integer;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="SDLTIMERCALLBACK"></a>
+<h2>Callback</h2>
+<p>// Function prototype for the timer callback function<br>
+<b>type</b><br>
+&nbsp; TSDL_TimerCallback = function( interval : UInt32 ) : UInt32;</p>
+</div>
+<div class="REFSECT1"><a name="AEN8027"></a>
+<h2>Description</h2>
+<p>Set a callback to run after the specified number of milliseconds has elapsed.
+The callback function is passed the current timer interval and returns the
+next timer interval.  If the returned value is the same as the one passed
+in, the periodic alarm continues, otherwise a new alarm is scheduled.</p>
+<p>To cancel a currently running timer, call <tt class="FUNCTION">SDL_SetTimer(
+0, <b>nil</b> );</tt></p>
+<p>The timer callback function may run in a different thread than your main
+constant, and so shouldn't call any functions from within itself.</p>
+<p>The maximum resolution of this timer is 10 ms, which means that if you
+request a 16 ms timer, your callback will run approximately 20 ms later on
+an unloaded system.&nbsp; If you wanted to set a flag signaling a frame update
+at 30 frames per second (every 33 ms), you might set a timer for 30 ms (
+see example below ).</p>
+<p>If you use this function, you need to pass <tt class="LITERAL">SDL_INIT_TIMER</tt>
+ to <tt class="FUNCTION">SDL_Init()</tt>.</p>
+<div class="NOTE">
+<blockquote class="NOTE">
+  <p><b>Note: </b>This function is kept for compatibility but has been superseded 
+by the new timer functions <a href="sdladdtimer.html">SDL_AddTimer</a> and 
+  <a href="sdlremovetimer.html">SDL_RemoveTimer</a> which support multiple
+timers.</p>
+  </blockquote>
+  </div>
+  </div>
+  <div class="REFSECT1"><a name="AEN8041"></a>
+  <h2>Examples</h2>
+  <p><pre class="PROGRAMLISTING">SDL_SetTimer( ( 33 / 10 ) * 10, my_callback );</pre>
+  </p>
+  </div>
+  <div class="REFSECT1"><a name="AEN8045"></a>
+  <h2>See Also</h2>
+  <p><a href="sdladdtimer.html"><tt class="FUNCTION">SDL_AddTimer</tt></a></p>
+  </div>
+  <div class="NAVFOOTER">
+  <hr align="Left" width="100%">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td width="32%" align="Left" valign="Top"><a href="sdlremovetimer.html">
+Prev</a></td>
+        <td width="34%" align="Center" valign="Top"><a href="index.html">
+Home</a></td>
+        <td width="32%" align="Right" valign="Top">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="32%" align="Left" valign="Top">SDL_RemoveTimer</td>
+        <td width="34%" align="Center" valign="Top"><a href="time.html">Up</a></td>
+        <td width="32%" align="Right" valign="Top">&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  </body>
+  </html>

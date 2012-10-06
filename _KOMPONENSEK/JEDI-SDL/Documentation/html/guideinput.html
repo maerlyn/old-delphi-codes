@@ -1,0 +1,299 @@
+<html>
+<head>
+  <title>Input handling</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="SDL Guide" href="guide.html">
+  <link rel="PREVIOUS" title="Using OpenGL With SDL" href="guidevideoopengl.html">
+  <link rel="NEXT" title="Handling the Keyboard" href="guideinputkeyboard.html">
+</head>
+<body class="CHAPTER" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="guidevideoopengl.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="guideinputkeyboard.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<div class="CHAPTER">
+<h1><a name="GUIDEINPUT">Chapter 3. Input handling</a></h1>
+<div class="TOC">
+<dl>
+<dt><b>Table of Contents</b></dt>
+  <dt><a href="guideinput.html#GUIDEINPUTJOYSTICK">Handling Joysticks</a></dt>
+    <dt><a href="guideinputkeyboard.html">Handling the Keyboard</a></dt>
+      </dl>
+      </div>
+      <div class="SECT1">
+      <h1 class="SECT1"><a name="GUIDEINPUTJOYSTICK">Handling Joysticks</a></h1>
+      <div class="SECT2">
+      <h2 class="SECT2"><a name="AEN135">Initialization</a></h2>
+      <p>The first step in using a joystick in a SDL program is to initialize
+the Joystick subsystems of SDL. This done by passing the <tt class="LITERAL">
+SDL_INIT_JOYSTICK</tt> flag to <a href="sdlinit.html"><tt class="FUNCTION">
+SDL_Init</tt></a>.  The joystick flag will usually be used in conjunction
+with other flags (like the video flag) because the joystick is usually used
+to control something.</p>
+      <div class="EXAMPLE"><a name="AEN141"></a>
+      <p><b>Example 3-1. Initializing SDL with Joystick Support</b></p>
+      <pre class="PROGRAMLISTING">    <b>if</b> ( SDL_Init( SDL_INIT_VIDEO <b>or</b> SDL_INIT_JOYSTICK ) &lt; 0 ) <b>then</b><br>    <b>begin</b><br>        MessageBox(0, PChar(Format('Couldn''t initialize SDL : %s', [SDL_GetError])), 'Error', MB_OK or MB_ICONHAND);<br>        halt(1);<br>    <b>end;</b></pre>
+      </div>
+      <p>This will attempt to start SDL with both the video and the joystick
+subsystems activated.</p>
+      </div>
+      <div class="SECT2">
+      <h2 class="SECT2"><a name="AEN145">Querying</a></h2>
+      <p>If we have reached this point then we can safely assume that the
+SDL library has been initialized and that the Joystick subsystem is active.
+We can now call some video and/or sound functions to get things going before
+we need the joystick. Eventually we have to make sure that there is actually
+a joystick to work with. It's wise to always check even if you know a joystick
+will be present on the system because it can also help detect when the joystick
+is unplugged. The function used to check for joysticks is <a href="sdlnumjoysticks.html"><tt class="FUNCTION">
+SDL_NumJoysticks</tt></a>.</p>
+      <p>This function simply returns the number of joysticks available on
+the system. If it is at least one then we are in good shape. The next step
+is to determine which joystick the user wants to use. If the number of joysticks
+available is only one then it is safe to assume that one joystick is the
+one the user wants to use. SDL has a function to get the name of the joysticks
+as assigned by the operations system and that function is <a href="sdljoystickname.html"><tt class="FUNCTION">
+SDL_JoystickName</tt></a>.  The joystick is specified by an index where 0
+is the first joystick and the last joystick is the number returned by <tt class="FUNCTION">
+SDL_NumJoysticks</tt> - 1.  In the demonstration a list of all available
+joysticks is printed to stdout.</p>
+      <div class="EXAMPLE"><a name="AEN154"></a>
+      <p><b>Example 3-2. Querying the Number of Available Joysticks</b></p>
+      <pre class="PROGRAMLISTING">    MessageBox(0, PChar(Format('%d joysticks were found.', [SDL_NumJoysticks])), 'Information', MB_OK or MB_ICONHAND);<br>    printf("The names of the joysticks are:\n");<br>		<br>    <b>for</b> i := 0 <b>to</b> SDL_NumJoysticks - 1 <b>do</b> <br>    <b>begin</b><br>        Joysticks := SDL_JoystickName(i) + #13#10;<br>    <b>end;</b><br>    MessageBox(0, PChar(Format('The names of the joysticks are: %s', [Joysticks])), 'Information', MB_OK or MB_ICONHAND);<br></pre>
+      </div>
+      </div>
+      <div class="SECT2">
+      <h2 class="SECT2"><a name="AEN157">Opening a Joystick and Receiving
+Joystick Events</a></h2>
+      <p>SDL's event driven architecture makes working with joysticks a snap.
+ Joysticks can trigger 4 different types of events: </p>
+      <p></p>
+      <table border="0">
+        <tbody>
+          <tr>
+            <td><a href="sdljoyaxisevent.html"><span class="STRUCTNAME">SDL_JoyAxisEvent</span></a></td>
+            <td>Occurs when an axis changes</td>
+          </tr>
+          <tr>
+            <td><a href="sdljoyballevent.html"><span class="STRUCTNAME">SDL_JoyBallEvent</span></a></td>
+            <td>Occurs when a joystick trackball's position changes</td>
+          </tr>
+          <tr>
+            <td><a href="sdljoyhatevent.html"><span class="STRUCTNAME">SDL_JoyHatEvent</span></a></td>
+            <td>Occurs when a hat's position changes</td>
+          </tr>
+          <tr>
+            <td><a href="sdljoybuttonevent.html"><span class="STRUCTNAME">
+SDL_JoyButtonEvent</span></a></td>
+            <td>Occurs when a button is pressed or released</td>
+          </tr>
+        </tbody>
+      </table>
+      <p></p>
+      <p></p>
+      <p>Events are received from all joysticks opened. The first thing that
+needs to be done in order to receive joystick events is to call <a href="sdljoystickeventstate.html"><tt class="FUNCTION">
+SDL_JoystickEventState</tt></a> with the <tt class="LITERAL">SDL_ENABLE</tt>
+ flag. Next you must open the joysticks that you want to receive envents
+from. This is done with the <a href="sdljoystickopen.html"><tt class="FUNCTION">
+SDL_JoystickOpen</tt></a> function. For the example we are only interested
+in events from the first joystick on the system, regardless of what it may
+be. To receive events from it we would do this:</p>
+      <div class="EXAMPLE"><a name="AEN183"></a>
+      <p><b>Example 3-3. Opening a Joystick</b></p>
+      <pre class="PROGRAMLISTING">    joystick : PSDL_Joystick;<br><br>    SDL_JoystickEventState(SDL_ENABLE);<br>    joystick := SDL_JoystickOpen(0);</pre>
+      </div>
+      <p>If we wanted to receive events for other joysticks we would open
+them with calls to <tt class="FUNCTION">SDL_JoystickOpen</tt> just like we
+opened joystick 0, except we would store the <span class="STRUCTNAME">SDL_Joystick</span>
+ structure they return in a different pointer.  We only need the joystick
+pointer when we are querying the joysticks or when we are closing the joystick.</p>
+      <p>Up to this point all the code we have is used just to initialize
+the joysticks in order to read values at run time. All we need now is an
+event loop, which is something that all SDL programs should have anyway to
+receive the systems quit events. We must now add code to check the event
+loop for at least some of the above mentioned events. Let's assume our event
+loop looks like this: <pre class="PROGRAMLISTING">    event : TSDL_Event;<br>    // Other initializtion code goes here<br><br>    // Start main game loop here<br><br>    <b>while</b>(SDL_PollEvent(&amp;event)) <b>do</b><br>    <b>begin</b>  <br>        <b>case</b> event.type_ <b>of  </b><br>            SDL_KEYDOWN:<br>            <b>begin</b><br>            // handle keyboard stuff here */				<br>            <b>end;</b><br><br>            SDL_QUIT:<br>            <b>begin</b><br>            // Set whatever flags are necessary to<br>            // end the main game loop here<br>            <b>end;</b><br>        <b>end;</b><br>    <b>end;</b><br><br>    // End loop here</pre>
+ To handle Joystick events we merely add cases for them, first we'll add
+axis handling code. Axis checks can get kinda of tricky because alot of the
+joystick events received are junk. Joystick axis have a tendency to vary
+just a little between polling due to the way they are designed. To compensate
+for this you have to set a threshold for changes and ignore the events that
+have'nt exceeded the threshold. 10% is usually a good threshold value.  This
+sounds a lot more complicated than it is. Here is the Axis event handler:</p>
+      <div class="EXAMPLE"><a name="AEN191"></a>
+      <p><b>Example 3-4. Joystick Axis Events</b></p>
+      <pre class="PROGRAMLISTING">    SDL_JOYAXISMOTION:  // Handle Joystick Motion<br>    <b>begin</b><br>    <b>  if</b> ( ( event.jaxis.value &lt; -3200 ) <b>or</b> (event.jaxis.value &gt; 3200 ) ) <b>then</b><br>      <b>begin</b><br>        // code goes here <br>    <b>  end;</b><br>    <b>end;</b></pre>
+      </div>
+      <p>Another trick with axis events is that up-down and left-right movement
+are two different sets of axes. The most important axis is axis 0 (left-right)
+and axis 1 (up-down).  To handle them seperatly in the code we do the following:</p>
+      <div class="EXAMPLE"><a name="AEN195"></a>
+      <p><b>Example 3-5. More Joystick Axis Events</b></p>
+      <pre class="PROGRAMLISTING">    SDL_JOYAXISMOTION:  // Handle Joystick Motion <br>    <b>begin</b><br>      <b>if</b> ( ( event.jaxis.value &lt; -3200 ) <b>or</b> (event.jaxis.value &gt; 3200 ) ) <b>then</b><br>      <b>begin</b><br>          <b>if</b> ( event.jaxis.axis = 0) <b>then</b><br>          <b>begin</b><br>              // Left-right movement code goes here<br>          <b>end;</b>   <br><br>          <b>if</b> ( event.jaxis.axis = 1) <b>then</b> <br>          <b>begin</b><br>              // Up-Down movement code goes here <br>          <b>end</b>;<br>      <b>end;</b><br>    <b>end;</b></pre>
+      </div>
+      <p>Ideally the code here should use <tt class="STRUCTFIELD"><i>event.jaxis.value</i></tt>
+ to scale something. For example lets assume you are using the joystick to
+control the movement of a spaceship. If the user is using an analog joystick
+and they push the stick a little bit they expect to move less than if they
+pushed it a lot. Designing your code for this situation is preferred because
+it makes the experience for users of analog controls better and remains the
+same for users of digital controls.</p>
+      <p>If your joystick has any additional axis then they may be used for
+other sticks or throttle controls and those axis return values too just with
+different <tt class="STRUCTFIELD"><i>event.jaxis.axis</i></tt> values.</p>
+      <p>Button handling is simple compared to the axis checking.</p>
+      <div class="EXAMPLE"><a name="AEN203"></a>
+      <p><b>Example 3-6. Joystick Button Events</b></p>
+      <pre class="PROGRAMLISTING">    SDL_JOYBUTTONDOWN:  // Handle Joystick Button Presses <br>    <b>begin</b><br>      <b>if</b> ( event.jbutton.button = 0 ) <b>then</b><br>      <b>begin</b><br>          // code goes here <br>      <b>end;</b><br>    <b>end;</b></pre>
+      </div>
+      <p>Button checks are simpler than axis checks because a button can
+only be pressed or not pressed.  The <tt class="LITERAL">SDL_JOYBUTTONDOWN</tt>
+ event is triggered when a button is pressed and the <tt class="LITERAL">
+SDL_JOYBUTTONUP</tt> event is fired when a button is released. We do have
+to know what button was pressed though, that is done by reading the <tt class="STRUCTFIELD"><i>
+event.jbutton.button</i></tt> field.</p>
+      <p>Lastly when we are through using our joysticks we should close them
+with a call to <a href="sdljoystickclose.html"><tt class="FUNCTION">SDL_JoystickClose</tt></a>
+. To close our opened joystick 0 we would do this at the end of our program: 
+      <pre class="PROGRAMLISTING">    SDL_JoystickClose(joystick);</pre>
+      </p>
+      </div>
+      <div class="SECT2">
+      <h2 class="SECT2"><a name="AEN214">Advanced Joystick Functions</a></h2>
+      <p>That takes care of the controls that you can count on being on every
+joystick under the sun, but there are a few extra things that SDL can support.
+ Joyballs are next on our list, they are alot like axis we a few minor differences.
+ Joyballs store relative changes unlike the the absolute postion stored in
+a axis event. Also one trackball event contains both the change in x and
+they change in y.  Our case for it is as follows:</p>
+      <div class="EXAMPLE"><a name="AEN217"></a>
+      <p><b>Example 3-7. Joystick Ball Events</b></p>
+      <pre class="PROGRAMLISTING">    SDL_JOYBALLMOTION:  // Handle Joyball Motion<br>    <b>begin</b><br>      <b>if</b> ( event.jball.ball = 0 ) <b>then</b><br>      <b>begin</b><br>        // ball handling <br>      <b>end;</b><br>    <b>end;</b></pre>
+      </div>
+      <p>The above checks the first joyball on the joystick. The change in
+position will be stored in <tt class="STRUCTFIELD"><i>event.jball.xrel</i></tt>
+ and <tt class="STRUCTFIELD"><i>event.jball.yrel</i></tt>.</p>
+      <p>Finally we have the hat event. Hats report only the direction they
+are pushed in. We check hat's position with the bitmasks:  </p>
+      <p></p>
+      <table border="0">
+        <tbody>
+          <tr>
+            <td><tt class="LITERAL">SDL_HAT_CENTERED</tt></td>
+          </tr>
+          <tr>
+            <td><tt class="LITERAL">SDL_HAT_UP</tt></td>
+          </tr>
+          <tr>
+            <td><tt class="LITERAL">SDL_HAT_RIGHT</tt></td>
+          </tr>
+          <tr>
+            <td><tt class="LITERAL">SDL_HAT_DOWN</tt></td>
+          </tr>
+          <tr>
+            <td><tt class="LITERAL">SDL_HAT_LEFT</tt></td>
+          </tr>
+        </tbody>
+      </table>
+      <p></p>
+  Also there are some predefined combinations of the above: 
+      <p></p>
+      <table border="0">
+        <tbody>
+          <tr>
+            <td><tt class="LITERAL">SDL_HAT_RIGHTUP</tt></td>
+          </tr>
+          <tr>
+            <td><tt class="LITERAL">SDL_HAT_RIGHTDOWN</tt></td>
+          </tr>
+          <tr>
+            <td><tt class="LITERAL">SDL_HAT_LEFTUP</tt></td>
+          </tr>
+          <tr>
+            <td><tt class="LITERAL">SDL_HAT_LEFTDOWN</tt></td>
+          </tr>
+        </tbody>
+      </table>
+      <p></p>
+  Our case for the hat may resemble the following:
+      <p></p>
+      <div class="EXAMPLE"><a name="AEN244"></a>
+      <p><b>Example 3-8. Joystick Hat Events</b></p>
+      <pre class="PROGRAMLISTING">    SDL_JOYHATMOTION:  // Handle Hat Motion<br>    <b>begin</b><br>    <b>  if</b> ( event.jhat.hat <b>or </b>SDL_HAT_UP ) <b>then</b><br>     <b> begin</b><br>          // Do up stuff here<br>     <b> end;</b><br><br>    <b>  if</b> ( event.jhat.hat <b>or</b> SDL_HAT_LEFT ) <b>then</b><br>     <b> begin</b><br>          // Do left stuff here<br>     <b> end;</b><br><br>     <b> if</b> ( event.jhat.hat <b>or</b> SDL_HAT_RIGHTDOWN ) <b>then</b><br>     <b> begin</b><br>          // Do right and down together stuff here<br>     <b> end;</b><br>    <b>end;</b></pre>
+      </div>
+      <p>In addition to the queries for number of joysticks on the system
+and their names there are additional functions to query the capabilities
+of attached joysticks: </p>
+      <p></p>
+      <table border="0">
+        <tbody>
+          <tr>
+            <td><a href="sdljoysticknumaxes.html"><tt class="FUNCTION">SDL_JoystickNumAxes</tt></a></td>
+            <td>Returns the number of joysitck axes</td>
+          </tr>
+          <tr>
+            <td><a href="sdljoysticknumbuttons.html"><tt class="FUNCTION">
+SDL_JoystickNumButtons</tt></a></td>
+            <td>Returns the number of joysitck buttons</td>
+          </tr>
+          <tr>
+            <td><a href="sdljoysticknumballs.html"><tt class="FUNCTION">SDL_JoystickNumBalls</tt></a></td>
+            <td>Returns the number of joysitck balls</td>
+          </tr>
+          <tr>
+            <td><a href="sdljoysticknumhats.html"><tt class="FUNCTION">SDL_JoystickNumHats</tt></a></td>
+            <td>Returns the number of joysitck hats</td>
+          </tr>
+        </tbody>
+      </table>
+      <p></p>
+  To use these functions we just have to pass in the joystick structure we
+got when we opened the joystick. For Example:
+      <p></p>
+      <div class="EXAMPLE"><a name="AEN265"></a>
+      <p><b>Example 3-9. Querying Joystick Characteristics</b></p>
+      <pre class="PROGRAMLISTING">    number_of_buttons : integer;<br>    joystick : PSDL_Joystick;<br><br>    joystick := SDL_JoystickOpen(0);<br>    number_of_buttons := SDL_JoystickNumButtons(joystick);</pre>
+      </div>
+      <p>This block of code would get the number of buttons on the first
+joystick in the system.	</p>
+      </div>
+      </div>
+      </div>
+      <div class="NAVFOOTER">
+      <hr align="Left" width="100%">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td width="32%" align="Left" valign="Top"><a href="guidevideoopengl.html">
+Prev</a></td>
+            <td width="34%" align="Center" valign="Top"><a href="index.html">
+Home</a></td>
+            <td width="32%" align="Right" valign="Top"><a href="guideinputkeyboard.html">
+Next</a></td>
+          </tr>
+          <tr>
+            <td width="32%" align="Left" valign="Top">Using OpenGL With SDL</td>
+            <td width="34%" align="Center" valign="Top"><a href="guide.html">
+Up</a></td>
+            <td width="32%" align="Right" valign="Top">Handling the Keyboard</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      </body>
+      </html>

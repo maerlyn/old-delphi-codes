@@ -1,0 +1,20 @@
+[CopyFiles]
+CopyAppFiles=%InstallPath%
+
+[CopyAppFiles]
+main\*.*=*.*
+skins\*.*=skins\*.*,DONT_OVERWRITE
+data\*.*=Data\*.*,DONT_OVERWRITE
+
+
+[Shortcuts]
+CDNyIkon=%Desktop%
+CDNyIkon2=%ProgramsMenu%\%ProgramGroup%
+
+[CDNyIkon]
+CD-Nyilvántartó=%InstallPath%\CDNyilvantarto.exe
+
+[CDNyIkon2]
+CD-Nyilvántartó eltávolítása="%Windows%\UnGins.exe","%InstallPath%\Install.log"
+CD-Nyilvántartó help=%InstallPath%\CDNyilvantarto.hlp
+CD-Nyilvántartó=%InstallPath%\CDNyilvantarto.exe

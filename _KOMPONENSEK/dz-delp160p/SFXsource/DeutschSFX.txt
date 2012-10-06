@@ -1,0 +1,17 @@
+um den sfx in deutscher sprache zu kompilieren ist in delphi folgendes zu tun :
+
+1) die englische version von SFXStrings.pas unter z.b. SFXStringsUS.pas speichern.
+
+2) SFXStringsDE.pas laden und unter SFXStrings.pas speichern, dabei wird die engl.
+  version natürlich überschrieben, aber die sollten wir ja mit schritt 1 gesichert 
+  haben.
+
+3) die datei SFX1.res nach SFX1US.res umbenennen.
+
+4) die datei SFX1DE.res nach SFX1.res umbenennen.
+
+5) das projekt neu kompilieren.
+
+das sollte es eigentlich gewesen sein.
+
+mfg, markus stephany, mirbir.st@t-online.de

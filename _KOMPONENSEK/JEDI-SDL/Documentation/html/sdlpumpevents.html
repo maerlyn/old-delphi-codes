@@ -1,0 +1,88 @@
+<html>
+<head>
+  <title>SDL_PumpEvents</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Event Functions." href="eventfunctions.html">
+  <link rel="PREVIOUS" title="Event Functions." href="eventfunctions.html">
+  <link rel="NEXT" title="SDL_PeepEvents" href="sdlpeepevents.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="eventfunctions.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlpeepevents.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLPUMPEVENTS">SDL_PumpEvents</a></h1>
+<div class="REFNAMEDIV"><a name="AEN4854"></a>
+<h2>Name</h2>
+SDL_PumpEvents&nbsp;--&nbsp;Pumps the event loop, gathering events from the
+input devices.</div>
+<div class="REFSYNOPSISDIV"><a name="AEN4857"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN4858"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+<p>procedure <b>SDL_PumpEvents</b>;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN4864"></a>
+<h2>Description</h2>
+<p>Pumps the event loop, gathering events from the input devices.</p>
+<p><tt class="FUNCTION">SDL_PumpEvents</tt> gathers all the pending input
+information from devices and places it on the event queue. Without calls
+to <tt class="FUNCTION">SDL_PumpEvents</tt> no events would ever be placed
+on the queue. Often calls the need for <tt class="FUNCTION">SDL_PumpEvents</tt>
+ is hidden from the user since <a href="sdlpollevent.html"><tt class="FUNCTION">
+SDL_PollEvent</tt></a> and <a href="sdlwaitevent.html"><tt class="FUNCTION">
+SDL_WaitEvent</tt></a> implicitly call <tt class="FUNCTION">SDL_PumpEvents</tt>
+. However, if you are not polling or waiting for events (e.g. your filtering
+them), then you must call <tt class="FUNCTION">SDL_PumpEvents</tt> to force
+an event queue update.</p>
+<div class="NOTE">
+<blockquote class="NOTE">
+  <p><b>Note: </b>You can only call this function in the thread that set
+the video mode.</p>
+  </blockquote>
+  </div>
+  </div>
+  <div class="REFSECT1"><a name="AEN4879"></a>
+  <h2>See Also</h2>
+  <p><a href="sdlpollevent.html"><tt class="FUNCTION">SDL_PollEvent</tt></a></p>
+  </div>
+  <div class="NAVFOOTER">
+  <hr align="Left" width="100%">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td width="32%" align="Left" valign="Top"><a href="eventfunctions.html">
+Prev</a></td>
+        <td width="34%" align="Center" valign="Top"><a href="index.html">
+Home</a></td>
+        <td width="32%" align="Right" valign="Top"><a href="sdlpeepevents.html">
+Next</a></td>
+      </tr>
+      <tr>
+        <td width="32%" align="Left" valign="Top">Event Functions.</td>
+        <td width="34%" align="Center" valign="Top"><a href="eventfunctions.html">
+Up</a></td>
+        <td width="32%" align="Right" valign="Top">SDL_PeepEvents</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  </body>
+  </html>

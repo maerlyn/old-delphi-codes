@@ -1,0 +1,45 @@
+package GR32_D4;
+
+{$R *.RES}
+{$ALIGN ON}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'Graphics32'}
+{$IMPLICITBUILD ON}
+
+requires
+  Vcl40;
+
+contains
+  G32 in '..\G32.pas',
+  G32_Transforms in '..\G32_Transforms.pas',
+  G32_Blend in '..\G32_Blend.pas',
+  G32_ByteMaps in '..\G32_ByteMaps.pas',
+  G32_CPUid in '..\G32_CPUid.pas',
+  G32_DrawingEx in '..\G32_DrawingEx.pas',
+  G32_Filters in '..\G32_Filters.pas',
+  G32_Image in '..\G32_Image.pas',
+  G32_Layers in '..\G32_Layers.pas',
+  G32_LowLevel in '..\G32_LowLevel.pas',
+  G32_Polygons in '..\G32_Polygons.pas',
+  G32_RangeBars in '..\G32_RangeBars.pas';
+
+end.

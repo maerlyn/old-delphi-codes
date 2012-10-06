@@ -1,0 +1,90 @@
+object Form1: TForm1
+  Left = 226
+  Top = 275
+  Width = 508
+  Height = 297
+  VertScrollBar.Range = 31
+  ActiveControl = edtMessage
+  Caption = 'ClientUI'
+  Color = clButton
+  Font.Color = clText
+  Font.Height = 11
+  Font.Name = 'MS Sans Serif'
+  Font.Pitch = fpVariable
+  Font.Style = []
+  Menu = MainMenu
+  ParentFont = False
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  TextHeight = 18
+  TextWidth = 5
+  object mmoConversation: TMemo
+    Left = 0
+    Top = 0
+    Width = 508
+    Height = 241
+    Align = alClient
+    ReadOnly = True
+    ScrollBars = ssBoth
+    TabOrder = 0
+  end
+  object pnlBottom: TPanel
+    Left = 0
+    Top = 241
+    Width = 508
+    Height = 31
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 1
+    object edtMessage: TEdit
+      Left = 0
+      Top = 6
+      Width = 409
+      Height = 26
+      Anchors = [akLeft, akRight, akBottom]
+      TabOrder = 0
+    end
+    object btnSend: TButton
+      Left = 415
+      Top = 4
+      Width = 75
+      Height = 25
+      Anchors = [akRight, akBottom]
+      Caption = '&Send'
+      Default = True
+      TabOrder = 1
+      OnClick = btnSendClick
+    end
+  end
+  object MainMenu: TMainMenu
+    Left = 32
+    Top = 48
+    object miFile: TMenuItem
+      Caption = 'File'
+      object miConnect: TMenuItem
+        Caption = 'Connect'
+        OnClick = Connect1Click
+      end
+      object miDisconnect: TMenuItem
+        Caption = 'Disconnect'
+        Enabled = False
+        OnClick = miDisconnectClick
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object Exit1: TMenuItem
+        Caption = 'E&xit'
+        OnClick = Exit1Click
+      end
+    end
+  end
+  object Timer: TTimer
+    Interval = 100
+    OnTimer = TimerTimer
+    Left = 32
+    Top = 80
+  end
+end

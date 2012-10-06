@@ -1,0 +1,1682 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<HTML>
+<HEAD>
+<TITLE>Országos Meteorológiai Szolgálat</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-2">
+<script language="JavaScript">
+<!--
+function SetCookie(name,value) {
+ var argv = SetCookie.arguments;
+ var argc = SetCookie.arguments.length;
+ var expires = (argc>2)? argv[2] : null;
+ var path    = (argc>3)? argv[3] : null;
+ var domain  = (argc>4)? argv[4] : null;
+ var secure  = (argc>5)? argv[5] : false;
+ document.cookie = name+"="+escape(value)+((expires == null)? "" : ("; expires=" + expires.toGMTString())) + ((path    == null)? "" : ("; path=" + path)) + ((domain  == null)? "" : ("; domain=" + domain)) + ((secure  == true)? "; secure" : "");
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function winup(theURL,winName,features) { x=window.open(theURL,winName,features); }
+
+function ablakfokusz() { self.onBlur=window.focus(navigator); }
+
+function addSidebar() { 
+      if ((typeof window.sidebar == "object") && (typeof window.sidebar.addPanel == "function")) 
+      { 
+         window.sidebar.addPanel ("MET.HU Időjárás", 
+         "http://www.met.hu/mysidebar.php?lang=hu",""); 
+      } 
+      else 
+      { 
+         var rv = window.confirm ("The Met.hu sidebar tab requires Netscape 6 or Mozilla. " + "Would you like to download it now?"); 
+         if (rv) 
+            document.location.href = "http://home.netscape.com"; 
+      } 
+   } 
+
+//-->
+</script>
+
+
+
+<link rel="stylesheet" href="/omsz.css" type="text/css" media="screen">
+<link REL="shortcut icon" HREF="/favicon.png" TYPE="image/png">
+</HEAD>
+
+<BODY BGCOLOR="#14092b" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFCC00" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"  >
+<center>
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" width="700" >
+  <TR> 
+    <TD ALIGN="LEFT" VALIGN="TOP" width="223"> 
+      <TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" width="100%">
+        <TR> 
+          <TD align="left" valign="top" height="19"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="65" height="19" align="LEFT" valign="TOP"><a href="/login.phtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('login','','img/login_hu_akt.gif',0)"><img src="img/login_hu.gif" width="65" height="19" border="0" name="login"></a></td>
+                <td width="87" height="19" align="LEFT" valign="TOP"><a href="/regisztracio.phtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('reg','','img/reg_hu_akt.gif',0)"><img src="img/reg_hu.gif" width="87" height="19" border="0" name="reg"></a></td>
+                <td width="73" height="19" align="LEFT" valign="TOP"><a href="/magyarorszag_mertadatok.phtml?lang=en" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('lang','','img/lang_hu_akt.gif',0)"><img src="img/lang_hu.gif" width="71" height="19" border="0" name="lang"></a></td>
+              </tr>
+            </table>
+          </TD>
+        </TR>
+        <TR> 
+          <TD align="left" valign="top" width="223"><img src="img/1.gif" width="223" height="58"></TD>
+        </TR>
+      </TABLE>
+    </TD>
+    <TD ALIGN="LEFT" VALIGN="TOP"> 
+      <TABLE WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+        <TR ALIGN="LEFT" VALIGN="TOP"> 
+          <TD COLSPAN="2"><IMG SRC="img/2.gif" WIDTH="477" HEIGHT="4"></TD>
+        </TR>
+        <TR ALIGN="LEFT" VALIGN="TOP"> 
+	  <TD WIDTH="468"><a href='http://metaad.econet.hu/click?pid=197&bid=412' target=new><img src='http://metaad.econet.hu/banner/ecohirlevel.gif' width=468 height=60 border=0 alt='Kattintson a hirdetésre!'></a></TD>
+          <!--<TD WIDTH="468"><a href='http://www.econet.hu/' target=_new><img src='/img/ecobanner.gif' border=0></a></TD>-->
+          <TD WIDTH="9" HEIGHT="60" align=right><IMG SRC="img/3.gif" WIDTH="9" HEIGHT="60"></TD>
+        </TR>
+        <TR ALIGN="LEFT" VALIGN="TOP"> 
+          <TD COLSPAN="2" HEIGHT="13"><IMG SRC="img/4.gif" WIDTH="477" HEIGHT="13"></TD>
+        </TR>
+      </TABLE>
+    </TD>
+  </TR>
+</TABLE>
+<!--!!!!!!!!FOMENU START!!!!!!!!!!! --><table width="700" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td width="62" height="17" align="LEFT" valign="TOP"><img src="img/menu_begin_inakt.gif" width="62" height="17" alt=' '></td>
+    <td width="1" height="17" align="LEFT" valign="TOP"><a href="index.phtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('fooldal','','img/menu_fooldal_hover_hu.gif',0)"><img src="img/menu_fooldal_inakt_hu.gif"  name="fooldal" border="0" alt='fooldal'></a></td>
+    <td width="9" height="17" align="LEFT" valign="TOP"><img src="img/menu_end_inakt-akt.gif" width="9" height="17" alt=' '></td>
+    <td width="9" height="17" align="LEFT" valign="TOP"><img src="img/menu_start_akt.gif" width="9" height="17" alt=' '></td>
+    <td width="1" height="17" align="LEFT" valign="TOP"><a href="magyarorszag.phtml"><img src="img/menu_magyarorszag_akt_hu.gif"  border=0></a></td>
+    <td width="7" height="17" align="LEFT" valign="TOP"><img src="img/menu_end_akt.gif" width="7" height="17" alt=' '></td>
+    <td width="9" height="17" align="LEFT" valign="TOP"><img src="img/menu_start_inakt.gif" width="9" height="17" alt=' '></td>
+    <td width="1" height="17" align="LEFT" valign="TOP"><a href="world.phtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('vilag','','img/menu_vilag_hover_hu.gif',0)"><img src="img/menu_vilag_inakt_hu.gif"  border="0" name="vilag" alt='Világ/World' title='Világ/World'></a></td>
+    <td width="9" height="17" align="LEFT" valign="TOP"><img src="img/menu_end_inakt-inakt.gif" width="9" height="17" alt=' '></td>
+    <td width="9" height="17" align="LEFT" valign="TOP"><img src="img/menu_start_inakt.gif" width="9" height="17" alt=' '></td>
+    <td width="1" height="17" align="LEFT" valign="TOP"><a href="muholdkepek.phtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('muhold','','img/menu_muhold_hover_hu.gif',0)"><img src="img/menu_muhold_inakt_hu.gif"  border="0" name="muhold" alt='Muholdkepek'></a></td>
+    <td width="9" height="17" align="LEFT" valign="TOP"><img src="img/menu_end_inakt-inakt.gif" width="9" height="17" alt=' '></td>
+    <td width="9" height="17" align="LEFT" valign="TOP"><img src="img/menu_start_inakt.gif" width="9" height="17" alt=' '></td>
+    <td width="1" height="17" align="LEFT" valign="TOP"><a href="radarkepek.phtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('radar','','img/menu_radarkepek_hover_hu.gif',0)"><img src="img/menu_radarkepek_inakt_hu.gif"  border="0" name="radar" alt='Radarkepek'></a></td>
+    <td width="9" height="17" align="LEFT" valign="TOP"><img src="img/menu_end_inakt-inakt.gif" width="9" height="17" alt=' '></td>
+    <td width="9" height="17" align="LEFT" valign="TOP"><img src="img/menu_start_inakt.gif" width="9" height="17" alt=' '></td>
+    <td width="1" height="17" align="LEFT" valign="TOP"><a href="szieszta.phtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('szieszta','','img/menu_szieszta_hover_hu.gif',0)"><img src="img/menu_szieszta_inakt_hu.gif"  border="0" name="szieszta" alt='Szieszta'></a></td>
+    <td width="9" height="17" align="LEFT" valign="TOP"><img src="img/menu_end_inakt-inakt.gif" width="9" height="17" alt=' '></td>
+    <td width="9" height="17" align="LEFT" valign="TOP"><img src="img/menu_start_inakt.gif" width="9" height="17" alt=' '></td>
+    <td width="1" height="17" align="LEFT" valign="TOP"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('szolg','','img/menu_szolg_hover_hu.gif',0)"><img src="img/menu_szolg_inakt_hu.gif"  border="0" name="szolg" alt='Szolgaltatasok'></a></td>
+    <td width="7" height="17" align="LEFT" valign="TOP"><img src="img/menu_lezar_inakt.gif" width="7" height="17" alt=' '></td>
+  </tr>
+</table>
+<!--!!!!!!!!FOMENU END!!!!!!!!!!! --><!--!!!!!!!!ALMENU START!!!!!!!!!!! --><table width="700" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td bgcolor="#14092B" width="4"><img src="img/spacer.gif" width="4" height="1"></td>
+    <td bgcolor="#FFFFFF" width="1"><img src="img/spacer.gif" width="1" height="1"></td>
+    <td bgcolor="#021e5c" width="690"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="4">
+        <tr> 
+          <td align="right" valign="middle"><a href="/magyarorszag.phtml" class="menu">Előrejelzés</a>&nbsp;<span class="separator">|&nbsp;</span>&nbsp;<a href="/magyarorszag_mertadatok.phtml" class="menusarga">Utolsó mért adatok</a>&nbsp;<span class="separator">|&nbsp;</span><a href="magyarorszag_historikus.phtml" class="menu">Historikus adatok</a>&nbsp;<span class="separator">|&nbsp;</span><a href="magyarorszag_eghajlati.phtml" class="menu">Éghajlati adatok</a>&nbsp;<span class="separator">|&nbsp;</span><a href="magyarorszag_webkamera.phtml" class="menu">Webkamera</a>&nbsp;<span class="separator">|&nbsp;</span><a href="magyarorszag_metar.phtml" class="menu">Repülésmeteorológia</a>
+          <br><a href="/hojelentes.phtml?c=hu&p=h" class="menu">Hójelentés</a>&nbsp;<span class="separator">|&nbsp;</span>&nbsp;<a href="/balaton_vihar.phtml" class="menu">Balaton</a>&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+    <td bgcolor="#FFFFFF" width="1"><img src="img/spacer.gif" width="1" height="1"></td>
+    <td bgcolor="#14092B" width="4"><img src="img/spacer.gif" width="4" height="1"></td>
+  </tr>
+</table>
+
+<table width='700' border='0' cellspacing='0' cellpadding='0'>
+ <tr> 
+  <td bgcolor='#14092B' width='4'><img src='/img/spacer.gif' width='4' height='1'></td>
+  <td bgcolor='#FFFFFF' width='1'><img src='/img/spacer.gif' width='1' height='1'></td>
+  <td bgcolor='#021e5c' width='100%' align=center> 
+   <table width='690' border='0' cellspacing='0' cellpadding='3' height=100%>
+    <tr>
+     <td align=center valign=middle>  
+      <table width='100%' border='0' cellspacing='0' cellpadding='1' align=center>
+       <tr> 
+        <td bgcolor='#FFFFFF' valign=middle> 
+         <table width=100% border='0' cellspacing='0' cellpadding='1' height=100% bgcolor='#021e5c' >
+          <form action='/magyarorszag_mertadatok.phtml' method=post name=tform>
+          <tr> 
+           <td align='center' valign='middle'> 
+           <table border=0 width=100% cellpadding=0 cellspacing=0>
+        <tr>
+        <td align=center width=50% nowrap valign=middle class=txt0b>&nbsp;Magyarországi idő (HLT): <span class=txt1byellow>07:09</span></td>
+        <td align=center class=separator>|</td>
+        <td align=center width=50% nowrap valign=middle class=txt0b>&nbsp;Egyezményes idő (UTC): <span class=txt1byellow>06:09</span></td>
+        <!--<td align=center class=separator>|</td>
+        <td align=center width=23% nowrap  valign=middle class=txt0b>&nbsp;Az Őn időzónája: <span class=txt1byellow>2002-11-26 06:09:58</span></td>
+        <td align=center class=separator>|</td>
+        <td align=right width=8% valign=middle class=txt0b>&nbsp;<a href='/magyarorszag_mertadatok.phtml?mod_timezone=1' class=txt1byellow>Módosítás</a>&nbsp;</td>-->
+        </tr>
+        </table>
+        
+           </td>
+          </form>
+          </tr>
+         </table>
+        </td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </td>
+  <td bgcolor='#FFFFFF' width='1'><img src='/img/spacer.gif' width='1' height='1'></td>
+  <td bgcolor='#14092B' width='4'><img src='/img/spacer.gif' width='4' height='1'></td>
+ </tr>
+</table>
+<!--!!!!!!!!ALMENU END!!!!!!!!!!! -->
+<!--tartalom_magyarorszag_mertadatok.phtml comment citywmo: 12882:21.6:47.48:Debrecen-->
+<!-- ha parameter kordfi: kordla: -->
+<!--  szetbontas utan citywmo: 12882  Varos: Debrecen-->
+<!-- kordfi:47.48 kordla:21.6 -->
+<a name=top></a>
+<table width="700" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td bgcolor="#14092B" width="4"><img src="img/spacer.gif" width="4" height="1"></td>
+    <td bgcolor="#FFFFFF" width="1"><img src="img/spacer.gif" width="1" height="1"></td>
+    <td bgcolor="#021e5c" width="690"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="3" height=100%>
+        <tr> 
+          <td width="440" align="center" valign="top" width=440> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="1">
+              <tr> 
+                <td bgcolor="#FFFFFF"> 
+                  <table width="440" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#6A7E9E" class="tablehead" width="9" height="17" align="center" valign="middle"><img src="img/nyil.gif" width="9" height="11"></td>
+                      <td bgcolor="#6A7E9E" class="tablehead" height="17" width="439" >
+                      Utolsó mért adatok</td>
+                    </tr>
+                    <tr><td class="tablehead" colspan=2 bgcolor=#ffffff align="center" valign="middle"><img src="img/spacer.gif" width="1" height="1"></td></tr>
+                    <tr bgcolor="#6A7E9E">
+                    <td colspan=2 width=100% align=center valign=middle background="img/back.jpg">
+                    <form action=/magyarorszag_mertadatok.phtml method=post onSubmit="javascript:document.popupcheck.check.value=0; winup('/loading.html','upload','width=205,height=133');" >
+<br>
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+<tr>
+<td align=center nowrap class=txt2>
+<span class=txt3b>A legközelebbi mérőállomás:</span><br><span class=txt2b> <span class=txt2byellow>Debrecen</span> [ Magyarország] <br></span> <span class=txt2byellow>47.48</span><span class=txt2b> szélességi és </span><span class=txt2byellow>21.6</span><span class=txt2b> hosszúsági fok</span><br>2002.&nbsp;november&nbsp;26.<br><br>
+</td>
+</tr>
+</table>
+
+
+<form action='/magyarorszag.phtml' method=post onSubmit="javascript:document.popupcheck.check.value=0; winup('/loading.html','upload','width=205,height=133');">
+<input type=hidden name=progtype value='48'>
+<input type=hidden name=kivid value='12'>
+<input type=hidden name=orszag value='Magyarország'>
+                     <!-- mertadatok rovidtavu comment  -->
+<input type=hidden name=kord[fi] value='47.48'>
+<input type=hidden name=kord[la] value='21.6'>
+<input type=hidden name=citywmo value='12882:21.6:47.48:Debrecen'>
+<table border=0 width=100%  background='' cellpadding=0 cellspacing=1 align=center>
+<tr><td align=center><input type=submit 
+value='rövidtávú előrejelzés' class=button ></td></tr>
+</table>
+</form>
+<form action='/magyarorszag.phtml' method=post onSubmit="javascript:document.popupcheck.check.value=0; winup('/loading.html','upload','width=205,height=133');">
+<input type=hidden name=progtype value='144'>
+<input type=hidden name=kivid value='12'>
+<input type=hidden name=orszag value='Magyarország'>
+                   <!-- mertadatok kozeptavu comment -->
+<input type=hidden name=kord[fi] value='47.48'>
+<input type=hidden name=kord[la] value='21.6'>
+<input type=hidden name=citywmo value='12882:21.6:47.48:Debrecen'>
+<table border=0 width=100%  background='' cellpadding=0 cellspacing=1 align=center>
+<tr><td align=center><input type=submit 
+value='középtávú előrejelzés' class=button></td></tr>
+</table>
+</form><br><table border=0 width=420 cellpadding=2 cellspacing=1 background='' bgcolor=ffffff><tr class=td1>
+	<th class=tablehead width=14% valign=top align=center>Nap</th>
+	<th class=tablehead width=14% valign=top align=center>Időjárási esemény</th>
+	<th class=tablehead width=14% valign=top align=center>Hőmérséklet<br>[&deg;C]</th>
+	<th class=tablehead width=14% valign=top align=center>Szélerő<br>[km/h]</th>
+	<th class=tablehead width=14% valign=top align=center>Szélirány<br>[&deg;]</th>
+	<th class=tablehead width=14% valign=top align=center>Légnyomás<br>[hPa]</th>
+	<th class=tablehead width=14% valign=top align=center>Páratart.<br>[%]</th>
+	</tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>26</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_idonkentfelhos.gif' width=50 alt='időnként felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>6</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_90.gif' width='50' border=0 alt='keleti'><br><span class=txt1b>80</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 019</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>85</span>&nbsp;%</td>
+   	    </tr></table><br><br><span class=txt2b>Visszamenőleges mérések::</span>
+<br><span class=txt2>2002.&nbsp;november&nbsp;26. <span class=txt>-</span> 2002.&nbsp;október&nbsp;27.</span>
+<br><br>
+<table border=0 width=420 cellpadding=2 cellspacing=1 background='' bgcolor=ffffff><tr class=td1>
+	<th class=tablehead width=14% valign=top align=center>Nap</th>
+	<th class=tablehead width=14% valign=top align=center>Időjárási esemény</th>
+	<th class=tablehead width=14% valign=top align=center>Hőmérséklet<br>[&deg;C]</th>
+	<th class=tablehead width=14% valign=top align=center>Szélerő<br>[km/h]</th>
+	<th class=tablehead width=14% valign=top align=center>Szélirány<br>[&deg;]</th>
+	<th class=tablehead width=14% valign=top align=center>Légnyomás<br>[hPa]</th>
+	<th class=tablehead width=14% valign=top align=center>Páratart.<br>[%]</th>
+	</tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>25</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>9</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_60.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>70</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 018</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>80</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>25</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_idonkentfelhos.gif' width=50 alt='időnként felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>15</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_90.gif' width='50' border=0 alt='keleti'><br><span class=txt1b>80</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 018</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>48</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>25</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_idonkentfelhos.gif' width=50 alt='időnként felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>3</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_60.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>70</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 021</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>92</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>25</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_derult.gif' width=50 alt='derült'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>5</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_90.gif' width='50' border=0 alt='keleti'><br><span class=txt1b>80</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 022</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>87</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>24</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_idonkentfelhos.gif' width=50 alt='időnként felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>8</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_90.gif' width='50' border=0 alt='keleti'><br><span class=txt1b>90</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 022</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>87</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>24</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_esos.gif' width=50 alt='eső volt '><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>10</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_150.gif' width='50' border=0 alt='dél-keleti'><br><span class=txt1b>140</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 021</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>84</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>24</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_idonkentfelhos.gif' width=50 alt='időnként felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>3</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_150.gif' width='50' border=0 alt='dél-keleti'><br><span class=txt1b>140</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 021</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>96</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>24</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_derult.gif' width=50 alt='derült'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>3</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_210.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>200</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 020</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>96</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>23</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_idonkentfelhos.gif' width=50 alt='időnként felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>6</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_210.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>220</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 016</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>85</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>23</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>10</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>14</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_240.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>250</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 012</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>75</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>23</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_esos.gif' width=50 alt='eső volt '><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>10</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>18</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>190</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 009</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>94</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>23</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_borult.gif' width=50 alt='borult'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>12</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>25</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>190</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 005</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>77</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>22</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>11</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_60.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>70</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 004</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>81</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>22</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_esos.gif' width=50 alt='eső'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>11</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_60.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>60</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 006</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>81</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>22</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% >-<br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>4</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_90.gif' width='50' border=0 alt='keleti'><br><span class=txt1b>80</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 008</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>94</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>22</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_derult.gif' width=50 alt='derült'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>7</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_90.gif' width='50' border=0 alt='keleti'><br><span class=txt1b>100</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 010</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>90</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>21</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>9</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_90.gif' width='50' border=0 alt='keleti'><br><span class=txt1b>80</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 012</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>89</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>21</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>15</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>14</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>170</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 014</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>71</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>21</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_esos.gif' width=50 alt='eső'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>7</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>4</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_90.gif' width='50' border=0 alt='keleti'><br><span class=txt1b>80</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 016</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>97</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>21</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_derult.gif' width=50 alt='derült'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>3</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_90.gif' width='50' border=0 alt='keleti'><br><span class=txt1b>80</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 017</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>0</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>20</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_derult.gif' width=50 alt='derült'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>5</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>0</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nowind.png' width='50' border=0 alt='Nincs szel'><br><span class=txt1b></span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 018</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>94</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>20</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>11</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>18</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_240.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>230</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 016</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>67</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>20</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>9</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_210.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>220</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 014</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>92</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>20</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>10</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_210.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>200</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 013</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>87</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>19</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_valtozo.gif' width=50 alt='változó'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>12</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_210.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>200</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 012</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>82</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>19</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_valtozo.gif' width=50 alt='változó'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>17</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>22</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>180</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 011</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>53</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>19</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_idonkentfelhos.gif' width=50 alt='időnként felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>4</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_90.gif' width='50' border=0 alt='keleti'><br><span class=txt1b>80</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 011</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>92</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>19</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_derult.gif' width=50 alt='derült'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>8</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_60.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>60</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 013</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>79</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>18</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_derult.gif' width=50 alt='derült'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>11</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_60.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>60</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 016</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>80</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>18</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_valtozo.gif' width=50 alt='változó'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>20</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>0</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nowind.png' width='50' border=0 alt='Nincs szel'><br><span class=txt1b></span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 018</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>42</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>18</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_valtozo.gif' width=50 alt='változó'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>8</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_90.gif' width='50' border=0 alt='keleti'><br><span class=txt1b>80</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 020</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>93</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>18</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_valtozo.gif' width=50 alt='változó'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>11</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>4</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_150.gif' width='50' border=0 alt='dél-keleti'><br><span class=txt1b>140</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 020</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>86</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>17</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>15</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_210.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>200</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 019</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>77</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>17</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_zapor.gif' width=50 alt='záporeső volt'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>20</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>25</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_210.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>220</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 016</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>55</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>17</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_idonkentfelhos.gif' width=50 alt='időnként felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>14</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>18</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_210.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>200</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 014</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>58</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>17</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>15</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>18</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>190</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 012</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>56</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>16</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_borult.gif' width=50 alt='borult'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>16</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>14</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_150.gif' width='50' border=0 alt='dél-keleti'><br><span class=txt1b>160</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 012</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>62</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>16</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>19</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>22</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>180</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 013</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>60</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>16</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_borult.gif' width=50 alt='borult'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>14</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>18</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>180</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 012</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>69</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>16</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_borult.gif' width=50 alt='borult'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>15</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>25</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>180</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 011</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>65</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>15</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_borult.gif' width=50 alt='borult'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>15</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>18</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>170</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 010</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>64</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>15</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_borult.gif' width=50 alt='borult'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>19</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>29</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>190</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 008</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>58</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>15</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>14</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>25</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>180</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 008</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>69</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>15</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_derult.gif' width=50 alt='derült'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>12</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>22</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>170</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 007</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>78</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>14</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_valtozo.gif' width=50 alt='változó'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>13</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>22</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>180</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 006</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>80</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>14</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_idonkentfelhos.gif' width=50 alt='időnként felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>15</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>22</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>180</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 007</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>75</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>14</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_esos.gif' width=50 alt='eső'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>9</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>22</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>190</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 008</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>86</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>14</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_borult.gif' width=50 alt='borult'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>8</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_210.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>200</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 010</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>94</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>13</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_borult.gif' width=50 alt='borult'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>7</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_120.gif' width='50' border=0 alt='dél-keleti'><br><span class=txt1b>130</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 012</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>95</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>13</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_esos.gif' width=50 alt='eső'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>7</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>4</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_90.gif' width='50' border=0 alt='keleti'><br><span class=txt1b>90</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 014</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>85</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>13</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_idonkentfelhos.gif' width=50 alt='időnként felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>2</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>14</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_90.gif' width='50' border=0 alt='keleti'><br><span class=txt1b>80</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 016</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>94</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>13</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% >-<br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>1</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_90.gif' width='50' border=0 alt='keleti'><br><span class=txt1b>90</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 020</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>94</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>12</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_valtozo.gif' width=50 alt='változó'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>3</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_90.gif' width='50' border=0 alt='keleti'><br><span class=txt1b>90</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 021</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>86</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>12</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_derult.gif' width=50 alt='derült'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>9</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_120.gif' width='50' border=0 alt='dél-keleti'><br><span class=txt1b>110</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 019</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>71</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>12</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_paras.gif' width=50 alt='párásság'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>1</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_240.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>250</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 016</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>86</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>12</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_valtozo.gif' width=50 alt='változó'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>5</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>14</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_300.gif' width='50' border=0 alt='észak-nyugati'><br><span class=txt1b>300</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 010</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>93</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>11</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_esos.gif' width=50 alt='eső'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>4</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>18</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>180</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 006</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>89</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>11</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_esos.gif' width=50 alt='eső'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>4</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>25</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>180</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 010</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>86</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>11</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_valtozo.gif' width=50 alt='változó'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>-3</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>170</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 013</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>95</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>11</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_valtozo.gif' width=50 alt='változó'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>0</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>170</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 013</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>96</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>10</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_idonkentfelhos.gif' width=50 alt='időnként felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>3</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>0</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nowind.png' width='50' border=0 alt='Nincs szel'><br><span class=txt1b></span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 011</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>85</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>10</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>7</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_300.gif' width='50' border=0 alt='észak-nyugati'><br><span class=txt1b>300</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 006</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>62</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>10</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_paras.gif' width=50 alt='párásság'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>2</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>22</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_210.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>200</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 003</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>85</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>10</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% >-<br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>3</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>18</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>190</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 003</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>83</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>09</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_borult.gif' width=50 alt='borult'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>3</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>14</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>190</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 003</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>88</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>09</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_paras.gif' width=50 alt='párásság'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>4</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>22</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>190</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 006</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>82</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>09</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_kodos.gif' width=50 alt='köd'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>0</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>4</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_150.gif' width='50' border=0 alt='dél-keleti'><br><span class=txt1b>150</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 011</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>96</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>09</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_idonkentfelhos.gif' width=50 alt='időnként felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>2</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>4</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_120.gif' width='50' border=0 alt='dél-keleti'><br><span class=txt1b>130</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 014</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>94</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>08</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_borult.gif' width=50 alt='borult'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>3</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>0</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nowind.png' width='50' border=0 alt='Nincs szel'><br><span class=txt1b></span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 016</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>90</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>08</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_paras.gif' width=50 alt='párásság'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>2</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>0</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nowind.png' width='50' border=0 alt='Nincs szel'><br><span class=txt1b></span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 016</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>96</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>08</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_paras.gif' width=50 alt='párásság'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>2</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_210.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>200</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 014</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>98</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>07</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_esos.gif' width=50 alt='eső'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>2</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>4</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_270.gif' width='50' border=0 alt='nyugati'><br><span class=txt1b>270</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 013</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>96</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>07</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_esos.gif' width=50 alt='ónos eső'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>1</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_60.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>60</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 014</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>98</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>07</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>-1</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_60.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>70</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 017</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>92</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>07</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% >-<br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>1</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>14</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_30.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>30</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 021</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>82</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>06</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>4</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_30.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>40</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 025</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>77</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>06</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>5</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_30.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>30</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 026</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>73</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>06</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>1</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>18</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_30.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>20</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 026</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>89</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>06</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_havazas.gif' width=50 alt='gyenge/közepes havazás'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>1</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>22</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_30.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>30</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 024</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>95</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>05</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_zapor.gif' width=50 alt='gyenge, közepes zápor'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>2</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>18</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_30.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>20</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 021</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>92</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>05</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_zapor.gif' width=50 alt='gyenge, közepes zápor'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>2</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_0.gif' width='50' border=0 alt='északi'><br><span class=txt1b>10</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 017</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>96</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>05</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_esos.gif' width=50 alt='ónos eső'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>1</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>14</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_360.gif' width='50' border=0 alt='északi'><br><span class=txt1b>360</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 013</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>95</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>05</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_esos.gif' width=50 alt='eső'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>2</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_330.gif' width='50' border=0 alt='észak-nyugati'><br><span class=txt1b>330</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 012</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>87</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>04</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_esos.gif' width=50 alt='eső volt '><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>2</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>14</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_30.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>20</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 011</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>93</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>04</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_esos.gif' width=50 alt='eső'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>2</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>18</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_30.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>30</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 010</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>96</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>04</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_esos.gif' width=50 alt='eső'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>1</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>14</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_30.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>30</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 011</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>87</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>04</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% >-<br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>0</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_30.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>30</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 014</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>79</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>03</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_valtozo.gif' width=50 alt='változó'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>2</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_30.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>30</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 015</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>74</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>03</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_valtozo.gif' width=50 alt='változó'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>7</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>14</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_0.gif' width='50' border=0 alt='északi'><br><span class=txt1b>10</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 015</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>51</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>03</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_valtozo.gif' width=50 alt='változó'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>3</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>14</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_0.gif' width='50' border=0 alt='északi'><br><span class=txt1b>10</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 015</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>73</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>03</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>6</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>14</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_30.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>20</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 013</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>83</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>02</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_esos.gif' width=50 alt='eső'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>9</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_210.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>210</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 011</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>98</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>02</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_paras.gif' width=50 alt='párásság'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>9</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>14</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_240.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>240</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 013</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>94</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>02</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_kodos.gif' width=50 alt='köd'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>6</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>0</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nowind.png' width='50' border=0 alt='Nincs szel'><br><span class=txt1b></span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 018</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>98</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>02</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_paras.gif' width=50 alt='párásság'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>5</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_120.gif' width='50' border=0 alt='dél-keleti'><br><span class=txt1b>120</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 022</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>97</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>01</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_paras.gif' width=50 alt='párásság'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>7</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>4</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_90.gif' width='50' border=0 alt='keleti'><br><span class=txt1b>100</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 023</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>96</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>01</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_borult.gif' width=50 alt='borult'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>7</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>4</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_150.gif' width='50' border=0 alt='dél-keleti'><br><span class=txt1b>150</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 023</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>72</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>01</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% >-<br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>3</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>4</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_120.gif' width='50' border=0 alt='dél-keleti'><br><span class=txt1b>110</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 023</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>98</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>november<br>01</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>3</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_210.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>220</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 023</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>94</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>október<br>31</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_derult.gif' width=50 alt='derült'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>4</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_30.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>40</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 024</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>83</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>október<br>31</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>10</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_60.gif' width='50' border=0 alt='észak-keleti'><br><span class=txt1b>70</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 023</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>58</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>október<br>31</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_paras.gif' width=50 alt='párásság'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>3</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_0.gif' width='50' border=0 alt='északi'><br><span class=txt1b>10</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 022</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>90</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>október<br>31</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% >-<br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>-0</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>4</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_300.gif' width='50' border=0 alt='észak-nyugati'><br><span class=txt1b>310</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 019</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>97</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>október<br>30</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_derult.gif' width=50 alt='derült'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>5</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_240.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>250</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 015</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>89</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>október<br>30</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_esos.gif' width=50 alt='eső'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>7</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>18</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>190</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 013</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>74</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>október<br>30</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>4</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_150.gif' width='50' border=0 alt='dél-keleti'><br><span class=txt1b>150</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 020</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>81</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>október<br>30</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_derult.gif' width=50 alt='derült'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>1</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>7</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_90.gif' width='50' border=0 alt='keleti'><br><span class=txt1b>80</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 023</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>82</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>október<br>29</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_derult.gif' width=50 alt='derült'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>7</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_270.gif' width='50' border=0 alt='nyugati'><br><span class=txt1b>260</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 023</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>59</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>október<br>29</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_valtozo.gif' width=50 alt='változó'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>12</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>18</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_300.gif' width='50' border=0 alt='észak-nyugati'><br><span class=txt1b>290</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 023</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>38</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>október<br>29</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_derult.gif' width=50 alt='derült'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>5</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>18</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_270.gif' width='50' border=0 alt='nyugati'><br><span class=txt1b>270</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 023</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>79</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>október<br>29</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_derult.gif' width=50 alt='derült'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>5</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>18</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_270.gif' width='50' border=0 alt='nyugati'><br><span class=txt1b>260</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 022</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>76</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>október<br>28</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_derult.gif' width=50 alt='derült'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>9</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>29</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_270.gif' width='50' border=0 alt='nyugati'><br><span class=txt1b>270</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 020</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>50</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>október<br>28</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_derult.gif' width=50 alt='derült'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>15</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>40</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_270.gif' width='50' border=0 alt='nyugati'><br><span class=txt1b>280</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 015</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>26</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>október<br>28</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_valtozo.gif' width=50 alt='változó'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>12</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>25</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_270.gif' width='50' border=0 alt='nyugati'><br><span class=txt1b>260</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 012</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>43</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>október<br>28</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_felhos.gif' width=50 alt='felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>12</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>25</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_210.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>210</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 010</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>67</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>október<br>27</span><br>18:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_borult.gif' width=50 alt='borult'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>12</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>25</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_180.gif' width='50' border=0 alt='déli'><br><span class=txt1b>180</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 014</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>66</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>október<br>27</span><br>12:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_valtozo.gif' width=50 alt='változó'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>15</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>18</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_240.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>240</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 020</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>48</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>október<br>27</span><br>06:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/nappal/tn_idonkentfelhos.gif' width=50 alt='időnként felhős'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>6</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>11</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_210.gif' width='50' border=0 alt='dél-nyugati'><br><span class=txt1b>220</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 022</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>91</span>&nbsp;%</td>
+   	    </tr><tr class=tdzold2>
+   	    <td align=center class=txt1 width=14% >
+<span class=txt2b>október<br>27</span><br>00:00
+</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/idokep/ejjel/tn_derult.gif' width=50 alt='derült'><br>&nbsp;</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/ico_ho.gif' width='50' align=top alt='Homerseklet'><br><span class=txt1b>8</span>&nbsp;&deg;C</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_szelero.gif' width='50' align=center alt='szélerő' title='szélerő'><br><span class=txt1b>18</span>&nbsp;km/h</td>
+   	    <td align=center class=txt1 width=14% ><img src='/img/icons/nyil_270.gif' width='50' border=0 alt='nyugati'><br><span class=txt1b>270</span>&nbsp;&deg;</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_legnyomas.gif' width='50' align=center alt='Legnyomas' title='Legnyomas'><br><span class=txt1b>1 020</span>&nbsp;hPa</td>
+   	    <td align=center class=txt1 width=14% nowrap><img src='/img/icons/ico_relnedv.jpg' width='50' align=center alt='Relativ nedvesseg' title='Relativ nedvesseg'><br><span class=txt1b>74</span>&nbsp;%</td>
+   	    </tr></table><br><br>
+<div align=right><br><a href='#top' class=link><img src='/img/nyil_fel.gif' border=0>&nbsp;lap teteje</a></div>
+<br>
+
+		
+
+		   </form>
+		   </td>
+		  </tr>
+                  </table> 
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td width="35%" valign=top>  
+            <table width="100%" border="0" cellspacing="0" cellpadding="1">
+              <tr> 
+                <td bgcolor="#FFFFFF"> 
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#6A7E9E" class="tablehead" width="9" height="17" align="center" valign="middle"><img src="img/nyil.gif" width="9" height="11"></td>
+                      <td bgcolor="#6A7E9E" class="tablehead" height="17" width="100%">
+Információ:		    </td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF"> 
+                      <td class="tablehead" colspan="2" align="center" valign="middle"><img src="img/spacer.gif" width="1" height="1"></td>
+                    </tr>
+                    <tr bgcolor="#5C708F" align="left"> 
+                    <form action=/magyarorszag_mertadatok.phtml method=post onSubmit="javascript:document.popupcheck.check.value=0; winup('/loading.html','upload','width=205,height=133');" >
+                      <td background="img/back.jpg" colspan="2" height="17" valign="middle" class="txt"> 
+                       <table width="100%" border="0" cellspacing="2" cellpadding="2">
+                        <tr><td class=txt>
+<table width=100% cellpadding=1 cellspacing=0 align=center>
+<tr>
+<td><center class=txt1b></center>
+<p align=justify><span class=txt0 >
+A meteorológiai állomások mért adatainak megtekintéséhez kattintson a térképen a kívánt helyre, vagy válassza ki a várost a listából.<br>Az adatok 6 óránkénti frissítéssel kerülnek fel a lapra, itt mindig a legutolsó mérési adatok láthatók.<br>A közelmúlt mérési adatai a historikus adatok menüpontból kérhetok le.
+</span></p>
+</td></tr></table>                        <center >
+                        <select name=citywmo onChange="javascript:document.popupcheck.check.value=0; winup('/loading.html','upload','width=205,height=133'); this.form.submit();" class=fselect>
+                        <option value=''>Válasszon egy várost<option value='12843:19.18:47.43:Budapest'> Budapest  [HU]
+<option value='12882:21.6:47.48:Debrecen'> Debrecen  [HU]
+<option value='12822:17.68:47.72:Gy%F5r'> Győr  [HU]
+<option value='12772:20.77:48.08:Miskolc'> Miskolc  [HU]
+<option value='12925:16.97:46.45:Nagykanizsa'> Nagykanizsa  [HU]
+<option value='12942:18.23:46:P%E9cs'> Pécs  [HU]
+<option value='12982:20.1:46.25:Szeged'> Szeged  [HU]
+                        </select>
+                        <br>
+                        <input class=button2 type=submit value='Mehet'>
+                        </center>
+                        </td></tr>
+                        </table>
+                      </td>
+                    </form>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <br>
+            <table width=100% border="0" background='' cellspacing="0" cellpadding="1" align=center>
+              <tr> 
+                <td bgcolor="#FFFFFF"> 
+                  <table width=100% border="0" background='' cellspacing="0" cellpadding="0" >
+                    <tr> 
+                      <td bgcolor="#6A7E9E" class="tablehead" width="9" height="17" align="center" valign="middle"><img src="img/nyil.gif" width="9" height="11"></td>
+                      <td bgcolor="#6A7E9E" class="tablehead" height="17" width="439">
+                      Keresztlinkek</td>
+                    </tr>
+                    <tr><td class="tablehead" colspan=2 bgcolor=#ffffff align="center" valign="middle"><img src="img/spacer.gif" width="1" height="1"></td></tr>
+                    <tr bgcolor="#6A7E9E" >
+                    <td colspan=2 width=100% align=center valign=top background="img/back.jpg">
+
+<form action='/magyarorszag.phtml' method=post onSubmit="javascript:document.popupcheck.check.value=0; winup('/loading.html','upload','width=205,height=133');">
+<input type=hidden name=progtype value='48'>
+<input type=hidden name=kivid value='12'>
+<input type=hidden name=orszag value='Magyarország'>
+                     <!-- mertadatok rovidtavu comment  -->
+<input type=hidden name=kord[fi] value='47.48'>
+<input type=hidden name=kord[la] value='21.6'>
+<input type=hidden name=citywmo value='12882:21.6:47.48:Debrecen'>
+<table border=0 width=100%  background='' cellpadding=0 cellspacing=1 align=center>
+<tr><td align=center><input type=submit 
+value='rövidtávú előrejelzés' class=button ></td></tr>
+</table>
+</form>
+<form action='/magyarorszag.phtml' method=post onSubmit="javascript:document.popupcheck.check.value=0; winup('/loading.html','upload','width=205,height=133');">
+<input type=hidden name=progtype value='144'>
+<input type=hidden name=kivid value='12'>
+<input type=hidden name=orszag value='Magyarország'>
+                   <!-- mertadatok kozeptavu comment -->
+<input type=hidden name=kord[fi] value='47.48'>
+<input type=hidden name=kord[la] value='21.6'>
+<input type=hidden name=citywmo value='12882:21.6:47.48:Debrecen'>
+<table border=0 width=100%  background='' cellpadding=0 cellspacing=1 align=center>
+<tr><td align=center><input type=submit 
+value='középtávú előrejelzés' class=button></td></tr>
+</table>
+</form>
+                    </td>
+                    </tr>
+                  </table> 
+                </td>
+              </tr>
+            </table>
+<br>
+            <table width="100%" border="0" cellspacing="0" cellpadding="1" >
+              <tr> 
+                <td bgcolor="#FFFFFF"> 
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td bgcolor="#6A7E9E" class="tablehead" width="9" height="17" align="left" valign="middle"><img src="img/nyil.gif" width="9" height="11"></td>
+                      <td bgcolor="#6A7E9E" class="tablehead" height="17" width="100%" align=left>Ajánlat:</td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF"> 
+                      <td class="tablehead" colspan="2" align="center" valign="middle"><img src="img/spacer.gif" width="1" height="1"></td>
+                    </tr>
+                    <tr> 
+                      <td bgcolor="#5C708F" background="img/back.jpg" colspan="2" height="17" align="left" valign="middle" class="txt"> 
+                        <center><br><a href='/hojelentes.phtml?p=e'><img src='/img/banner_hojelentes.gif' border=0 alt='Banner hójelentes' title='Banner hójelentes'></a>&nbsp;&nbsp;&nbsp;<a href='/magyarorszag_metar.phtml'><img src='/img/banner_repules.gif' border=0 alt='Banner repulesmeteorologia' title='Banner repülésmeteorológia'></a><br><br><br></center>                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td bgcolor="#FFFFFF" width="1"><img src="img/spacer.gif" width="1" height="1"></td>
+    <td bgcolor="#14092B" width="4"><img src="img/spacer.gif" width="4" height="1"></td>
+  </tr>
+</table>
+<table width="700" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td><img src="img/5.gif" width="700" height="12"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" class="footer">
+
+
+   <table width='700' border='0' cellspacing='0' cellpadding='3'>
+    <tr>
+     <td align=center valign=middle>  
+      <table width='100%' border='0' cellspacing='0' cellpadding='1' align=center>
+       <tr> 
+        <td bgcolor='#FFFFFF' valign=middle> 
+         <table width=100% border='0' cellspacing='0' cellpadding='1' bgcolor='#021e5c' >
+          <tr> 
+           <td align='right' valign='middle' class=txt1byellow> 
+           &nbsp;A szerver terheltsége: <img src='/data/siteload.png?245458867.8487' border=0 align=absmiddle> 
+           </td>
+          </tr>
+         </table>
+        </td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+
+
+<table cellspacing=0 cellpadding=0 width=700 border=0>
+  <tr> 
+    <td class=footer valign=top align=center>2002. 
+    <a href="http://omsz.met.hu/omsz.html">Országos Meteorológiai Szolgálat</a>, 
+      minden jog fenntartva</td>
+  </tr>
+  <tr> 
+    <td class=footer valign=top align=middle>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td class=footer valign=top align=middle> 
+      <table cellspacing=0 cellpadding=1 border=0 width="100%">
+        <tr> 
+          <td class=footer noWrap><a href="http://omsz.met.hu/omsz.html"><img src="/img/omszlogo.gif" width="52" height="64" border="0"></a></td>
+          <td class=footer noWrap align="left" valign="middle">1024 Budapest, 
+            Kitaibel Pál u. 1 <br>
+            Postacím: 1525 Budapest, Pf. 38. <br>
+            Telefon: (1) 346-4600 <br>
+            Fax: (1) 346-4669<br>
+            E-mail: <a href="mailto:contact@econet.hu,webmaster@met.hu">webmaster@met.hu</a></td>
+          <td class=footer noWrap width="100%">&nbsp;</td>
+          <td class=footer noWrap align="right" valign="middle">Fejlesztette:&nbsp;<a href="http://www.econet.hu">econet.hu Rt.</a><br>
+            1117, Budapest, Hauszmann A. u. 3.<br>
+            Tel.: (+36-1) 371-2100 <br> Fax: (+36-1) 371-2101<br>
+            E-mail: <a href="mailto:contact@econet.hu,webmaster@met.hu">contact@econet.hu</a> </td>
+          <td class=footer noWrap align="right" valign="middle"><a href="http://www.econet.hu"><img src="/img/eco_webgyar_logo.gif" alt='econet.hu' title='econet.hu' border="0"></a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+      
+      </td></tr></table>
+    </td>
+  </tr>
+</table>
+<p class="separator">&nbsp;</p>
+</center>
+
+<!--POPUPCHECK-->
+<form name=popupcheck action='#'>
+<input type=hidden name=check value=1>
+</form>
+<!--POPUPCHECK-->
+<iframe src="/reload.php" marginwidth=0 marginheight=0 scrolling=no height=0 width=0 frameborder=0></iframe>
+</BODY>
+</HTML>

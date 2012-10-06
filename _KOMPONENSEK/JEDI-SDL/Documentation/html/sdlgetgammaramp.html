@@ -1,0 +1,103 @@
+<html>
+<head>
+  <title>SDL_GetGammaRamp</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="Video" href="video.html">
+   
+  <link rel="PREVIOUS" title="SDL_SetGamma" href="sdlsetgamma.html">
+   
+  <link rel="NEXT" title="SDL_SetGammaRamp" href="sdlsetgammaramp.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="sdlsetgamma.html">
+ Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom"><br>
+       </td>
+       <td width="8%" align="Right" valign="Bottom"><a href="sdlsetgammaramp.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<h1><a name="SDLGETGAMMARAMP">SDL_GetGammaRamp</a></h1>
+ 
+<div class="REFNAMEDIV"><a name="AEN1216"></a> 
+<h2>Name</h2>
+ SDL_GetGammaRamp&nbsp;--&nbsp;Gets the color gamma lookup tables for the 
+display</div>
+ 
+<div class="REFSYNOPSISDIV"><a name="AEN1219"></a><br>
+ 
+<h2>Synopsis</h2>
+ 
+<div class="FUNCSYNOPSIS"><a name="AEN1220"></a> 
+<p></p>
+ <pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+ 
+<p>function <b>SDL_GetGammaRamp</b>( var redtable : UInt16; var greentable
+: UInt16; var bluetable : UInt16 ) : Integer;</p>
+ 
+<p></p>
+ </div>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN1226"></a> 
+<h2>Description</h2>
+ 
+<p>Gets the gamma translation lookup tables currently used by the display.
+ Each table is an array of 256 Uint16 values.</p>
+ 
+<p>Not all display hardware is able to change gamma.</p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN1230"></a> 
+<h2>Return Value</h2>
+ 
+<p>Returns -1 on error.</p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN1233"></a> 
+<h2>See Also</h2>
+ 
+<p><a href="sdlsetgamma.html">SDL_SetGamma</a> <a href="sdlsetgammaramp.html">
+ SDL_SetGammaRamp</a></p>
+ </div>
+ 
+<div class="NAVFOOTER"> 
+<hr align="Left" width="100%"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <td width="31%" align="Left" valign="Top"><a href="sdlsetgamma.html">
+ Prev</a></td>
+       <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+       <td width="31%" align="Right" valign="Top"><a href="sdlsetgammaramp.html">
+ Next</a></td>
+     </tr>
+     <tr>
+       <td width="31%" align="Left" valign="Top">SDL_SetGamma</td>
+       <td width="34%" align="Center" valign="Top"><a href="video.html">Up</a></td>
+       <td width="31%" align="Right" valign="Top">SDL_SetGammaRamp</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ </div>
+ 
+</body>
+</html>

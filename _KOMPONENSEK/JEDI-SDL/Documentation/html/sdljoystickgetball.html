@@ -1,0 +1,111 @@
+<html>
+<head>
+  <title>SDL_JoystickGetBall</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="Joystick" href="joystick.html">
+   
+  <link rel="PREVIOUS" title="SDL_JoystickGetButton" href="sdljoystickgetbutton.html">
+   
+  <link rel="NEXT" title="SDL_JoystickClose" href="sdljoystickclose.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="sdljoystickgetbutton.html">
+ Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom"><br>
+       </td>
+       <td width="8%" align="Right" valign="Bottom"><a href="sdljoystickclose.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<h1><a name="SDLJOYSTICKGETBALL">SDL_JoystickGetBall</a></h1>
+ 
+<div class="REFNAMEDIV"><a name="AEN5892"></a> 
+<h2>Name</h2>
+ SDL_JoystickGetBall&nbsp;--&nbsp;Get relative trackball motion</div>
+ 
+<div class="REFSYNOPSISDIV"><a name="AEN5895"></a><br>
+ 
+<h2>Synopsis</h2>
+ 
+<div class="FUNCSYNOPSIS"><a name="AEN5896"></a> 
+<p></p>
+ <pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+ 
+<p>function <b>SDL_JoystickGetBall</b>( joystick : PSDL_Joystick; ball : var
+Integer; dx : var Integer; dy : Integer) : Integer;</p>
+ 
+<p></p>
+ </div>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN5902"></a> 
+<h2>Description</h2>
+ 
+<p>Get the <tt class="PARAMETER"><i>ball</i></tt> axis change.</p>
+ 
+<p>Trackballs can only return relative motion since the last call to <tt class="FUNCTION">
+ SDL_JoystickGetBall</tt>, these motion deltas a placed into <tt class="PARAMETER"><i>
+ dx</i></tt> and <tt class="PARAMETER"><i>dy</i></tt>.</p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN5910"></a> 
+<h2>Return Value</h2>
+ 
+<p>Returns <span class="RETURNVALUE">0</span> on success or <span class="RETURNVALUE">
+ -1</span> on failure</p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN5915"></a> 
+<h2>Examples</h2>
+ 
+<p><pre class="PROGRAMLISTING">delta_x, delta_y : Integer;<br>joy : PSDL_Joystick;<br>.<br>.<br>.<br>SDL_JoystickUpdate;<br><b>if</b> ( SDL_JoystickGetBall( joy, 0, delta_x, delta_y ) = -1) <b>then</b><br>  WriteLn( 'TrackBall Read Error!' );<br>WriteLn( Format('Trackball Delta- X:%d, Y:%d', [ delta_x, delta_y ] ) );</pre>
+ </p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN5919"></a> 
+<h2>See Also</h2>
+ 
+<p><a href="sdljoysticknumballs.html"><tt class="FUNCTION">SDL_JoystickNumBalls</tt></a></p>
+ </div>
+ 
+<div class="NAVFOOTER"> 
+<hr align="Left" width="100%"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <td width="31%" align="Left" valign="Top"><a href="sdljoystickgetbutton.html">
+ Prev</a></td>
+       <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+       <td width="31%" align="Right" valign="Top"><a href="sdljoystickclose.html">
+ Next</a></td>
+     </tr>
+     <tr>
+       <td width="31%" align="Left" valign="Top">SDL_JoystickGetButton</td>
+       <td width="34%" align="Center" valign="Top"><a href="joystick.html">
+ Up</a></td>
+       <td width="31%" align="Right" valign="Top">SDL_JoystickClose</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ </div>
+ 
+</body>
+</html>

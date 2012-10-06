@@ -1,0 +1,112 @@
+object Form1: TForm1
+  Left = 194
+  Top = 145
+  Width = 737
+  Height = 474
+  HorzScrollBar.Range = 721
+  VertScrollBar.Range = 457
+  ActiveControl = Button1
+  Caption = 'Form1'
+  Color = clBackground
+  Visible = True
+  WindowState = wsMaximized
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnPaint = FormPaint
+  PixelsPerInch = 75
+  TextHeight = 15
+  TextWidth = 7
+  object Button1: TButton
+    Left = 384
+    Top = 16
+    Width = 75
+    Height = 25
+    Caption = 'Initialise SDL'
+    Font.CharSet = fcsAnyCharSet
+    Font.Color = clBlack
+    Font.Height = 11
+    Font.Name = 'arial'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    ParentFont = False
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object Panel1: TPanel
+    Left = 8
+    Top = 16
+    Width = 369
+    Height = 441
+    Caption = 'Panel1'
+    TabOrder = 1
+  end
+  object cbhw: TCheckBox
+    Left = 536
+    Top = 16
+    Width = 100
+    Height = 30
+    Caption = 'Hardware'
+    Enabled = False
+    TabOrder = 2
+  end
+  object Memo: TMemo
+    Left = 392
+    Top = 336
+    Width = 329
+    Height = 113
+    Enabled = False
+    TabOrder = 3
+  end
+  object Edit1: TEdit
+    Left = 392
+    Top = 72
+    Width = 329
+    Height = 23
+    Enabled = False
+    TabOrder = 4
+    Text = 'Edit1'
+  end
+  object TrackBar1: TTrackBar
+    Left = 392
+    Top = 104
+    Width = 329
+    Height = 45
+    Enabled = False
+    Max = 100
+    Position = 50
+    TabOrder = 5
+    OnChange = TrackBar1Change
+  end
+  object TrackBar2: TTrackBar
+    Left = 392
+    Top = 160
+    Width = 329
+    Height = 45
+    Enabled = False
+    Max = 100
+    Position = 50
+    TabOrder = 6
+    OnChange = TrackBar2Change
+  end
+  object TrackBar3: TTrackBar
+    Left = 392
+    Top = 272
+    Width = 329
+    Height = 45
+    Enabled = False
+    Max = 31
+    TabOrder = 7
+    OnChange = TrackBar3Change
+  end
+  object TrackBar4: TTrackBar
+    Left = 392
+    Top = 216
+    Width = 329
+    Height = 45
+    Enabled = False
+    Min = -9
+    TabOrder = 8
+    OnChange = TrackBar4Change
+  end
+end

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<PersonalityInfo>
+		<Option>
+			<Option Name="Personality" Type="String">Default.Personality</Option>
+			<Option Name="ProjectType" Type="String"></Option>
+			<Option Name="Version" Type="String">1.0</Option>
+			<Option Name="GUID" Type="String">{AF3096EA-81E9-497C-AFF7-A9DDEB948B20}</Option>
+		</Option>
+	</PersonalityInfo>
+	<Default.Personality>  <Projects ActiveProject="FtpTst.exe">
+      <Projects Name="IcsSocketClientConsoleDemo.exe" Type="String">IcsSocketClientConsoleDemo.bdsproj</Projects>
+      <Projects Name="IcsSocketServerConsoleDemo.exe" Type="String">IcsSocketServerConsoleDemo.bdsproj</Projects>
+      <Projects Name="IcsSocketConsoleUdpSender.exe" Type="String">IcsSocketConsoleUdpSender.bdsproj</Projects>
+      <Projects Name="IcsSocketConsoleUdpReceiver.exe" Type="String">IcsSocketConsoleUdpReceiver.bdsproj</Projects>
+      <Projects Name="IcsConsoleFtpClient.exe" Type="String">IcsConsoleFtpClient.bdsproj</Projects>
+      <Projects Name="IcsConsoleHttpClient.exe" Type="String">IcsConsoleHttpClient.bdsproj</Projects>
+      <Projects Name="FtpTst.exe" Type="String">FtpTst.bdsproj</Projects>
+      <Projects Name="Targets" Type="String">IcsSocketClientConsoleDemo.exe IcsSocketServerConsoleDemo.exe IcsSocketConsoleUdpSender.exe IcsSocketConsoleUdpReceiver.exe IcsConsoleFtpClient.exe IcsConsoleHttpClient.exe FtpTst.exe</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+</BorlandProject>

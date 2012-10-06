@@ -1,0 +1,72 @@
+<html>
+<head>
+  <title>SDL_LockAudio</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Audio" href="audio.html">
+  <link rel="PREVIOUS" title="SDL_MixAudio" href="sdlmixaudio.html">
+  <link rel="NEXT" title="SDL_UnlockAudio" href="sdlunlockaudio.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlmixaudio.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlunlockaudio.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLLOCKAUDIO">SDL_LockAudio</a></h1>
+<div class="REFNAMEDIV"><a name="AEN6591"></a>
+<h2>Name</h2>
+SDL_LockAudio&nbsp;--&nbsp;Lock out the callback function</div>
+<div class="REFSYNOPSISDIV"><a name="AEN6594"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN6595"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+<p>procedure <b>SDL_LockAudio</b>;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN6601"></a>
+<h2>Description</h2>
+<p>The lock manipulated by these functions protects the callback function. 
+During a LockAudio period, you can be guaranteed that the callback function
+is not running.  Do not call these from the callback function or you will
+cause deadlock.</p>
+</div>
+<div class="REFSECT1"><a name="AEN6604"></a>
+<h2>See Also</h2>
+<p><a href="sdlopenaudio.html"><tt class="FUNCTION">SDL_OpenAudio</tt></a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdlmixaudio.html">
+Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="sdlunlockaudio.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">SDL_MixAudio</td>
+      <td width="34%" align="Center" valign="Top"><a href="audio.html">Up</a></td>
+      <td width="32%" align="Right" valign="Top">SDL_UnlockAudio</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

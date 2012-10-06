@@ -1,0 +1,18 @@
+[General]
+NumberOfEvents=4
+
+[Event1]
+Evszam=ie264-241
+Esemeny=I.pun háború
+
+[Event2]
+Evszam=ie218-201
+Esemeny=II.pun háború
+
+[Event3]
+Evszam=ie149-146
+Esemeny=III.pun háború
+
+[Event4]
+Evszam=ie74-71
+Esemeny=Spartacusi rabszolgafelkelés

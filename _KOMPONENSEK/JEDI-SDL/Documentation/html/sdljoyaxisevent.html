@@ -1,0 +1,128 @@
+<html>
+<head>
+  <title>TSDL_JoyAxisEvent</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="SDL Event Structures." href="eventstructures.html">
+   
+  <link rel="PREVIOUS" title="SDL_MouseButtonEvent" href="sdlmousebuttonevent.html">
+   
+  <link rel="NEXT" title="SDL_JoyButtonEvent" href="sdljoybuttonevent.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="sdlmousebuttonevent.html">
+ Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom"><br>
+       </td>
+       <td width="8%" align="Right" valign="Bottom"><a href="sdljoybuttonevent.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<h1><a name="SDLJOYAXISEVENT">TSDL_JoyAxisEvent</a></h1>
+ 
+<div class="REFNAMEDIV"><a name="AEN3776"></a> 
+<h2>Name</h2>
+ TSDL_JoyAxisEvent -- Joystick axis motion event structure</div>
+ 
+<div class="REFSECT1"><a name="AEN3779"></a><br>
+ 
+<h2>Structure Definition</h2>
+ <pre class="PROGRAMLISTING">  TSDL_JoyAxisEvent = <b>record</b><br>    type_: UInt8;  // SDL_JOYAXISMOTION<br>    which: UInt8;  // The joystick device index<br>    axis: UInt8;   // The joystick axis index<br>    value: Sint16; // The axis value (range: -32768 to 32767)<br>  <b>end;</b></pre>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN3782"></a> 
+<h2>Structure Data</h2>
+ 
+<div class="INFORMALTABLE"><a name="AEN3784"></a> 
+<p></p>
+ 
+<table border="0" class="CALSTABLE">
+   <tbody>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>type</i></tt></td>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_JOYAXISMOTION</tt></td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>which</i></tt></td>
+       <td align="Left" valign="Top">Joystick device index</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>axis</i></tt></td>
+       <td align="Left" valign="Top">Joystick axis index</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>value</i></tt></td>
+       <td align="Left" valign="Top">Axis value (range: -32768 to 32767)</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<p></p>
+ </div>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN3804"></a> 
+<h2>Description</h2>
+ 
+<p><span class="STRUCTNAME">TSDL_JoyAxisEvent</span> is a member of the <a href="sdlevent.html"><span class="STRUCTNAME">
+ TSDL_Event</span></a> union and is used when an event of type <tt class="LITERAL">
+ SDL_JOYAXISMOTION</tt> is reported.</p>
+ 
+<p>A <tt class="LITERAL">SDL_JOYAXISMOTION</tt> event occurs when ever a user
+moves an axis on the joystick. The field <tt class="STRUCTFIELD"><i> which</i></tt>
+ is the index of the joystick that reported the event and <tt class="STRUCTFIELD"><i>
+ axis</i></tt> is the index of the axis (for a more detailed explaination 
+see the <a href="joystick.html">Joystick section</a>). <tt class="STRUCTFIELD"><i>
+ value</i></tt> is the current position of the axis.</p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN3817"></a> 
+<h2>See Also</h2>
+ 
+<p><a href="sdlevent.html"><span class="STRUCTNAME">TSDL_Event</span></a>
+ , <a href="joystick.html">Joystick Functions</a>, <a href="sdljoystickeventstate.html"><tt class="FUNCTION">
+ SDL_JoystickEventState</tt></a>, <a href="sdljoystickgetaxis.html"><tt class="FUNCTION">
+ SDL_JoystickGetAxis</tt></a></p>
+ </div>
+ 
+<div class="NAVFOOTER"> 
+<hr align="Left" width="100%"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <td width="31%" align="Left" valign="Top"><a href="sdlmousebuttonevent.html">
+ Prev</a></td>
+       <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+       <td width="31%" align="Right" valign="Top"><a href="sdljoybuttonevent.html">
+ Next</a></td>
+     </tr>
+     <tr>
+       <td width="31%" align="Left" valign="Top">TSDL_MouseButtonEvent</td>
+       <td width="34%" align="Center" valign="Top"><a href="eventstructures.html">
+ Up</a></td>
+       <td width="31%" align="Right" valign="Top">TSDL_JoyButtonEvent</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ </div>
+ 
+</body>
+</html>

@@ -1,0 +1,200 @@
+<html>
+<head>
+  <title>SDL_SetAlpha</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Video" href="video.html">
+  <link rel="PREVIOUS" title="SDL_SetColorKey" href="sdlsetcolorkey.html">
+  <link rel="NEXT" title="SDL_SetClipRect" href="sdlsetcliprect.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlsetcolorkey.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlsetcliprect.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLSETALPHA">SDL_SetAlpha</a></h1>
+<div class="REFNAMEDIV"><a name="AEN1687"></a>
+<h2>Name</h2>
+SDL_SetAlpha&nbsp;--&nbsp;Adjust the alpha properties of a surface</div>
+<div class="REFSYNOPSISDIV"><a name="AEN1690"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN1691"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b> <br>  SDL;</pre>
+<p>function <b>SDL_SetAlpha</b>( surface : PSDL_Surface; flag : UInt32; alpha
+: UInt8) : Integer;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN1697"></a>
+<h2>Description</h2>
+<div class="NOTE">
+<blockquote class="NOTE">
+  <p><b>Note: </b>This function and the semantics of SDL alpha blending have
+changed since version 1.1.4. Up until version 1.1.5, an alpha value of 0
+was considered opaque and a value of 255 was considered transparent. This
+has now been inverted: 0 (<tt class="LITERAL">SDL_ALPHA_TRANSPARENT</tt>)
+is now considered transparent and 255 (<tt class="LITERAL">SDL_ALPHA_OPAQUE</tt>
+) is now considered opaque.</p>
+  </blockquote>
+  </div>
+  <p><tt class="FUNCTION">SDL_SetAlpha</tt> is used for setting the per-surface
+alpha value and/or enabling and disabling alpha blending.</p>
+  <p>The<tt class="PARAMETER"><i>surface</i></tt> parameter specifies which
+surface whose alpha attributes you wish to adjust. <tt class="PARAMETER"><i>
+flags</i></tt> is used to specify whether alpha blending should be used (<tt class="LITERAL">
+SDL_SRCALPHA</tt>) and whether the surface should use RLE acceleration for
+blitting (<tt class="LITERAL">SDL_RLEACCEL</tt>). <tt class="PARAMETER"><i>
+flags</i></tt> can be an OR'd combination of these two options, one of these
+options or 0. If <tt class="LITERAL">SDL_SRCALPHA</tt> is not passed as a
+flag then all alpha information is ignored when blitting the surface. The 
+  <tt class="PARAMETER"><i>alpha</i></tt> parameter is the per-surface alpha
+value; a surface need not have an alpha channel to use per-surface alpha
+and blitting can still be accelerated with <tt class="LITERAL">SDL_RLEACCEL</tt>
+.</p>
+  <div class="NOTE">
+  <blockquote class="NOTE">
+    <p><b>Note: </b>The per-surface alpha value of 128 is considered a special
+case and is optimised, so it's much faster than other per-surface values.</p>
+    </blockquote>
+    </div>
+    <p>Alpha effects surface blitting in the following ways:</p>
+    <div class="INFORMALTABLE"><a name="AEN1717"></a>
+    <p></p>
+    <table border="0" class="CALSTABLE">
+      <tbody>
+        <tr>
+          <td align="Left" valign="Top">RGBA-&gt;RGB with <tt class="LITERAL">
+SDL_SRCALPHA</tt></td>
+          <td align="Left" valign="Top">
+          <p>The source is alpha-blended with the destination, using the
+alpha channel. <tt class="LITERAL">SDL_SRCCOLORKEY</tt> and the per-surface
+alpha are ignored.</p>
+          </td>
+        </tr>
+        <tr>
+          <td align="Left" valign="Top">RGBA-&gt;RGB without <tt class="LITERAL">
+SDL_SRCALPHA</tt></td>
+          <td align="Left" valign="Top">
+          <p>The RGB data is copied from the source. The source alpha channel
+and the per-surface alpha value are ignored.</p>
+          </td>
+        </tr>
+        <tr>
+          <td align="Left" valign="Top">RGB-&gt;RGBA with <tt class="LITERAL">
+SDL_SRCALPHA</tt></td>
+          <td align="Left" valign="Top">
+          <p>The source is alpha-blended with the destination using the per-surface
+alpha value. If <tt class="LITERAL">SDL_SRCCOLORKEY</tt> is set, only the
+pixels not matching the colorkey value are copied. The alpha channel of the
+copied pixels is set to opaque.</p>
+          </td>
+        </tr>
+        <tr>
+          <td align="Left" valign="Top">RGB-&gt;RGBA without <tt class="LITERAL">
+SDL_SRCALPHA</tt></td>
+          <td align="Left" valign="Top">
+          <p>The RGB data is copied from the source and the alpha value of
+the copied pixels is set to opaque. If <tt class="LITERAL">SDL_SRCCOLORKEY</tt>
+ is set, only the pixels not matching the colorkey value are copied. </p>
+          </td>
+        </tr>
+        <tr>
+          <td align="Left" valign="Top">RGBA-&gt;RGBA with <tt class="LITERAL">
+SDL_SRCALPHA</tt></td>
+          <td align="Left" valign="Top">
+          <p>The source is alpha-blended with the destination using the source
+alpha channel. The alpha channel in the destination surface is left untouched. 
+          <tt class="LITERAL">SDL_SRCCOLORKEY</tt> is ignored.</p>
+          </td>
+        </tr>
+        <tr>
+          <td align="Left" valign="Top">RGBA-&gt;RGBA without <tt class="LITERAL">
+SDL_SRCALPHA</tt></td>
+          <td align="Left" valign="Top">
+          <p>The RGBA data is copied to the destination surface. If <tt class="LITERAL">
+SDL_SRCCOLORKEY</tt> is set, only the pixels not matching the colorkey value
+are copied.</p>
+          </td>
+        </tr>
+        <tr>
+          <td align="Left" valign="Top">RGB-&gt;RGB with <tt class="LITERAL">
+SDL_SRCALPHA</tt></td>
+          <td align="Left" valign="Top">
+          <p>The source is alpha-blended with the destination using the per-surface
+alpha value. If <tt class="LITERAL">SDL_SRCCOLORKEY</tt> is set, only the
+pixels not matching the colorkey value are copied.</p>
+          </td>
+        </tr>
+        <tr>
+          <td align="Left" valign="Top">RGB-&gt;RGB without <tt class="LITERAL">
+SDL_SRCALPHA</tt></td>
+          <td align="Left" valign="Top">
+          <p>The RGB data is copied from the source. If <tt class="LITERAL">
+SDL_SRCCOLORKEY</tt> is set, only the pixels not matching the colorkey value
+are copied.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p></p>
+    </div>
+    <div class="NOTE">
+    <blockquote class="NOTE">
+      <p><b>Note: </b> Note that RGBA-&gt;RGBA blits (with SDL_SRCALPHA set)
+keep the alpha of the destination surface. This means that you cannot compose
+two arbitrary RGBA surfaces this way and get the result you would expect
+from "overlaying" them; the destination alpha will work as a mask.</p>
+      <p>Also note that per-pixel and per-surface alpha cannot be combined; 
+the per-pixel alpha is always used if available</p>
+      </blockquote>
+      </div>
+      </div>
+      <div class="REFSECT1"><a name="AEN1770"></a>
+      <h2>Return Value</h2>
+      <p>This function returns <span class="RETURNVALUE">0</span>, or <span class="RETURNVALUE">
+-1</span> if there was an error.</p>
+      </div>
+      <div class="REFSECT1"><a name="AEN1775"></a>
+      <h2>See Also</h2>
+      <p><a href="sdlmaprgba.html"><tt class="FUNCTION">SDL_MapRGBA</tt></a>
+, <a href="sdlgetrgba.html"><tt class="FUNCTION">SDL_GetRGBA</tt></a>, <a href="sdldisplayformatalpha.html"><tt class="FUNCTION">
+SDL_DisplayFormatAlpha</tt></a>, <a href="sdlblitsurface.html"><tt class="FUNCTION">
+SDL_BlitSurface</tt></a></p>
+      </div>
+      <div class="NAVFOOTER">
+      <hr align="Left" width="100%">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td width="32%" align="Left" valign="Top"><a href="sdlsetcolorkey.html">
+Prev</a></td>
+            <td width="34%" align="Center" valign="Top"><a href="index.html">
+Home</a></td>
+            <td width="32%" align="Right" valign="Top"><a href="sdlsetcliprect.html">
+Next</a></td>
+          </tr>
+          <tr>
+            <td width="32%" align="Left" valign="Top">SDL_SetColorKey</td>
+            <td width="34%" align="Center" valign="Top"><a href="video.html">
+Up</a></td>
+            <td width="32%" align="Right" valign="Top">SDL_SetClipRect</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      </body>
+      </html>

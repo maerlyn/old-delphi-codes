@@ -1,0 +1,85 @@
+<html>
+<head>
+  <title>SDL_EventState</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Event Functions." href="eventfunctions.html">
+  <link rel="PREVIOUS" title="SDL_GetEventFilter" href="sdlgeteventfilter.html">
+  <link rel="NEXT" title="SDL_GetKeyState" href="sdlgetkeystate.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlgeteventfilter.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlgetkeystate.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLEVENTSTATE">SDL_EventState</a></h1>
+<div class="REFNAMEDIV"><a name="AEN5109"></a>
+<h2>Name</h2>
+SDL_EventState&nbsp;--&nbsp;This function allows you to set the state of
+processing certain events.</div>
+<div class="REFSYNOPSISDIV"><a name="AEN5112"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN5113"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+<p>function <b>SDL_EventState</b>( type_ : UInt8; state : Integer ) : UInt8;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN5119"></a>
+<h2>Description</h2>
+<p>This function allows you to set the state of processing certain event
+<tt class="PARAMETER"><i>type</i></tt>'s.</p>
+<p>If <tt class="PARAMETER"><i>state</i></tt> is set to <tt class="LITERAL">
+SDL_IGNORE</tt>,  that event <tt class="PARAMETER"><i>type</i></tt> will
+be automatically dropped from the event queue and will  not be filtered.</p>
+<p>If <tt class="PARAMETER"><i>state</i></tt> is set to <tt class="LITERAL">
+SDL_ENABLE</tt>,  that event <tt class="PARAMETER"><i>type</i></tt> will
+be processed normally.</p>
+<p>If <tt class="PARAMETER"><i>state</i></tt> is set to <tt class="LITERAL">
+SDL_QUERY</tt>, <tt class="FUNCTION">SDL_EventState</tt> will return the
+current processing  state of the specified event <tt class="PARAMETER"><i>
+type</i></tt>.</p>
+<p>A list of event <tt class="PARAMETER"><i>type</i></tt>'s can be found
+in the <a href="sdlevent.html"><span class="STRUCTNAME">TSDL_Event</span></a>
+ section.</p>
+</div>
+<div class="REFSECT1"><a name="AEN5140"></a>
+<h2>See Also</h2>
+<p><a href="sdlevent.html"><span class="STRUCTNAME">TSDL_Event</span></a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdlgeteventfilter.html">
+Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="sdlgetkeystate.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">SDL_GetEventFilter</td>
+      <td width="34%" align="Center" valign="Top"><a href="eventfunctions.html">
+Up</a></td>
+      <td width="32%" align="Right" valign="Top">SDL_GetKeyState</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

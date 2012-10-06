@@ -1,0 +1,106 @@
+object Form1: TForm1
+  Left = 377
+  Top = 273
+  Width = 351
+  Height = 308
+  VertScrollBar.Range = 44
+  ActiveControl = Button1
+  AutoScroll = False
+  Caption = 'The Tube'
+  Color = clBackground
+  Font.Color = clText
+  Font.Height = 11
+  Font.Name = 'MS Sans Serif'
+  Font.Pitch = fpVariable
+  Font.Style = []
+  ParentFont = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 18
+  TextWidth = 5
+  object Panel1: TPanel
+    Left = 0
+    Top = 264
+    Width = 351
+    Height = 44
+    Align = alBottom
+    TabOrder = 0
+    object Panel2: TPanel
+      Left = 1
+      Top = 1
+      Width = 282
+      Height = 42
+      Align = alClient
+      BevelOuter = bvNone
+      TabOrder = 0
+      object Button1: TButton
+        Left = 5
+        Top = 21
+        Width = 48
+        Height = 16
+        Caption = 'Play'
+        TabOrder = 0
+        OnClick = Button1Click
+      end
+      object Button2: TButton
+        Left = 57
+        Top = 21
+        Width = 48
+        Height = 16
+        Caption = 'Pause'
+        TabOrder = 1
+        OnClick = Button2Click
+      end
+      object Button3: TButton
+        Left = 109
+        Top = 21
+        Width = 48
+        Height = 16
+        Caption = 'Stop'
+        TabOrder = 2
+        OnClick = Button3Click
+      end
+      object CheckBox1: TCheckBox
+        Left = 5
+        Top = 0
+        Width = 65
+        Height = 20
+        Caption = 'Sound'
+        Checked = True
+        State = cbChecked
+        TabOrder = 3
+      end
+    end
+    object Panel3: TPanel
+      Left = 283
+      Top = 1
+      Width = 67
+      Height = 42
+      Align = alRight
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      BevelOuter = bvNone
+      TabOrder = 1
+    end
+  end
+  object SDLMPEGPanel: TSDLMPEGPanel
+    Left = 0
+    Top = 0
+    Width = 351
+    Height = 264
+    Align = alClient
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    Caption = 'You Movie should play here...'
+    TabOrder = 1
+    Sound = False
+  end
+  object OpenDialog: TOpenDialog
+    Filter = 'MPEGs|*.mpeg;*.mpg|All Files|*.*'
+    FilterIndex = 0
+    Height = 0
+    Title = 'Open'
+    Width = 0
+    Left = 40
+    Top = 32
+  end
+end

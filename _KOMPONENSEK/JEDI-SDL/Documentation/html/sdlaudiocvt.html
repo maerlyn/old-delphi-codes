@@ -1,0 +1,201 @@
+<html>
+<head>
+  <title>SDL_AudioCVT</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="Audio" href="audio.html">
+   
+  <link rel="PREVIOUS" title="SDL_FreeWAV" href="sdlfreewav.html">
+   
+  <link rel="NEXT" title="SDL_BuildAudioCVT" href="sdlbuildaudiocvt.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="sdlfreewav.html">
+ Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom"><br>
+       </td>
+       <td width="8%" align="Right" valign="Bottom"><a href="sdlbuildaudiocvt.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<h1><a name="SDLAUDIOCVT">TSDL_AudioCVT</a></h1>
+ 
+<div class="REFNAMEDIV"><a name="AEN6343"></a> 
+<h2>Name</h2>
+T SDL_AudioCVT -- Audio Conversion Structure</div>
+ 
+<div class="REFSECT1"><a name="AEN6346"></a> 
+<h2>Structure Definition</h2>
+ <pre class="PROGRAMLISTING">  TSDL_AudioCVT = <b>record</b><br>    needed: Integer;    // Set to 1 if conversion possible<br>    src_format: UInt16; // Source audio format<br>    dst_format: UInt16; // Target audio format<br>    rate_incr: double;  // Rate conversion increment<br>    buf: PUInt8;        // Buffer to hold entire audio data<br>    len: Integer;       // Length of original audio buffer<br>    len_cvt: Integer;   // Length of converted audio buffer<br>    len_mult: Integer;  // buffer must be len*len_mult big<br>    len_ratio: double;  // Given len, final size is len*len_ratio<br>    filters: PSDL_AudioCVTFilterArray;<br>    filter_index: Integer; // Current audio conversion function<br>  <b>end;</b></pre>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN6349"></a> 
+<h2>Structure Data</h2>
+ 
+<div class="INFORMALTABLE"><a name="AEN6351"></a> 
+<p></p>
+ 
+<table border="0" class="CALSTABLE">
+   <tbody>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>needed</i></tt></td>
+       <td align="Left" valign="Top">Set to one if the conversion is possible</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>src_format</i></tt></td>
+       <td align="Left" valign="Top">Audio format of the source</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>dest_format</i></tt></td>
+       <td align="Left" valign="Top">Audio format of the destination</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>rate_incr</i></tt></td>
+       <td align="Left" valign="Top">Rate conversion increment</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>buf</i></tt></td>
+       <td align="Left" valign="Top">Audio buffer</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>len</i></tt></td>
+       <td align="Left" valign="Top">Length of the original audio buffer
+in bytes</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>len_cvt</i></tt></td>
+       <td align="Left" valign="Top">Length of converted audio buffer in
+bytes (calculated)</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>len_mult</i></tt></td>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>buf</i></tt>
+  must be <tt class="STRUCTFIELD"><i>len</i></tt>*<tt class="STRUCTFIELD"><i>
+ len_mult</i></tt> bytes in size(calculated)</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>len_ratio</i></tt></td>
+       <td align="Left" valign="Top">Final audio size is <tt class="STRUCTFIELD"><i>
+ len</i></tt>*<tt class="STRUCTFIELD"><i>len_ratio</i></tt></td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>filters[10](..)</i></tt></td>
+       <td align="Left" valign="Top">Pointers to functions needed for this 
+conversion</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>filter_index</i></tt></td>
+       <td align="Left" valign="Top">Current conversion function</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<p></p>
+ </div>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN6403"></a> 
+<h2>Description</h2>
+ 
+<p>The <span class="STRUCTNAME">TSDL_AudioCVT</span> is used to convert audio 
+data between different formats. A <span class="STRUCTNAME">TSDL_AudioCVT</span>
+&nbsp; structure is created with the <a href="sdlbuildaudiocvt.html"><tt class="FUNCTION">
+ SDL_BuildAudioCVT</tt></a> function, while the actual conversion is done 
+by the <a href="sdlconvertaudio.html"><tt class="FUNCTION">SDL_ConvertAudio</tt></a>
+&nbsp; function.</p>
+ 
+<p>Many of the fields in the T<span class="STRUCTNAME">SDL_AudioCVT</span>
+  structure should be considered private and their function will not be discussed 
+here.</p>
+ 
+<p></p>
+ 
+<div class="VARIABLELIST"> 
+<dl>
+<dt><span class="TYPE">Uint8 *</span><tt class="STRUCTFIELD"><i>buf</i></tt></dt>
+  <dd>     
+    <p>This points to the audio data that will be used in the conversion. 
+It is both the source and the destination, which means the converted audio 
+data overwrites the original data. It also means that the converted data may
+be larger than the original data (if you were converting from 8-bit to 16-bit,
+for instance), so you must ensure <tt class="STRUCTFIELD"><i>buf</i></tt>
+  is large enough. See below.</p>
+     </dd>
+    <dt><span class="TYPE">int</span> <tt class="STRUCTFIELD"><i>len</i></tt></dt>
+      <dd>         
+        <p>This is the length of the original audio data in bytes.</p>
+         </dd>
+        <dt><span class="TYPE">int</span> <tt class="STRUCTFIELD"><i>len_mult</i></tt></dt>
+          <dd>             
+            <p>As explained above, the audio buffer needs to be big enough 
+to store the converted data, which may be bigger than the original audio data.
+The length of <tt class="STRUCTFIELD"><i>buf</i></tt> should be <tt class="STRUCTFIELD"><i>
+ len</i></tt>*<tt class="STRUCTFIELD"><i>len_mult</i></tt>.</p>
+             </dd>
+            <dt><span class="TYPE">double</span> <tt class="STRUCTFIELD"><i>
+ len_ratio</i></tt></dt>
+              <dd>                 
+                <p>When you have finished converting your audio data, you 
+need to know how much of your audio buffer is valid. <tt class="STRUCTFIELD"><i>
+ len</i></tt>*<tt class="STRUCTFIELD"><i>len_ratio</i></tt> is the size of 
+the converted audio data in bytes. This is very similar to <tt class="STRUCTFIELD"><i>
+ len_mult</i></tt>, however when the convert audio data is shorter than the 
+original <tt class="STRUCTFIELD"><i>len_mult</i></tt> would be 1. <tt class="STRUCTFIELD"><i>
+ len_ratio</i></tt>, on the other hand, would be a fractional number between 
+0 and 1.</p>
+                 </dd>
+                </dl>
+                 </div>
+                 </div>
+                 
+                <div class="REFSECT1"><a name="AEN6448"></a>            
+    
+                <h2>See Also</h2>
+                 
+                <p><a href="sdlbuildaudiocvt.html"><tt class="FUNCTION">SDL_BuildAudioCVT</tt></a>
+ , <a href="sdlconvertaudio.html"><tt class="FUNCTION">SDL_ConvertAudio</tt></a>
+ , <a href="sdlaudiospec.html"><span class="STRUCTNAME">TSDL_AudioSpec</span></a></p>
+                 </div>
+                 
+                <div class="NAVFOOTER">                 
+                <hr align="Left" width="100%">                 
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                   <tbody>
+                     <tr>
+                       <td width="31%" align="Left" valign="Top"><a href="sdlfreewav.html">
+ Prev</a></td>
+                       <td width="34%" align="Center" valign="Top"><a href="index.html">
+ Home</a></td>
+                       <td width="31%" align="Right" valign="Top"><a href="sdlbuildaudiocvt.html">
+ Next</a></td>
+                     </tr>
+                     <tr>
+                       <td width="31%" align="Left" valign="Top">SDL_FreeWAV</td>
+                       <td width="34%" align="Center" valign="Top"><a href="audio.html">
+ Up</a></td>
+                       <td width="31%" align="Right" valign="Top">SDL_BuildAudioCVT</td>
+                     </tr>
+                   
+                  </tbody>                 
+                </table>
+                 </div>
+                 
+                </body>
+                </html>

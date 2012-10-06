@@ -1,0 +1,83 @@
+<html>
+<head>
+  <title>SDL_InitSubSystem</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="General" href="general.html">
+  <link rel="PREVIOUS" title="SDL_Init" href="sdlinit.html">
+  <link rel="NEXT" title="SDL_QuitSubSystem" href="sdlquitsubsystem.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlinit.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlquitsubsystem.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLINITSUBSYSTEM">SDL_InitSubSystem</a></h1>
+<div class="REFNAMEDIV"><a name="AEN543"></a>
+<h2>Name</h2>
+SDL_InitSubSystem&nbsp;--&nbsp;Initialize subsystems</div>
+<div class="REFSYNOPSISDIV"><a name="AEN546"></a>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN547"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+<p>function <b>SDL_InitSubSystem</b>( flags: uint32 ) : Integer;</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN553"></a>
+<h2>Description</h2>
+<p>After SDL has been initialized with <a href="sdlinit.html"><tt class="FUNCTION">
+SDL_Init</tt></a> you may initialize uninitialized subsystems with <tt class="FUNCTION">
+SDL_InitSubSystem</tt>. The <tt class="PARAMETER"><i>flags</i></tt> parameter
+is the same as that used in <a href="sdlinit.html"><tt class="FUNCTION">SDL_Init</tt></a>
+.</p>
+</div>
+<div class="REFSECT1"><a name="AEN562"></a>
+<h2>Examples</h2>
+<pre class="PROGRAMLISTING">// Seperating Joystick and Video initialization. <br>SDL_Init( SDL_INIT_VIDEO );<br>.<br>.<br>SDL_SetVideoMode( 640, 480, 16, SDL_DOUBLEBUF <b>or</b> SDL_FULLSCREEN );<br>.<br>// Do Some Video stuff <br>.<br>.<br>// Initialize the joystick subsystem <br>SDL_InitSubSystem( SDL_INIT_JOYSTICK );<br><br>// Do some stuff with video and joystick <br>.<br>.<br>.<br>// Shut them both down<br>SDL_Quit;</pre>
+</div>
+<div class="REFSECT1"><a name="AEN565"></a>
+<h2>Return Value</h2>
+<p>Returns <span class="RETURNVALUE">-1</span> on an error or <span class="RETURNVALUE">
+0</span> on success.</p>
+</div>
+<div class="REFSECT1"><a name="AEN570"></a>
+<h2>See Also</h2>
+<p><a href="sdlinit.html"><tt class="FUNCTION">SDL_Init</tt></a>, <a href="sdlquit.html"><tt class="FUNCTION">
+SDL_Quit</tt></a>, <a href="sdlquitsubsystem.html"><tt class="FUNCTION">SDL_QuitSubSystem</tt></a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdlinit.html">Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="sdlquitsubsystem.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">SDL_Init</td>
+      <td width="34%" align="Center" valign="Top"><a href="general.html">
+Up</a></td>
+      <td width="32%" align="Right" valign="Top">SDL_QuitSubSystem</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

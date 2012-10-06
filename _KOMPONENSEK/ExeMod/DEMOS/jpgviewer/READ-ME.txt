@@ -1,0 +1,53 @@
+This demo creates stand-alone jpg image viewers...
+
+When you start it up it displays a tiny form with 3 buttons..
+
+To add a jpg file to your jpg archive/viewer just click on the top button
+---->[Add A New Jpg To Your Image Viewer]
+
+OR better yet just drag and drop up to 1000 jpg's at a time onto the form....
+
+
+
+Once you have added all your images you have a choice to make...
+
+You can rebuild the current exe and change it into the new viewer
+by clicking --> [Create An Image Viewer by Rebuilding This Exe]
+(this is not the best course of action.. I just included this option
+to show how to alter the current exe into the final at runtime)
+
+Or you can click --> [Eject new Viewer App In This Dir as -> View.exe]
+This will create a new stand-alone jpg viewer named View.exe in the current
+directory.
+
+
+Ok..now that you have the new viewer built just run it and the first image
+will display full screen... the aspect ratio will remain correct for each image.
+Just press the Backspace key to move backwards through your archive of images
+and press the space-bar to move forward... clicking the left mouse button on the image
+will also move forward through the pictures... to terminate the app just press the 
+escape key...
+
+As this is just a simple demo I did not resample the images when converting to
+the full screen size... adding resampling code would enhance the images quite a bit!
+
+I also did not handle the jpg error messages...so if you add a bad jpg to the archive
+up will pop an annoying error message when you try to view it :-(  this also happens if
+you accidently add a non-jpg file to the archive.  It would be a simple matter to add
+a test to weed out the bad images before they were added to the archive... but I was in
+a rush to get this demo out :-)
+
+
+Even though I set the max number of images at 1000 It is NOT such a good idea to
+create a stand-alone viewer with that many pix in it!  It just gets too huge and takes
+too long to compile the thing :-(   try and stay at <100 or so and you will have
+better results.  I did make a huge 1000 pic viewer as a test... it ended up at 86mb!
+.. it took about 3 minutes to compile on a Athlon 1600+ with 256mb ram... but it was
+useable even on an old K6-2-500mhz with 64mb ram... although I would have hated to
+wait for it to compile on that slow box ;-)
+
+This simple demo could quickly be altered into many useful little programs... 
+
+..Gwen..
+
+p.s. Use this code in any way you like... I consider it public domain... like all the rest of the strange software I write :-)

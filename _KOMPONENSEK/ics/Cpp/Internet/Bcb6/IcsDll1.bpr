@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="IcsDll1.dll"/>
+    <OBJFILES value="IcsDll1.obj ..\..\..\Delphi\VC32\WSocket.obj"/>
+    <RESFILES value=""/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES)"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="teeqr.lib qrpt.lib nmfast.lib ibxpress.lib soaprtl.lib dclocx.lib 
+      dbxcds.lib bdecds.lib inetdbxpress.lib inetdbbde.lib dss.lib tee.lib 
+      teedb.lib teeui.lib dbexpress.lib dsnapcon.lib dsnapcrba.lib 
+      visualdbclx.lib vcldbx.lib bdertl.lib cds.lib adortl.lib vcldb.lib 
+      indy.lib IcsBcb60.lib vcl.lib rtl.lib"/>
+    <SPARELIBS value="rtl.lib vcl.lib IcsBcb60.lib indy.lib vcldb.lib adortl.lib cds.lib 
+      bdertl.lib vcldbx.lib visualdbclx.lib dsnapcrba.lib dsnapcon.lib 
+      dbexpress.lib teeui.lib teedb.lib tee.lib dss.lib inetdbbde.lib 
+      inetdbxpress.lib bdecds.lib dbxcds.lib dclocx.lib soaprtl.lib ibxpress.lib 
+      nmfast.lib qrpt.lib teeqr.lib"/>
+    <PACKAGES value="rtl.bpi vcl.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;..\..\..\Delphi\VC32"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG"/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="IcsDll1.bpf"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;..\..\..\Delphi\vc32"/>
+    <LIBPATH value="&quot;g:\program files\borland\cbuilder6\lib\debug&quot;;$(BCB)\Projects\Lib;..\..\..\Delphi\VC32;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-src_suffix cpp -D_DEBUG -I$(BCB)\include -I$(BCB)\include\vcl 
+      -I..\..\..\Delphi\vc32 -boa"/>
+    <CFLAG1 value="-WD -Od -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- -tWD -tWM -c"/>
+    <PFLAGS value="-$YD -$W -$O- -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zd"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpd -x -Gn -Gi -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0d32.obj sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="IcsDll1.bpf" FORMNAME="" UNITNAME="IcsDll1" CONTAINERID="BPF" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="IcsDll1.cpp" FORMNAME="" UNITNAME="IcsDll1" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\Delphi\VC32\WSocket.pas" FORMNAME="" UNITNAME="WSocket" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1036
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=2
+Item0=$(BCB)\include;$(BCB)\include\vcl;..\..\..\Delphi\vc32
+Item1=$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=2
+Item0=$(BCB)\Projects\Lib;..\..\..\Delphi\VC32;$(BCB)\lib\obj;$(BCB)\lib
+Item1=$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=1
+Item0=_DEBUG
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=D:\FPiette\cpp\Internet\Bcb5\DllTst1.exe
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+
+[Linker]
+LibPrefix=
+LibSuffix=
+LibVersion=
+  </IDEOPTIONS>
+</PROJECT>

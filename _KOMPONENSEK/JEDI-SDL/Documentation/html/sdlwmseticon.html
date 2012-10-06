@@ -1,0 +1,80 @@
+<html>
+<head>
+  <title>SDL_WM_SetIcon</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Window Management" href="wm.html">
+  <link rel="PREVIOUS" title="SDL_WM_GetCaption" href="sdlwmgetcaption.html">
+  <link rel="NEXT" title="SDL_WM_IconifyWindow" href="sdlwmiconifywindow.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlwmgetcaption.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlwmiconifywindow.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLWMSETICON">SDL_WM_SetIcon</a></h1>
+<div class="REFNAMEDIV"><a name="AEN3166"></a>
+<h2>Name</h2>
+SDL_WM_SetIcon&nbsp;--&nbsp;Sets the icon for the display window.</div>
+<div class="REFSYNOPSISDIV"><a name="AEN3169"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN3170"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+<p>procedure <b>SDL_WM_SetIcon</b>( icon : PSDL_Surface; mask : UInt8 );</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN3176"></a>
+<h2>Description</h2>
+<p>Sets the icon for the display window.</p>
+<p>This function must be called before the first call to  <a href="sdlsetvideomode.html">
+SDL_SetVideoMode</a>.</p>
+<p>It takes an <tt class="PARAMETER"><i>icon</i></tt> surface, and a <tt class="PARAMETER"><i>
+mask</i></tt> in MSB format.</p>
+<p>If <tt class="PARAMETER"><i>mask</i></tt> is <tt class="LITERAL">NULL</tt>
+, the entire  icon surface will be used as the icon.</p>
+</div>
+<div class="REFSECT1"><a name="AEN3187"></a>
+<h2>Example</h2>
+<pre class="PROGRAMLISTING">SDL_WM_SetIcon( SDL_LoadBMP( 'icon.bmp' ), <b>nil</b> );</pre>
+</div>
+<div class="REFSECT1"><a name="AEN3190"></a>
+<h2>See Also</h2>
+<p><a href="sdlsetvideomode.html"><tt class="FUNCTION">SDL_SetVideoMode</tt></a>
+, <a href="sdlwmsetcaption.html"><tt class="FUNCTION">SDL_WM_SetCaption</tt></a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdlwmgetcaption.html">
+Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="sdlwmiconifywindow.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">SDL_WM_GetCaption</td>
+      <td width="34%" align="Center" valign="Top"><a href="wm.html">Up</a></td>
+      <td width="32%" align="Right" valign="Top">SDL_WM_IconifyWindow</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{*******************************************************}
+{                                                       }
+{         Delphi VCL Extensions (RX)                    }
+{                                                       }
+{         Copyright (c) 1997, 1998 Master-Bank          }
+{                                                       }
+{*******************************************************}
+
+package RxTools;
+
+{$DEBUGINFO OFF}
+{$DESCRIPTION 'RX Library Tools Component Package'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+{$L-,Y-,C-,D-}
+
+requires
+  RxCtl;
+
+contains
+  PicClip, DualList, FDualLst, ClipView, Speedbar, SbSetup, PageMngr, MrgMngr,
+  StrHlder, AppEvent, TimerLst, MRUList, RxIni, RxShell, RxMenus, RxNotify,
+  RxGrdCpt, SplshWnd, DataConv, RxTConst, Parsing, Ole2Auto, RxVerInf,
+  Str16;
+
+end.

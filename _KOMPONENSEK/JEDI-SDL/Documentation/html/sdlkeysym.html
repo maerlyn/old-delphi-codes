@@ -1,0 +1,134 @@
+<html>
+<head>
+  <title>SDL_keysym</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="SDL Event Structures." href="eventstructures.html">
+   
+  <link rel="PREVIOUS" title="SDL_QuitEvent" href="sdlquitevent.html">
+   
+  <link rel="NEXT" title="SDLKey" href="sdlkey.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="sdlquitevent.html">
+ Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom"><br>
+       </td>
+       <td width="8%" align="Right" valign="Bottom"><a href="sdlkey.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<h1><a name="SDLKEYSYM">TSDL_KeySym</a></h1>
+ 
+<div class="REFNAMEDIV"><a name="AEN4197"></a> 
+<h2>Name</h2>
+ TSDL_KeySym -- Keysym structure</div>
+ 
+<div class="REFSECT1"><a name="AEN4200"></a><br>
+ 
+<h2>Structure Definition</h2>
+ <pre class="PROGRAMLISTING">  TSDL_KeySym = <b>record</b><br>    scancode: UInt8;   // hardware specific scancode<br>    sym: TSDLKey;      // SDL virtual keysym<br>    modifier: TSDLMod; // current key modifiers<br>    unicode: UInt16;   // translated character<br>  <b>end;</b></pre>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN4203"></a> 
+<h2>Structure Data</h2>
+ 
+<div class="INFORMALTABLE"><a name="AEN4205"></a> 
+<p></p>
+ 
+<table border="0" class="CALSTABLE">
+   <tbody>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>scancode</i></tt></td>
+       <td align="Left" valign="Top">Hardware specific scancode</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>sym</i></tt></td>
+       <td align="Left" valign="Top">SDL virtual keysym</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>mod</i></tt></td>
+       <td align="Left" valign="Top">Current key modifiers</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>unicode</i></tt></td>
+       <td align="Left" valign="Top">Translated character</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<p></p>
+ </div>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN4224"></a> 
+<h2>Description</h2>
+ 
+<p>The <span class="STRUCTNAME">TSDL_KeySym</span> structure is used by reporting 
+key presses and releases since it is a part of the <a href="sdlkeyboardevent.html"><span class="STRUCTNAME">
+ TSDL_KeyboardEvent</span></a>.</p>
+ 
+<p>The <tt class="STRUCTFIELD"><i>scancode</i></tt> field should generally 
+be left alone, it is the hardware dependent scancode returned by the keyboard. 
+The <tt class="STRUCTFIELD"><i>sym</i></tt> field is extremely useful. It 
+is the SDL-defined value of the key (see <a href="sdlkey.html">SDL Key Syms</a>
+ . This field is very useful when you are checking for certain key presses, 
+like so: <pre class="PROGRAMLISTING">.<br>.<br><b>while</b> ( SDL_PollEvent( @event ) &gt; 0 ) <b>do</b><br><b>begin</b><br>  <b>case</b> event.type_ <b>of</b><br>    SDL_KEYDOWN:<br>    <b>begin</b><br>      if ( event.key.keysym.sym = SDLK_LEFT ) <b>then</b><br>        move_left;<br>    <b>end;</b><br>    .<br>    .<br>    .<br>  }<br><b>end;</b><br>.<br>.</pre>
+  <tt class="STRUCTFIELD"><i>mod</i></tt> stores the current state of the 
+keyboard modifiers as explained in <a href="sdlgetmodstate.html"><tt class="FUNCTION">
+ SDL_GetModState</tt></a>. The <tt class="STRUCTFIELD"><i>unicode</i></tt>
+  is only used when UNICODE translation is enabled with <a href="sdlenableunicode.html"><tt class="FUNCTION">
+ SDL_EnableUNICODE</tt></a>. If <tt class="STRUCTFIELD"><i>unicode</i></tt>
+  is non-zero then this a the UNICODE character corresponding to the keypress. 
+If the high 9 bits of the character are 0, then this maps to the equivalent 
+ASCII character: <pre class="PROGRAMLISTING">ch : char;<br>.<br>.<br>.<br><b>if</b> ( ( keysym.unicode <b>and</b> $FF80) = 0 ) <b>then</b><br><b>begin</b><br>  ch := keysym.unicode <b>and</b> $7F;<br><b>end</b><br><b>else</b> <br><b>begin</b><br>  printf("An International Character.\n");<br><b>end;</b><br></pre>
+  UNICODE translation does have a slight overhead so don't enable it unless 
+its needed.</p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN4243"></a> 
+<h2>See Also</h2>
+ 
+<p><a href="sdlkey.html"><span class="STRUCTNAME">SDLKey</span></a></p>
+ </div>
+ 
+<div class="NAVFOOTER"> 
+<hr align="Left" width="100%"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <td width="31%" align="Left" valign="Top"><a href="sdlquitevent.html">
+ Prev</a></td>
+       <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+       <td width="31%" align="Right" valign="Top"><a href="sdlkey.html">Next</a></td>
+     </tr>
+     <tr>
+       <td width="31%" align="Left" valign="Top">TSDL_QuitEvent</td>
+       <td width="34%" align="Center" valign="Top"><a href="eventstructures.html">
+ Up</a></td>
+       <td width="31%" align="Right" valign="Top">SDLKey</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ </div>
+ 
+</body>
+</html>

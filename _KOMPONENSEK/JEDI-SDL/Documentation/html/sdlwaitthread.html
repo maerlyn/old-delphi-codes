@@ -1,0 +1,76 @@
+<html>
+<head>
+  <title>SDL_WaitThread</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="Multi-threaded Programming" href="thread.html">
+  <link rel="PREVIOUS" title="SDL_GetThreadID" href="sdlgetthreadid.html">
+  <link rel="NEXT" title="SDL_KillThread" href="sdlkillthread.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdlgetthreadid.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlkillthread.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLWAITTHREAD">SDL_WaitThread</a></h1>
+<div class="REFNAMEDIV"><a name="AEN7223"></a>
+<h2>Name</h2>
+SDL_WaitThread&nbsp;--&nbsp;Wait for a thread to finish.</div>
+<div class="REFSYNOPSISDIV"><a name="AEN7226"></a><br>
+<h2>Synopsis</h2>
+<div class="FUNCSYNOPSIS"><a name="AEN7227"></a>
+<p></p>
+<pre class="FUNCSYNOPSISINFO"><b>uses</b><br>  SDL;</pre>
+<p>procedure <b>SDL_WaitThread</b>( thread : PSDL_Thread; var status : Integer
+);</p>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN7233"></a>
+<h2>Description</h2>
+<p>Wait for a thread to finish (timeouts are not supported).</p>
+</div>
+<div class="REFSECT1"><a name="AEN7236"></a>
+<h2>Return Value</h2>
+<p>The return code for the thread function is placed in the area pointed
+to by <tt class="PARAMETER"><i>status</i></tt>, if <tt class="PARAMETER"><i>
+status</i></tt> is not <span class="RETURNVALUE">NULL</span>.</p>
+</div>
+<div class="REFSECT1"><a name="AEN7242"></a>
+<h2>See Also</h2>
+<p><a href="sdlcreatethread.html"><tt class="FUNCTION">SDL_CreateThread</tt></a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdlgetthreadid.html">
+Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="sdlkillthread.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">SDL_GetThreadID</td>
+      <td width="34%" align="Center" valign="Top"><a href="thread.html">Up</a></td>
+      <td width="32%" align="Right" valign="Top">SDL_KillThread</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

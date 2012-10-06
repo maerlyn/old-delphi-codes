@@ -1,0 +1,61 @@
+Informationen zu Simons Komponentensammlung
+-------------------------------------------
+Herstellung und Vertrieb:
+
+p.i.c.s.
+Simon Reinhardt
+Am Pferdefeld 1
+42477 Radevormwald
+
+eMail		: reinhardt@picsoft.de
+Internet	: http://www.picsoft.de
+
+Version		: 1.12
+
+Das ZIP-Archiv "Simons.zip" enthält alle Dateien für die Komponentensammlung. Nach dem Entpacken des Archivs (dabei die Pfadnamen wiederherstellen!) findet man die Dateien in drei 
+Ordnern vor.
+
+Der Ordner "Units" enthält alle Dateien der Komponentensammlung, die für die Installation in den Delphi-IDEs benötigt werden.
+
+Im Ordner "Doc" finden sich Kurzbeschreibungen aller Komponenten im Textformat (*.txt), sowie eine 32Bit-und eine 16Bit-Windows-Hilfedatei (*.hlp).
+
+Der Ordner "Demo" schließlich enthält eine mit Delphi 5 kompilierte Exedatei, die die Funktionen aller Komponeten demonstriert, sowie die entsprechenden Quelldateien für Delphi 1 (D1_Demo.dpr), Delphi 2 (D2_Demo.dpr) und Delphi 3 bis 5 (D5_Demo.dpr).
+
+Der Abschnitt "Installation" dieser Hilfedatei beschreibt die Installation der Komponenten in den verschiedenen Delphi-IDEs.
+
+
+
+Vielen Dank an:
+---------------
+
+U. Conrad für die Ergänzung der FSingleLED-Eigenschaft von TLEDMeter.
+
+Matthias Frey für die Korrektur der Advents-Berechnung in der Komponente TSRCalendar.
+
+Peter Haas für die ConvertStrToDateTime und InitLocale-Funktionen
+
+Andreas Hörstemeier für die Routinen aus der Unit TimeFunc aus seiner TMoon-Komponente, die ich für die TSRCalendar-Komponente genutzt habe. Andreas hat die Routinen aus dem Buch "Astronomical Algorithms" von Jean Meeus.
+
+Christoph Kremer für die Die GetWeekOfYear-Funktion der Komponente TSRCalendar, die die Wochennummer nach DIN 1355 ermittelt.
+
+Marco Lange für die Korrektur der OnMouseEnter- und OnMouseLeave-Ereignisse von TOvalButton. 
+
+Edmund Matzke für die Korrektur der Schleswig-Holsteinischen Feiertage in TSRCalendar.
+
+Markus Pinl für die Fehlerkorrektur in TSRColorButton und die Beisteuerung der BorderColor-Eigenschaft!
+
+Brendan Rempel, der so nett war, die Komponente TRoundButton als Public Domain zu veröffentlichen. Auf Basis dieser Komponente habe ich TOvalButton entwickelt.
+
+Robert Rossmair für seine rrColors-Unit!
+
+
+
+Die Komponenten lassen sich mit allen bisher erschienenen Delphiversionen kompilieren. In älteren Delphiversionen sind aber u.U. nicht alle Eigenschaften und Ereignisse der Komponenten vorhanden. 
+Die Komponenten SRClock und alle erweiterten Open- und Save-Dialoge existieren nur für die 32-Bit-Delphiversionen ab 2.00.
+
+Diese Komponentensammlung ist Public Domain, das Urheberrecht liegt aber beim Autor. Fragen und Verbesserungsvorschläge sind immer willkommen. Sie darf frei benutzt und kopiert werden. Einzige 
+Voraussetzung für die Weitergabe der Komponentensuite ist die vollständige Weitergabe aller dazugehörigen unveränderten Dateien. 
+
+
+
+(C) 2001 Simon Reinhardt

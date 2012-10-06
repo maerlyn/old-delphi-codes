@@ -1,0 +1,53 @@
+<html>
+<link rel="stylesheet" href="CDNy.css" type="text/css"> 
+
+<center>
+<h1>Skinek</h1>
+</center>
+<br>
+A programnak tudod változtatni a kinézetét, ha másik "bõrt" adsz rá (valahogy úgy, mint a
+ WinAmpban). A bõröket a "skins" könyvtárba kell rakni, azon belül pedig egy olyan alkönyvtárba,
+ amely neve a skin neve (lehet, hogy elsõre érthetetlen, de gondolt át mégegyszer, és rájössz,
+ hogy milyen egyszerû, pl. ha van egy "izé" nevu skined, akkor azt a "skins\izé" mappába kell
+ rakni). Ezek közül választani a beállítások fülön lehet. Ja, fontos: itt nem szabad
+ "bezippelni", mint a WinAmpnál, mert nem tudom, hogy Delphibol hogy lehet zipet kicsomagolni,
+ ha valaki tudja, a névjegyben benne van az e-mail címem!!<br><br>
+
+A "skinneve" mappa tartalma a következõ legyen:<br>
+&nbsp;1.bmp : a fõform 1.gombjának a képe<br>
+&nbsp;.<br>
+&nbsp;.<br>
+&nbsp;.<br>
+&nbsp;9.bmp : a fõform 9. (utolsó) gombjának a képe, ezek mérete 32x32 pixel legyen<br>
+&nbsp;bg.bmp : a fõform háttérképe, a mérete lényegtelen, mozaikszerûen lesz kirakva<br>
+&nbsp;kereses.bmp : a keresés formon levõ "Nosza!" gomb képe, 16x16 pixel<br>
+&nbsp;ok.bmp : minden "OK" gomb képe, 18x18 képpont<br>
+&nbsp;megse.bmp : mindem "Mégse" gomb képe, 18x18 képpont<br>
+&nbsp;skin.ini : a "bõr" beállításait tartalmazza, lásd lentebb.<br><br>
+
+Ha valamenyik kép nem létezik, akkor a program az alapértelmezettet használja (belefordítva az
+ exe-be).<br><br>
+
+A skin.ini felépítése:<br>
+&nbsp;";" után megjegyzéseket tehetsz bele<br>
+&nbsp;1. sor: "[Szinek]"<br>
+&nbsp;csak ez után jöhet a többi, a sorrend lényegtelen:<br>
+&nbsp;Hatter= +a háttér színe (minden formé + a fõform gombjaié)<br>
+&nbsp;Gombok= +minden gomb háttérszíne, kiv. a fõforméi<br>
+&nbsp;Fulek= +a fülek színe (keresés&beállítások ablak)<br>
+&nbsp;Betuk= +a betûk színe (mindegyiké)<br><br>
+
+A színek kiszámítása:<br>
+Igen egyszeru képlettel történik:<br>
+65536 * V + 256 * Z + K<br>
+ahol "V" a szín vörös, "Z" a zöld, "K" pedig a kék összetevõje<br><br>
+
+<center><b>
+Egy Skinkészítõ letõlthetõ a honlaprõl!<br><br>
+
+HAHÓ!</b> Ha csináltok egy olyan skint, ami szerintetek másnak is tetszene, akkor küldjétek el
+ a címemre (<a href="mailto:televonzsinor@yahoo.com">televonzsinor@yahoo.com</a>), és lehet,
+ hogy fölrakom a honlapra!
+</center>
+
+</html>

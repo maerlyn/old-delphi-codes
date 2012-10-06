@@ -1,0 +1,133 @@
+<html>
+<head>
+  <title>TSDL_JoyButtonEvent</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="SDL Event Structures." href="eventstructures.html">
+   
+  <link rel="PREVIOUS" title="SDL_JoyAxisEvent" href="sdljoyaxisevent.html">
+   
+  <link rel="NEXT" title="SDL_JoyHatEvent" href="sdljoyhatevent.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="sdljoyaxisevent.html">
+ Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom"><br>
+       </td>
+       <td width="8%" align="Right" valign="Bottom"><a href="sdljoyhatevent.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<h1><a name="SDLJOYBUTTONEVENT">TSDL_JoyButtonEvent</a></h1>
+ 
+<div class="REFNAMEDIV"><a name="AEN3831"></a> 
+<h2>Name</h2>
+ TSDL_JoyButtonEvent -- Joystick button event structure</div>
+ 
+<div class="REFSECT1"><a name="AEN3834"></a><br>
+ 
+<h2>Structure Definition</h2>
+ <pre class="PROGRAMLISTING">  TSDL_JoyButtonEvent = <b>record</b><br>    type_: UInt8;  // SDL_JOYBUTTONDOWN or SDL_JOYBUTTONUP<br>    which: UInt8;  // The joystick device index<br>    button: UInt8; // The joystick button index<br>    state: UInt8;  // SDL_PRESSED or SDL_RELEASED<br>  <b>end;</b></pre>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN3837"></a> 
+<h2>Structure Data</h2>
+ 
+<div class="INFORMALTABLE"><a name="AEN3839"></a> 
+<p></p>
+ 
+<table border="0" class="CALSTABLE">
+   <tbody>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>type</i></tt></td>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_JOYBUTTONDOWN</tt>
+  or <tt class="LITERAL">SDL_JOYBUTTONUP</tt></td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>which</i></tt></td>
+       <td align="Left" valign="Top">Joystick device index</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>button</i></tt></td>
+       <td align="Left" valign="Top">Joystick button index</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>state</i></tt></td>
+       <td align="Left" valign="Top"><tt class="LITERAL">SDL_PRESSED</tt>
+ or <tt class="LITERAL">SDL_RELEASED</tt></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<p></p>
+ </div>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN3862"></a> 
+<h2>Description</h2>
+ 
+<p><span class="STRUCTNAME">TSDL_JoyButtonEvent</span> is a member of the 
+<a href="sdlevent.html"><span class="STRUCTNAME">TSDL_Event</span></a> union 
+and is used when an event of type <tt class="LITERAL">SDL_JOYBUTTONDOWN</tt>
+  or <tt class="LITERAL">SDL_JOYBUTTONUP</tt> is reported.</p>
+ 
+<p>A <tt class="LITERAL">SDL_JOYBUTTONDOWN</tt> or <tt class="LITERAL">SDL_JOYBUTTONUP</tt>
+  event occurs when ever a user presses or releases a button on a joystick. 
+The field <tt class="STRUCTFIELD"><i>which</i></tt> is the index of the joystick 
+that reported the event and <tt class="STRUCTFIELD"><i>button</i></tt> is 
+the index of the button (for a more detailed explaination see the <a href="joystick.html">
+ Joystick section</a>). <tt class="STRUCTFIELD"><i>state</i></tt> is the
+current state or the button which is either <tt class="LITERAL">SDL_PRESSED</tt>
+ or <tt class="LITERAL">SDL_RELEASED</tt>.</p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN3879"></a> 
+<h2>See Also</h2>
+ 
+<p><a href="sdlevent.html"><span class="STRUCTNAME">TSDL_Event</span></a>
+ , <a href="joystick.html">Joystick Functions</a>, <a href="sdljoystickeventstate.html"><tt class="FUNCTION">
+ SDL_JoystickEventState</tt></a>, <a href="sdljoystickgetbutton.html"><tt class="FUNCTION">
+ SDL_JoystickGetButton</tt></a></p>
+ </div>
+ 
+<div class="NAVFOOTER"> 
+<hr align="Left" width="100%"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <td width="31%" align="Left" valign="Top"><a href="sdljoyaxisevent.html">
+ Prev</a></td>
+       <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+       <td width="31%" align="Right" valign="Top"><a href="sdljoyhatevent.html">
+ Next</a></td>
+     </tr>
+     <tr>
+       <td width="31%" align="Left" valign="Top">TSDL_JoyAxisEvent</td>
+       <td width="34%" align="Center" valign="Top"><a href="eventstructures.html">
+ Up</a></td>
+       <td width="31%" align="Right" valign="Top">TSDL_JoyHatEvent</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ </div>
+ 
+</body>
+</html>

@@ -1,0 +1,152 @@
+<html>
+<head>
+  <title>SDL_VideoInfo</title>
+      
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+   
+  <link rel="HOME" TITLE="JEDI-SDL Library Documentation" href="index.html">
+   
+  <link rel="UP" title="Video" href="video.html">
+   
+  <link rel="PREVIOUS" title="SDL_Surface" href="sdlsurface.html">
+   
+  <link rel="NEXT" title="SDL_Overlay" href="sdloverlay.html">
+</head>
+ <body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+ 
+<div class="NAVHEADER"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+     </tr>
+     <tr>
+       <td width="8%" align="Left" valign="Bottom"><a href="sdlsurface.html">
+ Prev</a></td>
+       <td width="78%" align="Center" valign="Bottom"><br>
+       </td>
+       <td width="8%" align="Right" valign="Bottom"><a href="sdloverlay.html">
+ Next</a></td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<hr align="Left" width="100%"></div>
+ 
+<h1><a name="SDLVIDEOINFO">TSDL_VideoInfo</a></h1>
+ 
+<div class="REFNAMEDIV"><a name="AEN2974"></a> 
+<h2>Name</h2>
+ TSDL_VideoInfo -- Video Target information</div>
+ 
+<div class="REFSECT1"><a name="AEN2977"></a><br>
+ 
+<h2>Structure Definition</h2>
+ <pre class="PROGRAMLISTING"> TSDL_VideoInfo = <b>record</b><br>    hw_available: Uint32;   // Flag:Uint32  Can you create hardware surfaces?<br>    wm_available: Uint32;   // Flag:Uint32  Can you talk to a window manager?<br>    UnusedBits1: Uint32;<br>    UnusedBits2: Uint32;<br>    blit_hw: Uint32;        // Flag:Uint32  Accelerated blits HW --&gt; HW<br>    blit_hw_CC: Uint32;     // Flag:Uint32  Accelerated blits with Colorkey<br>    blit_hw_A: Uint32;      // Flag:Uint32  Accelerated blits with Alpha<br>    blit_sw: Uint32;        // Flag:Uint32  Accelerated blits SW --&gt; HW<br>    blit_sw_CC: Uint32;     // Flag:Uint32  Accelerated blits with Colorkey<br>    blit_sw_A: Uint32;      // Flag:Uint32  Accelerated blits with Alpha<br>    blit_fill: Uint32;      // Flag:Uint32  Accelerated color fill<br>    UnusedBits3: Uint32;<br>    video_mem: UInt32;      // The total amount of video memory (in K)<br>    vfmt: PSDL_PixelFormat; // Value: The format of the video surface<br>  <b>end;</b></pre>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN2980"></a> 
+<h2>Structure Data</h2>
+ 
+<div class="INFORMALTABLE"><a name="AEN2982"></a> 
+<p></p>
+ 
+<table border="0" class="CALSTABLE">
+   <tbody>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>hw_available</i></tt></td>
+       <td align="Left" valign="Top">Is it possible to create hardware surfaces?</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>wm_available</i></tt></td>
+       <td align="Left" valign="Top">Is there a window manager available</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>blit_hw</i></tt></td>
+       <td align="Left" valign="Top">Are hardware to hardware blits accelerated?</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>blit_hw_CC</i></tt></td>
+       <td align="Left" valign="Top">Are hardware to hardware colorkey blits 
+accelerated?</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>blit_hw_A</i></tt></td>
+       <td align="Left" valign="Top">Are hardware to hardware alpha blits 
+accelerated?</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>blit_sw</i></tt></td>
+       <td align="Left" valign="Top">Are software to hardware blits accelerated?</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>blit_sw_CC</i></tt></td>
+       <td align="Left" valign="Top">Are software to hardware colorkey blits 
+accelerated?</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>blit_sw_A</i></tt></td>
+       <td align="Left" valign="Top">Are software to hardware alpha blits 
+accelerated?</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>blit_fill</i></tt></td>
+       <td align="Left" valign="Top">Are color fills accelerated?</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>video_mem</i></tt></td>
+       <td align="Left" valign="Top">Total amount of video memory in Kilobytes</td>
+     </tr>
+     <tr>
+       <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>vfmt</i></tt></td>
+       <td align="Left" valign="Top"><a href="sdlpixelformat.html">Pixel
+format</a>  of the video device</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<p></p>
+ </div>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN3030"></a> 
+<h2>Description</h2>
+ 
+<p>This (read-only) structure is returned by <a href="sdlgetvideoinfo.html"><tt class="FUNCTION">
+ SDL_GetVideoInfo</tt></a>. It contains information on either the 'best'
+available mode  (if called before <a href="sdlsetvideomode.html"><tt class="FUNCTION">
+ SDL_SetVideoMode</tt></a>) or the current video mode.</p>
+ </div>
+ 
+<div class="REFSECT1"><a name="AEN3037"></a> 
+<h2>See Also</h2>
+ 
+<p><a href="sdlpixelformat.html"><span class="STRUCTNAME">TSDL_PixelFormat</span></a>
+ , <a href="sdlgetvideoinfo.html"><tt class="FUNCTION">SDL_GetVideoInfo</tt></a></p>
+ </div>
+ 
+<div class="NAVFOOTER"> 
+<hr align="Left" width="100%"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+     <tr>
+       <td width="31%" align="Left" valign="Top"><a href="sdlsurface.html">
+ Prev</a></td>
+       <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+       <td width="31%" align="Right" valign="Top"><a href="sdloverlay.html">
+ Next</a></td>
+     </tr>
+     <tr>
+       <td width="31%" align="Left" valign="Top">TSDL_Surface</td>
+       <td width="34%" align="Center" valign="Top"><a href="video.html">Up</a></td>
+       <td width="31%" align="Right" valign="Top">TSDL_Overlay</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ </div>
+ 
+</body>
+</html>

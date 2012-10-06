@@ -1,0 +1,106 @@
+<html>
+<head>
+  <title>SDL_JoyBallEvent</title>
+  <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.64">
+  <link rel="HOME" title="JEDI-SDL Library Documentation" href="index.html">
+  <link rel="UP" title="SDL Event Structures." href="eventstructures.html">
+  <link rel="PREVIOUS" title="SDL_JoyHatEvent" href="sdljoyhatevent.html">
+  <link rel="NEXT" title="SDL_ResizeEvent" href="sdlresizeevent.html">
+</head>
+<body class="REFENTRY" bgcolor="#fff8dc" text="#000000" link="#0000ee" vlink="#551a8b" alink="#ff0000">
+<div class="NAVHEADER">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <th colspan="3" align="Center"><i>JEDI</i>-SDL Library Documentation</th>
+    </tr>
+    <tr>
+      <td width="9%" align="Left" valign="Bottom"><a href="sdljoyhatevent.html">
+Prev</a></td>
+      <td width="79%" align="Center" valign="Bottom"><br>
+      </td>
+      <td width="9%" align="Right" valign="Bottom"><a href="sdlresizeevent.html">
+Next</a></td>
+    </tr>
+  </tbody>
+</table>
+<hr align="Left" width="100%"></div>
+<h1><a name="SDLJOYBALLEVENT">TSDL_JoyBallEvent</a></h1>
+<div class="REFNAMEDIV"><a name="AEN3969"></a>
+<h2>Name</h2>
+TSDL_JoyBallEvent -- Joystick trackball motion event structure</div>
+<div class="REFSECT1"><a name="AEN3972"></a><br>
+<h2>Structure Definition</h2>
+<pre class="PROGRAMLISTING">  TSDL_JoyBallEvent = <b>record</b><br>    type_: UInt8; // SDL_JOYAVBALLMOTION<br>    which: UInt8; // The joystick device index<br>    ball: UInt8; // The joystick trackball index<br>    xrel: Sint16; // The relative motion in the X direction<br>    yrel: Sint16; // The relative motion in the Y direction<br>  <b>end;</b></pre>
+</div>
+<div class="REFSECT1"><a name="AEN3975"></a>
+<h2>Structure Data</h2>
+<div class="INFORMALTABLE"><a name="AEN3977"></a>
+<p></p>
+<table border="0" class="CALSTABLE">
+  <tbody>
+    <tr>
+      <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>type</i></tt></td>
+      <td align="Left" valign="Top"><tt class="LITERAL">SDL_JOYBALLMOTION</tt></td>
+    </tr>
+    <tr>
+      <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>which</i></tt></td>
+      <td align="Left" valign="Top">Joystick device index</td>
+    </tr>
+    <tr>
+      <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>ball</i></tt></td>
+      <td align="Left" valign="Top">Joystick trackball index</td>
+    </tr>
+    <tr>
+      <td align="Left" valign="Top"><tt class="STRUCTFIELD"><i>xrel</i></tt>
+, <tt class="STRUCTFIELD"><i>yrel</i></tt></td>
+      <td align="Left" valign="Top">The relative motion in the X/Y direction</td>
+    </tr>
+  </tbody>
+</table>
+<p></p>
+</div>
+</div>
+<div class="REFSECT1"><a name="AEN3998"></a>
+<h2>Description</h2>
+<p><span class="STRUCTNAME">TSDL_JoyBallEvent</span> is a member of the <a href="sdlevent.html"><span class="STRUCTNAME">
+TSDL_Event</span></a> union and is used when an event of type <tt class="LITERAL">
+SDL_JOYBALLMOTION</tt> is reported.</p>
+<p>A <tt class="LITERAL">SDL_JOYBALLMOTION</tt> event occurs when a user
+moves a trackball on the joystick. The field <tt class="STRUCTFIELD"><i>which</i></tt>
+ is the index of the joystick that reported the event and <tt class="STRUCTFIELD"><i>
+ball</i></tt> is the index of the trackball (for a more detailed explaination
+see the <a href="joystick.html">Joystick section</a>). Trackballs only return
+relative motion, this is the change in position on the ball since it was
+last polled (last cycle of the event loop) and it is stored in <tt class="STRUCTFIELD"><i>
+xrel</i></tt> and <tt class="STRUCTFIELD"><i>yrel</i></tt>.</p>
+</div>
+<div class="REFSECT1"><a name="AEN4012"></a>
+<h2>See Also</h2>
+<p><a href="sdlevent.html"><span class="STRUCTNAME">TSDL_Event</span></a>
+, <a href="joystick.html">Joystick Functions</a>, <a href="sdljoystickeventstate.html"><tt class="FUNCTION">
+SDL_JoystickEventState</tt></a>, <a href="sdljoystickgetball.html"><tt class="FUNCTION">
+SDL_JoystickGetBall</tt></a></p>
+</div>
+<div class="NAVFOOTER">
+<hr align="Left" width="100%">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td width="32%" align="Left" valign="Top"><a href="sdljoyhatevent.html">
+Prev</a></td>
+      <td width="34%" align="Center" valign="Top"><a href="index.html">Home</a></td>
+      <td width="32%" align="Right" valign="Top"><a href="sdlresizeevent.html">
+Next</a></td>
+    </tr>
+    <tr>
+      <td width="32%" align="Left" valign="Top">TSDL_JoyHatEvent</td>
+      <td width="34%" align="Center" valign="Top"><a href="eventstructures.html">
+Up</a></td>
+      <td width="32%" align="Right" valign="Top">TSDL_ResizeEvent</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>
